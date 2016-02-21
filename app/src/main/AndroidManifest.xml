@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.arman.syndrom_down" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name"
+            android:noHistory="true"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AmoozeshActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".BaziActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".LoghatActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".JomleActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".KhanevadeActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".AndamActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".MiveActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".HeyvanatActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".PooshakActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".VasayelActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".MashaghelActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".KhordaniActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".RangActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".MafahimActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".LoghatGeneralActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".FelActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Kalame2Activity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Kalame3Activity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".FelGeneralActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".AmrActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".GozashteActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".HessiActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Kalame3GeneralActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ZamirActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Bazi1Activity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Bazi2Activity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".LoghatGeneralActivity1"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".LoghatGeneralActivity2"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".LoghatGeneralActivity3"
+            android:screenOrientation="landscape" >
+        </activity>
+    </application>
+
+</manifest>

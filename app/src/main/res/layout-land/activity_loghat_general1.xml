@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+   <ImageView
+       android:layout_width="120dp"
+       android:layout_height="120dp"
+       android:src="@drawable/father"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="50dp"
+       android:id="@+id/word" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/check"
+        android:id="@+id/pass"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/word"
+        android:layout_alignEnd="@+id/word"
+        android:layout_marginRight="70dp"
+        android:layout_marginEnd="70dp" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/replay"
+        android:id="@+id/replay"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/word"
+        android:layout_alignStart="@+id/word"
+        android:layout_marginLeft="64dp"
+        android:layout_marginStart="64dp" />
+</RelativeLayout>
