@@ -111,6 +111,18 @@
             android:name=".LoghatGeneralActivity3"
             android:screenOrientation="landscape" >
         </activity>
+        <activity
+            android:name=".LoghatGeneralActivity4"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".LoghatGeneralActivity5"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".LoghatGeneralActivity6"
+            android:screenOrientation="landscape" >
+        </activity>
     </application>
 
 </manifest>

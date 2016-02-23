@@ -3,7 +3,6 @@ package com.example.arman.syndrom_down;
 import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.Color;
-import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,27 +16,26 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 
 
-public class LoghatGeneralActivity3 extends ActionBarActivity {
+public class LoghatGeneralActivity4 extends ActionBarActivity {
     ImageView word;
-    ImageView fatherImg;
+    ImageView sabad;
     ImageView arrow;
     int wordDragged = 0;
-    MediaPlayer wordDrag;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_loghat_general_activity3);
-        word = (ImageView) findViewById(R.id.father);
-        fatherImg = (ImageView) findViewById(R.id.fatherimg);
+        setContentView(R.layout.loghat_general_activity4);
+        word = (ImageView) findViewById(R.id.word);
+        sabad = (ImageView) findViewById(R.id.sabad);
         arrow = (ImageView) findViewById(R.id.arrow);
-        wordDrag = MediaPlayer.create(getApplicationContext(), R.raw.baba_sabad);
         controller();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_loghat_general_activity3, menu);
+        getMenuInflater().inflate(R.menu.menu_loghat_general_activity4, menu);
         return true;
     }
 
@@ -65,15 +63,15 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
         animation.setRepeatMode(Animation.REVERSE);
         arrow.startAnimation(animation);
 
-        fatherImg.setOnLongClickListener(new View.OnLongClickListener() {
+        word.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 ClipData data = ClipData.newPlainText("", "");
-                fatherImg.startDrag(data, new View.DragShadowBuilder(v), null, 0);
+                word.startDrag(data, new View.DragShadowBuilder(v), null, 0);
                 return true;
             }
         });
-        word.setOnDragListener(new View.OnDragListener() {
+        sabad.setOnDragListener(new View.OnDragListener() {
             @Override
             public boolean onDrag(View v, DragEvent event) {
                 switch (event.getAction()) {
@@ -91,9 +89,8 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
                         wordDragged++;
 
                         if (wordDragged >= 4) {
-                            Intent intent = new Intent(LoghatGeneralActivity3.this, LoghatGeneralActivity4.class);
+                            Intent intent = new Intent(LoghatGeneralActivity4.this, LoghatGeneralActivity5.class);
                             startActivity(intent);
-//                            wordDrag.start();
                         } else {
                             //mediaPlayerTashvigh.start();
                         }

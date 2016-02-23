@@ -20,8 +20,8 @@ public class KhanevadeActivity extends ActionBarActivity {
     private Toolbar toolbar;
     private ListView listKhanevade;
     private List<String> items;
-    private ListAdapterKhanevadeActivity adapter;
-
+//    private ListAdapterKhanevadeActivity adapter;
+    private ArrayAdapter<String> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,10 +44,11 @@ public class KhanevadeActivity extends ActionBarActivity {
 //        items.add("dadash");
 //        items.add("khahar");
 
-        adapter = new ListAdapterKhanevadeActivity(this, items);
+//        adapter = new ListAdapterKhanevadeActivity(this, items);
+        adapter = new ArrayAdapter<String>
+                (this, android.R.layout.simple_list_item_1, items);
         listKhanevade.setAdapter(adapter);
 //        listKhanevade.getChildAt(1).setEnabled(false);
-//        listKhanevade.getChildAt(2).setEnabled(false);
 //        listKhanevade.getChildAt(3).setEnabled(false);
         setListener();
     }
