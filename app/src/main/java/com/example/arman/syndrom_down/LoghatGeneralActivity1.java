@@ -15,20 +15,16 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
     private ImageView word;
     private ImageView pass;
     private ImageView replay;
-    private int replayClicked=0;
+    private int replayClicked = 0;
     MediaPlayer wordSound;
-    MediaPlayer babaDrag;
+    MediaPlayer dragVoice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loghat_general1);
         setTitle(R.string.repeatTitle);
-        word = (ImageView) findViewById(R.id.word);
-        pass = (ImageView) findViewById(R.id.pass);
-        replay = (ImageView) findViewById(R.id.replay);
-        wordSound = MediaPlayer.create(getApplicationContext(), R.raw.baba);
-        babaDrag = MediaPlayer.create(getApplicationContext(), R.raw.baba_drag);
+        setViews();
         controller();
     }
 
@@ -55,7 +51,29 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void controller(){
+    private void setViews() {
+
+        int position = 0;
+
+        pass = (ImageView) findViewById(R.id.pass);
+        replay = (ImageView) findViewById(R.id.replay);
+        word = (ImageView) findViewById(R.id.word);
+
+        switch (position) {
+            case 0:
+                word.setImageResource(R.drawable.father);
+                wordSound = MediaPlayer.create(getApplicationContext(), R.raw.baba);
+                break;
+            case 1:
+
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    public void controller() {
         replay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,10 +86,10 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
             @Override
             public void onClick(View v) {
 
-                if(replayClicked>=4){
+                if (replayClicked >= 4) {
                     Intent intent = new Intent(LoghatGeneralActivity1.this, LoghatGeneralActivity2.class);
                     startActivity(intent);
-                    babaDrag.start();
+                    dragVoice.start();
                 }
             }
         });

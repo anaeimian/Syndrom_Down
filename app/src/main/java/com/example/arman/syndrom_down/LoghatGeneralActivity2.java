@@ -19,18 +19,18 @@ import android.widget.ImageView;
 
 public class LoghatGeneralActivity2 extends ActionBarActivity {
     ImageView word ;
-    ImageView fatherImg;
+    ImageView wordImg;
     ImageView arrow;
     int wordDragged=0;
-    MediaPlayer babaDrag;
+    MediaPlayer dragVoice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loghat_general_activity2);
         word = (ImageView) findViewById(R.id.word);
-        fatherImg = (ImageView) findViewById(R.id.fatherimg);
+        wordImg = (ImageView) findViewById(R.id.wordImg);
         arrow = (ImageView) findViewById(R.id.arrow);
-        babaDrag = MediaPlayer.create(getApplicationContext(), R.raw.baba_drag);
+        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.baba_drag);
         controller();
     }
 
@@ -72,7 +72,7 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
                 return true;
             }
         });
-        fatherImg.setOnDragListener(new View.OnDragListener() {
+        wordImg.setOnDragListener(new View.OnDragListener() {
             @Override
             public boolean onDrag(View v, DragEvent event) {
                 switch (event.getAction()) {
@@ -92,7 +92,7 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
                         if (wordDragged >= 4) {
                             Intent intent = new Intent(LoghatGeneralActivity2.this, LoghatGeneralActivity3.class);
                             startActivity(intent);
-                            babaDrag.start();
+                            dragVoice.start();
                         } else {
                             //mediaPlayerTashvigh.start();
                         }

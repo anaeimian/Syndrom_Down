@@ -21,13 +21,13 @@
         android:layout_height="120dp"
         android:src="@drawable/arrow1"
         android:id="@+id/arrow"
-        android:layout_alignTop="@+id/fatherimg"
+        android:layout_alignTop="@+id/wordImg"
         android:layout_centerHorizontal="true" />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="120dp"
         android:src="@drawable/fatherimg"
-        android:id="@+id/fatherimg"
+        android:id="@+id/wordImg"
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@+id/arrow"
         android:layout_toStartOf="@+id/arrow" />
