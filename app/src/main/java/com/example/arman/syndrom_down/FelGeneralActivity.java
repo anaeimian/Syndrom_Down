@@ -1,490 +1,489 @@
-//package com.example.arman.syndrom_down;
-//
-//import android.animation.Animator;
-//import android.animation.ObjectAnimator;
-//import android.content.ClipData;
-//import android.graphics.Color;
-//import android.media.MediaPlayer;
-//import android.net.Uri;
-//import android.os.Bundle;
-//import android.support.v7.app.ActionBarActivity;
-//import android.support.v7.widget.Toolbar;
-//import android.util.Log;
-//import android.view.DragEvent;
-//import android.view.MotionEvent;
-//import android.view.View;
-//import android.widget.ImageView;
-//import android.widget.LinearLayout;
-//import android.widget.MediaController;
-//import android.widget.ScrollView;
-//import android.widget.VideoView;
-//
-///**
-// * Created by Szamani on 12/26/2015.
-// */
-//public class FelGeneralActivity extends ActionBarActivity {
-//    private Toolbar toolbar;
-//    private int which;
-//    private int type;
-//    private boolean active;
-//
-//    private int c0;
-//    private int c1;
-//    private int c1w;
-//    private int c2;
-//    private int c3;
-//
-//    private MediaController mediaController;
-//
-//    private MediaPlayer mediaPlayerRahnama;
-//    private MediaPlayer mediaPlayerTashvigh;
-//
-//    private ScrollView scrollView;
-//
-//    private LinearLayout l1;
-//    private LinearLayout l2;
-//    private LinearLayout l3;
-//
-//    private ObjectAnimator animator;
-//
-//    private VideoView vidView0;
-//    private ImageView imViewReplay;
-//    private ImageView imViewNext;
-//
-//    private ImageView sep1;
-//
-//    private VideoView vidView1;
-//    private ImageView imViewPass;
-//    private ImageView imViewFail;
-//
-//    private ImageView sep2;
-//
-//    private ImageView imViewVisual;
-//    private ImageView imViewName;
-//    private ImageView imViewRahnama;
-//
-//    private ImageView sep3;
-//
-//    private ImageView imViewVisual2;
-//    private ImageView imViewName2;
-//    private ImageView imViewRahnama2;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_fel_general);
-//
-//        toolbar = (Toolbar) findViewById(R.id.app_bar);
-//        setSupportActionBar(toolbar);
-//        setTitle(getIntent().getStringExtra(Utils.NAME));
-//
-//        type = getIntent().getIntExtra(Utils.TYPE, 0); // khanevade
-//        which = getIntent().getIntExtra(Utils.WHICH, 0); // baba
-//        active = getIntent().getBooleanExtra(Utils.ACTIVE, false); // is passed?
-//
-//        mediaController = new MediaController(this);
-//
-////        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.beep);
-////        mediaPlayerTashvigh = MediaPlayer.create(this, R.raw.step);
-//
-//        animator = new ObjectAnimator();
-//        animator.setDuration(1500);
-//        animator.setPropertyName("translationY");
-//
-//        initializeViews();
+package com.example.arman.syndrom_down;
+
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.content.ClipData;
+import android.graphics.Color;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.DragEvent;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.MediaController;
+import android.widget.ScrollView;
+import android.widget.VideoView;
+
+/**
+ * Created by Szamani on 12/26/2015.
+ */
+public class FelGeneralActivity extends ActionBarActivity {
+    private Toolbar toolbar;
+    private int which;
+    private int type;
+    private boolean active;
+
+    private int c0;
+    private int c1;
+    private int c1w;
+    private int c2;
+    private int c3;
+
+    private MediaController mediaController;
+
+    private MediaPlayer mediaPlayerRahnama;
+    private MediaPlayer mediaPlayerTashvigh;
+
+    private ScrollView scrollView;
+
+    private LinearLayout l1;
+    private LinearLayout l2;
+    private LinearLayout l3;
+
+    private ObjectAnimator animator;
+
+    private VideoView vidView0;
+    private ImageView imViewReplay;
+    private ImageView imViewNext;
+
+    private ImageView sep1;
+
+    private VideoView vidView1;
+    private ImageView imViewPass;
+    private ImageView imViewFail;
+
+    private ImageView sep2;
+
+    private ImageView imViewVisual;
+    private ImageView imViewName;
+    private ImageView imViewRahnama;
+
+    private ImageView sep3;
+
+    private ImageView imViewVisual2;
+    private ImageView imViewName2;
+    private ImageView imViewRahnama2;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_fel_general);
+
+        toolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+        setTitle(getIntent().getStringExtra(Utils.NAME));
+
+        type = getIntent().getIntExtra(Utils.TYPE, 0); // khanevade
+        which = getIntent().getIntExtra(Utils.WHICH, 0); // baba
+        active = getIntent().getBooleanExtra(Utils.ACTIVE, false); // is passed?
+
+        mediaController = new MediaController(this);
+
+//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.beep);
+//        mediaPlayerTashvigh = MediaPlayer.create(this, R.raw.step);
+
+        animator = new ObjectAnimator();
+        animator.setDuration(1500);
+        animator.setPropertyName("translationY");
+
+        initializeViews();
 //        setImageResources();
-//        if (!active)
-//            diActivateAll();
-//        setListeners();
-//
-//    }
-//
-//    private void passSection() {
-//        int i = 0;
-//        active = true;
-//
-//        switch (type) {
-//            case 0: // amr
-//                while (i < Utils.database.amr.length &&
-//                        Utils.database.amr[++i]) ;
-//                Utils.database.amr[i] = true;
-//                break;
-//
-//            case 1: // gozashte
-//                while (i < Utils.database.gozashte.length &&
-//                        Utils.database.gozashte[++i]) ;
-//                Utils.database.gozashte[i] = true;
-//                break;
-//
-//            case 2: // hessi
-//                while (i < Utils.database.hessi.length &&
-//                        Utils.database.hessi[++i]) ;
-//                Utils.database.hessi[i] = true;
-//                break;
-//
-//            case 3: // kalame2
-//                while (i < Utils.database.kalame2.length &&
-//                        Utils.database.kalame2[++i]) ;
-//                Utils.database.kalame2[i] = true;
-//                break;
-//
-//            case 4: // zamir
-//                while (i < Utils.database.zamir.length &&
-//                        Utils.database.zamir[++i]) ;
-//                Utils.database.zamir[i] = true;
-//                break;
-//        }
-//
-//        DatabaseAdapter.getInstance().saveDatabase(FelGeneralActivity.this,
-//                Utils.database);
-//    }
-//
-//    private void initializeViews() {
-//        scrollView = (ScrollView) findViewById(R.id.scrollView);
-//        scrollView.post(new Runnable() {
-//            @Override
-//            public void run() {
-//                scrollView.smoothScrollTo(scrollView.getScrollX(), 0);
-//            }
-//        });
-//
-//        vidView0 = (VideoView) findViewById(R.id.vidView0);
-//        imViewReplay = (ImageView) findViewById(R.id.imViewReplay);
-//        imViewNext = (ImageView) findViewById(R.id.imViewNext);
+        if (!active)
+            diActivateAll();
+        setListeners();
+
+    }
+
+    private void passSection() {
+        int i = 0;
+        active = true;
+
+        switch (type) {
+            case 0: // amr
+                while (i < Utils.database.amr.length &&
+                        Utils.database.amr[++i]) ;
+                Utils.database.amr[i] = true;
+                break;
+
+            case 1: // gozashte
+                while (i < Utils.database.gozashte.length &&
+                        Utils.database.gozashte[++i]) ;
+                Utils.database.gozashte[i] = true;
+                break;
+
+            case 2: // hessi
+                while (i < Utils.database.hessi.length &&
+                        Utils.database.hessi[++i]) ;
+                Utils.database.hessi[i] = true;
+                break;
+
+            case 3: // kalame2
+                while (i < Utils.database.kalame2.length &&
+                        Utils.database.kalame2[++i]) ;
+                Utils.database.kalame2[i] = true;
+                break;
+
+            case 4: // zamir
+                while (i < Utils.database.zamir.length &&
+                        Utils.database.zamir[++i]) ;
+                Utils.database.zamir[i] = true;
+                break;
+        }
+
+        DatabaseAdapter.getInstance().saveDatabase(FelGeneralActivity.this,
+                Utils.database);
+    }
+
+    private void initializeViews() {
+        scrollView = (ScrollView) findViewById(R.id.scrollView);
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.smoothScrollTo(scrollView.getScrollX(), 0);
+            }
+        });
+
+        vidView0 = (VideoView) findViewById(R.id.vidView0);
+        imViewReplay = (ImageView) findViewById(R.id.imViewReplay);
+        imViewNext = (ImageView) findViewById(R.id.imViewNext);
 //        sep1 = (ImageView) findViewById(R.id.sep1);
-//        vidView1 = (VideoView) findViewById(R.id.vidView1);
-//        imViewPass = (ImageView) findViewById(R.id.imViewPass);
-//        imViewFail = (ImageView) findViewById(R.id.imViewFail);
+        vidView1 = (VideoView) findViewById(R.id.vidView1);
+        imViewPass = (ImageView) findViewById(R.id.imViewPass);
+        imViewFail = (ImageView) findViewById(R.id.imViewFail);
 //        sep2 = (ImageView) findViewById(R.id.sep2);
-//        imViewVisual = (ImageView) findViewById(R.id.imViewVisual);
-//        imViewName = (ImageView) findViewById(R.id.imViewName);
-//        imViewRahnama = (ImageView) findViewById(R.id.imViewRahnama);
+        imViewVisual = (ImageView) findViewById(R.id.imViewVisual);
+        imViewName = (ImageView) findViewById(R.id.imViewName);
+        imViewRahnama = (ImageView) findViewById(R.id.imViewRahnama);
 //        sep3 = (ImageView) findViewById(R.id.sep3);
-//        imViewVisual2 = (ImageView) findViewById(R.id.imViewVisual2);
-//        imViewName2 = (ImageView) findViewById(R.id.imViewName2);
-//        imViewRahnama2 = (ImageView) findViewById(R.id.imViewRahnama2);
-//
-//        l1 = (LinearLayout) findViewById(R.id.l1);
-//        l2 = (LinearLayout) findViewById(R.id.l2);
-//        l3 = (LinearLayout) findViewById(R.id.l3);
-//
-//        scrollView.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                return true;
-//            }
-//        });
-//
-//        vidView0.setMediaController(mediaController);
-//        vidView1.setMediaController(mediaController);
-//
-//        imViewRahnama.setVisibility(View.INVISIBLE);
-//        imViewRahnama2.setVisibility(View.INVISIBLE);
-//    }
-//
-//    private void diActivateAll() {
-//        vidView1.setEnabled(false);
-//        imViewPass.setEnabled(false);
-//        imViewFail.setEnabled(false);
-//        imViewVisual.setEnabled(false);
-//        imViewName.setEnabled(false);
-//        imViewRahnama.setEnabled(false);
-//        imViewVisual2.setEnabled(false);
-//        imViewName2.setEnabled(false);
-//        imViewRahnama2.setEnabled(false);
-//    }
-//
-//    private void activate1() {
-//        vidView1.setEnabled(true);
-//        imViewPass.setEnabled(true);
-//        imViewFail.setEnabled(true);
-//        l1.setBackgroundColor(Color.TRANSPARENT);
-//
-//        scrollView.post(new Runnable() {
-//            @Override
-//            public void run() {
-//                scrollView.smoothScrollTo(scrollView.getScrollX(),
-//                        (int) sep1.getY());
-//            }
-//        });
-//
-//        vidView1.post(new Runnable() {
-//            @Override
-//            public void run() {
-//                if (!vidView1.isPlaying())
-//                    vidView1.start();
-//            }
-//        });
-//    }
-//
-//    private void deActivate1() {
-//        vidView1.setEnabled(false);
-//        imViewPass.setEnabled(false);
-//        imViewFail.setEnabled(false);
-//        l1.setBackgroundColor(Color.parseColor("#CCC"));
-//
-//        c0 = 0;
-//        c1 = 0;
-//        c1w = 0;
-//
-//        scrollView.post(new Runnable() {
-//            @Override
-//            public void run() {
-//                scrollView.smoothScrollTo(scrollView.getScrollX(), 0);
-//            }
-//        });
-//    }
-//
-//    private void activate2() {
-//        imViewVisual.setEnabled(true);
-//        imViewName.setEnabled(true);
-//        imViewRahnama.setEnabled(true);
-//        l2.setBackgroundColor(Color.TRANSPARENT);
-//
-//        scrollView.post(new Runnable() {
-//            @Override
-//            public void run() {
-//                scrollView.smoothScrollTo(scrollView.getScrollX(),
-//                        (int) sep2.getY());
-//            }
-//        });
-//
-//        mediaPlayerRahnama.start();
-//        mediaPlayerRahnama.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-//            @Override
-//            public void onCompletion(MediaPlayer mp) {
-//                animator.start();
-//            }
-//        });
-//
-//        imViewRahnama.setX(imViewVisual.getX() + (imViewVisual.getWidth() / 2));
-//
-//        animator.setFloatValues(imViewVisual.getY() - imViewRahnama.getY() + (imViewVisual.getHeight() / 2)
-//                , imViewName.getY() - imViewRahnama.getY() + (imViewName.getHeight() / 2));
-//        animator.setTarget(imViewRahnama);
-//        animator.addListener(new Animator.AnimatorListener() {
-//            @Override
-//            public void onAnimationStart(Animator animation) {
-//                imViewRahnama.setVisibility(View.VISIBLE);
-//            }
-//
-//            @Override
-//            public void onAnimationEnd(Animator animation) {
-//                imViewRahnama.setVisibility(View.INVISIBLE);
-//            }
-//
-//            @Override
-//            public void onAnimationCancel(Animator animation) {
-//
-//            }
-//
-//            @Override
-//            public void onAnimationRepeat(Animator animation) {
-//
-//            }
-//        });
-//
-//
-//    }
-//
-//    private void activate3() {
-//        imViewVisual2.setEnabled(true);
-//        imViewName2.setEnabled(true);
-//        imViewRahnama2.setEnabled(true);
-//        l3.setBackgroundColor(Color.TRANSPARENT);
-//
-//        scrollView.post(new Runnable() {
-//            @Override
-//            public void run() {
-//                scrollView.smoothScrollTo(scrollView.getScrollX(),
-//                        (int) sep3.getY());
-//            }
-//        });
-//
-//        mediaPlayerRahnama.start();
-//        mediaPlayerRahnama.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-//            @Override
-//            public void onCompletion(MediaPlayer mp) {
-//                animator.start();
-//            }
-//        });
-//
-//        imViewRahnama2.setX(imViewVisual2.getX() + (imViewVisual2.getWidth() / 2));
-//
-//        animator.setFloatValues(imViewName2.getY() - imViewRahnama2.getY() + (imViewName2.getHeight() / 2),
-//                imViewVisual2.getY() - imViewRahnama2.getY() + (imViewVisual2.getHeight() / 2));
-//        animator.setTarget(imViewRahnama2);
-//        animator.addListener(new Animator.AnimatorListener() {
-//            @Override
-//            public void onAnimationStart(Animator animation) {
-//                imViewRahnama2.setVisibility(View.VISIBLE);
-//            }
-//
-//            @Override
-//            public void onAnimationEnd(Animator animation) {
-//                imViewRahnama2.setVisibility(View.INVISIBLE);
-//            }
-//
-//            @Override
-//            public void onAnimationCancel(Animator animation) {
-//
-//            }
-//
-//            @Override
-//            public void onAnimationRepeat(Animator animation) {
-//
-//            }
-//        });
-//
-//    }
-//
-//    private void setListeners() {
-//        imViewReplay.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (!vidView0.isPlaying()) {
-//                    vidView0.requestFocus();
-//                    vidView0.start();
-//                    ++c0;
-//                }
-//            }
-//        });
-//
-//        imViewNext.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (!vidView0.isPlaying() && c0 >= 4) {
-//                    activate1();
-//                }
-//            }
-//        });
-//
-//        ////////////////////////////////////////////////////////////////////
-//
-//        imViewPass.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                ++c1;
-//
-//                if (!vidView1.isPlaying()) {
-//                    if (c1 >= 4)
-//                        activate2();
-//                    else vidView1.start();
-//                }
-//            }
-//        });
-//
-//        imViewFail.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                ++c1w;
-//
-//                if (!vidView1.isPlaying()) {
-//                    if (c1w >= 3)
-//                        deActivate1();
-//                    else vidView1.start();
-//                }
-//            }
-//        });
-//
-//        ////////////////////////////////////////////////////////////////////
-//
-//        imViewVisual.setOnLongClickListener(new View.OnLongClickListener() {
-//            @Override
-//            public boolean onLongClick(View v) {
-//                ClipData clipData = ClipData.newPlainText("", "");
-//                imViewVisual.startDrag(clipData, new View.DragShadowBuilder(v), null, 0);
-//                return true;
-//            }
-//        });
-//
-//        imViewName.setOnDragListener(new View.OnDragListener() {
-//            @Override
-//            public boolean onDrag(View v, DragEvent event) {
-//                switch (event.getAction()) {
-//                    case DragEvent.ACTION_DRAG_ENTERED:
-//                        Log.d("Slama", " Drag Entered");
-//                        v.setBackgroundColor(Color.LTGRAY);
-//                        break;
-//                    case DragEvent.ACTION_DRAG_EXITED:
-//                        Log.d("Slama", " Drag Exited");
-//                        v.setBackgroundColor(Color.TRANSPARENT);
-//                        break;
-//                    case DragEvent.ACTION_DROP:
-//                        Log.d("Slama", " Drag Dropped");
-//                        v.setBackgroundColor(Color.TRANSPARENT);
-//                        ++c2;
-//
-//                        if (c2 >= 4) {
-//                            activate3();
-//                        } else mediaPlayerTashvigh.start();
-//
-//                        break;
-//                    default:
-//                        break;
-//                }
-//
-//                return true;
-//            }
-//        });
-//
-//        imViewRahnama.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
-//
-//        ////////////////////////////////////////////////////////////////////
-//
-//        imViewVisual2.setOnDragListener(new View.OnDragListener() {
-//            @Override
-//            public boolean onDrag(View v, DragEvent event) {
-//                switch (event.getAction()) {
-//                    case DragEvent.ACTION_DRAG_ENTERED:
-//                        Log.d("Slama", " Drag Entered");
-//                        v.setBackgroundColor(Color.LTGRAY);
-//                        break;
-//                    case DragEvent.ACTION_DRAG_EXITED:
-//                        Log.d("Slama", " Drag Exited");
-//                        v.setBackgroundColor(Color.TRANSPARENT);
-//                        break;
-//                    case DragEvent.ACTION_DROP:
-//                        Log.d("Slama", " Drag Dropped");
-//                        v.setBackgroundColor(Color.TRANSPARENT);
-//                        ++c3;
-//
-//                        if (c3 >= 4) {
-//                            if (!active)
-//                                passSection();
-//                        } else mediaPlayerTashvigh.start();
-//
-//                        break;
-//                    default:
-//                        break;
-//                }
-//
-//                return true;
-//            }
-//        });
-//
-//        imViewName2.setOnLongClickListener(new View.OnLongClickListener() {
-//            @Override
-//            public boolean onLongClick(View v) {
-//                ClipData clipData = ClipData.newPlainText("", "");
-//                imViewName2.startDrag(clipData, new View.DragShadowBuilder(v), null, 0);
-//                return true;
-//            }
-//        });
-//
-//        imViewRahnama2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
-//    }
-//
+        imViewVisual2 = (ImageView) findViewById(R.id.imViewVisual2);
+        imViewName2 = (ImageView) findViewById(R.id.imViewName2);
+        imViewRahnama2 = (ImageView) findViewById(R.id.imViewRahnama2);
+
+        l1 = (LinearLayout) findViewById(R.id.l1);
+        l2 = (LinearLayout) findViewById(R.id.l2);
+        l3 = (LinearLayout) findViewById(R.id.l3);
+
+        scrollView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return true;
+            }
+        });
+
+        vidView0.setMediaController(mediaController);
+        vidView1.setMediaController(mediaController);
+
+        imViewRahnama.setVisibility(View.INVISIBLE);
+        imViewRahnama2.setVisibility(View.INVISIBLE);
+    }
+
+    private void diActivateAll() {
+        vidView1.setEnabled(false);
+        imViewPass.setEnabled(false);
+        imViewFail.setEnabled(false);
+        imViewVisual.setEnabled(false);
+        imViewName.setEnabled(false);
+        imViewRahnama.setEnabled(false);
+        imViewVisual2.setEnabled(false);
+        imViewName2.setEnabled(false);
+        imViewRahnama2.setEnabled(false);
+    }
+
+    private void activate1() {
+        vidView1.setEnabled(true);
+        imViewPass.setEnabled(true);
+        imViewFail.setEnabled(true);
+        l1.setBackgroundColor(Color.TRANSPARENT);
+
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.smoothScrollTo(scrollView.getScrollX(),
+                        (int) sep1.getY());
+            }
+        });
+
+        vidView1.post(new Runnable() {
+            @Override
+            public void run() {
+                if (!vidView1.isPlaying())
+                    vidView1.start();
+            }
+        });
+    }
+
+    private void deActivate1() {
+        vidView1.setEnabled(false);
+        imViewPass.setEnabled(false);
+        imViewFail.setEnabled(false);
+        l1.setBackgroundColor(Color.parseColor("#CCC"));
+
+        c0 = 0;
+        c1 = 0;
+        c1w = 0;
+
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.smoothScrollTo(scrollView.getScrollX(), 0);
+            }
+        });
+    }
+
+    private void activate2() {
+        imViewVisual.setEnabled(true);
+        imViewName.setEnabled(true);
+        imViewRahnama.setEnabled(true);
+        l2.setBackgroundColor(Color.TRANSPARENT);
+
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.smoothScrollTo(scrollView.getScrollX(),
+                        (int) sep2.getY());
+            }
+        });
+
+        mediaPlayerRahnama.start();
+        mediaPlayerRahnama.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                animator.start();
+            }
+        });
+
+        imViewRahnama.setX(imViewVisual.getX() + (imViewVisual.getWidth() / 2));
+
+        animator.setFloatValues(imViewVisual.getY() - imViewRahnama.getY() + (imViewVisual.getHeight() / 2)
+                , imViewName.getY() - imViewRahnama.getY() + (imViewName.getHeight() / 2));
+        animator.setTarget(imViewRahnama);
+        animator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                imViewRahnama.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                imViewRahnama.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+
+
+    }
+
+    private void activate3() {
+        imViewVisual2.setEnabled(true);
+        imViewName2.setEnabled(true);
+        imViewRahnama2.setEnabled(true);
+        l3.setBackgroundColor(Color.TRANSPARENT);
+
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.smoothScrollTo(scrollView.getScrollX(),
+                        (int) sep3.getY());
+            }
+        });
+
+        mediaPlayerRahnama.start();
+        mediaPlayerRahnama.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                animator.start();
+            }
+        });
+
+        imViewRahnama2.setX(imViewVisual2.getX() + (imViewVisual2.getWidth() / 2));
+
+        animator.setFloatValues(imViewName2.getY() - imViewRahnama2.getY() + (imViewName2.getHeight() / 2),
+                imViewVisual2.getY() - imViewRahnama2.getY() + (imViewVisual2.getHeight() / 2));
+        animator.setTarget(imViewRahnama2);
+        animator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                imViewRahnama2.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                imViewRahnama2.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+
+    }
+
+    private void setListeners() {
+        imViewReplay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!vidView0.isPlaying()) {
+                    vidView0.requestFocus();
+                    vidView0.start();
+                    ++c0;
+                }
+            }
+        });
+
+        imViewNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!vidView0.isPlaying() && c0 >= 4) {
+                    activate1();
+                }
+            }
+        });
+
+        ////////////////////////////////////////////////////////////////////
+
+        imViewPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ++c1;
+
+                if (!vidView1.isPlaying()) {
+                    if (c1 >= 4)
+                        activate2();
+                    else vidView1.start();
+                }
+            }
+        });
+
+        imViewFail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ++c1w;
+
+                if (!vidView1.isPlaying()) {
+                    if (c1w >= 3)
+                        deActivate1();
+                    else vidView1.start();
+                }
+            }
+        });
+
+        ////////////////////////////////////////////////////////////////////
+
+        imViewVisual.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData clipData = ClipData.newPlainText("", "");
+                imViewVisual.startDrag(clipData, new View.DragShadowBuilder(v), null, 0);
+                return true;
+            }
+        });
+
+        imViewName.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch (event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        Log.d("Slama", " Drag Entered");
+                        v.setBackgroundColor(Color.LTGRAY);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        Log.d("Slama", " Drag Exited");
+                        v.setBackgroundColor(Color.TRANSPARENT);
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        Log.d("Slama", " Drag Dropped");
+                        v.setBackgroundColor(Color.TRANSPARENT);
+                        ++c2;
+
+                        if (c2 >= 4) {
+                            activate3();
+                        } else mediaPlayerTashvigh.start();
+
+                        break;
+                    default:
+                        break;
+                }
+
+                return true;
+            }
+        });
+
+        imViewRahnama.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        ////////////////////////////////////////////////////////////////////
+
+        imViewVisual2.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch (event.getAction()) {
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        Log.d("Slama", " Drag Entered");
+                        v.setBackgroundColor(Color.LTGRAY);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        Log.d("Slama", " Drag Exited");
+                        v.setBackgroundColor(Color.TRANSPARENT);
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        Log.d("Slama", " Drag Dropped");
+                        v.setBackgroundColor(Color.TRANSPARENT);
+                        ++c3;
+
+                        if (c3 >= 4) {
+                            if (!active)
+                                passSection();
+                        } else mediaPlayerTashvigh.start();
+
+                        break;
+                    default:
+                        break;
+                }
+
+                return true;
+            }
+        });
+
+        imViewName2.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ClipData clipData = ClipData.newPlainText("", "");
+                imViewName2.startDrag(clipData, new View.DragShadowBuilder(v), null, 0);
+                return true;
+            }
+        });
+
+        imViewRahnama2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+    }
+
 //    private void setImageResources() {
 //        switch (type) {
 //            case 0: // amr
@@ -629,7 +628,7 @@
 //        }
 //
 //    }
-//
+
 //    private void man() {
 //        imViewName.setImageResource(R.drawable.temp);
 //        imViewName2.setImageResource(R.drawable.temp);
@@ -916,4 +915,4 @@
 //        imViewVisual.setImageResource(R.drawable.khandani);
 //        imViewVisual2.setImageResource(R.drawable.khandani);
 //    }
-//}
+}

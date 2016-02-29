@@ -123,6 +123,18 @@
             android:name=".LoghatGeneralActivity6"
             android:screenOrientation="landscape" >
         </activity>
+        <activity
+            android:name=".FelGeneralActivity1"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".FelGeneralActivity2"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".FelGeneralActivity3"
+            android:screenOrientation="landscape" >
+        </activity>
     </application>
 
 </manifest>

@@ -20,8 +20,9 @@ public class KhanevadeActivity extends ActionBarActivity {
     private Toolbar toolbar;
     private ListView listKhanevade;
     private List<String> items;
-//    private ListAdapterKhanevadeActivity adapter;
+    //    private ListAdapterKhanevadeActivity adapter;
     private ArrayAdapter<String> adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,8 +46,7 @@ public class KhanevadeActivity extends ActionBarActivity {
 //        items.add("khahar");
 
 //        adapter = new ListAdapterKhanevadeActivity(this, items);
-        adapter = new ArrayAdapter<String>
-                (this, android.R.layout.simple_list_item_1, items);
+        adapter = new ListAdapterKhanevadeActivity(getApplicationContext(), items);
         listKhanevade.setAdapter(adapter);
 //        listKhanevade.getChildAt(1).setEnabled(false);
 //        listKhanevade.getChildAt(3).setEnabled(false);
@@ -54,19 +54,24 @@ public class KhanevadeActivity extends ActionBarActivity {
     }
 
     private void setListener() {
+//        int c = listKhanevade.getChildCount();
+//        for(int i = 0; i < c; i++){
+//            View v = listKhanevade.getChildAt(i);
+//            v.setBackgroundColor(R.color.black);
+//        }
         listKhanevade.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (!Utils.database.khanevade[position])
-                    return;
+//                if (!Utils.database.khanevade[position])
+//                    return;
 
                 Intent intent = new Intent(KhanevadeActivity.this, LoghatGeneralActivity1.class);
-                intent.putExtra(Utils.TYPE, 0);
-                intent.putExtra(Utils.WHICH, position);
-                if (Utils.database.khanevade[position + 1])
-                    intent.putExtra(Utils.ACTIVE, true);
-                else intent.putExtra(Utils.ACTIVE, false);
-                intent.putExtra(Utils.NAME, adapter.getItem(position));
+//                intent.putExtra(Utils.TYPE, 0);
+//                intent.putExtra(Utils.WHICH, position);
+//                if (Utils.database.khanevade[position + 1])
+//                    intent.putExtra(Utils.ACTIVE, true);
+//                else intent.putExtra(Utils.ACTIVE, false);
+//                intent.putExtra(Utils.NAME, adapter.getItem(position));
                 startActivity(intent);
             }
         });
@@ -82,6 +87,26 @@ public class KhanevadeActivity extends ActionBarActivity {
 class ListAdapterKhanevadeActivity extends ArrayAdapter<String> {
 
     public ListAdapterKhanevadeActivity(Context context, List<String> items) {
-        super(context, android.R.layout.simple_list_item_1, items);
+        super(context, R.layout.simple_list_item2, items);
     }
+
+    @Override
+    public boolean isEnabled(int position) {
+        if (position == 1) {
+            return false;
+        }
+        return true;
+    }
+
+//    @Override
+//    public View getView(int i, View convertView, ViewGroup viewGroup) {
+//        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//        convertView = LayoutInflater.inflate(R.layout.simple_list_item2); // Pseudo-code!
+//        if (i == 0) {
+//            convertView.setBackgroundColor(R.color.red);
+//        }
+//    }
 }
+//    @Override
+//    public void setEnabled(int position) {
+//    }

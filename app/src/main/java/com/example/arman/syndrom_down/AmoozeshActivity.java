@@ -38,8 +38,8 @@ public class AmoozeshActivity extends ActionBarActivity {
         imViewJomle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(AmoozeshActivity.this, JomleActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(AmoozeshActivity.this, JomleActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -5,4 +5,6 @@
     <color name="colorTabView">#CDDC39</color>
     <color name="colorAccent">#FFEB3B</color>
     <color name="backgroundColor">#FF5722</color>
+    <color name="black">#000000</color>
+    <color name="gray">#E0E0E0</color>
 </resources>

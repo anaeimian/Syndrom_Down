@@ -138,5 +138,8 @@
     <string name="title_activity_loghat_general_activity4">LoghatGeneralActivity4</string>
     <string name="title_activity_loghat_general_activity5">LoghatGeneralActivity5</string>
     <string name="title_activity_loghat_general_activity6">LoghatGeneralActivity6</string>
+    <string name="title_activity_fel_general_activity1">FelGeneralActivity1</string>
+    <string name="title_activity_fel_general_activity2">FelGeneralActivity2</string>
+    <string name="title_activity_fel_general_activity3">FelGeneralActivity3</string>
 
 </resources>
