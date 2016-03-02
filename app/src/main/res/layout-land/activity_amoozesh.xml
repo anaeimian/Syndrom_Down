@@ -28,7 +28,7 @@
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_margin="50dp"
-                android:src="@drawable/sents" />
+                android:src="@drawable/sentences" />
 
 
         </LinearLayout>
