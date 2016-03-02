@@ -9,10 +9,6 @@
         android:id="@+id/app_bar"
         layout="@layout/app_bar" />
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
 
         <LinearLayout
             android:layout_gravity="center"
@@ -25,18 +21,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="50dp"
-                android:src="@drawable/temp" />
+                android:src="@drawable/words" />
 
             <ImageView
                 android:id="@+id/imViewJomle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="50dp"
-                android:src="@drawable/temp" />
+                android:src="@drawable/sentences" />
 
 
         </LinearLayout>
 
-    </ScrollView>
 
 </LinearLayout>
