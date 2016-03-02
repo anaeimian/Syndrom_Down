@@ -30,7 +30,7 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
         word = (ImageView) findViewById(R.id.father);
         fatherImg = (ImageView) findViewById(R.id.fatherimg);
         arrow = (ImageView) findViewById(R.id.arrow);
-        wordDrag = MediaPlayer.create(getApplicationContext(), R.raw.baba_sabad);
+        wordDrag = MediaPlayer.create(getApplicationContext(), R.raw.father_sabad);
         controller();
     }
 

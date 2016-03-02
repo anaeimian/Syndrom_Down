@@ -30,8 +30,40 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
         word = (ImageView) findViewById(R.id.word);
         wordImg = (ImageView) findViewById(R.id.wordImg);
         arrow = (ImageView) findViewById(R.id.arrow);
-        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.baba_drag);
+        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.father_drag);
         controller();
+    }
+
+    private void setViews() {
+
+        int position = 0;
+
+        switch (position) {
+            case 0:
+                word.setImageResource(R.drawable.father);
+                wordImg.setImageResource(R.drawable.fatherimg);
+                dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.father_drag);
+
+                break;
+            case 1:
+                word.setImageResource(R.drawable.mother);
+                wordImg.setImageResource(R.drawable.motherimg);
+//                dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.mother_drag);
+                break;
+            case 2 :
+                word.setImageResource(R.drawable.brother);
+                wordImg.setImageResource(R.drawable.brotherimg);
+//                dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.brother_drag);
+                break;
+            case 3 :
+                word.setImageResource(R.drawable.sister);
+                wordImg.setImageResource(R.drawable.sisterimg);
+//                dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.sister_drag);
+
+            default:
+                break;
+        }
+
     }
 
     @Override

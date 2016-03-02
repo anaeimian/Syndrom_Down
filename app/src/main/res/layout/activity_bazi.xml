@@ -25,14 +25,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="50dp"
-                android:src="@drawable/temp" />
+                android:src="@drawable/bad" />
 
             <ImageView
                 android:id="@+id/imViewBazi2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="50dp"
-                android:src="@drawable/temp" />
+                android:src="@drawable/toop" />
 
 
         </LinearLayout>

@@ -24,7 +24,7 @@ public class AmoozeshActivity extends ActionBarActivity {
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
 
-        imViewLoghat = (ImageView) findViewById(R.id.imViewLoghat);
+     imViewLoghat = (ImageView) findViewById(R.id.imViewLoghat);
         imViewJomle = (ImageView) findViewById(R.id.imViewJomle);
 
         imViewLoghat.setOnClickListener(new View.OnClickListener() {

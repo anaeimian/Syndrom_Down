@@ -17,7 +17,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="120dp"
-        android:src="@drawable/arrow"
+        android:src="@drawable/arrow1"
         android:id="@+id/arrow"
         android:layout_alignTop="@+id/sabad"
         android:layout_toLeftOf="@+id/word"

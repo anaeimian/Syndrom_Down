@@ -12,9 +12,9 @@
 
             <ImageView
                 android:id="@+id/imViewFel"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/temp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/fel"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="70dp"
                 android:layout_above="@+id/imViewZamir"
@@ -24,9 +24,9 @@
 
             <ImageView
                 android:id="@+id/imView2Kalame"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/temp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/dok"
                 android:layout_gravity="center_horizontal"
                 android:layout_below="@+id/imViewFel"
                 android:layout_alignLeft="@+id/imViewFel"
@@ -34,9 +34,9 @@
 
             <ImageView
                 android:id="@+id/imView3Kalame"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/temp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/sek"
                 android:layout_marginLeft="93dp"
                 android:layout_alignTop="@+id/imViewFel"
                 android:layout_toRightOf="@+id/imViewFel"
@@ -45,9 +45,9 @@
 
             <ImageView
                 android:id="@+id/imViewZamir"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/temp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/zamir"
                 android:layout_alignParentBottom="true"
                 android:layout_alignLeft="@+id/imView3Kalame"
                 android:layout_alignStart="@+id/imView3Kalame" />

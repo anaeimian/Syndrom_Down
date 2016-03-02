@@ -25,21 +25,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="50dp"
-                android:src="@drawable/temp" />
+                android:src="@drawable/amr" />
 
             <ImageView
                 android:id="@+id/imViewGozashte"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="50dp"
-                android:src="@drawable/temp" />
+                android:src="@drawable/gozashte" />
 
             <ImageView
                 android:id="@+id/imViewHessi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="50dp"
-                android:src="@drawable/temp" />
+                android:src="@drawable/hesi" />
 
 
         </LinearLayout>
