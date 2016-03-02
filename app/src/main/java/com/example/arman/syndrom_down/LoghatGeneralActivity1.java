@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,8 +27,8 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
         setTitle(R.string.repeatTitle);
         setViews();
         controller();
-    }
 
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -54,23 +55,47 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
     private void setViews() {
 
         int position = 0;
-
+        Intent intent = getIntent();
+        String category = intent.getStringExtra("category");
+        Log.d("test", category);
         pass = (ImageView) findViewById(R.id.pass);
         replay = (ImageView) findViewById(R.id.replay);
         word = (ImageView) findViewById(R.id.word);
 
-        switch (position) {
-            case 0:
-                word.setImageResource(R.drawable.father);
-                wordSound = MediaPlayer.create(getApplicationContext(), R.raw.baba);
+        switch (category) {
+            case "khanevade":
+                switch (position) {
+                    case 0:
+                        word.setImageResource(R.drawable.father);
+                        wordSound = MediaPlayer.create(getApplicationContext(), R.raw.fathersound);
+                        break;
+                    case 1:
+//                        word.setImageResource(R.drawable.mother);
+//             wordSound = MediaPlayer.create(getApplicationContext(), R.raw.mothersound);
+                        break;
+                    case 2:
+//                        word.setImageResource(R.drawable.brother);
+//                wordSound = MediaPlayer.create(getApplicationContext(), R.raw.brothersound);
+                        break;
+                    case 3:
+//                        word.setImageResource(R.drawable.sister);
+//                wordSound = MediaPlayer.create(getApplicationContext(), R.raw.sistersound);
+                        break;
+                    default:
+                        break;
+                }
                 break;
-            case 1:
-
-                break;
-            default:
+            case "mafahim":
+                switch (position) {
+                    case 0:
+                        word.setImageResource(R.drawable.garm);
+                        wordSound = MediaPlayer.create(getApplicationContext(), R.raw.garm);
+                        break;
+                    default:
+                        break;
+                }
                 break;
         }
-
     }
 
     public void controller() {

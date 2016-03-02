@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="120dp"
-        android:src="@drawable/fatherimg"
+        android:src="@drawable/bedeimg"
         android:id="@+id/verbImg"
         android:layout_alignTop="@+id/arrow"
         android:layout_toRightOf="@+id/arrow"
@@ -19,7 +19,7 @@
         android:layout_height="120dp"
         android:src="@drawable/arrow1"
         android:id="@+id/arrow"
-        android:layout_alignTop="@+id/father"
+        android:layout_alignTop="@+id/verb"
         android:layout_centerHorizontal="true" />
     <ImageView
         android:layout_width="wrap_content"

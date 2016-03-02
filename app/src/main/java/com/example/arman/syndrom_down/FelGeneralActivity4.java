@@ -17,7 +17,7 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 
 
-public class FelGeneralActivity3 extends ActionBarActivity {
+public class FelGeneralActivity4 extends ActionBarActivity {
 
     ImageView verb;
     ImageView verbImg;
@@ -25,21 +25,21 @@ public class FelGeneralActivity3 extends ActionBarActivity {
     int verbDragged = 0;
     MediaPlayer verbDrag;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fel_general_activity3);
+        setContentView(R.layout.fel_general_activity4);
         verb = (ImageView) findViewById(R.id.verb);
         verbImg = (ImageView) findViewById(R.id.verbImg);
         arrow = (ImageView) findViewById(R.id.arrow);
+        verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.bede_drag);
         controller();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_fel_general_activity3, menu);
+        getMenuInflater().inflate(R.menu.menu_fel_general_activity4, menu);
         return true;
     }
 
@@ -58,8 +58,7 @@ public class FelGeneralActivity3 extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    void controller() {
-
+    private void controller() {
         final Animation animation = new AlphaAnimation(1, 0);
         animation.setDuration(1000);
         animation.setInterpolator(new LinearInterpolator());
@@ -67,15 +66,15 @@ public class FelGeneralActivity3 extends ActionBarActivity {
         animation.setRepeatMode(Animation.REVERSE);
         arrow.startAnimation(animation);
 
-        verbImg.setOnLongClickListener(new View.OnLongClickListener() {
+        verb.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 ClipData data = ClipData.newPlainText("", "");
-                verbImg.startDrag(data, new View.DragShadowBuilder(v), null, 0);
+                verb.startDrag(data, new View.DragShadowBuilder(v), null, 0);
                 return true;
             }
         });
-        verb.setOnDragListener(new View.OnDragListener() {
+        verbImg.setOnDragListener(new View.OnDragListener() {
             @Override
             public boolean onDrag(View v, DragEvent event) {
                 switch (event.getAction()) {
@@ -93,7 +92,8 @@ public class FelGeneralActivity3 extends ActionBarActivity {
                         verbDragged++;
 
                         if (verbDragged >= 4) {
-                            Intent intent = new Intent(FelGeneralActivity3.this, FelGeneralActivity4.class);
+                            Intent intent = new Intent(FelGeneralActivity4.this, AmrActivity.class);
+                            intent.putExtra("position","0");
                             startActivity(intent);
 //                            wordDrag.start();
                         } else {
@@ -108,5 +108,8 @@ public class FelGeneralActivity3 extends ActionBarActivity {
                 return true;
             }
         });
+
+        verbDrag.start();
+
     }
 }

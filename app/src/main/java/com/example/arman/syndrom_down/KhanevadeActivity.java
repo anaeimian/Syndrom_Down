@@ -3,8 +3,9 @@ package com.example.arman.syndrom_down;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,12 +17,13 @@ import java.util.List;
 /**
  * Created by Szamani on 12/20/2015.
  */
-public class KhanevadeActivity extends ActionBarActivity {
+public class KhanevadeActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private ListView listKhanevade;
     private List<String> items;
     //    private ListAdapterKhanevadeActivity adapter;
     private ArrayAdapter<String> adapter;
+    private int indexEnable = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +48,31 @@ public class KhanevadeActivity extends ActionBarActivity {
 //        items.add("khahar");
 
 //        adapter = new ListAdapterKhanevadeActivity(this, items);
-        adapter = new ListAdapterKhanevadeActivity(getApplicationContext(), items);
+        handleIntent();
+        adapter = new ListAdapterKhanevadeActivity(getApplicationContext(), items, indexEnable);
         listKhanevade.setAdapter(adapter);
-//        listKhanevade.getChildAt(1).setEnabled(false);
-//        listKhanevade.getChildAt(3).setEnabled(false);
         setListener();
+
+
+    }
+
+    //    @Override
+//    protected void onNewIntent(Intent intent) {
+//        Log.d("temp","testtxt");
+//        Bundle b = intent.getExtras();
+//        String temp = b.getString("test");
+//        Log.d("test", temp);
+//    }
+    private void handleIntent() {
+        Intent intent = getIntent();
+        int position = -1;
+        String prevPosition = intent.getStringExtra("position");
+        if (prevPosition != null) {
+            Log.d("pos", prevPosition);
+            position = Integer.parseInt(prevPosition);
+        }
+        indexEnable = position;
+        Log.d("pos", position + "");
     }
 
     private void setListener() {
@@ -66,6 +88,7 @@ public class KhanevadeActivity extends ActionBarActivity {
 //                    return;
 
                 Intent intent = new Intent(KhanevadeActivity.this, LoghatGeneralActivity1.class);
+                intent.putExtra("category", "khanevade");
 //                intent.putExtra(Utils.TYPE, 0);
 //                intent.putExtra(Utils.WHICH, position);
 //                if (Utils.database.khanevade[position + 1])
@@ -85,18 +108,22 @@ public class KhanevadeActivity extends ActionBarActivity {
 }
 
 class ListAdapterKhanevadeActivity extends ArrayAdapter<String> {
+    int indexEnable;
 
-    public ListAdapterKhanevadeActivity(Context context, List<String> items) {
+    public ListAdapterKhanevadeActivity(Context context, List<String> items, int indexEnable) {
         super(context, R.layout.simple_list_item2, items);
+        this.indexEnable = indexEnable;
     }
 
     @Override
     public boolean isEnabled(int position) {
-        if (position == 1) {
-            return false;
+        Log.d("oomad to", indexEnable + "");
+        if (position <= indexEnable + 1) {
+            return true;
         }
-        return true;
+        return false;
     }
+
 
 //    @Override
 //    public View getView(int i, View convertView, ViewGroup viewGroup) {

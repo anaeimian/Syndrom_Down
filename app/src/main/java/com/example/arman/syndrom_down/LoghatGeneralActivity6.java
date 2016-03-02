@@ -17,6 +17,7 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
     MediaPlayer inchie;
     MediaPlayer failSound;
     int passClicked = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +66,7 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
                 passClicked++;
                 if (passClicked >= 4) {
                     Intent intent = new Intent(LoghatGeneralActivity6.this, KhanevadeActivity.class);
+                    intent.putExtra("position", "0");
                     startActivity(intent);
                 }
             }
