@@ -29,8 +29,8 @@
                 android:src="@drawable/dok"
                 android:layout_gravity="center_horizontal"
                 android:layout_below="@+id/imViewFel"
-                android:layout_alignLeft="@+id/imViewFel"
-                android:layout_alignStart="@+id/imViewFel" />
+                android:layout_toRightOf="@+id/imViewFel"
+                android:layout_toEndOf="@+id/imViewFel" />
 
             <ImageView
                 android:id="@+id/imView3Kalame"
@@ -49,7 +49,7 @@
                 android:layout_height="120dp"
                 android:src="@drawable/zamir"
                 android:layout_alignParentBottom="true"
-                android:layout_alignLeft="@+id/imView3Kalame"
-                android:layout_alignStart="@+id/imView3Kalame" />
+                android:layout_toRightOf="@+id/imView3Kalame"
+                android:layout_toEndOf="@+id/imView3Kalame" />
 
 </RelativeLayout>

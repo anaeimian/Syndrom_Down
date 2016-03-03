@@ -1,8 +1,10 @@
 package com.example.arman.syndrom_down;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ImageView;
 
 /**
@@ -23,15 +25,15 @@ public class BaziActivity extends ActionBarActivity {
         setSupportActionBar(toolbar);
 
         imViewBazi1 = (ImageView) findViewById(R.id.imViewBazi1);
-        imViewBazi2 = (ImageView) findViewById(R.id.imViewBazi2);
+//        imViewBazi2 = (ImageView) findViewById(R.id.imViewBazi2);
 
-//        imViewBazi1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(BaziActivity.this, Bazi1Activity.class);
-//                startActivity(intent);
-//            }
-//        });
+        imViewBazi1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BaziActivity.this, Bazi1Activity.class);
+                startActivity(intent);
+            }
+        });
 //
 //        imViewBazi2.setOnClickListener(new View.OnClickListener() {
 //            @Override

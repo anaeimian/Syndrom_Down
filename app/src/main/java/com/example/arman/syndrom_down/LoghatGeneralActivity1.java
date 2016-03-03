@@ -19,7 +19,7 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
     private int replayClicked = 0;
     MediaPlayer wordSound;
     MediaPlayer dragVoice;
-
+    String category;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +56,7 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
 
         int position = 0;
         Intent intent = getIntent();
-        String category = intent.getStringExtra("category");
+        category = intent.getStringExtra("category");
         Log.d("test", category);
         pass = (ImageView) findViewById(R.id.pass);
         replay = (ImageView) findViewById(R.id.replay);
@@ -392,6 +392,7 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
 
                 if (replayClicked >= 4) {
                     Intent intent = new Intent(LoghatGeneralActivity1.this, LoghatGeneralActivity2.class);
+                    intent.putExtra("category",category);
                     startActivity(intent);
                     dragVoice.start();
                 }

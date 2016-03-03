@@ -1,88 +1,88 @@
-//package com.example.arman.syndrom_down;
-//
-//import android.animation.Animator;
-//import android.animation.ObjectAnimator;
-//import android.media.MediaPlayer;
-//import android.os.Bundle;
-//import android.os.Handler;
-//import android.support.v7.app.ActionBarActivity;
-//import android.support.v7.widget.Toolbar;
-//import android.view.View;
-//import android.widget.ImageView;
-//
-//import java.util.Random;
-//
-///**
-// * Created by Szamani on 1/1/2016.
-// */
-//public class Bazi1Activity extends ActionBarActivity {
-//    private Toolbar toolbar;
-//    private ImageView imView0;
-//    private ImageView imView1;
-//    private ImageView imView2;
-//
-//    private ObjectAnimator animator;
-//
-//    private MediaPlayer mediaPlayerRahnama;
-//    private MediaPlayer mediaPlayerRahnama1;
-//    private MediaPlayer mediaPlayerTashvigh;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_bazi1);
-//        setTitle(getString(R.string.badkonak));
-//
-//        toolbar = (Toolbar) findViewById(R.id.app_bar);
-//        setSupportActionBar(toolbar);
-//
-//        imView0 = (ImageView) findViewById(R.id.imView0);
-//        imView1 = (ImageView) findViewById(R.id.imView1);
-//        imView2 = (ImageView) findViewById(R.id.imView2);
-//
-//        animator = new ObjectAnimator();
-//        animator.setDuration(1500);
-//        animator.setTarget(imView2);
-//        animator.setPropertyName("translationY");
-//
-//        setResources();
-//        setListeners();
-//
-//    }
-//
-//    private void setListeners() {
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                animator.setFloatValues(0,
-//                        imView0.getY() - imView2.getY() + (imView0.getHeight() / 2));
-//                animator.start();
-//            }
-//        }, 500);
-//
-//        animator.addListener(new Animator.AnimatorListener() {
-//            @Override
-//            public void onAnimationStart(Animator animation) {
-//                imView2.setVisibility(View.VISIBLE);
-//            }
-//
-//            @Override
-//            public void onAnimationEnd(Animator animation) {
-//                imView2.setVisibility(View.INVISIBLE);
-//                mediaPlayerRahnama.start();
-//            }
-//
-//            @Override
-//            public void onAnimationCancel(Animator animation) {
-//
-//            }
-//
-//            @Override
-//            public void onAnimationRepeat(Animator animation) {
-//
-//            }
-//        });
-//
+package com.example.arman.syndrom_down;
+
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.ImageView;
+
+import java.util.Random;
+
+/**
+ * Created by Szamani on 1/1/2016.
+ */
+public class Bazi1Activity extends ActionBarActivity {
+    private Toolbar toolbar;
+    private ImageView imView0;
+    private ImageView imView1;
+    private ImageView imView2;
+
+    private ObjectAnimator animator;
+
+    private MediaPlayer mediaPlayerRahnama;
+    private MediaPlayer mediaPlayerRahnama1;
+    private MediaPlayer mediaPlayerTashvigh;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_bazi1);
+        setTitle(getString(R.string.badkonak));
+
+        toolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+
+        imView0 = (ImageView) findViewById(R.id.imView0);
+        imView1 = (ImageView) findViewById(R.id.imView1);
+        imView2 = (ImageView) findViewById(R.id.imView2);
+
+        animator = new ObjectAnimator();
+        animator.setDuration(1500);
+        animator.setTarget(imView2);
+        animator.setPropertyName("translationY");
+
+        setResources();
+        setListeners();
+
+    }
+
+    private void setListeners() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                animator.setFloatValues(0,
+                        imView0.getY() - imView2.getY() + (imView0.getHeight() / 2));
+                animator.start();
+            }
+        }, 500);
+
+        animator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                imView2.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                imView2.setVisibility(View.INVISIBLE);
+                mediaPlayerRahnama.start();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+
 //        mediaPlayerRahnama.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 //            @Override
 //            public void onCompletion(MediaPlayer mp) {
@@ -110,24 +110,24 @@
 //                mediaPlayerRahnama1.start();
 //            }
 //        });
-//
-//    }
-//
-//    private void setResources() {
+
+    }
+
+    private void setResources() {
 //        mediaPlayerTashvigh = MediaPlayer.create(this, R.raw.step);
 //
 //        //////////////////////////////////////////////////////////////
 //        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
 //        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        //////////////////////////////////////////////////////////////
-//
-//        Random random = new Random();
-//        int cat = random.nextInt(10);
-//
-//        switch (cat) {
-//            case 0:
-//                khanevade();
-//                break;
+        //////////////////////////////////////////////////////////////
+
+        Random random = new Random();
+        int cat = random.nextInt(10);
+
+        switch (cat) {
+            case 0:
+                khanevade();
+                break;
 //            case 1:
 //                andam();
 //                break;
@@ -155,19 +155,19 @@
 //            case 9:
 //                mafahim();
 //                break;
-//            default:
-//                khanevade();
-//                break;
-//        }
-//    }
-//
-//    private void khanevade() {
+            default:
+                khanevade();
+                break;
+        }
+    }
+
+    private void khanevade() {
 //        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat); // imView0
 //        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep); // imView1
-//        imView0.setImageResource(R.drawable.pedari);
-//        imView1.setImageResource(R.drawable.khahar);
-//    }
-//
+        imView0.setImageResource(R.drawable.fatherimg);
+        imView1.setImageResource(R.drawable.sisterimg);
+    }
+
 //    private void andam() {
 //        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
 //        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
@@ -230,4 +230,4 @@
 //        imView0.setImageResource(R.drawable.balai);
 //        imView1.setImageResource(R.drawable.sardi);
 //    }
-//}
+}
