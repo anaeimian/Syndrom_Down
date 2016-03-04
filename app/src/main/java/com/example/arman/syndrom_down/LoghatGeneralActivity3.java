@@ -19,7 +19,7 @@ import android.widget.ImageView;
 
 public class LoghatGeneralActivity3 extends ActionBarActivity {
     ImageView word;
-    ImageView fatherImg;
+    ImageView wordImg;
     ImageView arrow;
     int wordDragged = 0;
     MediaPlayer wordDrag;
@@ -28,7 +28,7 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loghat_general_activity3);
         word = (ImageView) findViewById(R.id.father);
-        fatherImg = (ImageView) findViewById(R.id.fatherimg);
+        wordImg = (ImageView) findViewById(R.id.fatherimg);
         arrow = (ImageView) findViewById(R.id.arrow);
         wordDrag = MediaPlayer.create(getApplicationContext(), R.raw.father_sabad);
         controller();
@@ -65,11 +65,11 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
         animation.setRepeatMode(Animation.REVERSE);
         arrow.startAnimation(animation);
 
-        fatherImg.setOnLongClickListener(new View.OnLongClickListener() {
+        wordImg.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 ClipData data = ClipData.newPlainText("", "");
-                fatherImg.startDrag(data, new View.DragShadowBuilder(v), null, 0);
+                wordImg.startDrag(data, new View.DragShadowBuilder(v), null, 0);
                 return true;
             }
         });

@@ -164,8 +164,8 @@ public class Bazi1Activity extends ActionBarActivity {
     private void khanevade() {
 //        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat); // imView0
 //        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep); // imView1
-        imView0.setImageResource(R.drawable.fatherimg);
-        imView1.setImageResource(R.drawable.sisterimg);
+        imView0.setImageResource(R.drawable.imbaba);
+        imView1.setImageResource(R.drawable.imkhahar);
     }
 
 //    private void andam() {
