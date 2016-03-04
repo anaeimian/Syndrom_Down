@@ -25,7 +25,7 @@ public class BaziActivity extends ActionBarActivity {
         setSupportActionBar(toolbar);
 
         imViewBazi1 = (ImageView) findViewById(R.id.imViewBazi1);
-//        imViewBazi2 = (ImageView) findViewById(R.id.imViewBazi2);
+        imViewBazi2 = (ImageView) findViewById(R.id.imViewBazi2);
 
         imViewBazi1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,13 +35,13 @@ public class BaziActivity extends ActionBarActivity {
             }
         });
 //
-//        imViewBazi2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(BaziActivity.this, Bazi2Activity.class);
-//                startActivity(intent);
-//            }
-//        });
+        imViewBazi2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BaziActivity.this, Bazi2ListActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

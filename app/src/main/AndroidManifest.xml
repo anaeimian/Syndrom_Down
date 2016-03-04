@@ -142,6 +142,22 @@
             android:name=".FelGeneralActivity4"
             android:label="@string/title_activity_fel_general_activity4" >
         </activity>
+        <activity
+            android:name=".Bazi2ListActivity"
+            android:label="@string/title_activity_bazi2_list" >
+        </activity>
+        <activity
+            android:name=".Bazi2Activity2"
+            android:label="@string/title_activity_bazi2_activity2" >
+        </activity>
+        <activity
+            android:name=".Bazi2Activity3"
+            android:label="@string/title_activity_bazi2_activity3" >
+        </activity>
+        <activity
+            android:name=".Bazi2Activity4"
+            android:label="@string/title_activity_bazi2_activity4" >
+        </activity>
     </application>
 
 </manifest>

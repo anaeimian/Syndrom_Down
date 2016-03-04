@@ -142,5 +142,9 @@
     <string name="title_activity_fel_general_activity2">FelGeneralActivity2</string>
     <string name="title_activity_fel_general_activity3">FelGeneralActivity3</string>
     <string name="title_activity_fel_general_activity4">FelGeneralActivity4</string>
+    <string name="title_activity_bazi2_list">Bazi2ListActivity</string>
+    <string name="title_activity_bazi2_activity2">Bazi2Activity2</string>
+    <string name="title_activity_bazi2_activity3">Bazi2Activity3</string>
+    <string name="title_activity_bazi2_activity4">Bazi2Activity4</string>
 
 </resources>

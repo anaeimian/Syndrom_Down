@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="120dp"
-        android:src="@drawable/fatherimg"
+        android:src="@drawable/imbaba"
         android:id="@+id/fatherimg"
         android:layout_alignTop="@+id/arrow"
         android:layout_toRightOf="@+id/arrow"
@@ -24,7 +24,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="120dp"
-        android:src="@drawable/fatherimg"
+        android:src="@drawable/imbaba"
         android:id="@+id/father"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"

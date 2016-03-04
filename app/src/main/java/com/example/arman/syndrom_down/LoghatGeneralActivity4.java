@@ -3,6 +3,7 @@ package com.example.arman.syndrom_down;
 import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,6 +22,8 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
     ImageView sabad;
     ImageView arrow;
     int wordDragged = 0;
+    String category = "";
+    MediaPlayer dragVoice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,37 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
         sabad = (ImageView) findViewById(R.id.sabad);
         arrow = (ImageView) findViewById(R.id.arrow);
         controller();
+        setViews();
+    }
+
+    private void setViews() {
+        int position = 0;
+        Intent intent = getIntent();
+        category = intent.getStringExtra("category");
+        switch (category) {
+            case "khanevade":
+                switch (position) {
+                    case 0:
+                        word.setImageResource(R.drawable.tbaba);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.father_sabad);
+                        break;
+                    case 1:
+                        word.setImageResource(R.drawable.tmaman);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.madar_sabad);
+                        break;
+                    case 2:
+                        word.setImageResource(R.drawable.tkhahar);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.khahar_sabad);
+                        break;
+                    case 3:
+                        word.setImageResource(R.drawable.tbaradar);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.dadash_sabad);
+                        break;
+                    default:
+                        break;
+                }
+                break;
+        }
     }
 
     @Override
