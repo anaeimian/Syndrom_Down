@@ -24,6 +24,7 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
     int wordDragged = 0;
     MediaPlayer dragVoice;
     String category = "";
+    int position = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,20 +34,21 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
         wordImg = (ImageView) findViewById(R.id.fatherimg);
         arrow = (ImageView) findViewById(R.id.arrow);
         dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.father_drag);
-        dragVoice.start();
 
         setViews();
         controller();
+        dragVoice.start();
     }
 
     private void setViews() {
 
-        int position = 0;
+
         word = (ImageView) findViewById(R.id.father);
         wordImg = (ImageView) findViewById(R.id.fatherimg);
         arrow = (ImageView) findViewById(R.id.arrow);
         Intent intent = getIntent();
         category = intent.getStringExtra("category");
+        position = Integer.parseInt(intent.getStringExtra("position"));
         switch (category) {
             case "khanevade":
                 switch (position) {
@@ -480,6 +482,8 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
 
                         if (wordDragged >= 4) {
                             Intent intent = new Intent(LoghatGeneralActivity3.this, LoghatGeneralActivity4.class);
+                            intent.putExtra("category", category);
+                            intent.putExtra("position", position + "");
                             startActivity(intent);
 //                            wordDrag.start();
                         } else {

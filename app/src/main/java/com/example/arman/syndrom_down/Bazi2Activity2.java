@@ -1,5 +1,6 @@
 package com.example.arman.syndrom_down;
 
+import android.animation.ObjectAnimator;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -11,20 +12,24 @@ import android.widget.ImageView;
 public class Bazi2Activity2 extends ActionBarActivity {
     private ImageView field;
     private ImageView ball;
-    private ImageView goal2;
     private ImageView pic1;
     private ImageView pic2;
     private MediaPlayer mediaPlayerRahnama;
+    private ObjectAnimator animator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bazi2_activity2);
         ball = (ImageView) findViewById(R.id.ball);
         field = (ImageView) findViewById(R.id.field);
-//        goal2 = (ImageView) findViewById(R.id.goal2);
         pic1 = (ImageView) findViewById(R.id.pic1);
         pic2 = (ImageView) findViewById(R.id.pic2);
-        mediaPlayerRahnama = MediaPlayer.create(getApplicationContext(), R.raw.football_dadash);
+        mediaPlayerRahnama = MediaPlayer.create(getApplicationContext(), R.raw.football_madar);
+
+        animator = new ObjectAnimator();
+        animator.setDuration(1000);
+        animator.setTarget(ball);
+        animator.setPropertyName("translationX");
     }
 
     @Override

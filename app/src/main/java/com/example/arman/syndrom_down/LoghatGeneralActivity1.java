@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +19,8 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
     MediaPlayer wordSound;
     MediaPlayer dragVoice;
     String category;
+    int position = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,10 +56,10 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
 
     private void setViews() {
 
-        int position = 0;
+
         Intent intent = getIntent();
         category = intent.getStringExtra("category");
-        Log.d("test", category);
+        position = Integer.parseInt(intent.getStringExtra("position"));
         pass = (ImageView) findViewById(R.id.pass);
         replay = (ImageView) findViewById(R.id.replay);
         word = (ImageView) findViewById(R.id.word);
@@ -76,11 +77,11 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
                         break;
                     case 2:
                         word.setImageResource(R.drawable.tkhahar);
-                        wordSound = MediaPlayer.create(getApplicationContext(), R.raw.brothersound);
+                        wordSound = MediaPlayer.create(getApplicationContext(), R.raw.sistersound);
                         break;
                     case 3:
                         word.setImageResource(R.drawable.tbaradar);
-                        wordSound = MediaPlayer.create(getApplicationContext(), R.raw.sistersound);
+                        wordSound = MediaPlayer.create(getApplicationContext(), R.raw.brothersound);
                         break;
                     default:
                         break;
@@ -393,7 +394,8 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
 
                 if (replayClicked >= 4) {
                     Intent intent = new Intent(LoghatGeneralActivity1.this, LoghatGeneralActivity2.class);
-                    intent.putExtra("category",category);
+                    intent.putExtra("category", category);
+                    intent.putExtra("position", position + "");
                     startActivity(intent);
 //                    dragVoice.start();
                 }

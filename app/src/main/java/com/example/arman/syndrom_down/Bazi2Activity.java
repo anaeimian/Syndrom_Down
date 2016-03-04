@@ -23,7 +23,6 @@ public class Bazi2Activity extends ActionBarActivity {
     private ImageView pic2;
     private float ballX = 0;
     private ObjectAnimator animator;
-    private ObjectAnimator animator1;
 
     private MediaPlayer mediaPlayerRahnama;
     private MediaPlayer mediaPlayerRahnama1;

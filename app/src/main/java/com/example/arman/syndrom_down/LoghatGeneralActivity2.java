@@ -18,31 +18,33 @@ import android.widget.ImageView;
 
 
 public class LoghatGeneralActivity2 extends ActionBarActivity {
-    ImageView word ;
+    ImageView word;
     ImageView wordImg;
     ImageView arrow;
-    int wordDragged=0;
+    int wordDragged = 0;
     MediaPlayer dragVoice;
     String category;
+    int position = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loghat_general_activity2);
         dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.father_drag);
-        dragVoice.start();
         setViews();
         controller();
-
+        dragVoice.start();
     }
 
     private void setViews() {
 
-        int position = 0;
+
         word = (ImageView) findViewById(R.id.word);
         wordImg = (ImageView) findViewById(R.id.wordImg);
         arrow = (ImageView) findViewById(R.id.arrow);
         Intent intent = getIntent();
         category = intent.getStringExtra("category");
+        position = Integer.parseInt(intent.getStringExtra("position"));
         switch (category) {
             case "khanevade":
                 switch (position) {
@@ -439,7 +441,8 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    void controller(){
+
+    void controller() {
 
         final Animation animation = new AlphaAnimation(1, 0);
         animation.setDuration(1000);
@@ -475,7 +478,8 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
 
                         if (wordDragged >= 4) {
                             Intent intent = new Intent(LoghatGeneralActivity2.this, LoghatGeneralActivity3.class);
-                            intent.putExtra("category",category);
+                            intent.putExtra("category", category);
+                            intent.putExtra("position", position + "");
                             startActivity(intent);
                         } else {
                             //mediaPlayerTashvigh.start();

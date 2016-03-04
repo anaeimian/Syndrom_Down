@@ -39,8 +39,9 @@ public class KhanevadeActivity extends AppCompatActivity {
         items = new ArrayList<>();
         items.add(getResources().getString(R.string.baba));
         items.add(getResources().getString(R.string.maman));
-        items.add(getResources().getString(R.string.dadash));
         items.add(getResources().getString(R.string.khahar));
+        items.add(getResources().getString(R.string.dadash));
+
 
 //        items.add("Baba");
 //        items.add("maman");
@@ -89,6 +90,7 @@ public class KhanevadeActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(KhanevadeActivity.this, LoghatGeneralActivity1.class);
                 intent.putExtra("category", "khanevade");
+                intent.putExtra("position", position + "");
 //                intent.putExtra(Utils.TYPE, 0);
 //                intent.putExtra(Utils.WHICH, position);
 //                if (Utils.database.khanevade[position + 1])
@@ -115,14 +117,13 @@ class ListAdapterKhanevadeActivity extends ArrayAdapter<String> {
         this.indexEnable = indexEnable;
     }
 
-    @Override
-    public boolean isEnabled(int position) {
-        Log.d("oomad to", indexEnable + "");
-        if (position <= indexEnable + 1) {
-            return true;
-        }
-        return false;
-    }
+//    @Override
+//    public boolean isEnabled(int position) {
+//        if (position <= indexEnable + 1) {
+//            return true;
+//        }
+//        return false;
+//    }
 
 
 //    @Override

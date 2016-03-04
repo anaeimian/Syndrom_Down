@@ -18,16 +18,20 @@
         android:layout_height="wrap_content"
         android:src="@drawable/check"
         android:id="@+id/pass"
+        android:layout_marginRight="83dp"
+        android:layout_marginEnd="83dp"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/fail"
-        android:layout_toStartOf="@+id/fail" />
+        android:layout_alignRight="@+id/wordImg"
+        android:layout_alignEnd="@+id/wordImg" />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/fail"
         android:id="@+id/fail"
-        android:layout_alignTop="@+id/pass"
-        android:layout_alignRight="@+id/wordImg"
-        android:layout_alignEnd="@+id/wordImg" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/wordImg"
+        android:layout_alignStart="@+id/wordImg"
+        android:layout_marginLeft="85dp"
+        android:layout_marginStart="85dp" />
 
 </RelativeLayout>
