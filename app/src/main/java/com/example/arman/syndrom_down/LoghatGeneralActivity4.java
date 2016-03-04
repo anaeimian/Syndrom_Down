@@ -63,6 +63,294 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
                         break;
                 }
                 break;
+
+            case "andam":
+                switch (position) {
+                    case 0:
+                        word.setImageResource(R.drawable.tcheshm);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.cheshm_sabad);
+                        break;
+                    case 1:
+                        word.setImageResource(R.drawable.tdast);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.dast_sabad);
+                        break;
+                    case 2:
+                        word.setImageResource(R.drawable.tpa);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.pa_sabad);
+                        break;
+                    case 3:
+                        word.setImageResource(R.drawable.tgosh);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.gosh_sabad);
+                        break;
+                    case 4:
+                        word.setImageResource(R.drawable.tmo);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.mo_sabad);
+                        break;
+                    case 5:
+                        word.setImageResource(R.drawable.tdahan);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.dahan_sabad);
+                        break;
+                    case 6:
+                        word.setImageResource(R.drawable.tbini);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.bini_sabad);
+                        break;
+                    case 7:
+                        word.setImageResource(R.drawable.tzaban);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.zaban_sabad);
+                    case 8:
+                        word.setImageResource(R.drawable.tdandan);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.dandan_sabad);
+                    case 9:
+                        word.setImageResource(R.drawable.tabro);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.abro_sabad);
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            case "mive":
+                switch (position) {
+                    case 0:
+                        word.setImageResource(R.drawable.tmoz);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.moz_sabad);
+                        break;
+                    case 1:
+                        word.setImageResource(R.drawable.tsib);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.sib_sabad);
+                        break;
+                    case 2:
+                        word.setImageResource(R.drawable.tkhiar);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.khiar_sabad);
+                        break;
+                    case 3:
+                        word.setImageResource(R.drawable.tporteqal);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.porteqal_sabad);
+                        break;
+                    case 4:
+                        word.setImageResource(R.drawable.tlimo);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.limo_sabad);
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+            case "heivan":
+                switch (position) {
+                    case 0:
+                        word.setImageResource(R.drawable.tgorbe);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.gorbe_sabad);
+                        break;
+                    case 1:
+                        word.setImageResource(R.drawable.tsag);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.sag_sabad);
+                        break;
+                    case 2:
+                        word.setImageResource(R.drawable.tgav);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.sag_sabad);
+                        break;
+                    case 3:
+                        word.setImageResource(R.drawable.tmahi);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.mahi_sabad);
+                        break;
+                    case 4:
+                        word.setImageResource(R.drawable.tmorq);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.morq_sabad);
+                        break;
+                    case 5:
+                        word.setImageResource(R.drawable.tasb);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.asb_sabad);
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+            case "poshak":
+                switch (position) {
+                    case 0:
+                        word.setImageResource(R.drawable.tkafsh);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.kafsh_sabad);
+                        break;
+                    case 1:
+                        word.setImageResource(R.drawable.tkolah);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.kolah_sabad);
+                        break;
+                    case 2:
+                        word.setImageResource(R.drawable.tjorab);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.jorab_sabad);
+                        break;
+                    case 3:
+                        word.setImageResource(R.drawable.tshalvar);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.shalvar_sabad);
+                        break;
+                    case 4:
+                        word.setImageResource(R.drawable.tpirahan);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.pirahan_sabad);
+                        break;
+                    case 5:
+                        word.setImageResource(R.drawable.trosari);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.rosari_sabad);
+                        break;
+                    case 6:
+                        word.setImageResource(R.drawable.tbloz);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.bloz_sabad);
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+            case "vasile":
+                switch (position) {
+                    case 0:
+                        word.setImageResource(R.drawable.tshane);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.shane_sabad);
+                        break;
+                    case 1:
+                        word.setImageResource(R.drawable.tmesvak);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.mesvak_sabad);
+                        break;
+                    case 2:
+                        word.setImageResource(R.drawable.thole);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.hole_sabad);
+                        break;
+                    case 3:
+                        word.setImageResource(R.drawable.ttop);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.toop_sabad);
+                        break;
+                    case 4:
+                        word.setImageResource(R.drawable.tdocharkhe);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.docharkhe_sabad);
+                        break;
+                    case 5:
+                        word.setImageResource(R.drawable.tmashin);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.mashin_sabad);
+                        break;
+                    case 6:
+                        word.setImageResource(R.drawable.thavapeima);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.bloz_sabad);
+                        break;
+                    case 7:
+                        word.setImageResource(R.drawable.tghashoq);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.ghashogh_sabad);
+                        break;
+                    case 8:
+                        word.setImageResource(R.drawable.tketab);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.ketab_sabad);
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+            case "shoql":
+                switch (position) {
+                    case 0:
+                        word.setImageResource(R.drawable.tdoctor);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.doctor_sabad);
+                        break;
+                    case 1:
+                        word.setImageResource(R.drawable.tnanva);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.nanva_sabad);
+                        break;
+                    case 2:
+                        word.setImageResource(R.drawable.tmoalem);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.moalem_sabad);
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+            case "rang":
+                switch (position) {
+                    case 0:
+                        word.setImageResource(R.drawable.tabi);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.moalem_sabad);
+                        break;
+                    case 1:
+                        word.setImageResource(R.drawable.tzard);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.moalem_sabad);
+                        break;
+                    case 2:
+                        word.setImageResource(R.drawable.tghermez);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.moalem_sabad);
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+            case "khordani":
+                switch (position) {
+                    case 0:
+                        word.setImageResource(R.drawable.tnan);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.nan_sabad);
+                        break;
+                    case 1:
+                        word.setImageResource(R.drawable.tshir);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.shir_sabad);
+                        break;
+                    case 2:
+                        word.setImageResource(R.drawable.tab);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.ab_sabad);
+                        break;
+                    case 3:
+                        word.setImageResource(R.drawable.tcake);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.cake_sabad);
+                        break;
+                    case 4:
+                        word.setImageResource(R.drawable.tbisko);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.bisko_sabad);
+                        break;
+                    default:
+                        break;
+                }
+                break;
+
+            case "mafahim":
+                switch (position) {
+                    case 0:
+                        word.setImageResource(R.drawable.tbala);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.bala_sabad);
+                        break;
+                    case 1:
+                        word.setImageResource(R.drawable.tpaeen);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.paeen_sabad);
+                        break;
+                    case 2:
+                        word.setImageResource(R.drawable.tkasif);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.kasif_sabad);
+                        break;
+                    case 3:
+                        word.setImageResource(R.drawable.ttamiz);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.tamiz_sabad);
+                        break;
+                    case 4:
+                        word.setImageResource(R.drawable.tbache);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.bache_sabad);
+                        break;
+                    case 5:
+                        word.setImageResource(R.drawable.tdokhtar);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.dokhtar_sabad);
+                        break;
+                    case 6:
+                        word.setImageResource(R.drawable.tpesar);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.pesar_sabad);
+                        break;
+                    case 7:
+                        word.setImageResource(R.drawable.tsard);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.garm_sabad);
+                        break;
+                    case 8:
+                        word.setImageResource(R.drawable.tgarm);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.garm_sabad);
+                        break;
+                    default:
+                        break;
+                }
+                break;
         }
     }
 
