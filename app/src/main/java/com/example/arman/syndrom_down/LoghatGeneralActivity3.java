@@ -85,7 +85,7 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
                         break;
                     case 1:
                         word.setImageResource(R.drawable.tdast);
-                        wordImg.setImageResource(R.drawable.imhand);
+                        wordImg.setImageResource(R.drawable.imdast);
                         dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.dast_drag);
                         break;
                     case 2:
@@ -130,7 +130,7 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
                         break;
                 }
                 break;
-            case "mive":
+            case "miveh":
                 switch (position) {
                     case 0:
                         word.setImageResource(R.drawable.tmoz);
@@ -162,7 +162,7 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
                 }
                 break;
 
-            case "heivan":
+            case "heyvanat":
                 switch (position) {
                     case 0:
                         word.setImageResource(R.drawable.tgorbe);
@@ -199,7 +199,7 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
                 }
                 break;
 
-            case "poshak":
+            case "pooshak":
                 switch (position) {
                     case 0:
                         word.setImageResource(R.drawable.tkafsh);
@@ -241,7 +241,7 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
                 }
                 break;
 
-            case "vasile":
+            case "vasayel":
                 switch (position) {
                     case 0:
                         word.setImageResource(R.drawable.tshane);
@@ -293,7 +293,7 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
                 }
                 break;
 
-            case "shoql":
+            case "mashagel":
                 switch (position) {
                     case 0:
                         word.setImageResource(R.drawable.tdoctor);

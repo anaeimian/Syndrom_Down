@@ -63,12 +63,14 @@ public class HeyvanatActivity extends ActionBarActivity {
                     return;
 
                 Intent intent = new Intent(HeyvanatActivity.this, LoghatGeneralActivity1.class);
-                intent.putExtra(Utils.TYPE, 3);
-                intent.putExtra(Utils.WHICH, position);
-                if (Utils.database.heyvanat[position + 1])
-                    intent.putExtra(Utils.ACTIVE, true);
-                else intent.putExtra(Utils.ACTIVE, false);
-                intent.putExtra(Utils.NAME, adapter.getItem(position));
+                intent.putExtra("position", position + "");
+                intent.putExtra("category", "heyvanat");
+//                intent.putExtra(Utils.TYPE, 3);
+//                intent.putExtra(Utils.WHICH, position);
+//                if (Utils.database.heyvanat[position + 1])
+//                    intent.putExtra(Utils.ACTIVE, true);
+//                else intent.putExtra(Utils.ACTIVE, false);
+//                intent.putExtra(Utils.NAME, adapter.getItem(position));
                 startActivity(intent);
             }
         });

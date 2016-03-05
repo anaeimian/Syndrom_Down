@@ -133,7 +133,7 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
                         break;
                 }
                 break;
-            case "mive":
+            case "miveh":
                 switch (position) {
                     case 0:
                         word.setImageResource(R.drawable.tmoz);
@@ -160,7 +160,7 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
                 }
                 break;
 
-            case "heivan":
+            case "heyvanat":
                 switch (position) {
                     case 0:
                         word.setImageResource(R.drawable.tgorbe);
@@ -191,7 +191,7 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
                 }
                 break;
 
-            case "poshak":
+            case "pooshak":
                 switch (position) {
                     case 0:
                         word.setImageResource(R.drawable.tkafsh);
@@ -226,7 +226,7 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
                 }
                 break;
 
-            case "vasile":
+            case "vasayel":
                 switch (position) {
                     case 0:
                         word.setImageResource(R.drawable.tshane);
@@ -269,7 +269,7 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
                 }
                 break;
 
-            case "shoql":
+            case "mashaghel":
                 switch (position) {
                     case 0:
                         word.setImageResource(R.drawable.tdoctor);

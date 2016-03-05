@@ -53,16 +53,18 @@ public class MashaghelActivity extends ActionBarActivity {
         listMashaghel.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (!Utils.database.mashaghel[position])
-                    return;
+//                if (!Utils.database.mashaghel[position])
+//                    return;
 
                 Intent intent = new Intent(MashaghelActivity.this, LoghatGeneralActivity1.class);
-                intent.putExtra(Utils.TYPE, 6);
-                intent.putExtra(Utils.WHICH, position);
-                if (Utils.database.mashaghel[position + 1])
-                    intent.putExtra(Utils.ACTIVE, true);
-                else intent.putExtra(Utils.ACTIVE, false);
-                intent.putExtra(Utils.NAME, adapter.getItem(position));
+                intent.putExtra("category","mashaghel");
+                intent.putExtra("position", position + "");
+//                intent.putExtra(Utils.TYPE, 6);
+//                intent.putExtra(Utils.WHICH, position);
+//                if (Utils.database.mashaghel[position + 1])
+//                    intent.putExtra(Utils.ACTIVE, true);
+//                else intent.putExtra(Utils.ACTIVE, false);
+//                intent.putExtra(Utils.NAME, adapter.getItem(position));
                 startActivity(intent);
             }
         });

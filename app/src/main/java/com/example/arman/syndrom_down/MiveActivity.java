@@ -57,16 +57,18 @@ public class MiveActivity extends ActionBarActivity{
         listMive.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (!Utils.database.mive[position])
-                    return;
+//                if (!Utils.database.mive[position])
+//                    return;
 
                 Intent intent = new Intent(MiveActivity.this, LoghatGeneralActivity1.class);
-                intent.putExtra(Utils.TYPE, 2);
-                intent.putExtra(Utils.WHICH, position);
-                if (Utils.database.mive[position + 1])
-                    intent.putExtra(Utils.ACTIVE, true);
-                else intent.putExtra(Utils.ACTIVE, false);
-                intent.putExtra(Utils.NAME, adapter.getItem(position));
+                intent.putExtra("category","miveh");
+                intent.putExtra("position", position + "");
+//                intent.putExtra(Utils.TYPE, 2);
+//                intent.putExtra(Utils.WHICH, position);
+//                if (Utils.database.mive[position + 1])
+//                    intent.putExtra(Utils.ACTIVE, true);
+//                else intent.putExtra(Utils.ACTIVE, false);
+//                intent.putExtra(Utils.NAME, adapter.getItem(position));
                 startActivity(intent);
             }
         });

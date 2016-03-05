@@ -110,7 +110,7 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
                         break;
                 }
                 break;
-            case "mive":
+            case "miveh":
                 switch (position) {
                     case 0:
                         word.setImageResource(R.drawable.tmoz);
@@ -137,7 +137,7 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
                 }
                 break;
 
-            case "heivan":
+            case "heyvanat":
                 switch (position) {
                     case 0:
                         word.setImageResource(R.drawable.tgorbe);
@@ -168,7 +168,7 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
                 }
                 break;
 
-            case "poshak":
+            case "pooshak":
                 switch (position) {
                     case 0:
                         word.setImageResource(R.drawable.tkafsh);
@@ -203,7 +203,7 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
                 }
                 break;
 
-            case "vasile":
+            case "vasayel":
                 switch (position) {
                     case 0:
                         word.setImageResource(R.drawable.tshane);
@@ -246,7 +246,7 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
                 }
                 break;
 
-            case "shoql":
+            case "mashaghel":
                 switch (position) {
                     case 0:
                         word.setImageResource(R.drawable.tdoctor);
