@@ -24,6 +24,8 @@ public class FelGeneralActivity4 extends ActionBarActivity {
     ImageView arrow;
     int verbDragged = 0;
     MediaPlayer verbDrag;
+    int position;
+    String category;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +34,63 @@ public class FelGeneralActivity4 extends ActionBarActivity {
         verb = (ImageView) findViewById(R.id.verb);
         verbImg = (ImageView) findViewById(R.id.verbImg);
         arrow = (ImageView) findViewById(R.id.arrow);
-        verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.bede_drag);
         controller();
+        setViews();
+        verbDrag.start();
+
+    }
+
+    private void setViews() {
+        category = getIntent().getStringExtra("category");
+        String pos = getIntent().getStringExtra("position");
+        if (pos != null) {
+            position = Integer.parseInt(pos);
+        }
+        switch (category) {
+            case "amr":
+                switch (position) {
+                    case 0:
+                        verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.bede_drag);
+//                        verb.setImageResource(R.drawable.tbede);
+//                        verbImg.setImageResource(R.drawable.imbede);
+                        break;
+                    case 1:
+                        break;
+                }
+                break;
+            case "gozashte":
+                break;
+            case "hessi":
+                break;
+            case "twowords":
+                switch (position) {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                }
+                break;
+
+            case "threewords":
+                switch (position) {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                }
+                break;
+            case "zamir":
+                switch (position) {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                }
+                break;
+
+
+        }
+
     }
 
     @Override
@@ -93,7 +150,7 @@ public class FelGeneralActivity4 extends ActionBarActivity {
 
                         if (verbDragged >= 4) {
                             Intent intent = new Intent(FelGeneralActivity4.this, AmrActivity.class);
-                            intent.putExtra("position","0");
+                            intent.putExtra("position", "0");
                             startActivity(intent);
 //                            wordDrag.start();
                         } else {

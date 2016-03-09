@@ -17,19 +17,74 @@ public class FelGeneralActivity1 extends ActionBarActivity {
     private MediaPlayer felVoice;
     ImageView pass;
     ImageView replay;
+    int position = 0;
+    String category;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fel_general_activity1);
-        felVoice = MediaPlayer.create(getApplicationContext(), R.raw.bedeh_voice);
+
         felVideo = (VideoView) findViewById(R.id.videoView);
-        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.bedeh));
-        felVideo.start();
-        felVoice.start();
         pass = (ImageView) findViewById(R.id.pass);
         replay = (ImageView) findViewById(R.id.replay);
+        setViews();
         controller();
+        felVideo.start();
+        felVoice.start();
+    }
+
+    private void setViews() {
+        category = getIntent().getStringExtra("category");
+        String pos = getIntent().getStringExtra("position");
+        if (pos != null) {
+            position = Integer.parseInt(pos);
+
+        }
+        switch (category) {
+            case "amr":
+                switch (position) {
+                    case 0:
+                        felVoice = MediaPlayer.create(getApplicationContext(), R.raw.bedeh_voice);
+                        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.bedeh));
+                        break;
+                    case 1:
+                        break;
+                }
+                break;
+            case "gozashte":
+                break;
+            case "hessi":
+                break;
+            case "twowords":
+                switch (position) {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                }
+                break;
+
+            case "threewords":
+                switch (position) {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                }
+                break;
+            case "zamir":
+                switch (position) {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                }
+                break;
+
+
+        }
+
     }
 
     @Override
@@ -58,15 +113,15 @@ public class FelGeneralActivity1 extends ActionBarActivity {
         pass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    Intent intent = new Intent(FelGeneralActivity1.this, FelGeneralActivity2.class);
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(FelGeneralActivity1.this, FelGeneralActivity2.class);
+                startActivity(intent);
+            }
         });
         replay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    felVideo.start();
-                    felVoice.start();
+                felVideo.start();
+                felVoice.start();
             }
         });
     }

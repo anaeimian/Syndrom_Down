@@ -4,8 +4,8 @@ import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.DragEvent;
 import android.view.Menu;
@@ -24,6 +24,8 @@ public class FelGeneralActivity3 extends ActionBarActivity {
     ImageView arrow;
     int verbDragged = 0;
     MediaPlayer verbDrag;
+    int position;
+    String category;
 
 
     @Override
@@ -34,6 +36,60 @@ public class FelGeneralActivity3 extends ActionBarActivity {
         verbImg = (ImageView) findViewById(R.id.verbImg);
         arrow = (ImageView) findViewById(R.id.arrow);
         controller();
+        setViews();
+    }
+
+    private void setViews() {
+        category = getIntent().getStringExtra("category");
+        String pos = getIntent().getStringExtra("position");
+        if (pos != null) {
+            position = Integer.parseInt(pos);
+        }
+        switch (category) {
+            case "amr":
+                switch (position) {
+                    case 0:
+                        verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.bede_drag);
+//                        verb.setImageResource(R.drawable.tbede);
+//                        verbImg.setImageResource(R.drawable.imbede);
+                        break;
+                    case 1:
+                        break;
+                }
+                break;
+            case "gozashte":
+                break;
+            case "hessi":
+                break;
+            case "twowords":
+                switch (position) {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                }
+                break;
+
+            case "threewords":
+                switch (position) {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                }
+                break;
+            case "zamir":
+                switch (position) {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                }
+                break;
+
+
+        }
+
     }
 
     @Override

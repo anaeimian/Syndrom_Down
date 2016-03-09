@@ -19,18 +19,74 @@ public class FelGeneralActivity2 extends ActionBarActivity {
     ImageView fail;
     int passclicked = 0;
     int failclicked = 0;
+    String category;
+    int position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fel_general_activity2);
-        felVoice = MediaPlayer.create(getApplicationContext(), R.raw.fail);
+        felVoice = MediaPlayer.create(getApplicationContext(), R.raw.inchie);
         felVideo = (VideoView) findViewById(R.id.videoView);
-        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.bedeh));
-        felVideo.start();
         pass = (ImageView) findViewById(R.id.pass);
         fail = (ImageView) findViewById(R.id.fail);
+        setViews();
         controller();
+        felVideo.start();
+        felVoice.start();
+    }
+
+
+    private void setViews() {
+        category = getIntent().getStringExtra("category");
+        String pos = getIntent().getStringExtra("position");
+        if (pos != null) {
+            position = Integer.parseInt(pos);
+
+        }
+        switch (category) {
+            case "amr":
+                switch (position) {
+                    case 0:
+                        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.bedeh));
+                        break;
+                    case 1:
+                        break;
+                }
+                break;
+            case "gozashte":
+                break;
+            case "hessi":
+                break;
+            case "twowords":
+                switch (position) {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                }
+                break;
+
+            case "threewords":
+                switch (position) {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                }
+                break;
+            case "zamir":
+                switch (position) {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                }
+                break;
+
+
+        }
+
     }
 
     @Override

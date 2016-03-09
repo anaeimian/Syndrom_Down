@@ -56,16 +56,18 @@ public class GozashteActivity extends ActionBarActivity {
         listGozashte.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (!Utils.database.gozashte[position])
-                    return;
+//                if (!Utils.database.gozashte[position])
+//                    return;
 
-                Intent intent = new Intent(GozashteActivity.this, FelGeneralActivity.class);
-                intent.putExtra(Utils.TYPE, 1);
-                intent.putExtra(Utils.WHICH, position);
-                if (Utils.database.gozashte[position + 1])
-                    intent.putExtra(Utils.ACTIVE, true);
-                else intent.putExtra(Utils.ACTIVE, false);
-                intent.putExtra(Utils.NAME, adapter.getItem(position));
+                Intent intent = new Intent(GozashteActivity.this, FelGeneralActivity1.class);
+                intent.putExtra("position",position+"");
+                intent.putExtra("category","gozashte");
+//                intent.putExtra(Utils.TYPE, 1);
+//                intent.putExtra(Utils.WHICH, position);
+//                if (Utils.database.gozashte[position + 1])
+//                    intent.putExtra(Utils.ACTIVE, true);
+//                else intent.putExtra(Utils.ACTIVE, false);
+//                intent.putExtra(Utils.NAME, adapter.getItem(position));
                 startActivity(intent);
             }
         });

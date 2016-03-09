@@ -5,11 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -54,16 +52,18 @@ public class HessiActivity extends ActionBarActivity {
         listHessi.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (!Utils.database.hessi[position])
-                    return;
+//                if (!Utils.database.hessi[position])
+//                    return;
 
-                Intent intent = new Intent(HessiActivity.this, FelGeneralActivity.class);
-                intent.putExtra(Utils.TYPE, 2);
-                intent.putExtra(Utils.WHICH, position);
-                if (Utils.database.hessi[position + 1])
-                    intent.putExtra(Utils.ACTIVE, true);
-                else intent.putExtra(Utils.ACTIVE, false);
-                intent.putExtra(Utils.NAME, adapter.getItem(position));
+                Intent intent = new Intent(HessiActivity.this, FelGeneralActivity1.class);
+                intent.putExtra("position",position+"");
+                intent.putExtra("category","hessi");
+//                intent.putExtra(Utils.TYPE, 2);
+//                intent.putExtra(Utils.WHICH, position);
+//                if (Utils.database.hessi[position + 1])
+//                    intent.putExtra(Utils.ACTIVE, true);
+//                else intent.putExtra(Utils.ACTIVE, false);
+//                intent.putExtra(Utils.NAME, adapter.getItem(position));
                 startActivity(intent);
             }
         });
