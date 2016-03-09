@@ -29,16 +29,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/tbaba"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/ball"
+        android:layout_toStartOf="@+id/ball"
+        android:layout_marginRight="45dp"
+        android:layout_marginEnd="45dp" />
     <ImageView
         android:id="@+id/pic2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/tmaman"
-        android:layout_alignBottom="@+id/pic1"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_marginLeft="51dp"
+        android:layout_marginStart="51dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/ball"
+        android:layout_toEndOf="@+id/ball" />
 
 </RelativeLayout>
