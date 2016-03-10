@@ -25,8 +25,9 @@ public class Bazi2Activity extends ActionBarActivity {
     private ObjectAnimator animator;
 
     private MediaPlayer mediaPlayerRahnama;
-    private MediaPlayer mediaPlayerRahnama1;
-    private MediaPlayer mediaPlayerTashvigh;
+    private MediaPlayer payMoreAttention;
+    private MediaPlayer tashvigh;
+    String category;
     int xCenter;
 
     @Override
@@ -46,6 +47,8 @@ public class Bazi2Activity extends ActionBarActivity {
         pic1 = (ImageView) findViewById(R.id.pic1);
         pic2 = (ImageView) findViewById(R.id.pic2);
         mediaPlayerRahnama = MediaPlayer.create(getApplicationContext(), R.raw.football_dadash);
+        payMoreAttention = MediaPlayer.create(getApplicationContext(), R.raw.pay_more_attention);
+        tashvigh = MediaPlayer.create(getApplicationContext(), R.raw.afarin);
 //        Display display = getWindowManager().getDefaultDisplay();
 //        Point size = new Point();
 //        display.getSize(size);
@@ -68,7 +71,7 @@ public class Bazi2Activity extends ActionBarActivity {
 
     private void handleIntent() {
         Intent intent = getIntent();
-        String category = intent.getStringExtra("category");
+        category = intent.getStringExtra("category");
         switch (category) {
             case "khanevade":
                 pic1.setImageResource(R.drawable.tbaradar);
@@ -77,15 +80,17 @@ public class Bazi2Activity extends ActionBarActivity {
                 pic1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        animator.setFloatValues(0, -ball.getX() + pic1.getX());
+                        tashvigh.start();
+                        animator.setFloatValues(0, -field.getWidth() / 2 + 30);
                         animator.start();
                     }
                 });
                 pic2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        animator.setFloatValues(0, pic2.getX() - ball.getX());
-                        animator.start();
+                        payMoreAttention.start();
+//                        animator.setFloatValues(0, field.getWidth()/2-10);
+//                        animator.start();
                     }
                 });
                 animator.addListener(new Animator.AnimatorListener() {
@@ -96,8 +101,9 @@ public class Bazi2Activity extends ActionBarActivity {
 
                     @Override
                     public void onAnimationEnd(Animator animation) {
+                        ball.setVisibility(View.INVISIBLE);
                         Intent intent = new Intent(Bazi2Activity.this, Bazi2Activity2.class);
-
+                        intent.putExtra("category", category);
                         startActivity(intent);
 //                mediaPlayerTashvigh.start();
                     }
@@ -113,6 +119,8 @@ public class Bazi2Activity extends ActionBarActivity {
                     }
                 });
 
+                break;
+            default:
                 break;
 
         }

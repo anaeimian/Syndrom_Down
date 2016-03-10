@@ -10,35 +10,53 @@
         layout="@layout/app_bar" />
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:orientation="horizontal">
 
-            <ImageView
-                android:src="@drawable/sabad"
-                android:id="@+id/imView0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="50dp" />
+        <ImageView
+            android:id="@+id/imView0"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/bad"
+            android:layout_marginRight="60dp"
+            android:layout_marginEnd="60dp"
+            android:layout_alignTop="@+id/imView1"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="invisible"/>
 
-            <ImageView
-                android:id="@+id/imView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="50dp"
-                android:src="@drawable/hand" />
+        <!--<ImageView-->
+        <!--android:id="@+id/word1"-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="50dp"-->
+        <!--android:src="@drawable/bad" />-->
 
-            <ImageView
-                android:src="@drawable/sabad"
-                android:id="@+id/imView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="50dp" />
+        <!--<ImageView-->
+        <!--android:id="@+id/word2"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="50dp"-->
+        <!--android:src="@drawable/tmaman" />-->
+
+        <ImageView
+            android:id="@+id/imView1"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/bad"
+
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="60dp"
+            android:layout_marginStart="60dp"
+            android:visibility="invisible"/>
 
 
-        </LinearLayout>
+    </RelativeLayout>
 
 
 </LinearLayout>

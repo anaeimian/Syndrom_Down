@@ -143,7 +143,7 @@
             android:label="@string/title_activity_fel_general_activity4" >
         </activity>
         <activity
-            android:name=".Bazi2ListActivity"
+            android:name=".BaziListActivity"
             android:label="@string/title_activity_bazi2_list" >
         </activity>
         <activity
@@ -157,6 +157,10 @@
         <activity
             android:name=".Bazi2Activity4"
             android:label="@string/title_activity_bazi2_activity4" >
+        </activity>
+        <activity
+            android:name=".Bazi1Activity2"
+            android:label="@string/title_activity_bazi1_activity2" >
         </activity>
     </application>
 

@@ -14,11 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Bazi2ListActivity extends ActionBarActivity {
+public class BaziListActivity extends ActionBarActivity {
     private ListView listLoghat;
     private List<String> items;
     private ListAdapterLoghatActivity adapter;
     private Toolbar toolbar;
+    Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,11 +48,16 @@ public class Bazi2ListActivity extends ActionBarActivity {
 
         adapter = new ListAdapterLoghatActivity(this, items);
         listLoghat.setAdapter(adapter);
-
+        Intent getIntent = getIntent();
+        final String gameType = getIntent.getStringExtra("gameType");
         listLoghat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(Bazi2ListActivity.this, Bazi2Activity.class);
+                if (gameType.equals("balloon")) {
+                    intent = new Intent(BaziListActivity.this, Bazi1Activity.class);
+                } else if (gameType.equals("football")) {
+                    intent = new Intent(BaziListActivity.this, Bazi2Activity.class);
+                }
                 switch (position) {
                     case 0:
                         intent.putExtra("category", "khanevade");

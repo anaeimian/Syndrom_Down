@@ -144,17 +144,18 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
                         wordSound = MediaPlayer.create(getApplicationContext(), R.raw.sibsound);
                         break;
                     case 2:
+                        word.setImageResource(R.drawable.tkhiar);
+                        wordSound = MediaPlayer.create(getApplicationContext(), R.raw.khiarsound);
+                        break;
+                    case 3:
                         word.setImageResource(R.drawable.tporteqal);
                         wordSound = MediaPlayer.create(getApplicationContext(), R.raw.porteqalsound);
                         break;
-                    case 3:
+                    case 4:
                         word.setImageResource(R.drawable.tlimo);
                         wordSound = MediaPlayer.create(getApplicationContext(), R.raw.limosound);
                         break;
-                    case 4:
-                        word.setImageResource(R.drawable.tmo);
-                        wordSound = MediaPlayer.create(getApplicationContext(), R.raw.mosound);
-                        break;
+
                     default:
                         break;
                 }

@@ -30,7 +30,8 @@ public class BaziActivity extends ActionBarActivity {
         imViewBazi1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BaziActivity.this, Bazi1Activity.class);
+                Intent intent = new Intent(BaziActivity.this, BaziListActivity.class);
+                intent.putExtra("gameType","balloon");
                 startActivity(intent);
             }
         });
@@ -38,7 +39,8 @@ public class BaziActivity extends ActionBarActivity {
         imViewBazi2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BaziActivity.this, Bazi2ListActivity.class);
+                Intent intent = new Intent(BaziActivity.this, BaziListActivity.class);
+                intent.putExtra("gameType","football");
                 startActivity(intent);
             }
         });

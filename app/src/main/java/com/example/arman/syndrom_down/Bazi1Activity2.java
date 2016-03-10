@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
-import android.view.animation.Transformation;
 import android.widget.ImageView;
 
 import java.util.Random;
@@ -20,7 +19,7 @@ import java.util.Random;
 /**
  * Created by Szamani on 1/1/2016.
  */
-public class Bazi1Activity extends ActionBarActivity {
+public class Bazi1Activity2 extends ActionBarActivity {
     private Toolbar toolbar;
     private ImageView word1;
     private ImageView word2;
@@ -67,20 +66,20 @@ public class Bazi1Activity extends ActionBarActivity {
         String category = intent.getStringExtra("category");
         switch (category) {
             case "khanevade":
-                word1.setImageResource(R.drawable.balloon_baba);
-                word2.setImageResource(R.drawable.balloon_maman);
+                word1.setImageResource(R.drawable.balloon_dadash);
+                word2.setImageResource(R.drawable.balloon_khahar);
                 startAnimation();
-                wordVoice = MediaPlayer.create(this, R.raw.baba_ko);
+                wordVoice = MediaPlayer.create(this, R.raw.khahar_ko);
                 wordVoice.start();
-                word1.setOnClickListener(new View.OnClickListener() {
+                word2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        startRotateAnimation("khanevade");
+                        startRotateAnimation();
                         tashvigh.start();
 
                     }
                 });
-                word2.setOnClickListener(new View.OnClickListener() {
+                word1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         payMoreAttention.start();
@@ -88,16 +87,18 @@ public class Bazi1Activity extends ActionBarActivity {
                 });
 
                 break;
+            default:
+                break;
 
         }
 
     }
 
-    private void startRotateAnimation(final String category) {
+    private void startRotateAnimation() {
         RotateAnimation rotate = new RotateAnimation(0, 30, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         rotate.setDuration(1000);
         rotate.setInterpolator(new LinearInterpolator());
-        word1.startAnimation(rotate);
+        word2.startAnimation(rotate);
         rotate.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -110,7 +111,7 @@ public class Bazi1Activity extends ActionBarActivity {
                 rotate1.setDuration(2000);
                 rotate1.setInterpolator(new LinearInterpolator());
 
-                word1.startAnimation(rotate1);
+                word2.startAnimation(rotate1);
                 rotate1.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
@@ -123,7 +124,7 @@ public class Bazi1Activity extends ActionBarActivity {
                         rotate2.setDuration(1000);
                         rotate2.setInterpolator(new LinearInterpolator());
 
-                        word1.startAnimation(rotate2);
+                        word2.startAnimation(rotate2);
                         rotate2.setAnimationListener(new Animation.AnimationListener() {
                             @Override
                             public void onAnimationStart(Animation animation) {
@@ -132,8 +133,9 @@ public class Bazi1Activity extends ActionBarActivity {
 
                             @Override
                             public void onAnimationEnd(Animation animation) {
-                                Intent intent = new Intent(Bazi1Activity.this, Bazi1Activity2.class);
-                                intent.putExtra("category", category);
+                                Intent intent = new Intent(Bazi1Activity2.this, BaziListActivity.class);
+                                intent.putExtra("category", "khanevade");
+                                intent.putExtra("gameType", "balloon");
                                 startActivity(intent);
                             }
 
@@ -377,31 +379,31 @@ public class Bazi1Activity extends ActionBarActivity {
 //    }
 }
 
-class ResizeAnimation extends Animation {
-    final int targetHeight;
-    View view;
-    int startHeight;
-
-    public ResizeAnimation(View view, int targetHeight, int startHeight) {
-        this.view = view;
-        this.targetHeight = targetHeight;
-        this.startHeight = startHeight;
-    }
-
-    @Override
-    protected void applyTransformation(float interpolatedTime, Transformation t) {
-        int newHeight = (int) (startHeight + targetHeight * interpolatedTime);
-        view.getLayoutParams().height = newHeight;
-        view.requestLayout();
-    }
-
-    @Override
-    public void initialize(int width, int height, int parentWidth, int parentHeight) {
-        super.initialize(width, height, parentWidth, parentHeight);
-    }
-
-    @Override
-    public boolean willChangeBounds() {
-        return true;
-    }
-}
+//class ResizeAnimation extends Animation {
+//    final int targetHeight;
+//    View view;
+//    int startHeight;
+//
+//    public ResizeAnimation(View view, int targetHeight, int startHeight) {
+//        this.view = view;
+//        this.targetHeight = targetHeight;
+//        this.startHeight = startHeight;
+//    }
+//
+//    @Override
+//    protected void applyTransformation(float interpolatedTime, Transformation t) {
+//        int newHeight = (int) (startHeight + targetHeight * interpolatedTime);
+//        view.getLayoutParams().height = newHeight;
+//        view.requestLayout();
+//    }
+//
+//    @Override
+//    public void initialize(int width, int height, int parentWidth, int parentHeight) {
+//        super.initialize(width, height, parentWidth, parentHeight);
+//    }
+//
+//    @Override
+//    public boolean willChangeBounds() {
+//        return true;
+//    }
+//}
