@@ -24,6 +24,7 @@ public class BaziListActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_bazi2_list);
 
         setTitle(getString(R.string.footbal));

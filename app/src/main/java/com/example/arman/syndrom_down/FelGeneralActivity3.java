@@ -37,6 +37,7 @@ public class FelGeneralActivity3 extends ActionBarActivity {
         arrow = (ImageView) findViewById(R.id.arrow);
         controller();
         setViews();
+        verbDrag.start();
     }
 
     private void setViews() {
@@ -50,8 +51,8 @@ public class FelGeneralActivity3 extends ActionBarActivity {
                 switch (position) {
                     case 0:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.bede_drag);
-//                        verb.setImageResource(R.drawable.tbede);
-//                        verbImg.setImageResource(R.drawable.imbede);
+                        verb.setImageResource(R.drawable.tbede);
+                        verbImg.setImageResource(R.drawable.imbede);
                         break;
                     case 1:
                         break;
@@ -150,6 +151,8 @@ public class FelGeneralActivity3 extends ActionBarActivity {
 
                         if (verbDragged >= 4) {
                             Intent intent = new Intent(FelGeneralActivity3.this, FelGeneralActivity4.class);
+                            intent.putExtra("category", category);
+                            intent.putExtra("position", position + "");
                             startActivity(intent);
 //                            wordDrag.start();
                         } else {

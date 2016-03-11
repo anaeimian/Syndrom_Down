@@ -3,8 +3,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
    <ImageView
-       android:layout_width="120dp"
-       android:layout_height="120dp"
+       android:layout_width="160dp"
+       android:layout_height="160dp"
        android:src="@drawable/imbaba"
        android:layout_centerHorizontal="true"
        android:layout_marginTop="50dp"
@@ -15,18 +15,28 @@
         android:src="@drawable/check"
         android:id="@+id/pass"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/word"
-        android:layout_alignEnd="@+id/word"
-        android:layout_marginRight="70dp"
-        android:layout_marginEnd="70dp" />
+        android:layout_alignRight="@+id/test"
+        android:layout_alignEnd="@+id/test"
+        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_centerHorizontal="true"/>
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/replay"
         android:id="@+id/replay"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/word"
-        android:layout_alignStart="@+id/word"
-        android:layout_marginLeft="64dp"
-        android:layout_marginStart="64dp" />
+        android:layout_alignLeft="@+id/test"
+        android:layout_alignStart="@+id/test"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_centerHorizontal="true"/>
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/test"
+        android:visibility="invisible"
+        />
 </RelativeLayout>

@@ -51,8 +51,8 @@ public class FelGeneralActivity4 extends ActionBarActivity {
                 switch (position) {
                     case 0:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.bede_drag);
-//                        verb.setImageResource(R.drawable.tbede);
-//                        verbImg.setImageResource(R.drawable.imbede);
+                        verb.setImageResource(R.drawable.tbede);
+                        verbImg.setImageResource(R.drawable.imbede);
                         break;
                     case 1:
                         break;
@@ -150,7 +150,7 @@ public class FelGeneralActivity4 extends ActionBarActivity {
 
                         if (verbDragged >= 4) {
                             Intent intent = new Intent(FelGeneralActivity4.this, AmrActivity.class);
-                            intent.putExtra("position", "0");
+                            intent.putExtra("position", position + "");
                             startActivity(intent);
 //                            wordDrag.start();
                         } else {
@@ -165,8 +165,6 @@ public class FelGeneralActivity4 extends ActionBarActivity {
                 return true;
             }
         });
-
-        verbDrag.start();
 
     }
 }

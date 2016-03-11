@@ -38,6 +38,7 @@ public class Bazi1Activity extends ActionBarActivity {
         setContentView(R.layout.activity_bazi1);
         setTitle(getString(R.string.badkonak));
 
+
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
 

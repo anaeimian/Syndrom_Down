@@ -68,6 +68,7 @@ public class AmrActivity extends ActionBarActivity {
 //                    return;
 
                 Intent intent = new Intent(AmrActivity.this, FelGeneralActivity1.class);
+                intent.putExtra("category","amr");
                 intent.putExtra("position", position + "");
 //                intent.putExtra(Utils.TYPE, 0);
 //                intent.putExtra(Utils.WHICH, position);

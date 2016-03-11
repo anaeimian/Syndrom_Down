@@ -48,7 +48,7 @@ public class FelGeneralActivity2 extends ActionBarActivity {
             case "amr":
                 switch (position) {
                     case 0:
-                        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.bedeh));
+                        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.bedeh_clip));
                         break;
                     case 1:
                         break;
@@ -118,6 +118,8 @@ public class FelGeneralActivity2 extends ActionBarActivity {
                 passclicked++;
                 if (passclicked >= 4) {
                     Intent intent = new Intent(FelGeneralActivity2.this, FelGeneralActivity3.class);
+                    intent.putExtra("category", category);
+                    intent.putExtra("position", position + "");
                     startActivity(intent);
                 }
             }
@@ -129,6 +131,8 @@ public class FelGeneralActivity2 extends ActionBarActivity {
                 felVoice.start();
                 if (failclicked >= 3) {
                     Intent intent = new Intent(FelGeneralActivity2.this, FelGeneralActivity1.class);
+                    intent.putExtra("category", category);
+                    intent.putExtra("position", position + "");
                     startActivity(intent);
                 }
 

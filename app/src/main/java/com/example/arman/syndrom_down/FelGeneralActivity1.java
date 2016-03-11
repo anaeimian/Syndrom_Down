@@ -46,7 +46,7 @@ public class FelGeneralActivity1 extends ActionBarActivity {
                 switch (position) {
                     case 0:
                         felVoice = MediaPlayer.create(getApplicationContext(), R.raw.bedeh_voice);
-                        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.bedeh));
+                        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.bedeh_clip));
                         break;
                     case 1:
                         break;
@@ -114,6 +114,8 @@ public class FelGeneralActivity1 extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(FelGeneralActivity1.this, FelGeneralActivity2.class);
+                intent.putExtra("category", category);
+                intent.putExtra("position", position + "");
                 startActivity(intent);
             }
         });
