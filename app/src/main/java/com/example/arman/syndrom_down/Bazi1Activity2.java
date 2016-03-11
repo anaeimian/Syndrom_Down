@@ -14,6 +14,7 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -63,28 +64,102 @@ public class Bazi1Activity2 extends ActionBarActivity {
 
     private void handleIntent() {
         Intent intent = getIntent();
-        String category = intent.getStringExtra("category");
+        final String category = intent.getStringExtra("category");
+        ArrayList<String> items = intent.getStringArrayListExtra("list");
+        Random random = new Random();
+        int answerPos = random.nextInt(2);
         switch (category) {
             case "khanevade":
-                word1.setImageResource(R.drawable.balloon_dadash);
-                word2.setImageResource(R.drawable.balloon_khahar);
-                startAnimation();
-                wordVoice = MediaPlayer.create(this, R.raw.khahar_ko);
-                wordVoice.start();
-                word2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        startRotateAnimation();
-                        tashvigh.start();
+                switch (items.get(0)) {
+                    case "baba":
+                        word1.setImageResource(R.drawable.balloon_baba);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.baba_ko);
+                        }
+                        break;
+                    case "maman":
+                        word1.setImageResource(R.drawable.balloon_maman);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.maman_ko);
+                        }
+                        break;
 
-                    }
-                });
-                word1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        payMoreAttention.start();
-                    }
-                });
+                    case "khahar":
+                        word1.setImageResource(R.drawable.balloon_khahar);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.khahar_ko);
+                        }
+                        break;
+                    case "dadash":
+                        word1.setImageResource(R.drawable.balloon_dadash);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.dadash_ko);
+                        }
+                        break;
+                }
+                switch (items.get(1)) {
+                    case "baba":
+                        word2.setImageResource(R.drawable.balloon_baba);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.baba_ko);
+                        }
+                        break;
+                    case "maman":
+                        word2.setImageResource(R.drawable.balloon_maman);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.maman_ko);
+                        }
+                        break;
+                    case "khahar":
+                        word2.setImageResource(R.drawable.balloon_khahar);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.khahar_ko);
+                        }
+                        break;
+                    case "dadash":
+                        word2.setImageResource(R.drawable.balloon_dadash);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.dadash_ko);
+                        }
+                        break;
+                }
+
+//                word1.setImageResource(R.drawable.balloon_dadash);
+//                word2.setImageResource(R.drawable.balloon_khahar);
+                startAnimation();
+                wordVoice.start();
+                if (answerPos == 0) {
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word1, category);
+                            tashvigh.start();
+
+                        }
+                    });
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                } else if (answerPos == 1) {
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word2, category);
+                            tashvigh.start();
+
+                        }
+                    });
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                }
+
 
                 break;
             default:
@@ -94,11 +169,77 @@ public class Bazi1Activity2 extends ActionBarActivity {
 
     }
 
-    private void startRotateAnimation() {
+//    private void startRotateAnimation() {
+//        RotateAnimation rotate = new RotateAnimation(0, 30, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+//        rotate.setDuration(1000);
+//        rotate.setInterpolator(new LinearInterpolator());
+//        word2.startAnimation(rotate);
+//        rotate.setAnimationListener(new Animation.AnimationListener() {
+//            @Override
+//            public void onAnimationStart(Animation animation) {
+//
+//            }
+//
+//            @Override
+//            public void onAnimationEnd(Animation animation) {
+//                RotateAnimation rotate1 = new RotateAnimation(30, -30, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+//                rotate1.setDuration(2000);
+//                rotate1.setInterpolator(new LinearInterpolator());
+//
+//                word2.startAnimation(rotate1);
+//                rotate1.setAnimationListener(new Animation.AnimationListener() {
+//                    @Override
+//                    public void onAnimationStart(Animation animation) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onAnimationEnd(Animation animation) {
+//                        RotateAnimation rotate2 = new RotateAnimation(-30, 0, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+//                        rotate2.setDuration(1000);
+//                        rotate2.setInterpolator(new LinearInterpolator());
+//
+//                        word2.startAnimation(rotate2);
+//                        rotate2.setAnimationListener(new Animation.AnimationListener() {
+//                            @Override
+//                            public void onAnimationStart(Animation animation) {
+//
+//                            }
+//
+//                            @Override
+//                            public void onAnimationEnd(Animation animation) {
+//                                Intent intent = new Intent(Bazi1Activity2.this, BaziListActivity.class);
+//                                intent.putExtra("category", "khanevade");
+//                                intent.putExtra("gameType", "balloon");
+//                                startActivity(intent);
+//                            }
+//
+//                            @Override
+//                            public void onAnimationRepeat(Animation animation) {
+//
+//                            }
+//                        });
+//                    }
+//
+//                    @Override
+//                    public void onAnimationRepeat(Animation animation) {
+//
+//                    }
+//                });
+//            }
+//
+//            @Override
+//            public void onAnimationRepeat(Animation animation) {
+//
+//            }
+//        });
+//    }
+
+    private void startRotateAnimation(final ImageView image, final String category) {
         RotateAnimation rotate = new RotateAnimation(0, 30, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         rotate.setDuration(1000);
         rotate.setInterpolator(new LinearInterpolator());
-        word2.startAnimation(rotate);
+        image.startAnimation(rotate);
         rotate.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -111,7 +252,7 @@ public class Bazi1Activity2 extends ActionBarActivity {
                 rotate1.setDuration(2000);
                 rotate1.setInterpolator(new LinearInterpolator());
 
-                word2.startAnimation(rotate1);
+                image.startAnimation(rotate1);
                 rotate1.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
@@ -124,7 +265,7 @@ public class Bazi1Activity2 extends ActionBarActivity {
                         rotate2.setDuration(1000);
                         rotate2.setInterpolator(new LinearInterpolator());
 
-                        word2.startAnimation(rotate2);
+                        image.startAnimation(rotate2);
                         rotate2.setAnimationListener(new Animation.AnimationListener() {
                             @Override
                             public void onAnimationStart(Animation animation) {
@@ -134,7 +275,7 @@ public class Bazi1Activity2 extends ActionBarActivity {
                             @Override
                             public void onAnimationEnd(Animation animation) {
                                 Intent intent = new Intent(Bazi1Activity2.this, BaziListActivity.class);
-                                intent.putExtra("category", "khanevade");
+                                intent.putExtra("category", category);
                                 intent.putExtra("gameType", "balloon");
                                 startActivity(intent);
                             }

@@ -27,7 +27,7 @@ public class BaziListActivity extends ActionBarActivity {
 
         setContentView(R.layout.activity_bazi2_list);
 
-        setTitle(getString(R.string.footbal));
+        setTitle(getString(R.string.categories));
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
