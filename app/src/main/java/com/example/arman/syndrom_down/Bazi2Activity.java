@@ -47,8 +47,8 @@ public class Bazi2Activity extends ActionBarActivity {
         pic1 = (ImageView) findViewById(R.id.pic1);
         pic2 = (ImageView) findViewById(R.id.pic2);
         mediaPlayerRahnama = MediaPlayer.create(getApplicationContext(), R.raw.football_dadash);
-        payMoreAttention = MediaPlayer.create(getApplicationContext(), R.raw.pay_more_attention);
-        tashvigh = MediaPlayer.create(getApplicationContext(), R.raw.afarin);
+       // payMoreAttention = MediaPlayer.create(getApplicationContext(), R.raw.pay_more_attention);
+      //  tashvigh = MediaPlayer.create(getApplicationContext(), R.raw.afarin);
 //        Display display = getWindowManager().getDefaultDisplay();
 //        Point size = new Point();
 //        display.getSize(size);
