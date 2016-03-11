@@ -34,6 +34,7 @@ public class Bazi1Activity extends ActionBarActivity {
     private MediaPlayer payMoreAttention;
     private MediaPlayer tashvigh;
     private ArrayList<String> remianedItems;
+    Random random = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,31 +70,32 @@ public class Bazi1Activity extends ActionBarActivity {
     private void handleIntent() {
         Intent intent = getIntent();
         String category = intent.getStringExtra("category");
+        int answerPos = random.nextInt(2);
+        int selectedItem1 = random.nextInt(4);
+        int selectedItem2 = random.nextInt(4);
+        while (selectedItem2 == selectedItem1) {
+            selectedItem2 = random.nextInt(4);
+        }
         switch (category) {
             case "khanevade":
-                ArrayList<String> items;
-                items = new ArrayList<>();
-                items.add("baba");
-                items.add("maman");
-                items.add("khahar");
-                items.add("dadash");
-                Random random = new Random();
-                int answerPos = random.nextInt(2);
-                int selectedItem1 = random.nextInt(4);
-                int selectedItem2 = random.nextInt(4);
-                while (selectedItem2 == selectedItem1) {
-                    selectedItem2 = random.nextInt(4);
-                }
+                ArrayList<String> khanevadeItems;
+                khanevadeItems = new ArrayList<>();
+                khanevadeItems.add("baba");
+                khanevadeItems.add("maman");
+                khanevadeItems.add("khahar");
+                khanevadeItems.add("dadash");
+
+
                 remianedItems = new ArrayList<>();
-                for (int i = 0; i < items.size(); i++) {
+                for (int i = 0; i < khanevadeItems.size(); i++) {
                     if (i != selectedItem1 && i != selectedItem2)
-                        remianedItems.add(items.get(i));
+                        remianedItems.add(khanevadeItems.get(i));
                 }
 
                 Log.d("rand", answerPos + " " + selectedItem1 + " " + selectedItem2);
                 if (answerPos == 0) {
                     Log.d("rand1", "rand1");
-                    setVoiceImage(word1, selectedItem1);
+                    setVoiceImage(word1, selectedItem1, category);
                     setImage(word2, selectedItem2);
                     word1.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -111,7 +113,7 @@ public class Bazi1Activity extends ActionBarActivity {
                     });
                 } else if (answerPos == 1) {
                     Log.d("rand2", "rand2");
-                    setVoiceImage(word2, selectedItem1);
+                    setVoiceImage(word2, selectedItem1, category);
                     setImage(word1, selectedItem2);
                     word2.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -149,35 +151,160 @@ public class Bazi1Activity extends ActionBarActivity {
 //                });
 
                 break;
+            case "andam":
+                ArrayList<String> andamItems;
+                andamItems = new ArrayList<>();
+                andamItems.add("cheshm");
+                andamItems.add("dast");
+                andamItems.add("pa");
+                andamItems.add("goosh");
+                andamItems.add("moo");
+                andamItems.add("dahan");
+                andamItems.add("bini");
+                andamItems.add("zaban");
+                andamItems.add("dandan");
+                andamItems.add("abroo");
 
+                remianedItems = new ArrayList<>();
+                for (int i = 0; i < andamItems.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remianedItems.add(andamItems.get(i));
+                }
+
+                Log.d("rand", answerPos + " " + selectedItem1 + " " + selectedItem2);
+                if (answerPos == 0) {
+                    Log.d("rand1", "rand1");
+                    setVoiceImage(word1, selectedItem1, category);
+                    setImage(word2, selectedItem2);
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word1, "andam");
+                            tashvigh.start();
+
+                        }
+                    });
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                } else if (answerPos == 1) {
+                    Log.d("rand2", "rand2");
+                    setVoiceImage(word2, selectedItem1, category);
+                    setImage(word1, selectedItem2);
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word2, "andam");
+                            tashvigh.start();
+
+                        }
+                    });
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                }
+//                word1.setImageResource(R.drawable.balloon_baba);
+//                word2.setImageResource(R.drawable.balloon_maman);
+                startAnimation();
+//                wordVoice = MediaPlayer.create(this, R.raw.baba_ko);
+                wordVoice.start();
+//                word1.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        startRotateAnimation("khanevade");
+//                        tashvigh.start();
+//
+//                    }
+//                });
+//                word2.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        payMoreAttention.start();
+//                    }
+//                });
+
+                break;
         }
 
     }
 
-    void setVoiceImage(ImageView image, int index) {
-        switch (index) {
-            case 0:
-                image.setImageResource(R.drawable.balloon_baba);
-                wordVoice = MediaPlayer.create(this, R.raw.baba_ko);
+    void setVoiceImage(ImageView image, int index, String category) {
+        switch (category) {
+            case "khanevade":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_baba);
+                        wordVoice = MediaPlayer.create(this, R.raw.baba_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_maman);
+                        wordVoice = MediaPlayer.create(this, R.raw.maman_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_khahar);
+                        wordVoice = MediaPlayer.create(this, R.raw.khahar_ko);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_dadash);
+                        wordVoice = MediaPlayer.create(this, R.raw.dadash_ko);
+                        break;
+                }
                 break;
-            case 1:
-                image.setImageResource(R.drawable.balloon_maman);
-                wordVoice = MediaPlayer.create(this, R.raw.maman_ko);
-                break;
-            case 2:
-                image.setImageResource(R.drawable.balloon_khahar);
-                wordVoice = MediaPlayer.create(this, R.raw.khahar_ko);
-                break;
-            case 3:
-                image.setImageResource(R.drawable.balloon_dadash);
-                wordVoice = MediaPlayer.create(this, R.raw.dadash_ko);
-                break;
-        }
+//            case "andam":
+//                switch (index) {
+//                    case 0:
+//                        image.setImageResource(R.drawable.balloon_cheshm);
+//                        wordVoice = MediaPlayer.create(this, R.raw.cheshm_ko);
+//                        break;
+//                    case 1:
+//                        image.setImageResource(R.drawable.balloon_dast);
+//                        wordVoice = MediaPlayer.create(this, R.raw.dast_ko);
+//                        break;
+//                    case 2:
+//                        image.setImageResource(R.drawable.balloon_paa);
+//                        wordVoice = MediaPlayer.create(this, R.raw.paa_ko);
+//                        break;
+//                    case 3:
+//                        image.setImageResource(R.drawable.balloon_goosh);
+//                        wordVoice = MediaPlayer.create(this, R.raw.goosh_ko);
+//                        break;
+//                    case 4:
+//                        image.setImageResource(R.drawable.balloon_mo);
+//                        wordVoice = MediaPlayer.create(this, R.raw.mo_ko);
+//                        break;
+//                    case 5:
+//                        image.setImageResource(R.drawable.balloon_dahan);
+//                        wordVoice = MediaPlayer.create(this, R.raw.dahan_ko);
+//                        break;
+//                    case 6:
+//                        image.setImageResource(R.drawable.balloon_bini);
+//                        wordVoice = MediaPlayer.create(this, R.raw.bini_ko);
+//                        break;
+//                    case 7:
+//                        image.setImageResource(R.drawable.balloon_zaban);
+//                        wordVoice = MediaPlayer.create(this, R.raw.zaban_ko);
+//                        break;
+//                    case 8:
+//                        image.setImageResource(R.drawable.balloon_dandan);
+//                        wordVoice = MediaPlayer.create(this, R.raw.dandan_ko);
+//                        break;
+//                    case 9:
+//                        image.setImageResource(R.drawable.balloon_abroo);
+//                        wordVoice = MediaPlayer.create(this, R.raw.dandan_ko);
+//                        break;
+//                }
+//                break;
 
+        }
     }
 
     void setImage(ImageView image, int index) {
-        Log.d("test", "setimage");
         switch (index) {
             case 0:
                 image.setImageResource(R.drawable.balloon_baba);

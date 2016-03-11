@@ -1,5 +1,7 @@
 package com.example.arman.syndrom_down;
 
+import android.app.ActionBar;
+import android.app.Dialog;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -7,7 +9,10 @@ import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 
 
 public class LoghatGeneralActivity1 extends FragmentActivity {
@@ -20,6 +25,11 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
     MediaPlayer dragVoice;
     String category;
     int position = 0;
+    private ImageView guide;
+    LinearLayout popUpLayout;
+    PopupWindow popUp;
+    ImageView imGuide;
+    Dialog settingsDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +39,28 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
         setViews();
         controller();
         dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.father_drag);
+        guide = (ImageView) findViewById(R.id.guide);
+        popUpLayout = new LinearLayout(this);
+
+        popUp = new PopupWindow(popUpLayout, ActionBar.LayoutParams.MATCH_PARENT,
+                ActionBar.LayoutParams.WRAP_CONTENT);
+        popUp.setContentView(popUpLayout);
+//        TextView text = new TextView(this);
+//        text.setText("test");
+//        imGuide = new ImageView(this);
+//        imGuide.setImageResource(R.drawable.guidemsg);
+        settingsDialog = new Dialog(this);
+        settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.dialog_layout, null));
+//        popUpLayout.addView(text);
+        guide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                settingsDialog.show();
+            }
+        });
+
 
     }
 

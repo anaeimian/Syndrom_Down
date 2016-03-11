@@ -10,6 +10,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 /**
  * Created by Szamani on 1/1/2016.
  */
@@ -24,11 +27,13 @@ public class Bazi2Activity extends ActionBarActivity {
     private float ballX = 0;
     private ObjectAnimator animator;
 
-    private MediaPlayer mediaPlayerRahnama;
+    private MediaPlayer wordVoice;
     private MediaPlayer payMoreAttention;
     private MediaPlayer tashvigh;
-    String category;
-    int xCenter;
+    String category = "";
+
+    Random random = new Random();
+    private ArrayList<String> remianedItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +51,6 @@ public class Bazi2Activity extends ActionBarActivity {
 //        goal2 = (ImageView) findViewById(R.id.goal2);
         pic1 = (ImageView) findViewById(R.id.pic1);
         pic2 = (ImageView) findViewById(R.id.pic2);
-        mediaPlayerRahnama = MediaPlayer.create(getApplicationContext(), R.raw.football_dadash);
         payMoreAttention = MediaPlayer.create(getApplicationContext(), R.raw.pay_more_attention);
         tashvigh = MediaPlayer.create(getApplicationContext(), R.raw.afarin);
 //        Display display = getWindowManager().getDefaultDisplay();
@@ -69,30 +73,68 @@ public class Bazi2Activity extends ActionBarActivity {
         setListeners();
     }
 
+
     private void handleIntent() {
         Intent intent = getIntent();
         category = intent.getStringExtra("category");
+
         switch (category) {
             case "khanevade":
-                pic1.setImageResource(R.drawable.tbaradar);
-                pic2.setImageResource(R.drawable.tkhahar);
-                mediaPlayerRahnama.start();
-                pic1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        tashvigh.start();
-                        animator.setFloatValues(0, -field.getWidth() / 2 + 30);
-                        animator.start();
-                    }
-                });
-                pic2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        payMoreAttention.start();
-//                        animator.setFloatValues(0, field.getWidth()/2-10);
-//                        animator.start();
-                    }
-                });
+                int answerPos = random.nextInt(2);
+                int selectedItem1 = random.nextInt(4);
+                int selectedItem2 = random.nextInt(4);
+                while (selectedItem2 == selectedItem1) {
+                    selectedItem2 = random.nextInt(4);
+                }
+                ArrayList<String> khanevadeItems;
+                khanevadeItems = new ArrayList<>();
+                khanevadeItems.add("baba");
+                khanevadeItems.add("maman");
+                khanevadeItems.add("khahar");
+                khanevadeItems.add("dadash");
+
+
+                remianedItems = new ArrayList<>();
+                for (int i = 0; i < khanevadeItems.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remianedItems.add(khanevadeItems.get(i));
+                }
+
+                if (answerPos == 0) {
+                    setVoiceImage(pic1, selectedItem1, category);
+                    setImage(pic2, selectedItem2);
+                    pic1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            animator.setFloatValues(0, -field.getWidth() / 2 + 30);
+                            animator.start();
+                            tashvigh.start();
+                        }
+                    });
+                    pic2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                } else if (answerPos == 1) {
+                    setVoiceImage(pic2, selectedItem1, category);
+                    setImage(pic1, selectedItem2);
+                    pic2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            animator.setFloatValues(0, field.getWidth() / 2 - 30);
+                            animator.start();
+                            tashvigh.start();
+                        }
+                    });
+                    pic1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                }
                 animator.addListener(new Animator.AnimatorListener() {
                     @Override
                     public void onAnimationStart(Animator animation) {
@@ -104,6 +146,7 @@ public class Bazi2Activity extends ActionBarActivity {
                         ball.setVisibility(View.INVISIBLE);
                         Intent intent = new Intent(Bazi2Activity.this, Bazi2Activity2.class);
                         intent.putExtra("category", category);
+                        intent.putExtra("list",remianedItems);
                         startActivity(intent);
 //                mediaPlayerTashvigh.start();
                     }
@@ -118,21 +161,237 @@ public class Bazi2Activity extends ActionBarActivity {
 
                     }
                 });
+//                word1.setImageResource(R.drawable.balloon_baba);
+//                word2.setImageResource(R.drawable.balloon_maman);
+//                wordVoice = MediaPlayer.create(this, R.raw.baba_ko);
+                wordVoice.start();
+//                word1.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        startRotateAnimation("khanevade");
+//                        tashvigh.start();
+//
+//                    }
+//                });
+//                word2.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        payMoreAttention.start();
+//                    }
+//                });
 
                 break;
-            default:
-                break;
-
+//            case "andam":
+//                ArrayList<String> andamItems;
+//                andamItems = new ArrayList<>();
+//                andamItems.add("cheshm");
+//                andamItems.add("dast");
+//                andamItems.add("pa");
+//                andamItems.add("goosh");
+//                andamItems.add("moo");
+//                andamItems.add("dahan");
+//                andamItems.add("bini");
+//                andamItems.add("zaban");
+//                andamItems.add("dandan");
+//                andamItems.add("abroo");
+//
+//                remianedItems = new ArrayList<>();
+//                for (int i = 0; i < andamItems.size(); i++) {
+//                    if (i != selectedItem1 && i != selectedItem2)
+//                        remianedItems.add(andamItems.get(i));
+//                }
+//
+//                Log.d("rand", answerPos + " " + selectedItem1 + " " + selectedItem2);
+//                if (answerPos == 0) {
+//                    Log.d("rand1", "rand1");
+//                    setVoiceImage(word1, selectedItem1, category);
+//                    setImage(word2, selectedItem2);
+//                    word1.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            startRotateAnimation(word1, "andam");
+//                            tashvigh.start();
+//
+//                        }
+//                    });
+//                    word2.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            payMoreAttention.start();
+//                        }
+//                    });
+//                } else if (answerPos == 1) {
+//                    Log.d("rand2", "rand2");
+//                    setVoiceImage(word2, selectedItem1, category);
+//                    setImage(word1, selectedItem2);
+//                    word2.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            startRotateAnimation(word2, "andam");
+//                            tashvigh.start();
+//
+//                        }
+//                    });
+//                    word1.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            payMoreAttention.start();
+//                        }
+//                    });
+//                }
+////                word1.setImageResource(R.drawable.balloon_baba);
+////                word2.setImageResource(R.drawable.balloon_maman);
+//                startAnimation();
+////                wordVoice = MediaPlayer.create(this, R.raw.baba_ko);
+//                wordVoice.start();
+////                word1.setOnClickListener(new View.OnClickListener() {
+////                    @Override
+////                    public void onClick(View v) {
+////                        startRotateAnimation("khanevade");
+////                        tashvigh.start();
+////
+////                    }
+////                });
+////                word2.setOnClickListener(new View.OnClickListener() {
+////                    @Override
+////                    public void onClick(View v) {
+////                        payMoreAttention.start();
+////                    }
+////                });
+//
+//                break;
         }
 
     }
+
+    void setVoiceImage(ImageView image, int index, String category) {
+        switch (category) {
+            case "khanevade":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tbaba);
+                        wordVoice = MediaPlayer.create(this, R.raw.football_baba);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tmaman);
+                        wordVoice = MediaPlayer.create(this, R.raw.football_maman);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.tkhahar);
+                        wordVoice = MediaPlayer.create(this, R.raw.football_khahar);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.tbaradar);
+                        wordVoice = MediaPlayer.create(this, R.raw.football_dadash);
+                        break;
+                }
+                break;
+//            case "andam":
+//                switch (index) {
+//                    case 0:
+//                        image.setImageResource(R.drawable.balloon_cheshm);
+//                        wordVoice = MediaPlayer.create(this, R.raw.cheshm_ko);
+//                        break;
+//                    case 1:
+//                        image.setImageResource(R.drawable.balloon_dast);
+//                        wordVoice = MediaPlayer.create(this, R.raw.dast_ko);
+//                        break;
+//                    case 2:
+//                        image.setImageResource(R.drawable.balloon_paa);
+//                        wordVoice = MediaPlayer.create(this, R.raw.paa_ko);
+//                        break;
+//                    case 3:
+//                        image.setImageResource(R.drawable.balloon_goosh);
+//                        wordVoice = MediaPlayer.create(this, R.raw.goosh_ko);
+//                        break;
+//                    case 4:
+//                        image.setImageResource(R.drawable.balloon_mo);
+//                        wordVoice = MediaPlayer.create(this, R.raw.mo_ko);
+//                        break;
+//                    case 5:
+//                        image.setImageResource(R.drawable.balloon_dahan);
+//                        wordVoice = MediaPlayer.create(this, R.raw.dahan_ko);
+//                        break;
+//                    case 6:
+//                        image.setImageResource(R.drawable.balloon_bini);
+//                        wordVoice = MediaPlayer.create(this, R.raw.bini_ko);
+//                        break;
+//                    case 7:
+//                        image.setImageResource(R.drawable.balloon_zaban);
+//                        wordVoice = MediaPlayer.create(this, R.raw.zaban_ko);
+//                        break;
+//                    case 8:
+//                        image.setImageResource(R.drawable.balloon_dandan);
+//                        wordVoice = MediaPlayer.create(this, R.raw.dandan_ko);
+//                        break;
+//                    case 9:
+//                        image.setImageResource(R.drawable.balloon_abroo);
+//                        wordVoice = MediaPlayer.create(this, R.raw.dandan_ko);
+//                        break;
+//                }
+//                break;
+
+        }
+    }
+
+    void setImage(ImageView image, int index) {
+        switch (index) {
+            case 0:
+                image.setImageResource(R.drawable.tbaba);
+                break;
+            case 1:
+                image.setImageResource(R.drawable.tmaman);
+                break;
+            case 2:
+                image.setImageResource(R.drawable.tkhahar);
+                break;
+            case 3:
+                image.setImageResource(R.drawable.tbaradar);
+                break;
+        }
+
+    }
+
+//    private void handleIntent1() {
+//        Intent intent = getIntent();
+//        category = intent.getStringExtra("category");
+//        switch (category) {
+//            case "khanevade":
+//                pic1.setImageResource(R.drawable.tbaradar);
+//                pic2.setImageResource(R.drawable.tkhahar);
+//                mediaPlayerRahnama.start();
+//                pic1.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        tashvigh.start();
+//                        animator.setFloatValues(0, -field.getWidth() / 2 + 30);
+//                        animator.start();
+//                    }
+//                });
+//                pic2.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        payMoreAttention.start();
+////                        animator.setFloatValues(0, field.getWidth()/2-10);
+////                        animator.start();
+//                    }
+//                });
+
+//
+//                break;
+//            default:
+//                break;
+//
+//        }
+//
+//    }
 
     private void setListeners() {
 //        new Handler().postDelayed(new Runnable() {
 //            @Override
 //            public void run() {
-//                animator.setFloatValues(imView1.getX() + 500, imView1.getX());
-//                animator.start();
+////                animator.setFloatValues(pic1.getX() + 500, pic1.getX());
+////                animator.start();
 //            }
 //        }, 500);
 

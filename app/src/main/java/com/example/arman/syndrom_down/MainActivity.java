@@ -6,13 +6,18 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
-
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 
 
 public class MainActivity extends ActionBarActivity {
     private ImageView imViewAmoozesh;
     private ImageView imViewBazi;
     private Toolbar toolbar;
+    private PopupWindow popUp;
+    private ImageView guide;
+    private LinearLayout mainLayout;
+    private ImageView imGuide;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +28,10 @@ public class MainActivity extends ActionBarActivity {
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
 
+
         imViewAmoozesh = (ImageView) findViewById(R.id.imViewAmoozesh);
         imViewBazi = (ImageView) findViewById(R.id.imViewBazi);
+
 
         imViewAmoozesh.setOnClickListener(new View.OnClickListener() {
             @Override

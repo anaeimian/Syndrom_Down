@@ -1,7 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:id="@+id/mainLayout">
    <ImageView
        android:layout_width="160dp"
        android:layout_height="160dp"
@@ -39,4 +40,17 @@
         android:id="@+id/test"
         android:visibility="invisible"
         />
+    <ImageView
+        android:id="@+id/guide"
+        android:layout_width="75dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/guide" />
+
+    <!--<ImageView-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:id="@+id/imGuide"-->
+        <!--android:src="@drawable/tbaba"/>-->
 </RelativeLayout>

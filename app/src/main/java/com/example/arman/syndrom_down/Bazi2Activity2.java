@@ -10,6 +10,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 /**
  * Created by Szamani on 1/1/2016.
  */
@@ -23,10 +26,11 @@ public class Bazi2Activity2 extends ActionBarActivity {
     private ImageView pic2;
     private float ballX = 0;
     private ObjectAnimator animator;
-
-    private MediaPlayer mediaPlayerRahnama;
+    private String category;
+    private MediaPlayer wordVoice;
     private MediaPlayer payMoreAttention;
     private MediaPlayer tashvigh;
+    private ArrayList<String> remainedItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +48,7 @@ public class Bazi2Activity2 extends ActionBarActivity {
 //        goal2 = (ImageView) findViewById(R.id.goal2);
         pic1 = (ImageView) findViewById(R.id.pic1);
         pic2 = (ImageView) findViewById(R.id.pic2);
-        mediaPlayerRahnama = MediaPlayer.create(getApplicationContext(), R.raw.football_madar);
+        wordVoice = MediaPlayer.create(getApplicationContext(), R.raw.football_madar);
         tashvigh = MediaPlayer.create(getApplicationContext(), R.raw.afarin);
         payMoreAttention = MediaPlayer.create(getApplicationContext(), R.raw.pay_more_attention);
 //        Display display = getWindowManager().getDefaultDisplay();
@@ -69,28 +73,108 @@ public class Bazi2Activity2 extends ActionBarActivity {
 
     private void handleIntent() {
         Intent intent = getIntent();
-        String category = intent.getStringExtra("category");
+        category = intent.getStringExtra("category");
+        ArrayList<String> items = intent.getStringArrayListExtra("list");
+        Random random = new Random();
+        int answerPos = random.nextInt(2);
+
         switch (category) {
+
             case "khanevade":
-                pic1.setImageResource(R.drawable.tbaba);
-                pic2.setImageResource(R.drawable.tmaman);
-                mediaPlayerRahnama.start();
-                pic2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        tashvigh.start();
-                        animator.setFloatValues(0, field.getWidth() / 2 - 30);
-                        animator.start();
-                    }
-                });
-                pic1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        payMoreAttention.start();
-//                        animator.setFloatValues(0, field.getWidth()/2-10);
-//                        animator.start();
-                    }
-                });
+                int selectedItem1 = random.nextInt(items.size());
+                int selectedItem2 = random.nextInt(items.size());
+                while (selectedItem1 == selectedItem2) {
+                    selectedItem2 = random.nextInt(items.size());
+                }
+                for (int i = 0; i < items.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remainedItems.add(items.get(i));
+                }
+                switch (items.get(selectedItem1)) {
+                    case "baba":
+                        pic1.setImageResource(R.drawable.tbaba);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.football_baba);
+                        }
+                        break;
+                    case "maman":
+                        pic1.setImageResource(R.drawable.tmaman);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.football_maman);
+                        }
+                        break;
+
+                    case "khahar":
+                        pic1.setImageResource(R.drawable.tkhahar);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.football_khahar);
+                        }
+                        break;
+                    case "dadash":
+                        pic1.setImageResource(R.drawable.tbaradar);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.football_dadash);
+                        }
+                        break;
+                }
+                switch (items.get(selectedItem2)) {
+                    case "baba":
+                        pic2.setImageResource(R.drawable.tbaba);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.football_baba);
+                        }
+                        break;
+                    case "maman":
+                        pic2.setImageResource(R.drawable.tmaman);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.football_maman);
+                        }
+                        break;
+                    case "khahar":
+                        pic2.setImageResource(R.drawable.tkhahar);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.football_khahar);
+                        }
+                        break;
+                    case "dadash":
+                        pic2.setImageResource(R.drawable.tbaradar);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.football_dadash);
+                        }
+                        break;
+                }
+                wordVoice.start();
+                if (answerPos == 0) {
+                    pic1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            animator.setFloatValues(0, -field.getWidth() / 2 + 30);
+                            animator.start();
+                            tashvigh.start();
+                        }
+                    });
+                    pic2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                } else if (answerPos == 1) {
+                    pic2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            animator.setFloatValues(0, field.getWidth() / 2 - 30);
+                            animator.start();
+                            tashvigh.start();
+                        }
+                    });
+                    pic1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                }
                 animator.addListener(new Animator.AnimatorListener() {
                     @Override
                     public void onAnimationStart(Animator animation) {
@@ -101,7 +185,8 @@ public class Bazi2Activity2 extends ActionBarActivity {
                     public void onAnimationEnd(Animator animation) {
                         ball.setVisibility(View.INVISIBLE);
                         Intent intent = new Intent(Bazi2Activity2.this, BaziListActivity.class);
-                        intent.putExtra("gameType", "football");
+                        intent.putExtra("category", category);
+                        intent.putStringArrayListExtra("list", remainedItems);
                         startActivity(intent);
 //                mediaPlayerTashvigh.start();
                     }
@@ -116,14 +201,67 @@ public class Bazi2Activity2 extends ActionBarActivity {
 
                     }
                 });
-
-                break;
-            default:
-                break;
-
         }
-
     }
+
+
+//    private void handleIntent1() {
+//        Intent intent = getIntent();
+//        String category = intent.getStringExtra("category");
+//        switch (category) {
+//            case "khanevade":
+//                pic1.setImageResource(R.drawable.tbaba);
+//                pic2.setImageResource(R.drawable.tmaman);
+//                mediaPlayerRahnama.start();
+//                pic2.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        tashvigh.start();
+//                        animator.setFloatValues(0, field.getWidth() / 2 - 30);
+//                        animator.start();
+//                    }
+//                });
+//                pic1.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        payMoreAttention.start();
+////                        animator.setFloatValues(0, field.getWidth()/2-10);
+////                        animator.start();
+//                    }
+//                });
+//                animator.addListener(new Animator.AnimatorListener() {
+//                    @Override
+//                    public void onAnimationStart(Animator animation) {
+//                        ball.setVisibility(View.VISIBLE);
+//                    }
+//
+//                    @Override
+//                    public void onAnimationEnd(Animator animation) {
+//                        ball.setVisibility(View.INVISIBLE);
+//                        Intent intent = new Intent(Bazi2Activity2.this, BaziListActivity.class);
+//                        intent.putExtra("gameType", "football");
+//                        startActivity(intent);
+////                mediaPlayerTashvigh.start();
+//                    }
+//
+//                    @Override
+//                    public void onAnimationCancel(Animator animation) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onAnimationRepeat(Animator animation) {
+//
+//                    }
+//                });
+//
+//                break;
+//            default:
+//                break;
+//
+//        }
+//
+//    }
 
     private void setListeners() {
 //        new Handler().postDelayed(new Runnable() {
