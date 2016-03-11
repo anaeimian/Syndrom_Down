@@ -7,20 +7,22 @@
     tools:context="com.example.arman.syndrom_down.LoghatGeneralActivity4">
 
     <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:src="@drawable/imbaba"
         android:id="@+id/word"
+        android:layout_centerVertical="true"
         android:layout_alignTop="@+id/arrow"
         android:layout_toRightOf="@+id/arrow"
         android:layout_toEndOf="@+id/arrow"
-        android:layout_marginLeft="60dp"
-        android:layout_marginStart="52dp" />
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp" />
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="120dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:src="@drawable/arrow1"
         android:id="@+id/arrow"
+        android:layout_centerVertical="true"
         android:layout_alignTop="@+id/sabad"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="30dp"/>

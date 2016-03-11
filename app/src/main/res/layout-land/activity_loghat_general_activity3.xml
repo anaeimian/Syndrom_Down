@@ -7,30 +7,34 @@
     tools:context="com.example.arman.syndrom_down.LoghatGeneralActivity3">
 
     <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:src="@drawable/imbaba"
         android:id="@+id/fatherimg"
-        android:layout_alignTop="@+id/arrow"
+        android:layout_centerVertical="true"
         android:layout_toRightOf="@+id/arrow"
-        android:layout_toEndOf="@+id/arrow" />
+        android:layout_toEndOf="@+id/arrow"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
+        />
     <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="170dp"
+        android:layout_height="150dp"
         android:src="@drawable/arrow1"
         android:id="@+id/arrow"
+        android:layout_centerVertical="true"
         android:layout_alignTop="@+id/father"
         android:layout_centerHorizontal="true" />
     <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@drawable/imbaba"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/tbaba"
         android:id="@+id/father"
         android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="109dp"
-        android:layout_marginStart="109dp" />
+        android:layout_toLeftOf="@+id/arrow"
+        android:layout_toStartOf="@+id/arrow"
+        android:layout_marginRight="50dp"
+        android:layout_marginEnd="50dp"/>
 
 
 </RelativeLayout>
