@@ -1,5 +1,6 @@
 package com.example.arman.syndrom_down;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 
 
@@ -19,6 +21,8 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
     int passClicked = 0;
     String category = "";
     int position = 0;
+    Dialog settingsDialog;
+    private ImageView guide;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,18 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
         setViews();
         controller();
         inchie.start();
+
+        guide = (ImageView) findViewById(R.id.guide);
+        settingsDialog = new Dialog(this);
+        settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.dialog_layout3, null));
+        guide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                settingsDialog.show();
+            }
+        });
     }
 
     @Override

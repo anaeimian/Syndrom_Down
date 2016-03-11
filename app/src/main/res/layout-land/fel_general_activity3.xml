@@ -1,34 +1,39 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.arman.syndrom_down.FelGeneralActivity3">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="120dp"
-        android:src="@drawable/imbede"
         android:id="@+id/verbImg"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_alignTop="@+id/arrow"
+        android:layout_marginLeft="20dp"
+        android:layout_toEndOf="@+id/arrow"
         android:layout_toRightOf="@+id/arrow"
-        android:layout_toEndOf="@+id/arrow" />
+        android:src="@drawable/imbede" />
+
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="120dp"
-        android:src="@drawable/arrow1"
         android:id="@+id/arrow"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:layout_alignTop="@+id/verb"
-        android:layout_centerHorizontal="true" />
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="120dp"
-        android:src="@drawable/imbaba"
-        android:id="@+id/verb"
+        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="109dp"
-        android:layout_marginStart="109dp" />
+        android:src="@drawable/arrow1" />
+
+    <ImageView
+        android:id="@+id/verb"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/arrow"
+        android:layout_toStartOf="@+id/arrow"
+        android:src="@drawable/imbaba" />
 </RelativeLayout>

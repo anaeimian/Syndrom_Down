@@ -1,5 +1,6 @@
 package com.example.arman.syndrom_down;
 
+import android.app.Dialog;
 import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.Color;
@@ -11,6 +12,7 @@ import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
@@ -25,6 +27,8 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
     String category = "";
     MediaPlayer sabadVoice;
     int position = 0;
+    Dialog settingsDialog;
+    private ImageView guide;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,18 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
         controller();
         setViews();
         sabadVoice.start();
+        guide = (ImageView) findViewById(R.id.guide);
+        settingsDialog = new Dialog(this);
+        settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.dialog_layout3, null));
+        guide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                settingsDialog.show();
+            }
+        });
+
     }
 
     private void setViews() {
