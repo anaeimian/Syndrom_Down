@@ -24,7 +24,7 @@ public class AmoozeshActivity extends ActionBarActivity {
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
 
-     imViewLoghat = (ImageView) findViewById(R.id.imViewLoghat);
+        imViewLoghat = (ImageView) findViewById(R.id.imViewLoghat);
         imViewJomle = (ImageView) findViewById(R.id.imViewJomle);
 
         imViewLoghat.setOnClickListener(new View.OnClickListener() {
@@ -44,5 +44,12 @@ public class AmoozeshActivity extends ActionBarActivity {
         });
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        Intent intent = new Intent(AmoozeshActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }

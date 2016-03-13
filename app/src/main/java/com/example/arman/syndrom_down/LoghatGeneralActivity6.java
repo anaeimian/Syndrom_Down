@@ -17,7 +17,8 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
     ImageView pass;
     ImageView fail;
     MediaPlayer inchie;
-    MediaPlayer failSound;
+    MediaPlayer payMoreAttention;
+    MediaPlayer tashvigh;
     int passClicked = 0;
     String category = "";
     int position = 0;
@@ -32,7 +33,8 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
         pass = (ImageView) findViewById(R.id.pass);
         fail = (ImageView) findViewById(R.id.fail);
         inchie = MediaPlayer.create(getApplicationContext(), R.raw.inchie);
-        failSound = MediaPlayer.create(getApplicationContext(), R.raw.fail);
+        payMoreAttention = MediaPlayer.create(getApplicationContext(), R.raw.pay_more_attention);
+        tashvigh = MediaPlayer.create(getApplicationContext(), R.raw.afarin);
         setViews();
         controller();
         inchie.start();
@@ -72,11 +74,18 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        Intent intent = new Intent(LoghatGeneralActivity6.this, LoghatActivity.class);
+        startActivity(intent);
+    }
+
     void controller() {
         fail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                failSound.start();
+                payMoreAttention.start();
             }
         });
 
@@ -85,37 +94,48 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
             public void onClick(View v) {
                 Intent intent = null;
                 passClicked++;
+                tashvigh.start();
                 if (passClicked >= 4) {
                     switch (category) {
                         case "khanevade":
                             intent = new Intent(LoghatGeneralActivity6.this, KhanevadeActivity.class);
+                            passSection();
                             break;
                         case "andam":
                             intent = new Intent(LoghatGeneralActivity6.this, AndamActivity.class);
+                            passSection();
                             break;
                         case "miveh":
                             intent = new Intent(LoghatGeneralActivity6.this, MiveActivity.class);
+                            passSection();
                             break;
                         case "heyvanat":
                             intent = new Intent(LoghatGeneralActivity6.this, HeyvanatActivity.class);
+                            passSection();
                             break;
                         case "pooshak":
                             intent = new Intent(LoghatGeneralActivity6.this, PooshakActivity.class);
+                            passSection();
                             break;
                         case "vasayel":
                             intent = new Intent(LoghatGeneralActivity6.this, VasayelActivity.class);
+                            passSection();
                             break;
                         case "mashaghel":
                             intent = new Intent(LoghatGeneralActivity6.this, MashaghelActivity.class);
+                            passSection();
                             break;
                         case "rang":
                             intent = new Intent(LoghatGeneralActivity6.this, RangActivity.class);
+                            passSection();
                             break;
                         case "khordani":
                             intent = new Intent(LoghatGeneralActivity6.this, KhordaniActivity.class);
+                            passSection();
                             break;
                         case "mafahim":
                             intent = new Intent(LoghatGeneralActivity6.this, MafahimActivity.class);
+                            passSection();
                             break;
                     }
                     intent.putExtra("position", "0");
@@ -123,6 +143,67 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
                 }
             }
         });
+    }
+
+    private void passSection() {
+        int i = 0;
+//        active = true;
+
+        switch (category) {
+            case "khanevade":
+                while (i < Utils.database.khanevade.length &&
+                        Utils.database.khanevade[++i]) ;
+                Utils.database.khanevade[i] = true;
+                break;
+            case "andam":
+                while (i < Utils.database.andam.length &&
+                        Utils.database.andam[++i]) ;
+                Utils.database.andam[i] = true;
+                break;
+            case "miveh":
+                while (i < Utils.database.mive.length &&
+                        Utils.database.mive[++i]) ;
+                Utils.database.mive[i] = true;
+                break;
+            case "heyvanat":
+                while (i < Utils.database.heyvanat.length &&
+                        Utils.database.heyvanat[++i]) ;
+                Utils.database.heyvanat[i] = true;
+                break;
+            case "pooshak":
+                while (i < Utils.database.pooshak.length &&
+                        Utils.database.pooshak[++i]) ;
+                Utils.database.pooshak[i] = true;
+                break;
+            case "vasayel":
+                while (i < Utils.database.vasayel.length &&
+                        Utils.database.vasayel[++i]) ;
+                Utils.database.vasayel[i] = true;
+                break;
+            case "mashaghel":
+                while (i < Utils.database.mashaghel.length &&
+                        Utils.database.mashaghel[++i]) ;
+                Utils.database.mashaghel[i] = true;
+                break;
+            case "rang":
+                while (i < Utils.database.rang.length &&
+                        Utils.database.rang[++i]) ;
+                Utils.database.rang[i] = true;
+                break;
+            case "khordani":
+                while (i < Utils.database.khordani.length &&
+                        Utils.database.khordani[++i]) ;
+                Utils.database.khordani[i] = true;
+                break;
+            case "mafahim":
+                while (i < Utils.database.mafahim.length &&
+                        Utils.database.mafahim[++i]) ;
+                Utils.database.mafahim[i] = true;
+                break;
+        }
+
+        DatabaseAdapter.getInstance().saveDatabase(LoghatGeneralActivity6.this,
+                Utils.database);
     }
 
     private void setViews() {

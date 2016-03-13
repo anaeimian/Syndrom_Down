@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -49,7 +48,7 @@ public class KhanevadeActivity extends AppCompatActivity {
 //        items.add("khahar");
 
 //        adapter = new ListAdapterKhanevadeActivity(this, items);
-        handleIntent();
+//        handleIntent();
         adapter = new ListAdapterKhanevadeActivity(getApplicationContext(), items, indexEnable);
         listKhanevade.setAdapter(adapter);
         setListener();
@@ -64,17 +63,17 @@ public class KhanevadeActivity extends AppCompatActivity {
 //        String temp = b.getString("test");
 //        Log.d("test", temp);
 //    }
-    private void handleIntent() {
-        Intent intent = getIntent();
-        int position = -1;
-        String prevPosition = intent.getStringExtra("position");
-        if (prevPosition != null) {
-            Log.d("pos", prevPosition);
-            position = Integer.parseInt(prevPosition);
-        }
-        indexEnable = position;
-        Log.d("pos", position + "");
-    }
+//    private void handleIntent() {
+//        Intent intent = getIntent();
+//        int position = -1;
+//        String prevPosition = intent.getStringExtra("position");
+//        if (prevPosition != null) {
+//            Log.d("pos", prevPosition);
+//            position = Integer.parseInt(prevPosition);
+//        }
+//        indexEnable = position;
+//        Log.d("pos", position + "");
+//    }
 
     private void setListener() {
 //        int c = listKhanevade.getChildCount();
@@ -85,18 +84,18 @@ public class KhanevadeActivity extends AppCompatActivity {
         listKhanevade.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (!Utils.database.khanevade[position])
-//                    return;
+                if (!Utils.database.khanevade[position])
+                    return;
 
                 Intent intent = new Intent(KhanevadeActivity.this, LoghatGeneralActivity1.class);
                 intent.putExtra("category", "khanevade");
                 intent.putExtra("position", position + "");
 //                intent.putExtra(Utils.TYPE, 0);
 //                intent.putExtra(Utils.WHICH, position);
-//                if (Utils.database.khanevade[position + 1])
-//                    intent.putExtra(Utils.ACTIVE, true);
-//                else intent.putExtra(Utils.ACTIVE, false);
-//                intent.putExtra(Utils.NAME, adapter.getItem(position));
+                if (Utils.database.khanevade[position + 1])
+                    intent.putExtra(Utils.ACTIVE, true);
+                else intent.putExtra(Utils.ACTIVE, false);
+                intent.putExtra(Utils.NAME, adapter.getItem(position));
                 startActivity(intent);
             }
         });

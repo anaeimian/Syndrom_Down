@@ -7,7 +7,6 @@ import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,15 +24,18 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
     ImageView arrow;
     int wordDragged = 0;
     MediaPlayer dragVoice;
+    MediaPlayer tashvigh;
     String category;
     int position = 0;
     Dialog settingsDialog;
     private ImageView guide;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loghat_general_activity2);
         dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.father_drag);
+        tashvigh = MediaPlayer.create(this, R.raw.afarin);
         setViews();
         controller();
         dragVoice.start();
@@ -436,6 +438,13 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        Intent intent = new Intent(LoghatGeneralActivity2.this, LoghatActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_loghat_general_activity2, menu);
@@ -479,23 +488,36 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
             public boolean onDrag(View v, DragEvent event) {
                 switch (event.getAction()) {
                     case DragEvent.ACTION_DRAG_ENTERED:
-                        Log.d("Slama", " Drag Entered");
                         v.setBackgroundColor(Color.LTGRAY);
                         break;
                     case DragEvent.ACTION_DRAG_EXITED:
-                        Log.d("Slama", " Drag Exited");
                         v.setBackgroundColor(Color.TRANSPARENT);
                         break;
                     case DragEvent.ACTION_DROP:
-                        Log.d("Slama", " Drag Dropped");
                         v.setBackgroundColor(Color.TRANSPARENT);
+                        tashvigh.start();
                         wordDragged++;
+                        if (wordDragged <= 3) {
 
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                public void onCompletion(MediaPlayer mp) {
+                                    if (wordDragged <= 3)
+                                        dragVoice.start();
+                                }
+                            });
+                        }
                         if (wordDragged >= 4) {
-                            Intent intent = new Intent(LoghatGeneralActivity2.this, LoghatGeneralActivity3.class);
-                            intent.putExtra("category", category);
-                            intent.putExtra("position", position + "");
-                            startActivity(intent);
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                public void onCompletion(MediaPlayer mp) {
+                                    if (wordDragged >= 4) {
+                                        Intent intent = new Intent(LoghatGeneralActivity2.this, LoghatGeneralActivity3.class);
+                                        intent.putExtra("category", category);
+                                        intent.putExtra("position", position + "");
+                                        startActivity(intent);
+                                    }
+                                }
+                            });
+
                         } else {
                             //mediaPlayerTashvigh.start();
                         }

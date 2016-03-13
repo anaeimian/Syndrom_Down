@@ -25,6 +25,7 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
     ImageView arrow;
     int wordDragged = 0;
     MediaPlayer dragVoice;
+    MediaPlayer tashvigh;
     String category = "";
     int position = 0;
     Dialog settingsDialog;
@@ -39,6 +40,7 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
         wordImg = (ImageView) findViewById(R.id.fatherimg);
         arrow = (ImageView) findViewById(R.id.arrow);
         dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.father_drag);
+        tashvigh = MediaPlayer.create(getApplicationContext(), R.raw.afarin);
 
         guide = (ImageView) findViewById(R.id.guide);
         settingsDialog = new Dialog(this);
@@ -449,6 +451,13 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        Intent intent = new Intent(LoghatGeneralActivity3.this, LoghatActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -493,16 +502,29 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
                         v.setBackgroundColor(Color.TRANSPARENT);
                         break;
                     case DragEvent.ACTION_DROP:
-                        Log.d("Slama", " Drag Dropped");
                         v.setBackgroundColor(Color.TRANSPARENT);
+                        tashvigh.start();
                         wordDragged++;
-
+                        if (wordDragged <= 3) {
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                public void onCompletion(MediaPlayer mp) {
+                                    if (wordDragged <= 3)
+                                        dragVoice.start();
+                                }
+                            });
+                        }
                         if (wordDragged >= 4) {
-                            Intent intent = new Intent(LoghatGeneralActivity3.this, LoghatGeneralActivity4.class);
-                            intent.putExtra("category", category);
-                            intent.putExtra("position", position + "");
-                            startActivity(intent);
-//                            wordDrag.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                public void onCompletion(MediaPlayer mp) {
+                                    if (wordDragged >= 4) {
+                                        Intent intent = new Intent(LoghatGeneralActivity3.this, LoghatGeneralActivity4.class);
+                                        intent.putExtra("category", category);
+                                        intent.putExtra("position", position + "");
+                                        startActivity(intent);
+                                    }
+                                }
+                            });
+
                         } else {
                             //mediaPlayerTashvigh.start();
                         }

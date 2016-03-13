@@ -63,6 +63,13 @@ public class LoghatActivity extends ActionBarActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        Intent intent = new Intent(LoghatActivity.this, AmoozeshActivity.class);
+        startActivity(intent);
+    }
+
     private void setListener() {
         listLoghat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

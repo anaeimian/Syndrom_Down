@@ -17,12 +17,14 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
     ImageView pass;
     ImageView fail;
     MediaPlayer shapeShows;
-    MediaPlayer failSound;
+    MediaPlayer payMoreAttention;
+    MediaPlayer tashvigh;
     int passClicked = 0;
     String category = "";
     int position = 0;
     Dialog settingsDialog;
     private ImageView guide;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +34,9 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
         pass = (ImageView) findViewById(R.id.pass);
         fail = (ImageView) findViewById(R.id.fail);
         shapeShows = MediaPlayer.create(getApplicationContext(), R.raw.shapeshows);
-        failSound = MediaPlayer.create(getApplicationContext(), R.raw.fail);
+        payMoreAttention = MediaPlayer.create(getApplicationContext(), R.raw.pay_more_attention);
         shapeShows.start();
+        tashvigh = MediaPlayer.create(this, R.raw.afarin);
         setViews();
         controller();
 
@@ -73,16 +76,17 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
     }
 
     @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        failSound.start();
+    public void onBackPressed() {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        Intent intent = new Intent(LoghatGeneralActivity5.this, LoghatActivity.class);
+        startActivity(intent);
     }
 
     void controller() {
         fail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                failSound.start();
+                payMoreAttention.start();
             }
         });
 
@@ -90,6 +94,7 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 passClicked++;
+                tashvigh.start();
                 if (passClicked >= 4) {
                     Intent intent = new Intent(LoghatGeneralActivity5.this, LoghatGeneralActivity6.class);
                     intent.putExtra("category", category);

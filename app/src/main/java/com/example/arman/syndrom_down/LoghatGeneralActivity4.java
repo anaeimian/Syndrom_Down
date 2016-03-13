@@ -26,6 +26,7 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
     int wordDragged = 0;
     String category = "";
     MediaPlayer sabadVoice;
+    MediaPlayer tashvigh;
     int position = 0;
     Dialog settingsDialog;
     private ImageView guide;
@@ -37,6 +38,7 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
         word = (ImageView) findViewById(R.id.word);
         sabad = (ImageView) findViewById(R.id.sabad);
         arrow = (ImageView) findViewById(R.id.arrow);
+        tashvigh = MediaPlayer.create(this, R.raw.afarin);
         controller();
         setViews();
         sabadVoice.start();
@@ -52,6 +54,13 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        Intent intent = new Intent(LoghatGeneralActivity4.this, LoghatActivity.class);
+        startActivity(intent);
     }
 
     private void setViews() {
@@ -427,12 +436,25 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
                         Log.d("Slama", " Drag Dropped");
                         v.setBackgroundColor(Color.TRANSPARENT);
                         wordDragged++;
-
+                        tashvigh.start();
+                        tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            public void onCompletion(MediaPlayer mp) {
+                                if (wordDragged <= 3)
+                                    sabadVoice.start();
+                            }
+                        });
                         if (wordDragged >= 4) {
-                            Intent intent = new Intent(LoghatGeneralActivity4.this, LoghatGeneralActivity5.class);
-                            intent.putExtra("category", category);
-                            intent.putExtra("position", position + "");
-                            startActivity(intent);
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                public void onCompletion(MediaPlayer mp) {
+                                    if (wordDragged >= 4) {
+                                        Intent intent = new Intent(LoghatGeneralActivity4.this, LoghatGeneralActivity5.class);
+                                        intent.putExtra("category", category);
+                                        intent.putExtra("position", position + "");
+                                        startActivity(intent);
+                                    }
+                                }
+                            });
+
                         } else {
                             //mediaPlayerTashvigh.start();
                         }

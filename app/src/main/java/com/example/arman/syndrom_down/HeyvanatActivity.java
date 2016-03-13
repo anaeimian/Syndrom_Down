@@ -59,18 +59,18 @@ public class HeyvanatActivity extends ActionBarActivity {
         listHeyvanat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (!Utils.database.heyvanat[position])
-//                    return;
+                if (!Utils.database.heyvanat[position])
+                    return;
 
                 Intent intent = new Intent(HeyvanatActivity.this, LoghatGeneralActivity1.class);
                 intent.putExtra("position", position + "");
                 intent.putExtra("category", "heyvanat");
 //                intent.putExtra(Utils.TYPE, 3);
 //                intent.putExtra(Utils.WHICH, position);
-//                if (Utils.database.heyvanat[position + 1])
-//                    intent.putExtra(Utils.ACTIVE, true);
-//                else intent.putExtra(Utils.ACTIVE, false);
-//                intent.putExtra(Utils.NAME, adapter.getItem(position));
+                if (Utils.database.heyvanat[position + 1])
+                    intent.putExtra(Utils.ACTIVE, true);
+                else intent.putExtra(Utils.ACTIVE, false);
+                intent.putExtra(Utils.NAME, adapter.getItem(position));
                 startActivity(intent);
             }
         });
