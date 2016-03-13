@@ -55,4 +55,10 @@ public class FelActivity extends ActionBarActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        Intent intent = new Intent(FelActivity.this, JomleActivity.class);
+        startActivity(intent);
+    }
 }

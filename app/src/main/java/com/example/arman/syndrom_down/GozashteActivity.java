@@ -60,8 +60,8 @@ public class GozashteActivity extends ActionBarActivity {
 //                    return;
 
                 Intent intent = new Intent(GozashteActivity.this, FelGeneralActivity1.class);
-                intent.putExtra("position",position+"");
-                intent.putExtra("category","gozashte");
+                intent.putExtra("position", position + "");
+                intent.putExtra("category", "gozashte");
 //                intent.putExtra(Utils.TYPE, 1);
 //                intent.putExtra(Utils.WHICH, position);
 //                if (Utils.database.gozashte[position + 1])
@@ -77,6 +77,13 @@ public class GozashteActivity extends ActionBarActivity {
     protected void onRestart() {
         super.onRestart();
         setListener();
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        Intent intent = new Intent(GozashteActivity.this, FelActivity.class);
+        startActivity(intent);
     }
 }
 

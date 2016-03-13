@@ -52,27 +52,33 @@ public class FelGeneralActivity4 extends ActionBarActivity {
                     case 0:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.bede_drag);
                         verb.setImageResource(R.drawable.tbede);
-                        verbImg.setImageResource(R.drawable.imbede);                        break;
+                        verbImg.setImageResource(R.drawable.imbede);
+                        break;
                     case 1:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.begir_drag);
                         verb.setImageResource(R.drawable.tbegir);
-                        verbImg.setImageResource(R.drawable.imbegir);                        break;
+                        verbImg.setImageResource(R.drawable.imbegir);
+                        break;
                     case 2:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.bia_drag);
                         verb.setImageResource(R.drawable.tbia);
-                        verbImg.setImageResource(R.drawable.imbia);                        break;
+                        verbImg.setImageResource(R.drawable.imbia);
+                        break;
                     case 3:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.beshin_drag);
                         verb.setImageResource(R.drawable.tbeshin);
-                        verbImg.setImageResource(R.drawable.imbeshin);                        break;
+                        verbImg.setImageResource(R.drawable.imbeshin);
+                        break;
                     case 4:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.beshor_drag);
                         verb.setImageResource(R.drawable.tbeshor);
-                        verbImg.setImageResource(R.drawable.imbeshour);                        break;
+                        verbImg.setImageResource(R.drawable.imbeshour);
+                        break;
                     case 5:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.bokhor_drag);
                         verb.setImageResource(R.drawable.tbokhor);
-                        verbImg.setImageResource(R.drawable.imbokhor);                        break;
+                        verbImg.setImageResource(R.drawable.imbokhor);
+                        break;
                 }
                 break;
             case "gozashte":
@@ -80,15 +86,18 @@ public class FelGeneralActivity4 extends ActionBarActivity {
                     case 0:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.raft_drag);
                         verb.setImageResource(R.drawable.traft);
-                        verbImg.setImageResource(R.drawable.imraft);                        break;
+                        verbImg.setImageResource(R.drawable.imraft);
+                        break;
                     case 1:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.khord_drag);
                         verb.setImageResource(R.drawable.tkhord);
-                        verbImg.setImageResource(R.drawable.imkhord);                        break;
+                        verbImg.setImageResource(R.drawable.imkhord);
+                        break;
                     case 2:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.khabid_drag);
                         verb.setImageResource(R.drawable.tkhabid);
-                        verbImg.setImageResource(R.drawable.imkhabid);                        break;
+                        verbImg.setImageResource(R.drawable.imkhabid);
+                        break;
                     case 3:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.parid_drag);
                         verb.setImageResource(R.drawable.tparid);
@@ -104,11 +113,13 @@ public class FelGeneralActivity4 extends ActionBarActivity {
                     case 0:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.khabidan_drag);
                         verb.setImageResource(R.drawable.tkhabidan);
-                        verbImg.setImageResource(R.drawable.imkhabidan);                        break;
+                        verbImg.setImageResource(R.drawable.imkhabidan);
+                        break;
                     case 1:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.shostan_drag);
                         verb.setImageResource(R.drawable.tshostan);
-                        verbImg.setImageResource(R.drawable.imshostan);                        break;
+                        verbImg.setImageResource(R.drawable.imshostan);
+                        break;
                     case 2:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.paridan_drag);
                         verb.setImageResource(R.drawable.tparidan);
@@ -116,15 +127,18 @@ public class FelGeneralActivity4 extends ActionBarActivity {
                     case 3:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.davidan_drag);
                         verb.setImageResource(R.drawable.tdavidan);
-                        verbImg.setImageResource(R.drawable.imdavidan);                        break;
+                        verbImg.setImageResource(R.drawable.imdavidan);
+                        break;
                     case 4:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.khordan_drag);
                         verb.setImageResource(R.drawable.tkhordan);
-                        verbImg.setImageResource(R.drawable.imkhordan);                        break;
+                        verbImg.setImageResource(R.drawable.imkhordan);
+                        break;
                     case 5:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.khandan_drag);
                         verb.setImageResource(R.drawable.tkhandan);
-                        verbImg.setImageResource(R.drawable.imkhaandan);                        break;
+                        verbImg.setImageResource(R.drawable.imkhaandan);
+                        break;
                 }
                 break;
             case "twowords":
@@ -132,7 +146,8 @@ public class FelGeneralActivity4 extends ActionBarActivity {
                     case 0:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.babayeman_drag);
                         verb.setImageResource(R.drawable.tbabayeman);
-                        verbImg.setImageResource(R.drawable.imbabayeman);                        break;
+                        verbImg.setImageResource(R.drawable.imbabayeman);
+                        break;
                     case 1:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.kafsheman_drag);
                         verb.setImageResource(R.drawable.tkafsheman);
@@ -144,19 +159,23 @@ public class FelGeneralActivity4 extends ActionBarActivity {
                     case 3:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.babayeto_drag);
                         verb.setImageResource(R.drawable.tbabayeto);
-                        verbImg.setImageResource(R.drawable.imbabayeto);                        break;
+                        verbImg.setImageResource(R.drawable.imbabayeto);
+                        break;
                     case 4:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.kafsheto_drag);
                         verb.setImageResource(R.drawable.tkafsheto);
-                        verbImg.setImageResource(R.drawable.imkafsheto);                        break;
+                        verbImg.setImageResource(R.drawable.imkafsheto);
+                        break;
                     case 5:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.toopeto_drag);
                         verb.setImageResource(R.drawable.ttoopeto);
-                        verbImg.setImageResource(R.drawable.imtoopeto);                        break;
+                        verbImg.setImageResource(R.drawable.imtoopeto);
+                        break;
                     case 6:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.shaneghermez_drag);
                         verb.setImageResource(R.drawable.tshaneghermez);
-                        verbImg.setImageResource(R.drawable.imshaneghermez);                        break;
+                        verbImg.setImageResource(R.drawable.imshaneghermez);
+                        break;
                     case 7:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.dokhtarekasif_drag);
                         verb.setImageResource(R.drawable.tdokhtarekasif);
@@ -197,19 +216,23 @@ public class FelGeneralActivity4 extends ActionBarActivity {
                     case 0:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.gorbeheivan_drag);
                         verb.setImageResource(R.drawable.tgorbeheivan);
-                        verbImg.setImageResource(R.drawable.imgorbeheivan);                        break;
+                        verbImg.setImageResource(R.drawable.imgorbeheivan);
+                        break;
                     case 1:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.abirangast_drag);
                         verb.setImageResource(R.drawable.tabirangast);
-                        verbImg.setImageResource(R.drawable.imtabirangast);                        break;
+                        verbImg.setImageResource(R.drawable.imtabirangast);
+                        break;
                     case 2:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.mozmiveast_drag);
                         verb.setImageResource(R.drawable.tmozmiveast);
-                        verbImg.setImageResource(R.drawable.immozmiveast);                        break;
+                        verbImg.setImageResource(R.drawable.immozmiveast);
+                        break;
                     case 3:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.pesarmadrese_drag);
                         verb.setImageResource(R.drawable.tpesarmadrese);
-                        verbImg.setImageResource(R.drawable.impesarmadrese);                        break;
+                        verbImg.setImageResource(R.drawable.impesarmadrese);
+                        break;
                 }
                 break;
             case "zamir":
@@ -303,5 +326,12 @@ public class FelGeneralActivity4 extends ActionBarActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        Intent intent = new Intent(FelGeneralActivity4.this, FelActivity.class);
+        startActivity(intent);
     }
 }

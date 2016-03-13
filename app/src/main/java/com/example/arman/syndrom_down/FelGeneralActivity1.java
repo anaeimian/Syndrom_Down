@@ -247,6 +247,13 @@ public class FelGeneralActivity1 extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        Intent intent = new Intent(FelGeneralActivity1.this, FelActivity.class);
+        startActivity(intent);
+    }
+
     void controller() {
         pass.setOnClickListener(new View.OnClickListener() {
             @Override

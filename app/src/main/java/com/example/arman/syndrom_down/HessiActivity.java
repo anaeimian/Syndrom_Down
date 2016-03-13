@@ -56,8 +56,8 @@ public class HessiActivity extends ActionBarActivity {
 //                    return;
 
                 Intent intent = new Intent(HessiActivity.this, FelGeneralActivity1.class);
-                intent.putExtra("position",position+"");
-                intent.putExtra("category","hessi");
+                intent.putExtra("position", position + "");
+                intent.putExtra("category", "hessi");
 //                intent.putExtra(Utils.TYPE, 2);
 //                intent.putExtra(Utils.WHICH, position);
 //                if (Utils.database.hessi[position + 1])
@@ -73,6 +73,13 @@ public class HessiActivity extends ActionBarActivity {
     protected void onRestart() {
         super.onRestart();
         setListener();
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        Intent intent = new Intent(HessiActivity.this, FelActivity.class);
+        startActivity(intent);
     }
 }
 

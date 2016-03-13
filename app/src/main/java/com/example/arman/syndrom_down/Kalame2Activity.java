@@ -1,6 +1,7 @@
 package com.example.arman.syndrom_down;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -69,6 +70,13 @@ public class Kalame2Activity extends ActionBarActivity {
 //                startActivity(intent);
 //            }
 //        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        Intent intent = new Intent(Kalame2Activity.this, JomleActivity.class);
+        startActivity(intent);
     }
 
     @Override
