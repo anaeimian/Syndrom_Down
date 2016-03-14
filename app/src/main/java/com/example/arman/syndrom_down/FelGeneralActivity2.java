@@ -16,6 +16,7 @@ public class FelGeneralActivity2 extends ActionBarActivity {
     private VideoView felVideo;
     private MediaPlayer felVoice;
     private MediaPlayer payMoreAttention;
+    private MediaPlayer tashvigh;
     ImageView pass;
     ImageView fail;
     int passclicked = 0;
@@ -29,6 +30,7 @@ public class FelGeneralActivity2 extends ActionBarActivity {
         setContentView(R.layout.fel_general_activity2);
         felVoice = MediaPlayer.create(getApplicationContext(), R.raw.inchie);
         payMoreAttention = MediaPlayer.create(this, R.raw.pay_more_attention);
+        tashvigh = MediaPlayer.create(this, R.raw.afarin);
         felVideo = (VideoView) findViewById(R.id.videoView);
         pass = (ImageView) findViewById(R.id.pass);
         fail = (ImageView) findViewById(R.id.fail);
@@ -226,12 +228,29 @@ public class FelGeneralActivity2 extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 passclicked++;
-                felVoice.start();
+                tashvigh.start();
+                if (passclicked <= 3)
+                    tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        public void onCompletion(MediaPlayer mp) {
+                            if (passclicked <= 3)
+                                felVoice.start();
+                        }
+                    });
+
+
                 if (passclicked >= 4) {
-                    Intent intent = new Intent(FelGeneralActivity2.this, FelGeneralActivity3.class);
-                    intent.putExtra("category", category);
-                    intent.putExtra("position", position + "");
-                    startActivity(intent);
+
+                    tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        public void onCompletion(MediaPlayer mp) {
+                            if (passclicked >= 4) {
+                                Intent intent = new Intent(FelGeneralActivity2.this, FelGeneralActivity3.class);
+                                intent.putExtra("category", category);
+                                intent.putExtra("position", position + "");
+                                startActivity(intent);
+                            }
+                        }
+                    });
+
                 }
             }
         });

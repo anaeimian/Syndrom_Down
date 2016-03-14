@@ -24,6 +24,7 @@ public class FelGeneralActivity3 extends ActionBarActivity {
     ImageView arrow;
     int verbDragged = 0;
     MediaPlayer verbDrag;
+    MediaPlayer tashvigh;
     int position;
     String category;
 
@@ -35,6 +36,7 @@ public class FelGeneralActivity3 extends ActionBarActivity {
         verb = (ImageView) findViewById(R.id.verb);
         verbImg = (ImageView) findViewById(R.id.verbImg);
         arrow = (ImageView) findViewById(R.id.arrow);
+        tashvigh = MediaPlayer.create(this, R.raw.afarin);
         controller();
         setViews();
         verbDrag.start();
@@ -109,7 +111,8 @@ public class FelGeneralActivity3 extends ActionBarActivity {
                     case 4:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.david_drag);
                         verb.setImageResource(R.drawable.tdavid);
-                        verbImg.setImageResource(R.drawable.imdavidan);                        break;
+                        verbImg.setImageResource(R.drawable.imdavidan);
+                        break;
                 }
                 break;
             case "hessi":
@@ -184,19 +187,23 @@ public class FelGeneralActivity3 extends ActionBarActivity {
                     case 7:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.dokhtarekasif_drag);
                         verb.setImageResource(R.drawable.tdokhtarekasif);
-                        verbImg.setImageResource(R.drawable.imdokhtarekasif);                        break;
+                        verbImg.setImageResource(R.drawable.imdokhtarekasif);
+                        break;
                     case 8:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.kafshekasif_drag);
                         verb.setImageResource(R.drawable.tkafshekasif);
-                        verbImg.setImageResource(R.drawable.imkafshekasif);                        break;
+                        verbImg.setImageResource(R.drawable.imkafshekasif);
+                        break;
                     case 9:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.dokhtaretamiz_drag);
                         verb.setImageResource(R.drawable.tcleangirl);
-                        verbImg.setImageResource(R.drawable.imdokhtaretamiz);                        break;
+                        verbImg.setImageResource(R.drawable.imdokhtaretamiz);
+                        break;
                     case 10:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.kafshetamiz_drag);
                         verb.setImageResource(R.drawable.tkafshetamiz);
-                        verbImg.setImageResource(R.drawable.imkafshetamiz);                        break;
+                        verbImg.setImageResource(R.drawable.imkafshetamiz);
+                        break;
                     case 11:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.abbedeh_drag);
                         verb.setImageResource(R.drawable.tabbedeh);
@@ -204,15 +211,18 @@ public class FelGeneralActivity3 extends ActionBarActivity {
                     case 12:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.babaraft_drag);
                         verb.setImageResource(R.drawable.tbabaraft);
-                        verbImg.setImageResource(R.drawable.imbabaraft);                        break;
+                        verbImg.setImageResource(R.drawable.imbabaraft);
+                        break;
                     case 13:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.babakhabid_drag);
                         verb.setImageResource(R.drawable.tbabakhabid);
-                        verbImg.setImageResource(R.drawable.imbabakhabid);                        break;
+                        verbImg.setImageResource(R.drawable.imbabakhabid);
+                        break;
                     case 14:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.bachebeshin_drag);
                         verb.setImageResource(R.drawable.tbachebeshin);
-                        verbImg.setImageResource(R.drawable.imbachebeshin);                        break;
+                        verbImg.setImageResource(R.drawable.imbachebeshin);
+                        break;
                 }
                 break;
 
@@ -245,11 +255,13 @@ public class FelGeneralActivity3 extends ActionBarActivity {
                     case 0:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.man_drag);
                         verb.setImageResource(R.drawable.tman);
-                        verbImg.setImageResource(R.drawable.imman);                        break;
+                        verbImg.setImageResource(R.drawable.imman);
+                        break;
                     case 1:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.to_drag);
                         verb.setImageResource(R.drawable.tto);
-                        verbImg.setImageResource(R.drawable.imto);                        break;
+                        verbImg.setImageResource(R.drawable.imto);
+                        break;
                 }
                 break;
 
@@ -320,23 +332,35 @@ public class FelGeneralActivity3 extends ActionBarActivity {
                         Log.d("Slama", " Drag Dropped");
                         v.setBackgroundColor(Color.TRANSPARENT);
                         verbDragged++;
-
-                        if (verbDragged >= 4) {
-                            Intent intent = null;
-                            switch (category) {
-                                case "amr":
-                                    intent = new Intent(FelGeneralActivity3.this, AmrActivity.class);
-                                    break;
-                                case "gozashte":
-                                    intent = new Intent(FelGeneralActivity3.this, GozashteActivity.class);
-                                    break;
-                                case "hessi":
-                                    intent = new Intent(FelGeneralActivity3.this, HessiActivity.class);
-                                    break;
+                        tashvigh.start();
+                        tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            public void onCompletion(MediaPlayer mp) {
+                                verbDrag.start();
                             }
-                            intent.putExtra("category", category);
-                            intent.putExtra("position", position + "");
-                            startActivity(intent);
+                        });
+                        if (verbDragged >= 4) {
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                public void onCompletion(MediaPlayer mp) {
+                                    if (verbDragged >= 4) {
+                                        Intent intent = null;
+                                        switch (category) {
+                                            case "amr":
+                                                intent = new Intent(FelGeneralActivity3.this, FelGeneralActivity4.class);
+                                                break;
+                                            case "gozashte":
+                                                intent = new Intent(FelGeneralActivity3.this, FelGeneralActivity4.class);
+                                                break;
+                                            case "hessi":
+                                                intent = new Intent(FelGeneralActivity3.this, FelGeneralActivity4.class);
+                                                break;
+                                        }
+                                        intent.putExtra("category", category);
+                                        intent.putExtra("position", position + "");
+                                        startActivity(intent);
+                                    }
+                                }
+                            });
+
 //                            wordDrag.start();
                         } else {
                             //mediaPlayerTashvigh.start();

@@ -81,6 +81,13 @@ public class HeyvanatActivity extends ActionBarActivity {
         super.onRestart();
         setListener();
     }
+
+    @Override
+    public void onBackPressed() {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        Intent intent = new Intent(HeyvanatActivity.this, LoghatActivity.class);
+        startActivity(intent);
+    }
 }
 
 class ListAdapterHeyvanatActivity extends ArrayAdapter<String> {
