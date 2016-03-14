@@ -82,7 +82,7 @@ public class FelGeneralActivity1 extends ActionBarActivity {
                         break;
                     case 2:
                         felVoice = MediaPlayer.create(getApplicationContext(), R.raw.khabid_voice);
-                        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.khabid_clip));
+                        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.khabidan_clip));
                         break;
                     case 3:
                         felVoice = MediaPlayer.create(getApplicationContext(), R.raw.parid_voice);
@@ -90,7 +90,7 @@ public class FelGeneralActivity1 extends ActionBarActivity {
                         break;
                     case 4:
                         felVoice = MediaPlayer.create(getApplicationContext(), R.raw.david_voice);
-                        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.david_clip));
+                        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.davidan_clip));
                         break;
                 }
                 break;
@@ -130,7 +130,7 @@ public class FelGeneralActivity1 extends ActionBarActivity {
                         break;
                     case 1:
                         felVoice = MediaPlayer.create(getApplicationContext(), R.raw.kafsheman_voice);
-//                        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.kafsheman_clip));
+                        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.kafsheman_clip));
                         break;
                     case 2:
                         felVoice = MediaPlayer.create(getApplicationContext(), R.raw.toopeman_voice);
@@ -158,7 +158,7 @@ public class FelGeneralActivity1 extends ActionBarActivity {
                         break;
                     case 8:
                         felVoice = MediaPlayer.create(getApplicationContext(), R.raw.kafshekasif_voice);
-//                        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.kafshekasif_clip));
+                        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.kafshekasif_clip));
                         break;
                     case 9:
                         felVoice = MediaPlayer.create(getApplicationContext(), R.raw.dokhtartamiz_voice);
@@ -166,7 +166,7 @@ public class FelGeneralActivity1 extends ActionBarActivity {
                         break;
                     case 10:
                         felVoice = MediaPlayer.create(getApplicationContext(), R.raw.kafshetamiz_voice);
-//                        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.kafshetamiz_clip));
+                        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.kafshetamiz_clip));
                         break;
                     case 11:
                         felVoice = MediaPlayer.create(getApplicationContext(), R.raw.abbedeh_voice);
