@@ -4,7 +4,7 @@
     android:orientation="vertical">
 
     <ImageView
-        android:layout_width="400dp"
-        android:layout_height="300dp"
-        android:src="@drawable/guidemsg" />
+        android:layout_width="500dp"
+        android:layout_height="200dp"
+        android:src="@drawable/kguide1" />
 </LinearLayout>
