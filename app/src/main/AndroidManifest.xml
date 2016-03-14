@@ -6,13 +6,12 @@
         android:allowBackup="true"
         android:icon="@mipmap/logo"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        android:largeHeap="true">
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
-            />
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SplashActivity"
             android:label="@string/app_name"
@@ -134,22 +133,28 @@
             android:screenOrientation="landscape"></activity>
         <activity
             android:name=".FelGeneralActivity4"
-            android:label="@string/title_activity_fel_general_activity4"></activity>
+            android:label="@string/title_activity_fel_general_activity4"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".BaziListActivity"
-            android:label="@string/title_activity_bazi2_list"></activity>
+            android:label="@string/title_activity_bazi2_list"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".Bazi2Activity2"
-            android:label="@string/title_activity_bazi2_activity2"></activity>
+            android:label="@string/title_activity_bazi2_activity2"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".Bazi2Activity3"
-            android:label="@string/title_activity_bazi2_activity3"></activity>
+            android:label="@string/title_activity_bazi2_activity3"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".Bazi2Activity4"
-            android:label="@string/title_activity_bazi2_activity4"></activity>
+            android:label="@string/title_activity_bazi2_activity4"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".Bazi1Activity2"
-            android:label="@string/title_activity_bazi1_activity2"></activity>
+            android:label="@string/title_activity_bazi1_activity2"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>

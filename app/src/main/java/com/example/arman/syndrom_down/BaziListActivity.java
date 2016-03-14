@@ -121,7 +121,7 @@ public class BaziListActivity extends ActionBarActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(BaziListActivity.this, Bazi1Activity.class);
+        Intent intent = new Intent(BaziListActivity.this, BaziActivity.class);
         intent.putExtra("category",category);
         startActivity(intent);
     }

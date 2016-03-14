@@ -24,6 +24,7 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
     int position = 0;
     Dialog settingsDialog;
     private ImageView guide;
+    Intent intent = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,8 +78,8 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
     @Override
     public void onBackPressed() {
         // Inflate the menu; this adds items to the action bar if it is present.
-        Intent intent = new Intent(LoghatGeneralActivity6.this, LoghatActivity.class);
-        startActivity(intent);
+        Intent intent1 = new Intent(LoghatGeneralActivity6.this, LoghatActivity.class);
+        startActivity(intent1);
     }
 
     void controller() {
@@ -92,55 +93,63 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
         pass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = null;
+
                 passClicked++;
                 tashvigh.start();
-                if (passClicked >= 4) {
-                    switch (category) {
-                        case "khanevade":
-                            intent = new Intent(LoghatGeneralActivity6.this, KhanevadeActivity.class);
-                            passSection();
-                            break;
-                        case "andam":
-                            intent = new Intent(LoghatGeneralActivity6.this, AndamActivity.class);
-                            passSection();
-                            break;
-                        case "miveh":
-                            intent = new Intent(LoghatGeneralActivity6.this, MiveActivity.class);
-                            passSection();
-                            break;
-                        case "heyvanat":
-                            intent = new Intent(LoghatGeneralActivity6.this, HeyvanatActivity.class);
-                            passSection();
-                            break;
-                        case "pooshak":
-                            intent = new Intent(LoghatGeneralActivity6.this, PooshakActivity.class);
-                            passSection();
-                            break;
-                        case "vasayel":
-                            intent = new Intent(LoghatGeneralActivity6.this, VasayelActivity.class);
-                            passSection();
-                            break;
-                        case "mashaghel":
-                            intent = new Intent(LoghatGeneralActivity6.this, MashaghelActivity.class);
-                            passSection();
-                            break;
-                        case "rang":
-                            intent = new Intent(LoghatGeneralActivity6.this, RangActivity.class);
-                            passSection();
-                            break;
-                        case "khordani":
-                            intent = new Intent(LoghatGeneralActivity6.this, KhordaniActivity.class);
-                            passSection();
-                            break;
-                        case "mafahim":
-                            intent = new Intent(LoghatGeneralActivity6.this, MafahimActivity.class);
-                            passSection();
-                            break;
+                tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        if (passClicked <= 3)
+                            inchie.start();
+                        if (passClicked >= 4) {
+                            switch (category) {
+                                case "khanevade":
+                                    intent = new Intent(LoghatGeneralActivity6.this, KhanevadeActivity.class);
+                                    passSection();
+                                    break;
+                                case "andam":
+                                    intent = new Intent(LoghatGeneralActivity6.this, AndamActivity.class);
+                                    passSection();
+                                    break;
+                                case "miveh":
+                                    intent = new Intent(LoghatGeneralActivity6.this, MiveActivity.class);
+                                    passSection();
+                                    break;
+                                case "heyvanat":
+                                    intent = new Intent(LoghatGeneralActivity6.this, HeyvanatActivity.class);
+                                    passSection();
+                                    break;
+                                case "pooshak":
+                                    intent = new Intent(LoghatGeneralActivity6.this, PooshakActivity.class);
+                                    passSection();
+                                    break;
+                                case "vasayel":
+                                    intent = new Intent(LoghatGeneralActivity6.this, VasayelActivity.class);
+                                    passSection();
+                                    break;
+                                case "mashaghel":
+                                    intent = new Intent(LoghatGeneralActivity6.this, MashaghelActivity.class);
+                                    passSection();
+                                    break;
+                                case "rang":
+                                    intent = new Intent(LoghatGeneralActivity6.this, RangActivity.class);
+                                    passSection();
+                                    break;
+                                case "khordani":
+                                    intent = new Intent(LoghatGeneralActivity6.this, KhordaniActivity.class);
+                                    passSection();
+                                    break;
+                                case "mafahim":
+                                    intent = new Intent(LoghatGeneralActivity6.this, MafahimActivity.class);
+                                    passSection();
+                                    break;
+                            }
+                            intent.putExtra("position", "0");
+                            startActivity(intent);
+                        }
                     }
-                    intent.putExtra("position", "0");
-                    startActivity(intent);
-                }
+                });
+
             }
         });
     }

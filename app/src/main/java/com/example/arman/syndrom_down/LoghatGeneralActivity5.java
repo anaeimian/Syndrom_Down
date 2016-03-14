@@ -95,12 +95,21 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
             public void onClick(View v) {
                 passClicked++;
                 tashvigh.start();
-                if (passClicked >= 4) {
-                    Intent intent = new Intent(LoghatGeneralActivity5.this, LoghatGeneralActivity6.class);
-                    intent.putExtra("category", category);
-                    intent.putExtra("position", position + "");
-                    startActivity(intent);
-                }
+                tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        if (passClicked <= 3)
+                            shapeShows.start();
+                        if (passClicked >= 4) {
+                            Intent intent = new Intent(LoghatGeneralActivity5.this, LoghatGeneralActivity6.class);
+                            intent.putExtra("category", category);
+                            intent.putExtra("position", position + "");
+                            startActivity(intent);
+                        }
+                    }
+                });
+
+
             }
         });
     }
