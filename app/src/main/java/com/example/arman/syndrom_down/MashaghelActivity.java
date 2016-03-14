@@ -71,6 +71,13 @@ public class MashaghelActivity extends ActionBarActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        Intent intent = new Intent(MashaghelActivity.this, LoghatActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
     protected void onRestart() {
         super.onRestart();
         setListener();

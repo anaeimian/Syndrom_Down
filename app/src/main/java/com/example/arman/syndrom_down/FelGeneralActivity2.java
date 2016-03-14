@@ -15,6 +15,7 @@ import android.widget.VideoView;
 public class FelGeneralActivity2 extends ActionBarActivity {
     private VideoView felVideo;
     private MediaPlayer felVoice;
+    private MediaPlayer payMoreAttention;
     ImageView pass;
     ImageView fail;
     int passclicked = 0;
@@ -27,6 +28,7 @@ public class FelGeneralActivity2 extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fel_general_activity2);
         felVoice = MediaPlayer.create(getApplicationContext(), R.raw.inchie);
+        payMoreAttention = MediaPlayer.create(this, R.raw.pay_more_attention);
         felVideo = (VideoView) findViewById(R.id.videoView);
         pass = (ImageView) findViewById(R.id.pass);
         fail = (ImageView) findViewById(R.id.fail);
@@ -224,6 +226,7 @@ public class FelGeneralActivity2 extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 passclicked++;
+                felVoice.start();
                 if (passclicked >= 4) {
                     Intent intent = new Intent(FelGeneralActivity2.this, FelGeneralActivity3.class);
                     intent.putExtra("category", category);
@@ -236,7 +239,7 @@ public class FelGeneralActivity2 extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 failclicked++;
-                felVoice.start();
+                payMoreAttention.start();
                 if (failclicked >= 3) {
                     Intent intent = new Intent(FelGeneralActivity2.this, FelGeneralActivity1.class);
                     intent.putExtra("category", category);

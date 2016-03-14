@@ -7,4 +7,7 @@
     <dimen name="main_margin">75dp</dimen>
     <dimen name="badkonak">300dp</dimen>
     <dimen name="football">300dp</dimen>
+    <dimen name="football_word_height">120dp</dimen>
+    <dimen name="football_word_width">90dp</dimen>
+    <dimen name="football_word_margin">82dp</dimen>
 </resources>

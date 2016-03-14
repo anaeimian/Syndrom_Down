@@ -134,7 +134,7 @@ public class Bazi1Activity extends ActionBarActivity {
 //                word2.setImageResource(R.drawable.balloon_maman);
                 startAnimation();
 //                wordVoice = MediaPlayer.create(this, R.raw.baba_ko);
-                wordVoice.start();
+
 //                word1.setOnClickListener(new View.OnClickListener() {
 //                    @Override
 //                    public void onClick(View v) {
@@ -409,6 +409,7 @@ public class Bazi1Activity extends ActionBarActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                wordVoice.start();
 //                imView0.setVisibility(View.INVISIBLE);
 //                mediaPlayerRahnama.start();
             }

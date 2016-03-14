@@ -69,7 +69,7 @@ public class AndamActivity extends ActionBarActivity {
                 if (!Utils.database.andam[position])
                     return;
                 Intent intent = new Intent(AndamActivity.this, LoghatGeneralActivity1.class);
-                intent.putExtra("category","andam");
+                intent.putExtra("category", "andam");
                 intent.putExtra("position", position + "");
 //                intent.putExtra(Utils.TYPE, 1);
 //                intent.putExtra(Utils.WHICH, position);
@@ -80,6 +80,13 @@ public class AndamActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        Intent intent = new Intent(AndamActivity.this, LoghatActivity.class);
+        startActivity(intent);
     }
 
     @Override

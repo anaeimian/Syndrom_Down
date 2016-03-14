@@ -64,7 +64,7 @@ public class PooshakActivity extends ActionBarActivity {
 //                    return;
 
                 Intent intent = new Intent(PooshakActivity.this, LoghatGeneralActivity1.class);
-                intent.putExtra("category","pooshak");
+                intent.putExtra("category", "pooshak");
                 intent.putExtra("position", position + "");
 //                intent.putExtra(Utils.TYPE, 4);
 //                intent.putExtra(Utils.WHICH, position);
@@ -75,6 +75,13 @@ public class PooshakActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        Intent intent = new Intent(PooshakActivity.this, LoghatActivity.class);
+        startActivity(intent);
     }
 
     @Override
