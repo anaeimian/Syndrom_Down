@@ -43,7 +43,7 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
         guide = (ImageView) findViewById(R.id.guide);
         settingsDialog = new Dialog(this);
         settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.dialog_layout3, null));
+        settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.dialog_layout5, null));
         guide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

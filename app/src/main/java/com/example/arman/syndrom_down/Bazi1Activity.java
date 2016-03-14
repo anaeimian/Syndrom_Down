@@ -29,6 +29,8 @@ public class Bazi1Activity extends ActionBarActivity {
 
     private ObjectAnimator animator1;
     private ObjectAnimator animator2;
+    private ObjectAnimator animator3;
+    private ObjectAnimator animator4;
 
     private MediaPlayer wordVoice;
     private MediaPlayer payMoreAttention;
@@ -61,6 +63,16 @@ public class Bazi1Activity extends ActionBarActivity {
         animator2.setTarget(word2);
         animator2.setPropertyName("translationY");
 
+        animator3 = new ObjectAnimator();
+        animator3.setDuration(1500);
+        animator3.setTarget(word1);
+        animator3.setPropertyName("translationY");
+
+        animator4 = new ObjectAnimator();
+        animator4.setDuration(1500);
+        animator4.setTarget(word2);
+        animator4.setPropertyName("translationY");
+
 //        setResources();
 //        setListeners();
         handleIntent();
@@ -76,6 +88,7 @@ public class Bazi1Activity extends ActionBarActivity {
         while (selectedItem2 == selectedItem1) {
             selectedItem2 = random.nextInt(4);
         }
+
         switch (category) {
             case "khanevade":
                 ArrayList<String> khanevadeItems;
@@ -102,6 +115,13 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word1, "khanevade");
                             tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator4.setFloatValues(0, 1000);
+                                    animator4.start();
+                                }
+                            }, 500);
 
                         }
                     });
@@ -120,6 +140,13 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word2, "khanevade");
                             tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator3.setFloatValues(0, 1000);
+                                    animator3.start();
+                                }
+                            }, 500);
 
                         }
                     });
@@ -181,6 +208,13 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word1, "andam");
                             tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator4.setFloatValues(0, 1000);
+                                    animator4.start();
+                                }
+                            }, 500);
 
                         }
                     });
@@ -199,6 +233,13 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word2, "andam");
                             tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator3.setFloatValues(0, 1000);
+                                    animator3.start();
+                                }
+                            }, 500);
 
                         }
                     });
@@ -213,7 +254,7 @@ public class Bazi1Activity extends ActionBarActivity {
 //                word2.setImageResource(R.drawable.balloon_maman);
                 startAnimation();
 //                wordVoice = MediaPlayer.create(this, R.raw.baba_ko);
-                wordVoice.start();
+//                wordVoice.start();
 //                word1.setOnClickListener(new View.OnClickListener() {
 //                    @Override
 //                    public void onClick(View v) {

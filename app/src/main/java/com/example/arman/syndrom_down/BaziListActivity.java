@@ -20,6 +20,7 @@ public class BaziListActivity extends ActionBarActivity {
     private ListAdapterLoghatActivity adapter;
     private Toolbar toolbar;
     Intent intent;
+    String category;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,5 +117,12 @@ public class BaziListActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(BaziListActivity.this, Bazi1Activity.class);
+        intent.putExtra("category",category);
+        startActivity(intent);
     }
 }
