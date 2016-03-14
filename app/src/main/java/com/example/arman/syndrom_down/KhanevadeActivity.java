@@ -90,8 +90,8 @@ public class KhanevadeActivity extends AppCompatActivity {
                 Intent intent = new Intent(KhanevadeActivity.this, LoghatGeneralActivity1.class);
                 intent.putExtra("category", "khanevade");
                 intent.putExtra("position", position + "");
-//                intent.putExtra(Utils.TYPE, 0);
-//                intent.putExtra(Utils.WHICH, position);
+                intent.putExtra(Utils.TYPE, 0);
+                intent.putExtra(Utils.WHICH, position);
                 if (Utils.database.khanevade[position + 1])
                     intent.putExtra(Utils.ACTIVE, true);
                 else intent.putExtra(Utils.ACTIVE, false);
@@ -100,6 +100,14 @@ public class KhanevadeActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        Intent intent = new Intent(KhanevadeActivity.this, LoghatActivity.class);
+        startActivity(intent);
+    }
+
 
     @Override
     protected void onRestart() {
