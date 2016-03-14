@@ -114,19 +114,15 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
                 switch (position) {
                     case 0:
                         wordImg.setImageResource(R.drawable.imbaba);
-//                        // = MediaPlayer.create(getApplicationContext(), R.raw.father_sabad);
                         break;
                     case 1:
                         wordImg.setImageResource(R.drawable.immadar);
-//                        // = MediaPlayer.create(getApplicationContext(), R.raw.madar_sabad);
                         break;
                     case 2:
                         wordImg.setImageResource(R.drawable.imkhahar);
-//                        // = MediaPlayer.create(getApplicationContext(), R.raw.khahar_sabad);
                         break;
                     case 3:
                         wordImg.setImageResource(R.drawable.imbaradar);
-//                        // = MediaPlayer.create(getApplicationContext(), R.raw.dadash_sabad);
                         break;
                     default:
                         break;
@@ -137,41 +133,31 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
                 switch (position) {
                     case 0:
                         wordImg.setImageResource(R.drawable.imcheshm);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.cheshm_sabad);
                         break;
                     case 1:
                         wordImg.setImageResource(R.drawable.imdast);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.dast_sabad);
                         break;
                     case 2:
                         wordImg.setImageResource(R.drawable.impaa);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.pa_sabad);
                         break;
                     case 3:
                         wordImg.setImageResource(R.drawable.imgoosh);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.gosh_sabad);
                         break;
                     case 4:
                         wordImg.setImageResource(R.drawable.immo);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.mo_sabad);
                         break;
                     case 5:
                         wordImg.setImageResource(R.drawable.imdahan);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.dahan_sabad);
                         break;
                     case 6:
                         wordImg.setImageResource(R.drawable.imdamagh);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.bini_sabad);
                         break;
                     case 7:
                         wordImg.setImageResource(R.drawable.imzaban);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.zaban_sabad);
                     case 8:
                         wordImg.setImageResource(R.drawable.imdandan);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.dandan_sabad);
                     case 9:
                         wordImg.setImageResource(R.drawable.imabroo);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.abro_sabad);
                         break;
                     default:
                         break;
@@ -181,23 +167,18 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
                 switch (position) {
                     case 0:
                         wordImg.setImageResource(R.drawable.immoz);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.moz_sabad);
                         break;
                     case 1:
                         wordImg.setImageResource(R.drawable.imsib);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.sib_sabad);
                         break;
                     case 2:
                         wordImg.setImageResource(R.drawable.imkhiar);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.khiar_sabad);
                         break;
                     case 3:
                         wordImg.setImageResource(R.drawable.importeqal);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.porteqal_sabad);
                         break;
                     case 4:
                         wordImg.setImageResource(R.drawable.imlimo);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.limo_sabad);
                         break;
                     default:
                         break;
@@ -208,27 +189,21 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
                 switch (position) {
                     case 0:
                         wordImg.setImageResource(R.drawable.imgorbe);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.gorbe_sabad);
                         break;
                     case 1:
                         wordImg.setImageResource(R.drawable.imsag);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.sag_sabad);
                         break;
                     case 2:
                         wordImg.setImageResource(R.drawable.imgav);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.sag_sabad);
                         break;
                     case 3:
                         wordImg.setImageResource(R.drawable.immahi);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.mahi_sabad);
                         break;
                     case 4:
                         wordImg.setImageResource(R.drawable.immorq);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.morq_sabad);
                         break;
                     case 5:
                         wordImg.setImageResource(R.drawable.imasb);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.asb_sabad);
                         break;
                     default:
                         break;
@@ -239,31 +214,24 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
                 switch (position) {
                     case 0:
                         wordImg.setImageResource(R.drawable.imkafsh);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.kafsh_sabad);
                         break;
                     case 1:
                         wordImg.setImageResource(R.drawable.imkolah);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.kolah_sabad);
                         break;
                     case 2:
                         wordImg.setImageResource(R.drawable.imjorab);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.jorab_sabad);
                         break;
                     case 3:
                         wordImg.setImageResource(R.drawable.imshalvaar);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.shalvar_sabad);
                         break;
                     case 4:
                         wordImg.setImageResource(R.drawable.impirahan);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.pirahan_sabad);
                         break;
                     case 5:
                         wordImg.setImageResource(R.drawable.imrusari);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.rosari_sabad);
                         break;
                     case 6:
                         wordImg.setImageResource(R.drawable.imbloz);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.bloz_sabad);
                         break;
                     default:
                         break;
@@ -274,39 +242,30 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
                 switch (position) {
                     case 0:
                         wordImg.setImageResource(R.drawable.imshune);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.shane_sabad);
                         break;
                     case 1:
                         wordImg.setImageResource(R.drawable.immesvaak);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.mesvak_sabad);
                         break;
                     case 2:
                         wordImg.setImageResource(R.drawable.imhole);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.hole_sabad);
                         break;
                     case 3:
                         wordImg.setImageResource(R.drawable.imtoop);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.toop_sabad);
                         break;
                     case 4:
                         wordImg.setImageResource(R.drawable.imdocharkhe);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.docharkhe_sabad);
                         break;
                     case 5:
                         wordImg.setImageResource(R.drawable.immashin);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.mashin_sabad);
                         break;
                     case 6:
                         wordImg.setImageResource(R.drawable.imhavapeimaa);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.bloz_sabad);
                         break;
                     case 7:
                         wordImg.setImageResource(R.drawable.imghashogh);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.ghashoq_sabad);
                         break;
                     case 8:
                         wordImg.setImageResource(R.drawable.imketab);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.ketab_sabad);
                         break;
                     default:
                         break;
@@ -317,15 +276,12 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
                 switch (position) {
                     case 0:
                         wordImg.setImageResource(R.drawable.imdoctor);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.doctor_sabad);
                         break;
                     case 1:
                         wordImg.setImageResource(R.drawable.imnanva);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.nanva_sabad);
                         break;
                     case 2:
                         wordImg.setImageResource(R.drawable.immoalem);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.moalem_sabad);
                         break;
                     default:
                         break;
@@ -336,15 +292,12 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
                 switch (position) {
                     case 0:
                         wordImg.setImageResource(R.drawable.imabi);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.moalem_sabad);
                         break;
                     case 1:
                         wordImg.setImageResource(R.drawable.imzard);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.moalem_sabad);
                         break;
                     case 2:
                         wordImg.setImageResource(R.drawable.imghermez);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.moalem_sabad);
                         break;
                     default:
                         break;
@@ -355,23 +308,18 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
                 switch (position) {
                     case 0:
                         wordImg.setImageResource(R.drawable.imnun);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.nan_sabad);
                         break;
                     case 1:
                         wordImg.setImageResource(R.drawable.imshir);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.shir_sabad);
                         break;
                     case 2:
                         wordImg.setImageResource(R.drawable.imab);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.ab_sabad);
                         break;
                     case 3:
                         wordImg.setImageResource(R.drawable.imcake);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.cake_sabad);
                         break;
                     case 4:
                         wordImg.setImageResource(R.drawable.imbiscuit);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.bisko_sabad);
                         break;
                     default:
                         break;
@@ -382,39 +330,30 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
                 switch (position) {
                     case 0:
                         wordImg.setImageResource(R.drawable.imbala);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.bala_sabad);
                         break;
                     case 1:
                         wordImg.setImageResource(R.drawable.impaeen);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.paeen_sabad);
                         break;
                     case 2:
                         wordImg.setImageResource(R.drawable.imkasif);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.kasif_sabad);
                         break;
                     case 3:
                         wordImg.setImageResource(R.drawable.imtamiz);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.tamiz_sabad);
                         break;
                     case 4:
                         wordImg.setImageResource(R.drawable.imbache);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.bache_sabad);
                         break;
                     case 5:
                         wordImg.setImageResource(R.drawable.imdokhtar);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.dokhtar_sabad);
                         break;
                     case 6:
                         wordImg.setImageResource(R.drawable.impesar);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.pesar_sabad);
                         break;
                     case 7:
                         wordImg.setImageResource(R.drawable.imsard);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.garm_sabad);
                         break;
                     case 8:
                         wordImg.setImageResource(R.drawable.imgarm);
-                        // = MediaPlayer.create(getApplicationContext(), R.raw.garm_sabad);
                         break;
                     default:
                         break;

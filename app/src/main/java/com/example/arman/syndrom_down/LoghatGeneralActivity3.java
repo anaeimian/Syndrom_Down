@@ -294,8 +294,8 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
                         break;
                     case 6:
                         word.setImageResource(R.drawable.thavapeima);
-                        wordImg.setImageResource(R.drawable.imbloz);
-                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.bloz_drag);
+                        wordImg.setImageResource(R.drawable.imhavapeimaa);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.havapeima_drag);
                         break;
                     case 7:
                         word.setImageResource(R.drawable.tghashoq);
@@ -339,17 +339,17 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
                     case 0:
                         word.setImageResource(R.drawable.tabi);
                         wordImg.setImageResource(R.drawable.imabi);
-                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.moalem_drag);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.abi_drag);
                         break;
                     case 1:
                         word.setImageResource(R.drawable.tzard);
                         wordImg.setImageResource(R.drawable.imzard);
-                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.moalem_drag);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.zard_drag);
                         break;
                     case 2:
                         word.setImageResource(R.drawable.tghermez);
                         wordImg.setImageResource(R.drawable.imghermez);
-                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.moalem_drag);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.ghermez_drag);
                         break;
                     default:
                         break;
@@ -428,7 +428,7 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
                     case 7:
                         word.setImageResource(R.drawable.tsard);
                         wordImg.setImageResource(R.drawable.imsard);
-                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.garm_drag);
+                        dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.sard_drag);
                         break;
                     case 8:
                         word.setImageResource(R.drawable.tgarm);

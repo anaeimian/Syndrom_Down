@@ -256,7 +256,7 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
                         break;
                     case 6:
                         word.setImageResource(R.drawable.thavapeima);
-                        sabadVoice = MediaPlayer.create(getApplicationContext(), R.raw.bloz_sabad);
+                        sabadVoice = MediaPlayer.create(getApplicationContext(), R.raw.havapeima_sabad);
                         break;
                     case 7:
                         word.setImageResource(R.drawable.tghashoq);
@@ -294,15 +294,15 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
                 switch (position) {
                     case 0:
                         word.setImageResource(R.drawable.tabi);
-                        sabadVoice = MediaPlayer.create(getApplicationContext(), R.raw.moalem_sabad);
+                        sabadVoice = MediaPlayer.create(getApplicationContext(), R.raw.abi_sabad);
                         break;
                     case 1:
                         word.setImageResource(R.drawable.tzard);
-                        sabadVoice = MediaPlayer.create(getApplicationContext(), R.raw.moalem_sabad);
+                        sabadVoice = MediaPlayer.create(getApplicationContext(), R.raw.zard_sabad);
                         break;
                     case 2:
                         word.setImageResource(R.drawable.tghermez);
-                        sabadVoice = MediaPlayer.create(getApplicationContext(), R.raw.moalem_sabad);
+                        sabadVoice = MediaPlayer.create(getApplicationContext(), R.raw.ghermez_sabad);
                         break;
                     default:
                         break;
@@ -368,7 +368,7 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
                         break;
                     case 7:
                         word.setImageResource(R.drawable.tsard);
-                        sabadVoice = MediaPlayer.create(getApplicationContext(), R.raw.garm_sabad);
+                        sabadVoice = MediaPlayer.create(getApplicationContext(), R.raw.sard_sabad);
                         break;
                     case 8:
                         word.setImageResource(R.drawable.tgarm);
