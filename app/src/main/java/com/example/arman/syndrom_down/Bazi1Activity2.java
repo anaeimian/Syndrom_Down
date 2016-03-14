@@ -27,6 +27,8 @@ public class Bazi1Activity2 extends ActionBarActivity {
 
     private ObjectAnimator animator1;
     private ObjectAnimator animator2;
+    private ObjectAnimator animator3;
+    private ObjectAnimator animator4;
 
     private MediaPlayer wordVoice;
     private MediaPlayer payMoreAttention;
@@ -56,6 +58,15 @@ public class Bazi1Activity2 extends ActionBarActivity {
         animator2.setTarget(word2);
         animator2.setPropertyName("translationY");
 
+        animator3 = new ObjectAnimator();
+        animator3.setDuration(1500);
+        animator3.setTarget(word1);
+        animator3.setPropertyName("translationY");
+
+        animator4 = new ObjectAnimator();
+        animator4.setDuration(1500);
+        animator4.setTarget(word2);
+        animator4.setPropertyName("translationY");
 //        setResources();
 //        setListeners();
         handleIntent();
@@ -127,13 +138,20 @@ public class Bazi1Activity2 extends ActionBarActivity {
 //                word1.setImageResource(R.drawable.balloon_dadash);
 //                word2.setImageResource(R.drawable.balloon_khahar);
                 startAnimation();
-                wordVoice.start();
+
                 if (answerPos == 0) {
                     word1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             startRotateAnimation(word1, category);
                             tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator4.setFloatValues(0, 1000);
+                                    animator4.start();
+                                }
+                            }, 500);
 
                         }
                     });
@@ -149,6 +167,13 @@ public class Bazi1Activity2 extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word2, category);
                             tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator3.setFloatValues(0, 1000);
+                                    animator3.start();
+                                }
+                            }, 500);
 
                         }
                     });
@@ -305,8 +330,6 @@ public class Bazi1Activity2 extends ActionBarActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-//                animator.setFloatValues(0,
-//                        imView0.getY() - imView2.getY() + (imView0.getHeight() / 2));
                 animator1.setFloatValues(1000, 0);
                 animator1.start();
                 animator2.setFloatValues(1000, 0);
@@ -322,8 +345,7 @@ public class Bazi1Activity2 extends ActionBarActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-//                imView0.setVisibility(View.INVISIBLE);
-//                mediaPlayerRahnama.start();
+                wordVoice.start();
             }
 
             @Override
