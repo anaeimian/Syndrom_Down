@@ -37,11 +37,21 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
     private ObjectAnimator animator3;
     private ObjectAnimator animator4;
     private ObjectAnimator animator5;
+    private ObjectAnimator animator6;
+    private ObjectAnimator animator7;
+    private ObjectAnimator animator8;
+    private ObjectAnimator animator9;
+    private ObjectAnimator animator10;
     ImageView star1;
     ImageView star2;
     ImageView star3;
     ImageView star4;
     ImageView star5;
+    ImageView star6;
+    ImageView star7;
+    ImageView star8;
+    ImageView star9;
+    ImageView star10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -189,6 +199,11 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
         star3 = (ImageView) findViewById(R.id.star3);
         star4 = (ImageView) findViewById(R.id.star4);
         star5 = (ImageView) findViewById(R.id.star5);
+        star6 = (ImageView) findViewById(R.id.star6);
+        star7 = (ImageView) findViewById(R.id.star7);
+        star8 = (ImageView) findViewById(R.id.star8);
+        star9 = (ImageView) findViewById(R.id.star9);
+        star10 = (ImageView) findViewById(R.id.star10);
         animator1 = new ObjectAnimator();
         animator1.setDuration(2000);
         animator1.setTarget(star1);
@@ -214,6 +229,31 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
         animator5.setTarget(star5);
         animator5.setPropertyName("translationY");
 
+        animator6 = new ObjectAnimator();
+        animator6.setDuration(3000);
+        animator6.setTarget(star6);
+        animator6.setPropertyName("translationY");
+
+        animator7 = new ObjectAnimator();
+        animator7.setDuration(3000);
+        animator7.setTarget(star7);
+        animator7.setPropertyName("translationY");
+
+        animator8 = new ObjectAnimator();
+        animator8.setDuration(3000);
+        animator8.setTarget(star8);
+        animator8.setPropertyName("translationY");
+
+        animator9 = new ObjectAnimator();
+        animator9.setDuration(3000);
+        animator9.setTarget(star9);
+        animator9.setPropertyName("translationY");
+
+        animator10 = new ObjectAnimator();
+        animator10.setDuration(3000);
+        animator10.setTarget(star10);
+        animator10.setPropertyName("translationY");
+
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
@@ -234,6 +274,16 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
                 animator4.start();
                 animator5.setFloatValues(0, -height - 300);
                 animator5.start();
+                animator6.setFloatValues(0, -height - 300);
+                animator6.start();
+                animator7.setFloatValues(0, -height - 300);
+                animator7.start();
+                animator8.setFloatValues(0, -height - 300);
+                animator8.start();
+                animator9.setFloatValues(0, -height - 300);
+                animator9.start();
+                animator10.setFloatValues(0, -height - 300);
+                animator10.start();
             }
         }, 500);
         animator1.addListener(new Animator.AnimatorListener() {
@@ -244,6 +294,11 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
                 star3.setX(3 * width / 6);
                 star4.setX(4 * width / 6);
                 star5.setX(5 * width / 6);
+                star6.setX(width / 6);
+                star7.setX(2 * width / 6);
+                star8.setX(3 * width / 6);
+                star9.setX(4 * width / 6);
+                star10.setX(5 * width / 6);
 //                star1.setVisibility(View.VISIBLE);
             }
 

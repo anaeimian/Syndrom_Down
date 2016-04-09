@@ -58,50 +58,97 @@
 
     <ImageView
         android:id="@+id/star1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/star1"
-        android:layout_alignTop="@+id/star2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignEnd="@+id/guide"
         android:layout_alignRight="@+id/guide"
-        android:layout_alignEnd="@+id/guide" />
+        android:layout_alignTop="@+id/star2"
+        android:src="@drawable/star_black" />
 
     <ImageView
         android:id="@+id/star2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/star2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignTop="@+id/star3"
+        android:layout_toEndOf="@+id/star1"
         android:layout_toRightOf="@+id/star1"
-        android:layout_toEndOf="@+id/star1" />
+        android:src="@drawable/star_gray" />
 
     <ImageView
         android:id="@+id/star3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/star3"
-        android:layout_alignTop="@+id/star4"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignLeft="@+id/word"
-        android:layout_alignStart="@+id/word" />
+        android:layout_alignStart="@+id/word"
+        android:layout_alignTop="@+id/star4"
+        android:src="@drawable/star_yellow" />
 
     <ImageView
         android:id="@+id/star4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/star4"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignTop="@+id/star5"
+        android:layout_toEndOf="@+id/word"
         android:layout_toRightOf="@+id/word"
-        android:layout_toEndOf="@+id/word" />
+        android:src="@drawable/star_gray" />
 
     <ImageView
         android:id="@+id/star5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/star5"
-        android:layout_below="@+id/center"
-        android:layout_alignParentRight="true"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="71dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/center"
         android:layout_marginEnd="71dp"
-        android:layout_marginTop="77dp" />
+        android:layout_marginRight="71dp"
+        android:layout_marginTop="77dp"
+        android:src="@drawable/star_yellow" />
+    <ImageView
+        android:id="@+id/star6"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignEnd="@+id/guide"
+        android:layout_alignRight="@+id/guide"
+        android:layout_alignTop="@+id/star2"
+        android:src="@drawable/star_black" />
+
+    <ImageView
+        android:id="@+id/star7"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignTop="@+id/star3"
+        android:layout_toEndOf="@+id/star1"
+        android:layout_toRightOf="@+id/star1"
+        android:src="@drawable/star_gray" />
+
+    <ImageView
+        android:id="@+id/star8"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/word"
+        android:layout_alignStart="@+id/word"
+        android:layout_alignTop="@+id/star4"
+        android:src="@drawable/star_yellow" />
+
+    <ImageView
+        android:id="@+id/star9"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignTop="@+id/star5"
+        android:layout_toEndOf="@+id/word"
+        android:layout_toRightOf="@+id/word"
+        android:src="@drawable/star_gray" />
+
+    <ImageView
+        android:id="@+id/star10"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/center"
+        android:layout_marginEnd="71dp"
+        android:layout_marginRight="71dp"
+        android:layout_marginTop="77dp"
+        android:src="@drawable/star_yellow" />
 
 </RelativeLayout>
