@@ -850,7 +850,7 @@ public class Bazi1Activity extends ActionBarActivity {
                 switch (index) {
                     case 0:
                         image.setImageResource(R.drawable.balloon_cheshm);
-                        wordVoice = MediaPlayer.create(this, R.raw.chashm_ko);
+                        wordVoice = MediaPlayer.create(this, R.raw.cheshm_ko);
                         break;
                     case 1:
                         image.setImageResource(R.drawable.balloon_dast);

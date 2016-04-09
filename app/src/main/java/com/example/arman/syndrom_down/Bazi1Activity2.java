@@ -145,7 +145,7 @@ public class Bazi1Activity2 extends ActionBarActivity {
                     case "cheshm":
                         word1.setImageResource(R.drawable.balloon_cheshm);
                         if (answerPos == 0) {
-                            wordVoice = MediaPlayer.create(this, R.raw.chashm_ko);
+                            wordVoice = MediaPlayer.create(this, R.raw.cheshm_ko);
                         }
                         break;
                     case "dast":
@@ -209,7 +209,7 @@ public class Bazi1Activity2 extends ActionBarActivity {
                     case "cheshm":
                         word2.setImageResource(R.drawable.balloon_cheshm);
                         if (answerPos == 1) {
-                            wordVoice = MediaPlayer.create(this, R.raw.chashm_ko);
+                            wordVoice = MediaPlayer.create(this, R.raw.cheshm_ko);
                         }
                         break;
                     case "dast":
