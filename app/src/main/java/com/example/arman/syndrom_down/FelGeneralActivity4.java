@@ -458,28 +458,33 @@ public class FelGeneralActivity4 extends ActionBarActivity {
                                         switch (category) {
                                             case "amr":
                                                 intent = new Intent(FelGeneralActivity4.this, AmrActivity.class);
+                                                passSection();
                                                 successAnimation();
                                                 break;
                                             case "gozashte":
                                                 intent = new Intent(FelGeneralActivity4.this, GozashteActivity.class);
+                                                passSection();
                                                 successAnimation();
                                                 break;
                                             case "hessi":
                                                 intent = new Intent(FelGeneralActivity4.this, HessiActivity.class);
+                                                passSection();
                                                 successAnimation();
                                                 break;
                                             case "kalame2":
                                                 intent = new Intent(FelGeneralActivity4.this, Kalame2Activity.class);
+                                                passSection();
                                                 successAnimation();
                                                 break;
                                             case "kalame3":
                                                 intent = new Intent(FelGeneralActivity4.this, Kalame3Activity.class);
+                                                passSection();
                                                 successAnimation();
                                                 break;
                                             case "zamir":
                                                 intent = new Intent(FelGeneralActivity4.this, ZamirActivity.class);
+                                                passSection();
                                                 successAnimation();
-//                                                Utils.database.zamir[1] = true;
                                                 break;
                                         }
 //                                        startActivity(intent);
@@ -502,6 +507,48 @@ public class FelGeneralActivity4 extends ActionBarActivity {
         });
 
     }
+
+
+    private void passSection() {
+        int i = 0;
+//        active = true;
+
+        switch (category) {
+            case "amr": // amr
+                while (i < Utils.database.amr.length &&
+                        Utils.database.amr[++i]) ;
+                Utils.database.amr[i] = true;
+                break;
+
+            case "gozashte": // gozashte
+                while (i < Utils.database.gozashte.length &&
+                        Utils.database.gozashte[++i]) ;
+                Utils.database.gozashte[i] = true;
+                break;
+
+            case "hessi": // hessi
+                while (i < Utils.database.hessi.length &&
+                        Utils.database.hessi[++i]) ;
+                Utils.database.hessi[i] = true;
+                break;
+
+            case "kalame2": // kalame2
+                while (i < Utils.database.kalame2.length &&
+                        Utils.database.kalame2[++i]) ;
+                Utils.database.kalame2[i] = true;
+                break;
+
+            case "zamir": // zamir
+                while (i < Utils.database.zamir.length &&
+                        Utils.database.zamir[++i]) ;
+                Utils.database.zamir[i] = true;
+                break;
+        }
+
+        DatabaseAdapter.getInstance().saveDatabase(FelGeneralActivity4.this,
+                Utils.database);
+    }
+
 
     @Override
     public void onBackPressed() {

@@ -68,10 +68,10 @@ public class BaziListActivity extends ActionBarActivity {
                         intent.putExtra("category", "andam");
                         break;
                     case 2:
-                        intent.putExtra("category", "mive");
+                        intent.putExtra("category", "miveh");
                         break;
                     case 3:
-                        intent.putExtra("category", "heivanat");
+                        intent.putExtra("category", "heyvanat");
                         break;
                     case 4:
                         intent.putExtra("category", "pooshak");

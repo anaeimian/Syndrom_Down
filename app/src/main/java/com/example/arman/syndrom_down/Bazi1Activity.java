@@ -115,7 +115,7 @@ public class Bazi1Activity extends ActionBarActivity {
                 if (answerPos == 0) {
                     Log.d("rand1", "rand1");
                     setVoiceImage(word1, selectedItem1, category);
-                    setImage(word2, selectedItem2);
+                    setImage(word2, selectedItem2, category);
                     word1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -139,7 +139,7 @@ public class Bazi1Activity extends ActionBarActivity {
                     });
                 } else if (answerPos == 1) {
                     setVoiceImage(word2, selectedItem1, category);
-                    setImage(word1, selectedItem2);
+                    setImage(word1, selectedItem2, category);
                     word2.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -203,11 +203,9 @@ public class Bazi1Activity extends ActionBarActivity {
                         remianedItems.add(andamItems.get(i));
                 }
 
-                Log.d("rand", answerPos + " " + selectedItem1 + " " + selectedItem2);
                 if (answerPos == 0) {
-                    Log.d("rand1", "rand1");
                     setVoiceImage(word1, selectedItem1, category);
-                    setImage(word2, selectedItem2);
+                    setImage(word2, selectedItem2, category);
                     word1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -232,7 +230,7 @@ public class Bazi1Activity extends ActionBarActivity {
                 } else if (answerPos == 1) {
                     Log.d("rand2", "rand2");
                     setVoiceImage(word2, selectedItem1, category);
-                    setImage(word1, selectedItem2);
+                    setImage(word1, selectedItem2, category);
                     word2.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -293,7 +291,7 @@ public class Bazi1Activity extends ActionBarActivity {
 
                 if (answerPos == 0) {
                     setVoiceImage(word1, selectedItem1, category);
-                    setImage(word2, selectedItem2);
+                    setImage(word2, selectedItem2, category);
                     word1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -317,7 +315,7 @@ public class Bazi1Activity extends ActionBarActivity {
                     });
                 } else if (answerPos == 1) {
                     setVoiceImage(word2, selectedItem1, category);
-                    setImage(word1, selectedItem2);
+                    setImage(word1, selectedItem2, category);
                     word2.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -362,7 +360,7 @@ public class Bazi1Activity extends ActionBarActivity {
 
                 if (answerPos == 0) {
                     setVoiceImage(word1, selectedItem1, category);
-                    setImage(word2, selectedItem2);
+                    setImage(word2, selectedItem2, category);
                     word1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -386,7 +384,7 @@ public class Bazi1Activity extends ActionBarActivity {
                     });
                 } else if (answerPos == 1) {
                     setVoiceImage(word2, selectedItem1, category);
-                    setImage(word1, selectedItem2);
+                    setImage(word1, selectedItem2, category);
                     word2.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -431,7 +429,7 @@ public class Bazi1Activity extends ActionBarActivity {
 
                 if (answerPos == 0) {
                     setVoiceImage(word1, selectedItem1, category);
-                    setImage(word2, selectedItem2);
+                    setImage(word2, selectedItem2, category);
                     word1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -455,7 +453,7 @@ public class Bazi1Activity extends ActionBarActivity {
                     });
                 } else if (answerPos == 1) {
                     setVoiceImage(word2, selectedItem1, category);
-                    setImage(word1, selectedItem2);
+                    setImage(word1, selectedItem2, category);
                     word2.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -503,7 +501,7 @@ public class Bazi1Activity extends ActionBarActivity {
 
                 if (answerPos == 0) {
                     setVoiceImage(word1, selectedItem1, category);
-                    setImage(word2, selectedItem2);
+                    setImage(word2, selectedItem2, category);
                     word1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -527,7 +525,7 @@ public class Bazi1Activity extends ActionBarActivity {
                     });
                 } else if (answerPos == 1) {
                     setVoiceImage(word2, selectedItem1, category);
-                    setImage(word1, selectedItem2);
+                    setImage(word1, selectedItem2, category);
                     word2.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -568,7 +566,7 @@ public class Bazi1Activity extends ActionBarActivity {
 
                 if (answerPos == 0) {
                     setVoiceImage(word1, selectedItem1, category);
-                    setImage(word2, selectedItem2);
+                    setImage(word2, selectedItem2, category);
                     word1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -592,7 +590,7 @@ public class Bazi1Activity extends ActionBarActivity {
                     });
                 } else if (answerPos == 1) {
                     setVoiceImage(word2, selectedItem1, category);
-                    setImage(word1, selectedItem2);
+                    setImage(word1, selectedItem2, category);
                     word2.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -633,7 +631,7 @@ public class Bazi1Activity extends ActionBarActivity {
 
                 if (answerPos == 0) {
                     setVoiceImage(word1, selectedItem1, category);
-                    setImage(word2, selectedItem2);
+                    setImage(word2, selectedItem2, category);
                     word1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -657,7 +655,7 @@ public class Bazi1Activity extends ActionBarActivity {
                     });
                 } else if (answerPos == 1) {
                     setVoiceImage(word2, selectedItem1, category);
-                    setImage(word1, selectedItem2);
+                    setImage(word1, selectedItem2, category);
                     word2.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -700,7 +698,7 @@ public class Bazi1Activity extends ActionBarActivity {
 
                 if (answerPos == 0) {
                     setVoiceImage(word1, selectedItem1, category);
-                    setImage(word2, selectedItem2);
+                    setImage(word2, selectedItem2, category);
                     word1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -724,7 +722,7 @@ public class Bazi1Activity extends ActionBarActivity {
                     });
                 } else if (answerPos == 1) {
                     setVoiceImage(word2, selectedItem1, category);
-                    setImage(word1, selectedItem2);
+                    setImage(word1, selectedItem2, category);
                     word2.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -771,7 +769,7 @@ public class Bazi1Activity extends ActionBarActivity {
 
                 if (answerPos == 0) {
                     setVoiceImage(word1, selectedItem1, category);
-                    setImage(word2, selectedItem2);
+                    setImage(word2, selectedItem2, category);
                     word1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -795,7 +793,7 @@ public class Bazi1Activity extends ActionBarActivity {
                     });
                 } else if (answerPos == 1) {
                     setVoiceImage(word2, selectedItem1, category);
-                    setImage(word1, selectedItem2);
+                    setImage(word1, selectedItem2, category);
                     word2.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -848,70 +846,208 @@ public class Bazi1Activity extends ActionBarActivity {
                         break;
                 }
                 break;
-//            case "andam":
-//                switch (index) {
-//                    case 0:
-//                        image.setImageResource(R.drawable.balloon_cheshm);
-//                        wordVoice = MediaPlayer.create(this, R.raw.cheshm_ko);
-//                        break;
-//                    case 1:
-//                        image.setImageResource(R.drawable.balloon_dast);
-//                        wordVoice = MediaPlayer.create(this, R.raw.dast_ko);
-//                        break;
-//                    case 2:
-//                        image.setImageResource(R.drawable.balloon_paa);
-//                        wordVoice = MediaPlayer.create(this, R.raw.paa_ko);
-//                        break;
-//                    case 3:
-//                        image.setImageResource(R.drawable.balloon_goosh);
-//                        wordVoice = MediaPlayer.create(this, R.raw.goosh_ko);
-//                        break;
-//                    case 4:
-//                        image.setImageResource(R.drawable.balloon_mo);
-//                        wordVoice = MediaPlayer.create(this, R.raw.mo_ko);
-//                        break;
-//                    case 5:
-//                        image.setImageResource(R.drawable.balloon_dahan);
-//                        wordVoice = MediaPlayer.create(this, R.raw.dahan_ko);
-//                        break;
-//                    case 6:
-//                        image.setImageResource(R.drawable.balloon_bini);
-//                        wordVoice = MediaPlayer.create(this, R.raw.bini_ko);
-//                        break;
-//                    case 7:
-//                        image.setImageResource(R.drawable.balloon_zaban);
-//                        wordVoice = MediaPlayer.create(this, R.raw.zaban_ko);
-//                        break;
-//                    case 8:
-//                        image.setImageResource(R.drawable.balloon_dandan);
-//                        wordVoice = MediaPlayer.create(this, R.raw.dandan_ko);
-//                        break;
-//                    case 9:
-//                        image.setImageResource(R.drawable.balloon_abroo);
-//                        wordVoice = MediaPlayer.create(this, R.raw.dandan_ko);
-//                        break;
-//                }
-//                break;
+            case "andam":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_cheshm);
+                        wordVoice = MediaPlayer.create(this, R.raw.chashm_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_dast);
+                        wordVoice = MediaPlayer.create(this, R.raw.dast_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_pa);
+                        wordVoice = MediaPlayer.create(this, R.raw.pa_ko);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_gush);
+                        wordVoice = MediaPlayer.create(this, R.raw.gush_ko);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_mo);
+                        wordVoice = MediaPlayer.create(this, R.raw.mo_ko);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.balloon_dahan);
+                        wordVoice = MediaPlayer.create(this, R.raw.dahan_ko);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.balloon_bini);
+                        wordVoice = MediaPlayer.create(this, R.raw.bini_ko);
+                        break;
+                    case 7:
+                        image.setImageResource(R.drawable.balloon_zaban);
+                        wordVoice = MediaPlayer.create(this, R.raw.zaban_ko);
+                        break;
+                    case 8:
+                        image.setImageResource(R.drawable.balloon_dandan);
+                        wordVoice = MediaPlayer.create(this, R.raw.dandan_ko);
+                        break;
+                    case 9:
+                        image.setImageResource(R.drawable.balloon_abro);
+                        wordVoice = MediaPlayer.create(this, R.raw.abro_ko);
+                        break;
+                }
+                break;
+            case "miveh":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_moz);
+                        wordVoice = MediaPlayer.create(this, R.raw.moz_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_sib);
+                        wordVoice = MediaPlayer.create(this, R.raw.sib_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_khiar);
+                        wordVoice = MediaPlayer.create(this, R.raw.khiar_ko);
+                        break;
+
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_porteqal);
+                        wordVoice = MediaPlayer.create(this, R.raw.porteqal_ko);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_limo);
+                        wordVoice = MediaPlayer.create(this, R.raw.limo_ko);
+                        break;
+                }
+                break;
+            case "heyvanat":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_gorbe);
+                        wordVoice = MediaPlayer.create(this, R.raw.gorbe_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_sag);
+                        wordVoice = MediaPlayer.create(this, R.raw.sag_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_gav);
+                        wordVoice = MediaPlayer.create(this, R.raw.gav_ko);
+                        break;
+
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_mahi);
+                        wordVoice = MediaPlayer.create(this, R.raw.mahi_ko);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_morq);
+                        wordVoice = MediaPlayer.create(this, R.raw.morq_ko);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.balloon_asb);
+                        wordVoice = MediaPlayer.create(this, R.raw.asb_ko);
+                        break;
+
+                }
+
+                break;
 
         }
     }
 
-    void setImage(ImageView image, int index) {
-        switch (index) {
-            case 0:
-                image.setImageResource(R.drawable.balloon_baba);
+    void setImage(ImageView image, int index, String category) {
+        switch (category) {
+            case "khanevade":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_baba);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_maman);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_khahar);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_dadash);
+                        break;
+                }
                 break;
-            case 1:
-                image.setImageResource(R.drawable.balloon_maman);
+            case "andam":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_cheshm);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_dast);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_pa);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_gush);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_gush);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.balloon_mo);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.balloon_dahan);
+                        break;
+                    case 7:
+                        image.setImageResource(R.drawable.balloon_bini);
+                        break;
+                    case 8:
+                        image.setImageResource(R.drawable.balloon_zaban);
+                        break;
+                    case 9:
+                        image.setImageResource(R.drawable.balloon_dandan);
+                        break;
+                    case 10:
+                        image.setImageResource(R.drawable.balloon_abro);
+                        break;
+                }
                 break;
-            case 2:
-                image.setImageResource(R.drawable.balloon_khahar);
+            case "miveh":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_moz);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_sib);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_khiar);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_porteqal);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_limo);
+                        break;
+                }
                 break;
-            case 3:
-                image.setImageResource(R.drawable.balloon_dadash);
+            case "heyvanat":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_gorbe);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_sag);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_gav);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_mahi);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_morq);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.balloon_asb);
+                        break;
+                }
                 break;
-        }
 
+        }
     }
 
     private void startRotateAnimation(final ImageView image, final String category) {

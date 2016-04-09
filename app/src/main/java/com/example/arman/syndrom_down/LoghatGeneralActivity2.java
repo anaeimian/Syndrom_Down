@@ -328,7 +328,7 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
                 }
                 break;
 
-            case "mashagel":
+            case "mashaghel":
                 switch (position) {
                     case 0:
                         word.setImageResource(R.drawable.tdoctor);
