@@ -246,7 +246,7 @@ public class FelGeneralActivity3 extends ActionBarActivity {
                         break;
                     case 6:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.shaneghermez_drag);
-                        verb.setImageResource(R.drawable.tshaneghermez);
+                        verb.setImageResource(R.drawable.tshaneqhermez);
                         verbImg.setImageResource(R.drawable.imshaneghermez);
                         break;
                     case 7:

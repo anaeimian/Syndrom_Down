@@ -270,19 +270,19 @@ public class Bazi2Activity extends ActionBarActivity {
                 switch (index) {
                     case 0:
                         image.setImageResource(R.drawable.tbaba);
-                        wordVoice = MediaPlayer.create(this, R.raw.football_baba);
+                        wordVoice = MediaPlayer.create(this, R.raw.baba_kojast);
                         break;
                     case 1:
                         image.setImageResource(R.drawable.tmaman);
-                        wordVoice = MediaPlayer.create(this, R.raw.football_maman);
+                        wordVoice = MediaPlayer.create(this, R.raw.maman_kojast);
                         break;
                     case 2:
                         image.setImageResource(R.drawable.tkhahar);
-                        wordVoice = MediaPlayer.create(this, R.raw.football_khahar);
+                        wordVoice = MediaPlayer.create(this, R.raw.khahar_kojast);
                         break;
                     case 3:
                         image.setImageResource(R.drawable.tbaradar);
-                        wordVoice = MediaPlayer.create(this, R.raw.football_dadash);
+                        wordVoice = MediaPlayer.create(this, R.raw.dadash_kojast);
                         break;
                 }
                 break;

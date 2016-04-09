@@ -94,26 +94,26 @@ public class Bazi2Activity2 extends ActionBarActivity {
                     case "baba":
                         pic1.setImageResource(R.drawable.tbaba);
                         if (answerPos == 0) {
-                            wordVoice = MediaPlayer.create(this, R.raw.football_baba);
+                            wordVoice = MediaPlayer.create(this, R.raw.baba_kojast);
                         }
                         break;
                     case "maman":
                         pic1.setImageResource(R.drawable.tmaman);
                         if (answerPos == 0) {
-                            wordVoice = MediaPlayer.create(this, R.raw.football_maman);
+                            wordVoice = MediaPlayer.create(this, R.raw.maman_kojast);
                         }
                         break;
 
                     case "khahar":
                         pic1.setImageResource(R.drawable.tkhahar);
                         if (answerPos == 0) {
-                            wordVoice = MediaPlayer.create(this, R.raw.football_khahar);
+                            wordVoice = MediaPlayer.create(this, R.raw.khahar_kojast);
                         }
                         break;
                     case "dadash":
                         pic1.setImageResource(R.drawable.tbaradar);
                         if (answerPos == 0) {
-                            wordVoice = MediaPlayer.create(this, R.raw.football_dadash);
+                            wordVoice = MediaPlayer.create(this, R.raw.dadash_kojast);
                         }
                         break;
                 }
@@ -121,25 +121,25 @@ public class Bazi2Activity2 extends ActionBarActivity {
                     case "baba":
                         pic2.setImageResource(R.drawable.tbaba);
                         if (answerPos == 1) {
-                            wordVoice = MediaPlayer.create(this, R.raw.football_baba);
+                            wordVoice = MediaPlayer.create(this, R.raw.baba_kojast);
                         }
                         break;
                     case "maman":
                         pic2.setImageResource(R.drawable.tmaman);
                         if (answerPos == 1) {
-                            wordVoice = MediaPlayer.create(this, R.raw.football_maman);
+                            wordVoice = MediaPlayer.create(this, R.raw.maman_kojast);
                         }
                         break;
                     case "khahar":
                         pic2.setImageResource(R.drawable.tkhahar);
                         if (answerPos == 1) {
-                            wordVoice = MediaPlayer.create(this, R.raw.football_khahar);
+                            wordVoice = MediaPlayer.create(this, R.raw.khahar_kojast);
                         }
                         break;
                     case "dadash":
                         pic2.setImageResource(R.drawable.tbaradar);
                         if (answerPos == 1) {
-                            wordVoice = MediaPlayer.create(this, R.raw.football_dadash);
+                            wordVoice = MediaPlayer.create(this, R.raw.dadash_kojast);
                         }
                         break;
                 }
