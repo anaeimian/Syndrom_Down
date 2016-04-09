@@ -27,7 +27,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="30dp"/>
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="120dp"
         android:src="@drawable/sabad"
         android:id="@+id/sabad"

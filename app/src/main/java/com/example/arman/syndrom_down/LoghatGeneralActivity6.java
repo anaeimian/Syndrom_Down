@@ -1,10 +1,16 @@
 package com.example.arman.syndrom_down;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Point;
 import android.media.MediaPlayer;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,12 +25,23 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
     MediaPlayer inchie;
     MediaPlayer payMoreAttention;
     MediaPlayer tashvigh;
+    MediaPlayer clapSound;
     int passClicked = 0;
     String category = "";
     int position = 0;
     Dialog settingsDialog;
     private ImageView guide;
     Intent intent = null;
+    private ObjectAnimator animator1;
+    private ObjectAnimator animator2;
+    private ObjectAnimator animator3;
+    private ObjectAnimator animator4;
+    private ObjectAnimator animator5;
+    ImageView star1;
+    ImageView star2;
+    ImageView star3;
+    ImageView star4;
+    ImageView star5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +53,7 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
         inchie = MediaPlayer.create(getApplicationContext(), R.raw.inchie);
         payMoreAttention = MediaPlayer.create(getApplicationContext(), R.raw.pay_more_attention);
         tashvigh = MediaPlayer.create(getApplicationContext(), R.raw.afarin);
+        clapSound = MediaPlayer.create(getApplicationContext(), R.raw.clap);
         setViews();
         controller();
         inchie.start();
@@ -47,7 +65,6 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
         guide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 settingsDialog.show();
             }
         });
@@ -95,7 +112,8 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
             public void onClick(View v) {
 
                 passClicked++;
-                tashvigh.start();
+                if (passClicked < 4)
+                    tashvigh.start();
                 tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
@@ -105,50 +123,148 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
                             switch (category) {
                                 case "khanevade":
                                     intent = new Intent(LoghatGeneralActivity6.this, KhanevadeActivity.class);
+                                    successAnimation();
                                     passSection();
+
                                     break;
                                 case "andam":
                                     intent = new Intent(LoghatGeneralActivity6.this, AndamActivity.class);
                                     passSection();
+                                    successAnimation();
                                     break;
                                 case "miveh":
                                     intent = new Intent(LoghatGeneralActivity6.this, MiveActivity.class);
                                     passSection();
+                                    successAnimation();
                                     break;
                                 case "heyvanat":
                                     intent = new Intent(LoghatGeneralActivity6.this, HeyvanatActivity.class);
                                     passSection();
+                                    successAnimation();
                                     break;
                                 case "pooshak":
                                     intent = new Intent(LoghatGeneralActivity6.this, PooshakActivity.class);
                                     passSection();
+                                    successAnimation();
                                     break;
                                 case "vasayel":
                                     intent = new Intent(LoghatGeneralActivity6.this, VasayelActivity.class);
                                     passSection();
+                                    successAnimation();
                                     break;
                                 case "mashaghel":
                                     intent = new Intent(LoghatGeneralActivity6.this, MashaghelActivity.class);
                                     passSection();
+                                    successAnimation();
                                     break;
                                 case "rang":
                                     intent = new Intent(LoghatGeneralActivity6.this, RangActivity.class);
                                     passSection();
+                                    successAnimation();
                                     break;
                                 case "khordani":
                                     intent = new Intent(LoghatGeneralActivity6.this, KhordaniActivity.class);
                                     passSection();
+                                    successAnimation();
                                     break;
                                 case "mafahim":
                                     intent = new Intent(LoghatGeneralActivity6.this, MafahimActivity.class);
                                     passSection();
+                                    successAnimation();
                                     break;
                             }
-                            intent.putExtra("position", "0");
-                            startActivity(intent);
+
                         }
                     }
                 });
+
+            }
+        });
+    }
+
+    void successAnimation() {
+        clapSound.start();
+        star1 = (ImageView) findViewById(R.id.star1);
+        star2 = (ImageView) findViewById(R.id.star2);
+        star3 = (ImageView) findViewById(R.id.star3);
+        star4 = (ImageView) findViewById(R.id.star4);
+        star5 = (ImageView) findViewById(R.id.star5);
+        animator1 = new ObjectAnimator();
+        animator1.setDuration(2000);
+        animator1.setTarget(star1);
+        animator1.setPropertyName("translationY");
+
+        animator2 = new ObjectAnimator();
+        animator2.setDuration(2000);
+        animator2.setTarget(star2);
+        animator2.setPropertyName("translationY");
+
+        animator3 = new ObjectAnimator();
+        animator3.setDuration(2000);
+        animator3.setTarget(star3);
+        animator3.setPropertyName("translationY");
+
+        animator4 = new ObjectAnimator();
+        animator4.setDuration(2000);
+        animator4.setTarget(star4);
+        animator4.setPropertyName("translationY");
+
+        animator5 = new ObjectAnimator();
+        animator5.setDuration(2000);
+        animator5.setTarget(star5);
+        animator5.setPropertyName("translationY");
+
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        final int width = size.x;
+        final int height = size.y;
+        Log.d("test", width + "");
+        Log.d("test", height + "");
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                animator1.setFloatValues(0, -height - 300);
+                animator1.start();
+                animator2.setFloatValues(0, -height - 300);
+                animator2.start();
+                animator3.setFloatValues(0, -height - 300);
+                animator3.start();
+                animator4.setFloatValues(0, -height - 300);
+                animator4.start();
+                animator5.setFloatValues(0, -height - 300);
+                animator5.start();
+            }
+        }, 500);
+        animator1.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                star1.setX(width / 6);
+                star2.setX(2 * width / 6);
+                star3.setX(3 * width / 6);
+                star4.setX(4 * width / 6);
+                star5.setX(5 * width / 6);
+//                star1.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                star1.setVisibility(View.INVISIBLE);
+                star2.setVisibility(View.INVISIBLE);
+                star3.setVisibility(View.INVISIBLE);
+                star4.setVisibility(View.INVISIBLE);
+                star5.setVisibility(View.INVISIBLE);
+                intent.putExtra("position", "0");
+                startActivity(intent);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
 
             }
         });
@@ -160,7 +276,7 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
 
         switch (category) {
             case "khanevade":
-                while (i < Utils.database.khanevade.length &&
+                while (i < Utils.database.khanevade.length - 1 &&
                         Utils.database.khanevade[++i]) ;
                 Utils.database.khanevade[i] = true;
                 break;

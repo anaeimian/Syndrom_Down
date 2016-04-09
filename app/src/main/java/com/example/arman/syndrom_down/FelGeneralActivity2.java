@@ -112,7 +112,7 @@ public class FelGeneralActivity2 extends ActionBarActivity {
                         break;
                 }
                 break;
-            case "twowords":
+            case "kalame2":
                 switch (position) {
                     case 0:
                         felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.babayeman_clip));
@@ -139,7 +139,7 @@ public class FelGeneralActivity2 extends ActionBarActivity {
                         felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.dokhtarekasif_clip));
                         break;
                     case 8:
-                       felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.kafshekasif_clip));
+                        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.kafshekasif_clip));
                         break;
                     case 9:
                         felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.dokhtaretamiz_clip));
@@ -162,7 +162,7 @@ public class FelGeneralActivity2 extends ActionBarActivity {
                 }
                 break;
 
-            case "threewords":
+            case "kalame3":
                 switch (position) {
                     case 0:
                         felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.gorbeheivanast_clip));

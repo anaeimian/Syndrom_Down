@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -54,22 +56,24 @@ public class Kalame2Activity extends ActionBarActivity {
     }
 
     private void setListener() {
-//        listKalame2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (!Utils.database.kalame2[position])
-//                    return;
-//
-//                Intent intent = new Intent(Kalame2Activity.this, FelGeneralActivity.class);
-//                intent.putExtra(Utils.TYPE, 3);
-//                intent.putExtra(Utils.WHICH, position);
-//                if (Utils.database.kalame2[position + 1])
-//                    intent.putExtra(Utils.ACTIVE, true);
-//                else intent.putExtra(Utils.ACTIVE, false);
-//                intent.putExtra(Utils.NAME, adapter.getItem(position));
-//                startActivity(intent);
-//            }
-//        });
+        listKalame2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (!Utils.database.kalame2[position])
+                    return;
+
+                Intent intent = new Intent(Kalame2Activity.this, FelGeneralActivity1.class);
+                intent.putExtra(Utils.TYPE, 3);
+                intent.putExtra(Utils.WHICH, position);
+                intent.putExtra("category", "kalame2");
+                intent.putExtra("position", position + "");
+                if (Utils.database.kalame2[position + 1])
+                    intent.putExtra(Utils.ACTIVE, true);
+                else intent.putExtra(Utils.ACTIVE, false);
+                intent.putExtra(Utils.NAME, adapter.getItem(position));
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

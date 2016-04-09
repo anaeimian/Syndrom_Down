@@ -31,7 +31,7 @@ public class BaziActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(BaziActivity.this, BaziListActivity.class);
-                intent.putExtra("gameType","balloon");
+                intent.putExtra("gameType", "balloon");
                 startActivity(intent);
             }
         });
@@ -40,11 +40,17 @@ public class BaziActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(BaziActivity.this, BaziListActivity.class);
-                intent.putExtra("gameType","football");
+                intent.putExtra("gameType", "football");
                 startActivity(intent);
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(BaziActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }
 

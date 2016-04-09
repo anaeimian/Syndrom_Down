@@ -12,44 +12,44 @@
 
             <ImageView
                 android:id="@+id/imViewFel"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="@dimen/jomle_item_dim"
+                android:layout_height="@dimen/jomle_item_dim"
                 android:src="@drawable/fel"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="70dp"
-                android:layout_above="@+id/imViewZamir"
+                android:layout_marginLeft="@dimen/jomle_item_left_margin"
+                android:layout_marginStart="@dimen/jomle_item_left_margin"
+                android:layout_below="@+id/app_bar"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="70dp" />
+                android:layout_alignParentStart="true" />
 
             <ImageView
                 android:id="@+id/imView2Kalame"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="@dimen/jomle_item_dim"
+                android:layout_height="@dimen/jomle_item_dim"
                 android:src="@drawable/dok"
                 android:layout_gravity="center_horizontal"
+                android:layout_below="@+id/app_bar"
+                android:layout_toRightOf="@+id/imViewFel"
+                android:layout_toEndOf="@+id/imViewFel"
+                android:layout_marginLeft="114dp"
+                android:layout_marginStart="114dp" />
+
+            <ImageView
+                android:id="@+id/imView3Kalame"
+                android:layout_width="@dimen/jomle_item_dim"
+                android:layout_height="@dimen/jomle_item_dim"
+                android:src="@drawable/sek"
                 android:layout_below="@+id/imViewFel"
                 android:layout_toRightOf="@+id/imViewFel"
                 android:layout_toEndOf="@+id/imViewFel" />
 
             <ImageView
-                android:id="@+id/imView3Kalame"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:src="@drawable/sek"
-                android:layout_marginLeft="93dp"
-                android:layout_alignTop="@+id/imViewFel"
-                android:layout_toRightOf="@+id/imViewFel"
-                android:layout_toEndOf="@+id/imViewFel"
-                android:layout_marginStart="93dp" />
-
-            <ImageView
                 android:id="@+id/imViewZamir"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="@dimen/jomle_item_dim"
+                android:layout_height="@dimen/jomle_item_dim"
                 android:src="@drawable/zamir"
-                android:layout_alignParentBottom="true"
-                android:layout_toRightOf="@+id/imView3Kalame"
-                android:layout_toEndOf="@+id/imView3Kalame" />
+                android:layout_below="@+id/imView2Kalame"
+                android:layout_toRightOf="@+id/imView2Kalame"
+                android:layout_toEndOf="@+id/imView2Kalame" />
 
 </RelativeLayout>

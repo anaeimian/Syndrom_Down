@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,38 +10,34 @@
         layout="@layout/app_bar" />
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="20dp">
+    <ImageView
+        android:id="@+id/imViewAmr"
+        android:layout_width="@dimen/fel_item_dim"
+        android:layout_height="@dimen/fel_item_dim"
 
-            <ImageView
-                android:id="@+id/imViewAmr"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginLeft="25dp"
-                android:src="@drawable/amr" />
+        android:layout_alignTop="@+id/imViewGozashte"
+        android:layout_toLeftOf="@+id/imViewGozashte"
+        android:layout_toStartOf="@+id/imViewGozashte"
+        android:src="@drawable/amr" />
 
-            <ImageView
-                android:id="@+id/imViewGozashte"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginLeft="25dp"
-                android:src="@drawable/gozashte" />
+    <ImageView
+        android:id="@+id/imViewGozashte"
+        android:layout_width="@dimen/fel_item_dim"
+        android:layout_height="@dimen/fel_item_dim"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:src="@drawable/gozashte" />
 
-            <ImageView
-                android:id="@+id/imViewHessi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginLeft="25dp"
-                android:src="@drawable/hesi" />
-
-
-        </LinearLayout>
+    <ImageView
+        android:id="@+id/imViewHessi"
+        android:layout_width="@dimen/fel_item_dim"
+        android:layout_height="@dimen/fel_item_dim"
+        android:layout_alignTop="@+id/imViewGozashte"
+        android:layout_toEndOf="@+id/imViewGozashte"
+        android:layout_toRightOf="@+id/imViewGozashte"
+        android:src="@drawable/hesi" />
 
 
-</LinearLayout>
+</RelativeLayout>

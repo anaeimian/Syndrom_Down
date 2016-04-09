@@ -18,6 +18,24 @@
         android:layout_toEndOf="@+id/arrow"
         android:layout_toRightOf="@+id/arrow"
         android:src="@drawable/tbaba" />
+    <ImageView
+        android:id="@+id/guideWord"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignTop="@+id/arrow"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_toEndOf="@+id/arrow"
+        android:layout_toRightOf="@+id/arrow"
+        android:src="@drawable/tbaba" />
+    <ImageView
+        android:id="@+id/hand"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/temp"
+        android:layout_below="@+id/word"
+        android:layout_alignLeft="@+id/word"
+        android:layout_alignStart="@+id/word" />
 
     <ImageView
         android:id="@+id/arrow"

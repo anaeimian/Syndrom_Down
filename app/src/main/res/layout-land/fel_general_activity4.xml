@@ -36,4 +36,59 @@
         android:layout_toStartOf="@+id/arrow"
         android:src="@drawable/imbede" />
 
+    <ImageView
+        android:id="@+id/star1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/guide"
+        android:layout_alignRight="@+id/guide"
+        android:layout_alignTop="@+id/star2"
+        android:src="@drawable/star1"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/star2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/star2"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/star3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/verbImg"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/verbImg"
+        android:src="@drawable/star3"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/star4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/verb"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/verb"
+        android:src="@drawable/star4"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/star5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/star5"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/bottomAligner"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:layout_alignParentBottom="true" />
+
 </RelativeLayout>

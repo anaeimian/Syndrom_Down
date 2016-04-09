@@ -1,12 +1,17 @@
 package com.example.arman.syndrom_down;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
 import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.media.MediaPlayer;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Display;
 import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,8 +30,21 @@ public class FelGeneralActivity4 extends ActionBarActivity {
     int verbDragged = 0;
     MediaPlayer verbDrag;
     MediaPlayer tashvigh;
+    MediaPlayer clapSound;
     int position;
     String category;
+    private ObjectAnimator animator1;
+    private ObjectAnimator animator2;
+    private ObjectAnimator animator3;
+    private ObjectAnimator animator4;
+    private ObjectAnimator animator5;
+    ImageView star1;
+    ImageView star2;
+    ImageView star3;
+    ImageView star4;
+    ImageView star5;
+    ImageView bottomAligner;
+    Intent intent = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +54,7 @@ public class FelGeneralActivity4 extends ActionBarActivity {
         verbImg = (ImageView) findViewById(R.id.verbImg);
         arrow = (ImageView) findViewById(R.id.arrow);
         tashvigh = MediaPlayer.create(this, R.raw.afarin);
+        clapSound = MediaPlayer.create(getApplicationContext(), R.raw.clap);
         controller();
         setViews();
         verbDrag.start();
@@ -144,7 +163,7 @@ public class FelGeneralActivity4 extends ActionBarActivity {
                         break;
                 }
                 break;
-            case "twowords":
+            case "kalame2":
                 switch (position) {
                     case 0:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.babayeman_drag);
@@ -221,7 +240,7 @@ public class FelGeneralActivity4 extends ActionBarActivity {
                 }
                 break;
 
-            case "threewords":
+            case "kalame3":
                 switch (position) {
                     case 0:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.gorbeheivan_drag);
@@ -263,6 +282,108 @@ public class FelGeneralActivity4 extends ActionBarActivity {
 
         }
 
+    }
+
+    void successAnimation() {
+        clapSound.start();
+        star1 = (ImageView) findViewById(R.id.star1);
+        star2 = (ImageView) findViewById(R.id.star2);
+        star3 = (ImageView) findViewById(R.id.star3);
+        star4 = (ImageView) findViewById(R.id.star4);
+        star5 = (ImageView) findViewById(R.id.star5);
+        bottomAligner = (ImageView) findViewById(R.id.bottomAligner);
+        animator1 = new ObjectAnimator();
+        animator1.setDuration(3000);
+        animator1.setTarget(star1);
+        animator1.setPropertyName("translationY");
+
+        animator2 = new ObjectAnimator();
+        animator2.setDuration(3000);
+        animator2.setTarget(star2);
+        animator2.setPropertyName("translationY");
+
+        animator3 = new ObjectAnimator();
+        animator3.setDuration(3000);
+        animator3.setTarget(star3);
+        animator3.setPropertyName("translationY");
+
+        animator4 = new ObjectAnimator();
+        animator4.setDuration(3000);
+        animator4.setTarget(star4);
+        animator4.setPropertyName("translationY");
+
+        animator5 = new ObjectAnimator();
+        animator5.setDuration(3000);
+        animator5.setTarget(star5);
+        animator5.setPropertyName("translationY");
+
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        final int width = size.x;
+        final int height = size.y;
+        Log.d("test", width + "");
+        Log.d("test", height + "");
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                animator1.setFloatValues(0, -height - 300);
+                animator1.start();
+                animator2.setFloatValues(0, -height - 300);
+                animator2.start();
+                animator3.setFloatValues(0, -height - 300);
+                animator3.start();
+                animator4.setFloatValues(0, -height - 300);
+                animator4.start();
+                animator5.setFloatValues(0, -height - 300);
+                animator5.start();
+                animator5.setFloatValues(0, -height - 300);
+                animator5.start();
+            }
+        }, 500);
+        animator1.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                star1.setX(width / 6);
+                star2.setX(2 * width / 6);
+                star3.setX(3 * width / 6);
+                star4.setX(4 * width / 6);
+                star5.setX(5 * width / 6);
+
+                star1.setY(height + 100);
+                star2.setY(height + 100);
+                star3.setY(height + 100);
+                star4.setY(height + 100);
+                star5.setY(height + 100);
+
+                star1.setVisibility(View.VISIBLE);
+                star2.setVisibility(View.VISIBLE);
+                star3.setVisibility(View.VISIBLE);
+                star4.setVisibility(View.VISIBLE);
+                star5.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                star1.setVisibility(View.INVISIBLE);
+                star2.setVisibility(View.INVISIBLE);
+                star3.setVisibility(View.INVISIBLE);
+                star4.setVisibility(View.INVISIBLE);
+                star5.setVisibility(View.INVISIBLE);
+                intent.putExtra("position", "0");
+                startActivity(intent);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
     }
 
     @Override
@@ -320,13 +441,48 @@ public class FelGeneralActivity4 extends ActionBarActivity {
                         v.setBackgroundColor(Color.TRANSPARENT);
                         verbDragged++;
                         tashvigh.start();
+                        tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                if (verbDragged <= 3) {
+                                    verbDrag.start();
+                                }
+                            }
+                        });
+
                         if (verbDragged >= 4) {
                             tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                                 public void onCompletion(MediaPlayer mp) {
                                     if (verbDragged >= 4) {
-                                        Intent intent = new Intent(FelGeneralActivity4.this, AmrActivity.class);
-                                        intent.putExtra("position", position + "");
-                                        startActivity(intent);
+//                                        Intent intent = null;
+                                        switch (category) {
+                                            case "amr":
+                                                intent = new Intent(FelGeneralActivity4.this, AmrActivity.class);
+                                                successAnimation();
+                                                break;
+                                            case "gozashte":
+                                                intent = new Intent(FelGeneralActivity4.this, GozashteActivity.class);
+                                                successAnimation();
+                                                break;
+                                            case "hessi":
+                                                intent = new Intent(FelGeneralActivity4.this, HessiActivity.class);
+                                                successAnimation();
+                                                break;
+                                            case "kalame2":
+                                                intent = new Intent(FelGeneralActivity4.this, Kalame2Activity.class);
+                                                successAnimation();
+                                                break;
+                                            case "kalame3":
+                                                intent = new Intent(FelGeneralActivity4.this, Kalame3Activity.class);
+                                                successAnimation();
+                                                break;
+                                            case "zamir":
+                                                intent = new Intent(FelGeneralActivity4.this, ZamirActivity.class);
+                                                successAnimation();
+//                                                Utils.database.zamir[1] = true;
+                                                break;
+                                        }
+//                                        startActivity(intent);
                                     }
                                 }
                             });

@@ -17,9 +17,6 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
- * Created by Szamani on 1/1/2016.
- */
 public class Bazi1Activity2 extends ActionBarActivity {
     private Toolbar toolbar;
     private ImageView word1;
@@ -71,6 +68,12 @@ public class Bazi1Activity2 extends ActionBarActivity {
 //        setListeners();
         handleIntent();
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Bazi1Activity2.this, BaziListActivity.class);
+        startActivity(intent);
     }
 
     private void handleIntent() {
@@ -137,60 +140,122 @@ public class Bazi1Activity2 extends ActionBarActivity {
 
 //                word1.setImageResource(R.drawable.balloon_dadash);
 //                word2.setImageResource(R.drawable.balloon_khahar);
-                startAnimation();
 
-                if (answerPos == 0) {
-                    word1.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            startRotateAnimation(word1, category);
-                            tashvigh.start();
-                            new Handler().postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    animator4.setFloatValues(0, 1000);
-                                    animator4.start();
-                                }
-                            }, 500);
 
-                        }
-                    });
-                    word2.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            payMoreAttention.start();
-                        }
-                    });
-                } else if (answerPos == 1) {
-                    word2.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            startRotateAnimation(word2, category);
-                            tashvigh.start();
-                            new Handler().postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    animator3.setFloatValues(0, 1000);
-                                    animator3.start();
-                                }
-                            }, 500);
+                break;
 
+            case "andam":
+                switch (items.get(0)) {
+                    case "cheshm":
+                        word1.setImageResource(R.drawable.balloon_cheshm);
+                        if (answerPos == 0) {
+//                            wordVoice = MediaPlayer.create(this, R.raw.cheshm_ko);
                         }
-                    });
-                    word1.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            payMoreAttention.start();
+                        break;
+                    case "dast":
+                        word1.setImageResource(R.drawable.balloon_dast);
+                        if (answerPos == 0) {
+//                            wordVoice = MediaPlayer.create(this, R.raw.dast_ko);
                         }
-                    });
+                        break;
+
+                    case "pa":
+                        word1.setImageResource(R.drawable.balloon_pa);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.khahar_ko);
+                        }
+                        break;
+                    case "goosh":
+                        word1.setImageResource(R.drawable.balloon_gush);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.dadash_ko);
+                        }
+                        break;
+                }
+                switch (items.get(1)) {
+                    case "baba":
+                        word2.setImageResource(R.drawable.balloon_baba);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.baba_ko);
+                        }
+                        break;
+                    case "maman":
+                        word2.setImageResource(R.drawable.balloon_maman);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.maman_ko);
+                        }
+                        break;
+                    case "khahar":
+                        word2.setImageResource(R.drawable.balloon_khahar);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.khahar_ko);
+                        }
+                        break;
+                    case "dadash":
+                        word2.setImageResource(R.drawable.balloon_dadash);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.dadash_ko);
+                        }
+                        break;
                 }
 
-
+                break;
+            case "miveh":
+                break;
+            case "heyvanat":
                 break;
             default:
                 break;
 
         }
+        startAnimation();
+
+        if (answerPos == 0) {
+            word1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startRotateAnimation(word1, category);
+                    tashvigh.start();
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            animator4.setFloatValues(0, 1000);
+                            animator4.start();
+                        }
+                    }, 500);
+
+                }
+            });
+            word2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    payMoreAttention.start();
+                }
+            });
+        } else if (answerPos == 1) {
+            word2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startRotateAnimation(word2, category);
+                    tashvigh.start();
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            animator3.setFloatValues(0, 1000);
+                            animator3.start();
+                        }
+                    }, 500);
+
+                }
+            });
+            word1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    payMoreAttention.start();
+                }
+            });
+        }
+
 
     }
 

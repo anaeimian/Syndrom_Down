@@ -122,7 +122,7 @@ public class FelGeneralActivity1 extends ActionBarActivity {
                         break;
                 }
                 break;
-            case "twowords":
+            case "kalame2":
                 switch (position) {
                     case 0:
                         felVoice = MediaPlayer.create(getApplicationContext(), R.raw.babayeman_voice);
@@ -187,7 +187,7 @@ public class FelGeneralActivity1 extends ActionBarActivity {
                 }
                 break;
 
-            case "threewords":
+            case "kalame3":
                 switch (position) {
                     case 0:
                         felVoice = MediaPlayer.create(getApplicationContext(), R.raw.gorbeheivanast_voice);
@@ -250,7 +250,28 @@ public class FelGeneralActivity1 extends ActionBarActivity {
     @Override
     public void onBackPressed() {
         // Inflate the menu; this adds items to the action bar if it is present.
-        Intent intent = new Intent(FelGeneralActivity1.this, FelActivity.class);
+        Intent intent = null;
+        switch (category) {
+            case "amr":
+                intent = new Intent(FelGeneralActivity1.this, AmrActivity.class);
+                break;
+            case "gozashte":
+                intent = new Intent(FelGeneralActivity1.this, GozashteActivity.class);
+                break;
+            case "hessi":
+                intent = new Intent(FelGeneralActivity1.this, HessiActivity.class);
+                break;
+            case "kalame2":
+                intent = new Intent(FelGeneralActivity1.this, Kalame2Activity.class);
+                break;
+            case "kalame3":
+                intent = new Intent(FelGeneralActivity1.this, Kalame3Activity.class);
+                break;
+            case "zamir":
+                intent = new Intent(FelGeneralActivity1.this, ZamirActivity.class);
+                break;
+        }
+
         startActivity(intent);
     }
 

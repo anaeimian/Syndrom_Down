@@ -10,10 +10,10 @@
 
     <ImageView
         android:id="@+id/wordImg"
-        android:layout_width="150dp"
-        android:layout_height="120dp"
+        android:layout_width="@dimen/word5_image_width"
+        android:layout_height="@dimen/word5_image_height"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="@dimen/word5_image_margin_top"
         android:src="@drawable/imbaba" />
 
     <ImageView

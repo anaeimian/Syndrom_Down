@@ -1,10 +1,13 @@
 package com.example.arman.syndrom_down;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
 import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.DragEvent;
@@ -28,6 +31,12 @@ public class FelGeneralActivity3 extends ActionBarActivity {
     int position;
     String category;
 
+    //guide
+    private ImageView guide;
+    private ImageView guideImage;
+    private ImageView hand;
+    ObjectAnimator animator1;
+    ObjectAnimator animator2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +46,65 @@ public class FelGeneralActivity3 extends ActionBarActivity {
         verbImg = (ImageView) findViewById(R.id.verbImg);
         arrow = (ImageView) findViewById(R.id.arrow);
         tashvigh = MediaPlayer.create(this, R.raw.afarin);
+        guide = (ImageView) findViewById(R.id.guide);
+        hand = (ImageView) findViewById(R.id.hand);
         controller();
         setViews();
         verbDrag.start();
+
+        guideImage = (ImageView) findViewById(R.id.guideWord);
+
+        guideImage.setImageDrawable(verbImg.getDrawable());
+
+        guide();
+
+    }
+
+    void guide() {
+
+
+        animator1 = new ObjectAnimator();
+        animator1.setDuration(1500);
+        animator1.setTarget(guideImage);
+        animator1.setPropertyName("translationX");
+
+        animator2 = new ObjectAnimator();
+        animator2.setDuration(1500);
+        animator2.setTarget(hand);
+        animator2.setPropertyName("translationX");
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                animator1.setFloatValues(0, -verbImg.getX() + verb.getX());
+                animator1.start();
+                animator2.setFloatValues(0, -verbImg.getX() + verb.getX());
+                animator2.start();
+            }
+        }, 500);
+
+        animator1.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                guideImage.setVisibility(View.INVISIBLE);
+                hand.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+
     }
 
     private void setViews() {
@@ -48,9 +113,9 @@ public class FelGeneralActivity3 extends ActionBarActivity {
         if (pos != null) {
             position = Integer.parseInt(pos);
         }
-        verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.bede_drag);
-        verb.setImageResource(R.drawable.tbede);
-        verbImg.setImageResource(R.drawable.imbede);
+//        verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.bede_drag);
+//        verb.setImageResource(R.drawable.tbede);
+//        verbImg.setImageResource(R.drawable.imbede);
 
         switch (category) {
             case "amr":
@@ -148,7 +213,7 @@ public class FelGeneralActivity3 extends ActionBarActivity {
                         break;
                 }
                 break;
-            case "twowords":
+            case "kalame2":
                 switch (position) {
                     case 0:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.babayeman_drag);
@@ -226,9 +291,10 @@ public class FelGeneralActivity3 extends ActionBarActivity {
                 }
                 break;
 
-            case "threewords":
+            case "kalame3":
                 switch (position) {
                     case 0:
+                        Log.d("gorbe", "gorbe");
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.gorbeheivan_drag);
                         verb.setImageResource(R.drawable.tgorbeheivan);
                         verbImg.setImageResource(R.drawable.imgorbeheivan);
@@ -342,18 +408,7 @@ public class FelGeneralActivity3 extends ActionBarActivity {
                             tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                                 public void onCompletion(MediaPlayer mp) {
                                     if (verbDragged >= 4) {
-                                        Intent intent = null;
-                                        switch (category) {
-                                            case "amr":
-                                                intent = new Intent(FelGeneralActivity3.this, FelGeneralActivity4.class);
-                                                break;
-                                            case "gozashte":
-                                                intent = new Intent(FelGeneralActivity3.this, FelGeneralActivity4.class);
-                                                break;
-                                            case "hessi":
-                                                intent = new Intent(FelGeneralActivity3.this, FelGeneralActivity4.class);
-                                                break;
-                                        }
+                                        Intent intent = new Intent(FelGeneralActivity3.this, FelGeneralActivity4.class);
                                         intent.putExtra("category", category);
                                         intent.putExtra("position", position + "");
                                         startActivity(intent);

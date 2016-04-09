@@ -10,8 +10,8 @@
 
     <VideoView
         android:id="@+id/videoView"
-        android:layout_width="320dp"
-        android:layout_height="200dp"
+        android:layout_width="@dimen/fel_video_width"
+        android:layout_height="@dimen/fel_video_height"
         android:layout_centerHorizontal="true" />
 
     <ImageView

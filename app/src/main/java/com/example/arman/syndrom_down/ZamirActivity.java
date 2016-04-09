@@ -49,14 +49,16 @@ public class ZamirActivity extends ActionBarActivity {
                 if (!Utils.database.zamir[position])
                     return;
 
-//                Intent intent = new Intent(ZamirActivity.this, FelGeneralActivity.class);
-//                intent.putExtra(Utils.TYPE, 4);
-//                intent.putExtra(Utils.WHICH, position);
-//                if (Utils.database.zamir[position + 1])
-//                    intent.putExtra(Utils.ACTIVE, true);
-//                else intent.putExtra(Utils.ACTIVE, false);
-//                intent.putExtra(Utils.NAME, adapter.getItem(position));
-//                startActivity(intent);
+                Intent intent = new Intent(ZamirActivity.this, FelGeneralActivity1.class);
+                intent.putExtra(Utils.TYPE, 4);
+                intent.putExtra(Utils.WHICH, position);
+                intent.putExtra("category", "zamir");
+                intent.putExtra("position", position + "");
+                if (Utils.database.zamir[position + 1])
+                    intent.putExtra(Utils.ACTIVE, true);
+                else intent.putExtra(Utils.ACTIVE, false);
+                intent.putExtra(Utils.NAME, adapter.getItem(position));
+                startActivity(intent);
             }
         });
     }

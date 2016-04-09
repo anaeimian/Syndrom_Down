@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,18 +49,18 @@ public class Kalame3Activity extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (!Utils.database.kalame3[position]) {
-                    Toast.makeText(Kalame3Activity.this, "Nemishe", Toast.LENGTH_SHORT)
-                            .show();
                     return;
                 }
 
-//                Intent intent = new Intent(Kalame3Activity.this, Kalame3GeneralActivity.class);
-//                intent.putExtra(Utils.NAME, listAdapterKalame3.getItem(position));
-//                intent.putExtra(Utils.WHICH, position);
-//                if (Utils.database.kalame3[position + 1])
-//                    intent.putExtra(Utils.ACTIVE, true);
-//                else intent.putExtra(Utils.ACTIVE, false);
-//                startActivity(intent);
+                Intent intent = new Intent(Kalame3Activity.this, FelGeneralActivity1.class);
+                intent.putExtra(Utils.NAME, listAdapterKalame3.getItem(position));
+                intent.putExtra(Utils.WHICH, position);
+                intent.putExtra("position", position + "");
+                intent.putExtra("category", "kalame3");
+                if (Utils.database.kalame3[position + 1])
+                    intent.putExtra(Utils.ACTIVE, true);
+                else intent.putExtra(Utils.ACTIVE, false);
+                startActivity(intent);
             }
         });
     }

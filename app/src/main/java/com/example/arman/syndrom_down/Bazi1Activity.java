@@ -79,6 +79,12 @@ public class Bazi1Activity extends ActionBarActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Bazi1Activity.this, BaziListActivity.class);
+        startActivity(intent);
+    }
+
     private void handleIntent() {
         Intent intent = getIntent();
         String category = intent.getStringExtra("category");
@@ -132,7 +138,6 @@ public class Bazi1Activity extends ActionBarActivity {
                         }
                     });
                 } else if (answerPos == 1) {
-                    Log.d("rand2", "rand2");
                     setVoiceImage(word2, selectedItem1, category);
                     setImage(word1, selectedItem2);
                     word2.setOnClickListener(new View.OnClickListener() {
@@ -271,6 +276,552 @@ public class Bazi1Activity extends ActionBarActivity {
 //                });
 
                 break;
+            case "miveh":
+                ArrayList<String> mivehItems;
+                mivehItems = new ArrayList<>();
+                mivehItems.add("moz");
+                mivehItems.add("sib");
+                mivehItems.add("khiar");
+                mivehItems.add("porteghal");
+                mivehItems.add("limo");
+
+                remianedItems = new ArrayList<>();
+                for (int i = 0; i < mivehItems.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remianedItems.add(mivehItems.get(i));
+                }
+
+                if (answerPos == 0) {
+                    setVoiceImage(word1, selectedItem1, category);
+                    setImage(word2, selectedItem2);
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word1, "miveh");
+                            tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator4.setFloatValues(0, 1000);
+                                    animator4.start();
+                                }
+                            }, 500);
+
+                        }
+                    });
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                } else if (answerPos == 1) {
+                    setVoiceImage(word2, selectedItem1, category);
+                    setImage(word1, selectedItem2);
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word2, "miveh");
+                            tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator3.setFloatValues(0, 1000);
+                                    animator3.start();
+                                }
+                            }, 500);
+
+                        }
+                    });
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                }
+                startAnimation();
+
+                break;
+
+            case "heyvanat":
+                ArrayList<String> heyvanatItems;
+                heyvanatItems = new ArrayList<>();
+                heyvanatItems.add("gorbe");
+                heyvanatItems.add("sag");
+                heyvanatItems.add("gav");
+                heyvanatItems.add("mahi");
+                heyvanatItems.add("morgh");
+                heyvanatItems.add("asb");
+
+                remianedItems = new ArrayList<>();
+                for (int i = 0; i < heyvanatItems.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remianedItems.add(heyvanatItems.get(i));
+                }
+
+                if (answerPos == 0) {
+                    setVoiceImage(word1, selectedItem1, category);
+                    setImage(word2, selectedItem2);
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word1, "heyvanat");
+                            tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator4.setFloatValues(0, 1000);
+                                    animator4.start();
+                                }
+                            }, 500);
+
+                        }
+                    });
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                } else if (answerPos == 1) {
+                    setVoiceImage(word2, selectedItem1, category);
+                    setImage(word1, selectedItem2);
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word2, "heyvanat");
+                            tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator3.setFloatValues(0, 1000);
+                                    animator3.start();
+                                }
+                            }, 500);
+
+                        }
+                    });
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                }
+                startAnimation();
+
+                break;
+            case "pooshak":
+                ArrayList<String> pooshakItems;
+                pooshakItems = new ArrayList<>();
+                pooshakItems.add("kafsh");
+                pooshakItems.add("kolah");
+                pooshakItems.add("joorab");
+                pooshakItems.add("shalvar");
+                pooshakItems.add("pirahan");
+                pooshakItems.add("rosari");
+                pooshakItems.add("bolooz");
+
+                remianedItems = new ArrayList<>();
+                for (int i = 0; i < pooshakItems.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remianedItems.add(pooshakItems.get(i));
+                }
+
+                if (answerPos == 0) {
+                    setVoiceImage(word1, selectedItem1, category);
+                    setImage(word2, selectedItem2);
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word1, "pooshak");
+                            tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator4.setFloatValues(0, 1000);
+                                    animator4.start();
+                                }
+                            }, 500);
+
+                        }
+                    });
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                } else if (answerPos == 1) {
+                    setVoiceImage(word2, selectedItem1, category);
+                    setImage(word1, selectedItem2);
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word2, "pooshak");
+                            tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator3.setFloatValues(0, 1000);
+                                    animator3.start();
+                                }
+                            }, 500);
+
+                        }
+                    });
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                }
+                startAnimation();
+
+                break;
+
+            case "vasayel":
+                ArrayList<String> vasayelItems;
+                vasayelItems = new ArrayList<>();
+                vasayelItems.add("shane");
+                vasayelItems.add("mesvak");
+                vasayelItems.add("hole");
+                vasayelItems.add("toop");
+                vasayelItems.add("docharkhe");
+                vasayelItems.add("mashin");
+                vasayelItems.add("havapeyma");
+                vasayelItems.add("ghashogh");
+                vasayelItems.add("ketab");
+
+                remianedItems = new ArrayList<>();
+                for (int i = 0; i < vasayelItems.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remianedItems.add(vasayelItems.get(i));
+                }
+
+                if (answerPos == 0) {
+                    setVoiceImage(word1, selectedItem1, category);
+                    setImage(word2, selectedItem2);
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word1, "vasayel");
+                            tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator4.setFloatValues(0, 1000);
+                                    animator4.start();
+                                }
+                            }, 500);
+
+                        }
+                    });
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                } else if (answerPos == 1) {
+                    setVoiceImage(word2, selectedItem1, category);
+                    setImage(word1, selectedItem2);
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word2, "vasayel");
+                            tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator3.setFloatValues(0, 1000);
+                                    animator3.start();
+                                }
+                            }, 500);
+
+                        }
+                    });
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                }
+                startAnimation();
+
+                break;
+            case "mashagel":
+                ArrayList<String> mashagelItems;
+                mashagelItems = new ArrayList<>();
+                mashagelItems.add("doctor");
+                mashagelItems.add("nanva");
+                mashagelItems.add("moalem");
+
+                remianedItems = new ArrayList<>();
+                for (int i = 0; i < mashagelItems.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remianedItems.add(mashagelItems.get(i));
+                }
+
+                if (answerPos == 0) {
+                    setVoiceImage(word1, selectedItem1, category);
+                    setImage(word2, selectedItem2);
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word1, "mashaghel");
+                            tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator4.setFloatValues(0, 1000);
+                                    animator4.start();
+                                }
+                            }, 500);
+
+                        }
+                    });
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                } else if (answerPos == 1) {
+                    setVoiceImage(word2, selectedItem1, category);
+                    setImage(word1, selectedItem2);
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word2, "mashaghel");
+                            tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator3.setFloatValues(0, 1000);
+                                    animator3.start();
+                                }
+                            }, 500);
+
+                        }
+                    });
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                }
+                startAnimation();
+
+                break;
+            case "rang":
+                ArrayList<String> rangItems;
+                rangItems = new ArrayList<>();
+                rangItems.add("abi");
+                rangItems.add("zard");
+                rangItems.add("ghermez");
+
+                remianedItems = new ArrayList<>();
+                for (int i = 0; i < rangItems.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remianedItems.add(rangItems.get(i));
+                }
+
+                if (answerPos == 0) {
+                    setVoiceImage(word1, selectedItem1, category);
+                    setImage(word2, selectedItem2);
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word1, "rang");
+                            tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator4.setFloatValues(0, 1000);
+                                    animator4.start();
+                                }
+                            }, 500);
+
+                        }
+                    });
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                } else if (answerPos == 1) {
+                    setVoiceImage(word2, selectedItem1, category);
+                    setImage(word1, selectedItem2);
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word2, "rang");
+                            tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator3.setFloatValues(0, 1000);
+                                    animator3.start();
+                                }
+                            }, 500);
+
+                        }
+                    });
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                }
+                startAnimation();
+
+                break;
+            case "khordani":
+                ArrayList<String> khordaniItems;
+                khordaniItems = new ArrayList<>();
+                khordaniItems.add("nan");
+                khordaniItems.add("shir");
+                khordaniItems.add("ab");
+                khordaniItems.add("cake");
+                khordaniItems.add("biscuit");
+
+                remianedItems = new ArrayList<>();
+                for (int i = 0; i < khordaniItems.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remianedItems.add(khordaniItems.get(i));
+                }
+
+                if (answerPos == 0) {
+                    setVoiceImage(word1, selectedItem1, category);
+                    setImage(word2, selectedItem2);
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word1, "khordani");
+                            tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator4.setFloatValues(0, 1000);
+                                    animator4.start();
+                                }
+                            }, 500);
+
+                        }
+                    });
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                } else if (answerPos == 1) {
+                    setVoiceImage(word2, selectedItem1, category);
+                    setImage(word1, selectedItem2);
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word2, "khordani");
+                            tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator3.setFloatValues(0, 1000);
+                                    animator3.start();
+                                }
+                            }, 500);
+
+                        }
+                    });
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                }
+                startAnimation();
+
+                break;
+            case "mafahim":
+                ArrayList<String> mafahimItems;
+                mafahimItems = new ArrayList<>();
+                mafahimItems.add("bala");
+                mafahimItems.add("paeen");
+                mafahimItems.add("kasif");
+                mafahimItems.add("tamiz");
+                mafahimItems.add("bache");
+                mafahimItems.add("dokhtar");
+                mafahimItems.add("pesar");
+                mafahimItems.add("sard");
+                mafahimItems.add("garm");
+
+                remianedItems = new ArrayList<>();
+                for (int i = 0; i < mafahimItems.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remianedItems.add(mafahimItems.get(i));
+                }
+
+                if (answerPos == 0) {
+                    setVoiceImage(word1, selectedItem1, category);
+                    setImage(word2, selectedItem2);
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word1, "mafahim");
+                            tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator4.setFloatValues(0, 1000);
+                                    animator4.start();
+                                }
+                            }, 500);
+
+                        }
+                    });
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                } else if (answerPos == 1) {
+                    setVoiceImage(word2, selectedItem1, category);
+                    setImage(word1, selectedItem2);
+                    word2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startRotateAnimation(word2, "mafahim");
+                            tashvigh.start();
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    animator3.setFloatValues(0, 1000);
+                                    animator3.start();
+                                }
+                            }, 500);
+
+                        }
+                    });
+                    word1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            payMoreAttention.start();
+                        }
+                    });
+                }
+                startAnimation();
+
+                break;
+
         }
 
     }

@@ -1,11 +1,14 @@
 package com.example.arman.syndrom_down;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
 import android.app.Dialog;
 import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.view.DragEvent;
 import android.view.Menu;
@@ -29,6 +32,10 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
     int position = 0;
     Dialog settingsDialog;
     private ImageView guide;
+    private ImageView guideImage;
+    private ImageView hand;
+    ObjectAnimator animator1;
+    ObjectAnimator animator2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +47,7 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
         controller();
         dragVoice.start();
         guide = (ImageView) findViewById(R.id.guide);
+        hand = (ImageView) findViewById(R.id.hand);
         settingsDialog = new Dialog(this);
         settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.dialog_layout2, null));
@@ -50,7 +58,14 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
 
                 settingsDialog.show();
             }
+
         });
+        guideImage = (ImageView) findViewById(R.id.guideWord);
+
+        guideImage.setImageDrawable(word.getDrawable());
+
+        guide();
+
     }
 
     private void setViews() {
@@ -58,11 +73,18 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
 
         word = (ImageView) findViewById(R.id.word);
         wordImg = (ImageView) findViewById(R.id.wordImg);
-        arrow = (ImageView) findViewById(R.id.arrow);
+
+
+        arrow = (ImageView)
+
+                findViewById(R.id.arrow);
+
         Intent intent = getIntent();
         category = intent.getStringExtra("category");
         position = Integer.parseInt(intent.getStringExtra("position"));
-        switch (category) {
+        switch (category)
+
+        {
             case "khanevade":
                 switch (position) {
                     case 0:
@@ -434,6 +456,53 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
                 }
                 break;
         }
+
+    }
+
+    void guide() {
+
+
+        animator1 = new ObjectAnimator();
+        animator1.setDuration(1500);
+        animator1.setTarget(guideImage);
+        animator1.setPropertyName("translationX");
+
+        animator2 = new ObjectAnimator();
+        animator2.setDuration(1500);
+        animator2.setTarget(hand);
+        animator2.setPropertyName("translationX");
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                animator1.setFloatValues(0, -word.getX() + wordImg.getX());
+                animator1.start();
+                animator2.setFloatValues(0, -word.getX() + wordImg.getX());
+                animator2.start();
+            }
+        }, 500);
+
+        animator1.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                guideImage.setVisibility(View.INVISIBLE);
+                hand.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
 
     }
 
