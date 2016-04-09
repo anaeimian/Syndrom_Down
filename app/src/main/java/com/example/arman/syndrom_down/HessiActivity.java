@@ -58,12 +58,12 @@ public class HessiActivity extends ActionBarActivity {
                 Intent intent = new Intent(HessiActivity.this, FelGeneralActivity1.class);
                 intent.putExtra("position", position + "");
                 intent.putExtra("category", "hessi");
-//                intent.putExtra(Utils.TYPE, 2);
-//                intent.putExtra(Utils.WHICH, position);
-//                if (Utils.database.hessi[position + 1])
-//                    intent.putExtra(Utils.ACTIVE, true);
-//                else intent.putExtra(Utils.ACTIVE, false);
-//                intent.putExtra(Utils.NAME, adapter.getItem(position));
+                intent.putExtra(Utils.TYPE, 2);
+                intent.putExtra(Utils.WHICH, position);
+                if (Utils.database.hessi[position + 1])
+                    intent.putExtra(Utils.ACTIVE, true);
+                else intent.putExtra(Utils.ACTIVE, false);
+                intent.putExtra(Utils.NAME, adapter.getItem(position));
                 startActivity(intent);
             }
         });

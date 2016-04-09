@@ -62,12 +62,12 @@ public class GozashteActivity extends ActionBarActivity {
                 Intent intent = new Intent(GozashteActivity.this, FelGeneralActivity1.class);
                 intent.putExtra("position", position + "");
                 intent.putExtra("category", "gozashte");
-//                intent.putExtra(Utils.TYPE, 1);
-//                intent.putExtra(Utils.WHICH, position);
-//                if (Utils.database.gozashte[position + 1])
-//                    intent.putExtra(Utils.ACTIVE, true);
-//                else intent.putExtra(Utils.ACTIVE, false);
-//                intent.putExtra(Utils.NAME, adapter.getItem(position));
+                intent.putExtra(Utils.TYPE, 1);
+                intent.putExtra(Utils.WHICH, position);
+                if (Utils.database.gozashte[position + 1])
+                    intent.putExtra(Utils.ACTIVE, true);
+                else intent.putExtra(Utils.ACTIVE, false);
+                intent.putExtra(Utils.NAME, adapter.getItem(position));
                 startActivity(intent);
             }
         });

@@ -77,15 +77,15 @@ public class Bazi2Activity extends ActionBarActivity {
     private void handleIntent() {
         Intent intent = getIntent();
         category = intent.getStringExtra("category");
-
+        int answerPos = random.nextInt(2);
+        int selectedItem1 = random.nextInt(4);
+        int selectedItem2 = random.nextInt(4);
+        while (selectedItem2 == selectedItem1) {
+            selectedItem2 = random.nextInt(4);
+        }
         switch (category) {
             case "khanevade":
-                int answerPos = random.nextInt(2);
-                int selectedItem1 = random.nextInt(4);
-                int selectedItem2 = random.nextInt(4);
-                while (selectedItem2 == selectedItem1) {
-                    selectedItem2 = random.nextInt(4);
-                }
+
                 ArrayList<String> khanevadeItems;
                 khanevadeItems = new ArrayList<>();
                 khanevadeItems.add("baba");
@@ -100,167 +100,95 @@ public class Bazi2Activity extends ActionBarActivity {
                         remianedItems.add(khanevadeItems.get(i));
                 }
 
-                if (answerPos == 0) {
-                    setVoiceImage(pic1, selectedItem1, category);
-                    setImage(pic2, selectedItem2);
-                    pic1.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            animator.setFloatValues(0, -field.getWidth() / 2 + 30);
-                            animator.start();
-                            tashvigh.start();
-                        }
-                    });
-                    pic2.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            payMoreAttention.start();
-                        }
-                    });
-                } else if (answerPos == 1) {
-                    setVoiceImage(pic2, selectedItem1, category);
-                    setImage(pic1, selectedItem2);
-                    pic2.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            animator.setFloatValues(0, field.getWidth() / 2 - 30);
-                            animator.start();
-                            tashvigh.start();
-                        }
-                    });
-                    pic1.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            payMoreAttention.start();
-                        }
-                    });
-                }
-                animator.addListener(new Animator.AnimatorListener() {
-                    @Override
-                    public void onAnimationStart(Animator animation) {
-                        ball.setVisibility(View.VISIBLE);
-                    }
 
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
-                        ball.setVisibility(View.INVISIBLE);
-                        Intent intent = new Intent(Bazi2Activity.this, Bazi2Activity2.class);
-                        intent.putExtra("category", category);
-                        intent.putExtra("list",remianedItems);
-                        startActivity(intent);
-//                mediaPlayerTashvigh.start();
-                    }
-
-                    @Override
-                    public void onAnimationCancel(Animator animation) {
-
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animator animation) {
-
-                    }
-                });
-//                word1.setImageResource(R.drawable.balloon_baba);
-//                word2.setImageResource(R.drawable.balloon_maman);
-//                wordVoice = MediaPlayer.create(this, R.raw.baba_ko);
-                wordVoice.start();
-//                word1.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        startRotateAnimation("khanevade");
-//                        tashvigh.start();
-//
-//                    }
-//                });
-//                word2.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        payMoreAttention.start();
-//                    }
-//                });
 
                 break;
-//            case "andam":
-//                ArrayList<String> andamItems;
-//                andamItems = new ArrayList<>();
-//                andamItems.add("cheshm");
-//                andamItems.add("dast");
-//                andamItems.add("pa");
-//                andamItems.add("goosh");
-//                andamItems.add("moo");
-//                andamItems.add("dahan");
-//                andamItems.add("bini");
-//                andamItems.add("zaban");
-//                andamItems.add("dandan");
-//                andamItems.add("abroo");
-//
-//                remianedItems = new ArrayList<>();
-//                for (int i = 0; i < andamItems.size(); i++) {
-//                    if (i != selectedItem1 && i != selectedItem2)
-//                        remianedItems.add(andamItems.get(i));
-//                }
-//
-//                Log.d("rand", answerPos + " " + selectedItem1 + " " + selectedItem2);
-//                if (answerPos == 0) {
-//                    Log.d("rand1", "rand1");
-//                    setVoiceImage(word1, selectedItem1, category);
-//                    setImage(word2, selectedItem2);
-//                    word1.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//                            startRotateAnimation(word1, "andam");
-//                            tashvigh.start();
-//
-//                        }
-//                    });
-//                    word2.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//                            payMoreAttention.start();
-//                        }
-//                    });
-//                } else if (answerPos == 1) {
-//                    Log.d("rand2", "rand2");
-//                    setVoiceImage(word2, selectedItem1, category);
-//                    setImage(word1, selectedItem2);
-//                    word2.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//                            startRotateAnimation(word2, "andam");
-//                            tashvigh.start();
-//
-//                        }
-//                    });
-//                    word1.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//                            payMoreAttention.start();
-//                        }
-//                    });
-//                }
-////                word1.setImageResource(R.drawable.balloon_baba);
-////                word2.setImageResource(R.drawable.balloon_maman);
-//                startAnimation();
-////                wordVoice = MediaPlayer.create(this, R.raw.baba_ko);
-//                wordVoice.start();
-////                word1.setOnClickListener(new View.OnClickListener() {
-////                    @Override
-////                    public void onClick(View v) {
-////                        startRotateAnimation("khanevade");
-////                        tashvigh.start();
-////
-////                    }
-////                });
-////                word2.setOnClickListener(new View.OnClickListener() {
-////                    @Override
-////                    public void onClick(View v) {
-////                        payMoreAttention.start();
-////                    }
-////                });
-//
-//                break;
+
+            case "andam":
+                ArrayList<String> andamItems;
+                andamItems = new ArrayList<>();
+                andamItems.add("cheshm");
+                andamItems.add("dast");
+                andamItems.add("pa");
+                andamItems.add("goosh");
+                andamItems.add("moo");
+                andamItems.add("dahan");
+                andamItems.add("bini");
+                andamItems.add("zaban");
+                andamItems.add("dandan");
+                andamItems.add("abroo");
+
+                remianedItems = new ArrayList<>();
+                for (int i = 0; i < andamItems.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remianedItems.add(andamItems.get(i));
+                }
+
+
+
         }
+        if (answerPos == 0) {
+            setVoiceImage(pic1, selectedItem1, category);
+            setImage(pic2, selectedItem2);
+            pic1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    animator.setFloatValues(0, -field.getWidth() / 2 + 30);
+                    animator.start();
+                    tashvigh.start();
+                }
+            });
+            pic2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    payMoreAttention.start();
+                }
+            });
+        } else if (answerPos == 1) {
+            setVoiceImage(pic2, selectedItem1, category);
+            setImage(pic1, selectedItem2);
+            pic2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    animator.setFloatValues(0, field.getWidth() / 2 - 30);
+                    animator.start();
+                    tashvigh.start();
+                }
+            });
+            pic1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    payMoreAttention.start();
+                }
+            });
+        }
+        animator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                ball.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                ball.setVisibility(View.INVISIBLE);
+                Intent intent = new Intent(Bazi2Activity.this, Bazi2Activity2.class);
+                intent.putExtra("category", category);
+                intent.putExtra("list",remianedItems);
+                startActivity(intent);
+//                mediaPlayerTashvigh.start();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+        wordVoice.start();
 
     }
 
