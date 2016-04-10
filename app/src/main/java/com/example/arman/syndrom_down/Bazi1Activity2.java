@@ -517,8 +517,382 @@ public class Bazi1Activity2 extends ActionBarActivity {
                 }
                 break;
             case "vasael":
+                switch (items.get(0)) {
+                    case "shane":
+                        word1.setImageResource(R.drawable.balloon_shane);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.shane_ko);
+                        }
+                        break;
+                    case "mesvak":
+                        word1.setImageResource(R.drawable.balloon_mesvak);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.mesvak_ko);
+                        }
+                        break;
+                    case "hole":
+                        word1.setImageResource(R.drawable.balloon_hole);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.hole_ko);
+                        }
+                        break;
+
+                    case "toop":
+                        word1.setImageResource(R.drawable.balloon_toop);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.toop_ko);
+                        }
+                        break;
+                    case "docharkhe":
+                        word1.setImageResource(R.drawable.balloon_docharkhe);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.docharkhe_ko);
+                        }
+                        break;
+                    case "mashin":
+                        word1.setImageResource(R.drawable.balloon_mashin);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.mashin_ko);
+                        }
+                        break;
+                    case "havapeima":
+                        word1.setImageResource(R.drawable.balloon_havapeima);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.havapeima_kojast);
+                        }
+                        break;
+                    case "ghashoq":
+                        word1.setImageResource(R.drawable.balloon_ghashoq);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.qashoq_ko);
+                        }
+                        break;case "ketab":
+                        word1.setImageResource(R.drawable.balloon_ketab);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.ketab_ko);
+                        }
+                        break;
+                }
+                switch (items.get(1)) {
+                    case "shane":
+                        word2.setImageResource(R.drawable.balloon_shane);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.shane_ko);
+                        }
+                    case "mesvak":
+                        word2.setImageResource(R.drawable.balloon_mesvak);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.mesvak_ko);
+                        }
+                        break;
+                    case "hole":
+                        word2.setImageResource(R.drawable.balloon_hole);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.hole_ko);
+                        }
+                        break;
+
+                    case "toop":
+                        word2.setImageResource(R.drawable.balloon_toop);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.toop_ko);
+                        }
+                        break;
+                    case "docharkhe":
+                        word2.setImageResource(R.drawable.balloon_docharkhe);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.docharkhe_ko);
+                        }
+                        break;
+                    case "mashin":
+                        word2.setImageResource(R.drawable.balloon_mashin);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.mashin_ko);
+                        }
+                        break;
+                    case "havapeima":
+                        word2.setImageResource(R.drawable.balloon_havapeima);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.havapeima_kojast);
+                        }
+                        break;
+                    case "ghashoq":
+                        word2.setImageResource(R.drawable.balloon_ghashoq);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.qashoq_ko);
+                        }
+                        break;
+                    case "ketab":
+                        word2.setImageResource(R.drawable.balloon_ketab);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.ketab_ko);
+                        }
+                        break;
+                }
                 break;
             case "mashaqel":
+                switch (items.get(0)) {
+                    case "doctor":
+                        word1.setImageResource(R.drawable.balloon_doctor);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.doctor_ko);
+                        }
+                        break;
+                    case "nanva":
+                        word1.setImageResource(R.drawable.balloon_nanva);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.nanva_ko);
+                        }
+                        break;
+                    case "moalem":
+                        word1.setImageResource(R.drawable.balloon_moalem);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.moalem_ko);
+                        }
+                        break;
+
+                }
+                switch (items.get(1)) {
+                    case "doctor":
+                        word2.setImageResource(R.drawable.balloon_doctor);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.doctor_ko);
+                        }
+                    case "nanva":
+                        word2.setImageResource(R.drawable.balloon_nanva);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.nanva_ko);
+                        }
+                        break;
+                    case "moalem":
+                        word2.setImageResource(R.drawable.balloon_moalem);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.moalem_ko);
+                        }
+                        break;
+                }
+
+                break;
+            case "rang":
+                switch (items.get(0)) {
+                    case "abi":
+                        word1.setImageResource(R.drawable.balloon_abi);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.abi_ko);
+                        }
+                        break;
+                    case "zard":
+                        word1.setImageResource(R.drawable.balloon_zard);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.zard_ko);
+                        }
+                        break;
+                    case "ghermez":
+                        word1.setImageResource(R.drawable.balloon_ghermez);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.qermez_ko);
+                        }
+                        break;
+
+                }
+                switch (items.get(1)) {
+                    case "abi":
+                        word2.setImageResource(R.drawable.balloon_abi);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.abi_ko);
+                        }
+                    case "zard":
+                        word2.setImageResource(R.drawable.balloon_zard);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.zard_ko);
+                        }
+                        break;
+                    case "ghermez":
+                        word2.setImageResource(R.drawable.balloon_ghermez);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.qermez_ko);
+                        }
+                        break;
+                }
+                break;
+            case "khordani":
+                switch (items.get(0)) {
+                    case "nan":
+                        word1.setImageResource(R.drawable.balloon_nan);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.nan_ko);
+                        }
+                        break;
+                    case "shir":
+                        word1.setImageResource(R.drawable.balloon_shir);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.shir_ko);
+                        }
+                        break;
+                    case "ab":
+                        word1.setImageResource(R.drawable.balloon_ab);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.ab_ko);
+                        }
+                        break;
+                    case "cake":
+                        word1.setImageResource(R.drawable.balloon_cake);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.cake_ko);
+                        }
+                        break;
+                    case "bisko":
+                        word1.setImageResource(R.drawable.balloon_bisko);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.bisko_ko);
+                        }
+                        break;
+                }
+                switch (items.get(1)) {
+                    case "nan":
+                        word2.setImageResource(R.drawable.balloon_nan);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.nan_ko);
+                        }
+                    case "cake":
+                        word2.setImageResource(R.drawable.balloon_cake);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.cake_ko);
+                        }
+                        break;
+                    case "ab":
+                        word2.setImageResource(R.drawable.balloon_ab);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.ab_ko);
+                        }
+                        break;
+                    case "shir":
+                        word2.setImageResource(R.drawable.balloon_shir);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.shir_ko);
+                        }
+                        break;
+                    case "bisko":
+                        word2.setImageResource(R.drawable.balloon_bisko);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.bisko_ko);
+                        }
+                        break;
+                }
+                break;
+            case "mafahim":
+                switch (items.get(0)) {
+                    case "bala":
+                        word1.setImageResource(R.drawable.balloon_bala);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.bala_ko);
+                        }
+                        break;
+                    case "paeen":
+                        word1.setImageResource(R.drawable.balloon_paeen);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.paeen_ko);
+                        }
+                        break;
+                    case "kasif":
+                        word1.setImageResource(R.drawable.balloon_kasif);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.kasif_ko);
+                        }
+                        break;
+
+                    case "tamiz":
+                        word1.setImageResource(R.drawable.balloon_tamiz);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.tamiz_ko);
+                        }
+                        break;
+                    case "bache":
+                        word1.setImageResource(R.drawable.balloon_bache);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.bache_kojast);
+                        }
+                        break;
+                    case "dokhtar":
+                        word1.setImageResource(R.drawable.balloon_dokhtar);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.dokhtar_ko);
+                        }
+                        break;
+                    case "pesar":
+                        word1.setImageResource(R.drawable.balloon_pesar);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.pesar_kojast);
+                        }
+                        break;
+                    case "sard":
+                        word1.setImageResource(R.drawable.balloon_sard);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.sard_ko);
+                        }
+                        break;case "garm":
+                        word1.setImageResource(R.drawable.balloon_garm);
+                        if (answerPos == 0) {
+                            wordVoice = MediaPlayer.create(this, R.raw.garm_ko);
+                        }
+                        break;
+                }
+                switch (items.get(1)) {
+                    case "bala":
+                        word2.setImageResource(R.drawable.balloon_bala);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.bala_ko);
+                        }
+                    case "paeen":
+                        word2.setImageResource(R.drawable.balloon_paeen);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.paeen_ko);
+                        }
+                        break;
+                    case "kasif":
+                        word2.setImageResource(R.drawable.balloon_kasif);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.kasif_ko);
+                        }
+                        break;
+
+                    case "tamiz":
+                        word2.setImageResource(R.drawable.balloon_tamiz);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.tamiz_ko);
+                        }
+                        break;
+                    case "bache":
+                        word2.setImageResource(R.drawable.balloon_bache);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.bache_kojast);
+                        }
+                        break;
+                    case "dokhtar":
+                        word2.setImageResource(R.drawable.balloon_dokhtar);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.dokhtar_ko);
+                        }
+                        break;
+                    case "pesar":
+                        word2.setImageResource(R.drawable.balloon_pesar);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.pesar_kojast);
+                        }
+                        break;
+                    case "sard":
+                        word2.setImageResource(R.drawable.balloon_sard);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.sard_ko);
+                        }
+                        break;
+                    case "garm":
+                        word2.setImageResource(R.drawable.balloon_garm);
+                        if (answerPos == 1) {
+                            wordVoice = MediaPlayer.create(this, R.raw.garm_ko);
+                        }
+                        break;
+                }
                 break;
             default:
                 break;
