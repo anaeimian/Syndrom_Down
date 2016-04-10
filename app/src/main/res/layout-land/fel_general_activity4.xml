@@ -43,7 +43,7 @@
         android:layout_alignEnd="@+id/guide"
         android:layout_alignRight="@+id/guide"
         android:layout_alignTop="@+id/star2"
-        android:src="@drawable/star1"
+        android:src="@drawable/star_black"
         android:visibility="invisible" />
 
     <ImageView
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/star2"
+        android:src="@drawable/star_yellow"
         android:visibility="invisible" />
 
     <ImageView
@@ -62,7 +62,7 @@
         android:layout_alignEnd="@+id/verbImg"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/verbImg"
-        android:src="@drawable/star3"
+        android:src="@drawable/star_gray"
         android:visibility="invisible" />
 
     <ImageView
@@ -72,7 +72,7 @@
         android:layout_alignLeft="@+id/verb"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/verb"
-        android:src="@drawable/star4"
+        android:src="@drawable/star_yellow"
         android:visibility="invisible" />
 
     <ImageView
@@ -82,7 +82,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:src="@drawable/star5"
+        android:src="@drawable/star_black"
         android:visibility="invisible" />
 
     <ImageView
