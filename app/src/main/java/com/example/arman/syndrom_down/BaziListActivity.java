@@ -1,8 +1,8 @@
 package com.example.arman.syndrom_down;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -60,6 +60,7 @@ public class BaziListActivity extends ActionBarActivity {
                 } else if (gameType.equals("football")) {
                     intent = new Intent(BaziListActivity.this, Bazi2Activity.class);
                 }
+                intent.putExtra("gameType", gameType);
                 switch (position) {
                     case 0:
                         intent.putExtra("category", "khanevade");
@@ -122,7 +123,7 @@ public class BaziListActivity extends ActionBarActivity {
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(BaziListActivity.this, BaziActivity.class);
-        intent.putExtra("category",category);
+        intent.putExtra("category", category);
         startActivity(intent);
     }
 }

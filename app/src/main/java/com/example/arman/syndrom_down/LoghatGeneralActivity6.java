@@ -109,6 +109,18 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
         startActivity(intent1);
     }
 
+    @Override
+    protected void onDestroy() {
+        tashvigh.release();
+        tashvigh = null;
+        clapSound.release();
+        clapSound = null;
+        payMoreAttention.release();
+        payMoreAttention = null;
+        inchie.release();
+        inchie = null;
+    }
+
     void controller() {
         fail.setOnClickListener(new View.OnClickListener() {
             @Override

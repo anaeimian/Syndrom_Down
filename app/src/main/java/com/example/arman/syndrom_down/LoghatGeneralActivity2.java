@@ -68,6 +68,14 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
 
     }
 
+    @Override
+    protected void onDestroy() {
+        tashvigh.release();
+        tashvigh = null;
+        dragVoice.release();
+        dragVoice = null;
+    }
+
     private void setViews() {
 
 

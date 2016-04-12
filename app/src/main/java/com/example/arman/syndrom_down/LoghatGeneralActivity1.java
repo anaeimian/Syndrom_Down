@@ -30,6 +30,7 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
     ImageView imGuide;
     Dialog settingsDialog;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +75,14 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onDestroy() {
+        wordSound.release();
+        wordSound = null;
+        dragVoice.release();
+        dragVoice = null;
     }
 
     private void setViews() {

@@ -82,6 +82,17 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
         startActivity(intent);
     }
 
+    @Override
+    protected void onDestroy() {
+        tashvigh.release();
+        tashvigh = null;
+        shapeShows.release();
+        shapeShows = null;
+        payMoreAttention.release();
+        payMoreAttention = null;
+    }
+
+
     void controller() {
         fail.setOnClickListener(new View.OnClickListener() {
             @Override

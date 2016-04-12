@@ -63,6 +63,15 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
         startActivity(intent);
     }
 
+    @Override
+    protected void onDestroy() {
+        tashvigh.release();
+        tashvigh = null;
+        sabadVoice.release();
+        sabadVoice = null;
+    }
+
+
     private void setViews() {
         Intent intent = getIntent();
         category = intent.getStringExtra("category");

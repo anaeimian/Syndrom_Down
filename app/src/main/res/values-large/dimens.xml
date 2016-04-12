@@ -6,10 +6,12 @@
     <dimen name="amoozesh">300dp</dimen>
     <dimen name="main_margin">75dp</dimen>
     <dimen name="badkonak">300dp</dimen>
+
     <dimen name="football">300dp</dimen>
     <dimen name="football_word_height">120dp</dimen>
     <dimen name="football_word_width">90dp</dimen>
-    <dimen name="football_word_margin">105dp</dimen>
+    <dimen name="football_word_margin">115dp</dimen>
+
     <dimen name="word5_image_height">180dp</dimen>
     <dimen name="word5_image_width">225dp</dimen>
     <dimen name="word5_image_margin_top">45dp</dimen>

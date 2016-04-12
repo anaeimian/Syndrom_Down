@@ -81,7 +81,10 @@ public class Bazi1Activity extends ActionBarActivity {
 
     @Override
     public void onBackPressed() {
+        Intent temp = getIntent();
+        String gameType = temp.getStringExtra("gameType");
         Intent intent = new Intent(Bazi1Activity.this, BaziListActivity.class);
+        intent.putExtra("gameType", gameType);
         startActivity(intent);
     }
 
@@ -89,10 +92,45 @@ public class Bazi1Activity extends ActionBarActivity {
         Intent intent = getIntent();
         String category = intent.getStringExtra("category");
         int answerPos = random.nextInt(2);
-        int selectedItem1 = random.nextInt(4);
-        int selectedItem2 = random.nextInt(4);
+        int categorySize = 0;
+
+        switch (category) {
+            case "khanevade":
+                categorySize = 4;
+                break;
+            case "andam":
+                categorySize = 10;
+                break;
+            case "miveh":
+                categorySize = 5;
+                break;
+            case "heyvanat":
+                categorySize = 6;
+                break;
+            case "pooshak":
+                categorySize = 7;
+                break;
+            case "vasayel":
+                categorySize = 9;
+                break;
+
+            case "mashaghel":
+                categorySize = 3;
+                break;
+            case "rang":
+                categorySize = 3;
+                break;
+            case "khordani":
+                categorySize = 5;
+                break;
+            case "mafahim":
+                categorySize = 9;
+                break;
+        }
+        int selectedItem1 = random.nextInt(categorySize);
+        int selectedItem2 = random.nextInt(categorySize);
         while (selectedItem2 == selectedItem1) {
-            selectedItem2 = random.nextInt(4);
+            selectedItem2 = random.nextInt(categorySize);
         }
 
         switch (category) {
@@ -111,9 +149,7 @@ public class Bazi1Activity extends ActionBarActivity {
                         remianedItems.add(khanevadeItems.get(i));
                 }
 
-                Log.d("rand", answerPos + " " + selectedItem1 + " " + selectedItem2);
                 if (answerPos == 0) {
-                    Log.d("rand1", "rand1");
                     setVoiceImage(word1, selectedItem1, category);
                     setImage(word2, selectedItem2, category);
                     word1.setOnClickListener(new View.OnClickListener() {
@@ -551,7 +587,7 @@ public class Bazi1Activity extends ActionBarActivity {
                 startAnimation();
 
                 break;
-            case "mashagel":
+            case "mashaghel":
                 ArrayList<String> mashagelItems;
                 mashagelItems = new ArrayList<>();
                 mashagelItems.add("doctor");
@@ -946,7 +982,175 @@ public class Bazi1Activity extends ActionBarActivity {
                 }
 
                 break;
+            case "pooshak":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_kafsh);
+                        wordVoice = MediaPlayer.create(this, R.raw.kafsh_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_kolah);
+                        wordVoice = MediaPlayer.create(this, R.raw.kolah_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_jorab);
+                        wordVoice = MediaPlayer.create(this, R.raw.jorab_ko);
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_shalvar);
+                        wordVoice = MediaPlayer.create(this, R.raw.shalvar_ko);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_pirahan);
+                        wordVoice = MediaPlayer.create(this, R.raw.pirhan_ko);
+                    case 5:
+                        image.setImageResource(R.drawable.balloon_rosari);
+                        wordVoice = MediaPlayer.create(this, R.raw.rosari_ko);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.balloon_bloz);
+                        wordVoice = MediaPlayer.create(this, R.raw.bloz_ko);
+                }
+                break;
+            case "vasayel":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_shane);
+                        wordVoice = MediaPlayer.create(this, R.raw.shane_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_mesvak);
+                        wordVoice = MediaPlayer.create(this, R.raw.mesvak_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_hole);
+                        wordVoice = MediaPlayer.create(this, R.raw.hole_ko);
+                        break;
 
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_toop);
+                        wordVoice = MediaPlayer.create(this, R.raw.toop_ko);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_docharkhe);
+                        wordVoice = MediaPlayer.create(this, R.raw.docharkhe_ko);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.balloon_mashin);
+                        wordVoice = MediaPlayer.create(this, R.raw.mashin_ko);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.balloon_havapeima);
+                        wordVoice = MediaPlayer.create(this, R.raw.havapeima_kojast);
+                        break;
+                    case 7:
+                        image.setImageResource(R.drawable.balloon_ghashoq);
+                        wordVoice = MediaPlayer.create(this, R.raw.qashoq_ko);
+                        break;
+                    case 8:
+                        image.setImageResource(R.drawable.balloon_ketab);
+                        wordVoice = MediaPlayer.create(this, R.raw.ketab_ko);
+                        break;
+
+
+                }
+                break;
+            case "mashaghel":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_doctor);
+                        wordVoice = MediaPlayer.create(this, R.raw.doctor_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_nanva);
+                        wordVoice = MediaPlayer.create(this, R.raw.nanva_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_moalem);
+                        wordVoice = MediaPlayer.create(this, R.raw.moalem_ko);
+                        break;
+                }
+                break;
+            case "rang":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_abi);
+                        wordVoice = MediaPlayer.create(this, R.raw.abi_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_zard);
+                        wordVoice = MediaPlayer.create(this, R.raw.zard_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_ghermez);
+                        wordVoice = MediaPlayer.create(this, R.raw.qermez_ko);
+                        break;
+                }
+                break;
+            case "khordani":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_nan);
+                        wordVoice = MediaPlayer.create(this, R.raw.nan_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_shir);
+                        wordVoice = MediaPlayer.create(this, R.raw.shir_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_ab);
+                        wordVoice = MediaPlayer.create(this, R.raw.ab_ko);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_cake);
+                        wordVoice = MediaPlayer.create(this, R.raw.cake_ko);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_bisko);
+                        wordVoice = MediaPlayer.create(this, R.raw.bisko_ko);
+                        break;
+                }
+                break;
+
+            case "mafahim":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_bala);
+                        wordVoice = MediaPlayer.create(this, R.raw.bala_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_paeen);
+                        wordVoice = MediaPlayer.create(this, R.raw.paeen_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_kasif);
+                        wordVoice = MediaPlayer.create(this, R.raw.kasif_ko);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_tamiz);
+                        wordVoice = MediaPlayer.create(this, R.raw.tamiz_ko);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_bache);
+                        wordVoice = MediaPlayer.create(this, R.raw.bache_kojast);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.balloon_dokhtar);
+                        wordVoice = MediaPlayer.create(this, R.raw.dokhtar_ko);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.balloon_pesar);
+                        wordVoice = MediaPlayer.create(this, R.raw.pesar_kojast);
+                        break;
+                    case 7:
+                        image.setImageResource(R.drawable.balloon_sard);
+                        wordVoice = MediaPlayer.create(this, R.raw.sard_ko);
+                        break;
+                    case 8:
+                        image.setImageResource(R.drawable.balloon_garm);
+                        wordVoice = MediaPlayer.create(this, R.raw.garm_ko);
+                        break;
+
+                }
         }
     }
 
@@ -1046,7 +1250,141 @@ public class Bazi1Activity extends ActionBarActivity {
                         break;
                 }
                 break;
+            case "pooshak":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_kafsh);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_kolah);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_jorab);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_shalvar);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_pirahan);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.balloon_rosari);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.balloon_bloz);
+                        break;
+                }
+                break;
 
+            case "vasayel":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_shane);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_mesvak);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_hole);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_toop);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_docharkhe);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.balloon_mashin);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.balloon_havapeima);
+                        break;
+                    case 7:
+                        image.setImageResource(R.drawable.balloon_ghashoq);
+                        break;
+                    case 8:
+                        image.setImageResource(R.drawable.balloon_ketab);
+                        break;
+                }
+                break;
+
+            case "mashaghel":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_doctor);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_nanva);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_moalem);
+                        break;
+                }
+                break;
+            case "rang":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_abi);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_zard);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_ghermez);
+                        break;
+                }
+                break;
+            case "khordani":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_nan);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_shir);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_ab);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_cake);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_bisko);
+                        break;
+                }
+                break;
+
+            case "mafahim":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_bala);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_paeen);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_kasif);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_tamiz);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_bache);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.balloon_dokhtar);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.balloon_pesar);
+                        break;
+                    case 7:
+                        image.setImageResource(R.drawable.balloon_sard);
+                        break;
+                    case 8:
+                        image.setImageResource(R.drawable.balloon_garm);
+                        break;
+
+                }
         }
     }
 

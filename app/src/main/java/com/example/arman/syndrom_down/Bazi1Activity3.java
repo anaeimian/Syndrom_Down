@@ -17,7 +17,8 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Bazi1Activity2 extends ActionBarActivity {
+
+public class Bazi1Activity3 extends ActionBarActivity {
     private Toolbar toolbar;
     private ImageView word1;
     private ImageView word2;
@@ -30,6 +31,7 @@ public class Bazi1Activity2 extends ActionBarActivity {
     private MediaPlayer wordVoice;
     private MediaPlayer payMoreAttention;
     private MediaPlayer tashvigh;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +74,7 @@ public class Bazi1Activity2 extends ActionBarActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(Bazi1Activity2.this, Bazi1Activity3.class);
+        Intent intent = new Intent(Bazi1Activity3.this, BaziListActivity.class);
         startActivity(intent);
     }
 
@@ -1056,7 +1058,7 @@ public class Bazi1Activity2 extends ActionBarActivity {
 
                             @Override
                             public void onAnimationEnd(Animation animation) {
-                                Intent intent = new Intent(Bazi1Activity2.this, Bazi1Activity3.class);
+                                Intent intent = new Intent(Bazi1Activity3.this, BaziListActivity.class);
                                 intent.putExtra("category", category);
                                 intent.putExtra("gameType", "balloon");
                                 startActivity(intent);
@@ -1139,191 +1141,24 @@ public class Bazi1Activity2 extends ActionBarActivity {
         });
     }
 
-//    private void setListeners() {
-//
-//        word1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//
-//            }
-//        });
-//
-//
-////        mediaPlayerRahnama.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-////            @Override
-////            public void onCompletion(MediaPlayer mp) {
-////                mediaPlayerTashvigh.start();
-////            }
-////        });
-////
-////        mediaPlayerRahnama1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-////            @Override
-////            public void onCompletion(MediaPlayer mp) {
-////                mediaPlayerTashvigh.start();
-////            }
-////        });
-////
-////        imView0.setOnClickListener(new View.OnClickListener() {
-////            @Override
-////            public void onClick(View v) {
-////                mediaPlayerRahnama.start();
-////            }
-////        });
-////
-////        imView1.setOnClickListener(new View.OnClickListener() {
-////            @Override
-////            public void onClick(View v) {
-////                mediaPlayerRahnama1.start();
-////            }
-////        });
-//
-//    }
 
-    private void setResources() {
-//        mediaPlayerTashvigh = MediaPlayer.create(this, R.raw.step);
-//
-//        //////////////////////////////////////////////////////////////
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-        //////////////////////////////////////////////////////////////
-
-        Random random = new Random();
-        int cat = random.nextInt(10);
-
-        switch (cat) {
-            case 0:
-                khanevade();
-                break;
-//            case 1:
-//                andam();
-//                break;
-//            case 2:
-//                mive();
-//                break;
-//            case 3:
-//                heyvanat();
-//                break;
-//            case 4:
-//                pooshak();
-//                break;
-//            case 5:
-//                vasayel();
-//                break;
-//            case 6:
-//                mashaghel();
-//                break;
-//            case 7:
-//                rang();
-//                break;
-//            case 8:
-//                khordani();
-//                break;
-//            case 9:
-//                mafahim();
-//                break;
-            default:
-                khanevade();
-                break;
-        }
-    }
-
-    private void khanevade() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat); // imView0
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep); // imView1
-//        imView0.setImageResource(R.drawable.imbaba);
-//        imView1.setImageResource(R.drawable.imkhahar);
-    }
-
-//    private void andam() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        imView0.setImageResource(R.drawable.binii);
-//        imView1.setImageResource(R.drawable.dahani);
-//    }
-//
-//    private void mive() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        imView0.setImageResource(R.drawable.moz);
-//        imView1.setImageResource(R.drawable.sib);
-//    }
-//
-//    private void heyvanat() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        imView0.setImageResource(R.drawable.sag);
-//        imView1.setImageResource(R.drawable.gav);
-//    }
-//
-//    private void pooshak() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        imView0.setImageResource(R.drawable.kafsh);
-//        imView1.setImageResource(R.drawable.kolah);
-//    }
-//
-//    private void vasayel() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        imView0.setImageResource(R.drawable.docharkhe);
-//        imView1.setImageResource(R.drawable.havapeyma);
-//    }
-//
-//    private void mashaghel() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        imView0.setImageResource(R.drawable.doctori);
-//        imView1.setImageResource(R.drawable.nanvai);
-//    }
-//
-//    private void rang() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        imView0.setImageResource(R.drawable.ghermez);
-//        imView1.setImageResource(R.drawable.zard);
-//    }
-//
-//    private void khordani() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        imView0.setImageResource(R.drawable.nan);
-//        imView1.setImageResource(R.drawable.cake);
-//    }
-//
-//    private void mafahim() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        imView0.setImageResource(R.drawable.balai);
-//        imView1.setImageResource(R.drawable.sardi);
-//    }
 }
 
-//class ResizeAnimation extends Animation {
-//    final int targetHeight;
-//    View view;
-//    int startHeight;
-//
-//    public ResizeAnimation(View view, int targetHeight, int startHeight) {
-//        this.view = view;
-//        this.targetHeight = targetHeight;
-//        this.startHeight = startHeight;
-//    }
-//
-//    @Override
-//    protected void applyTransformation(float interpolatedTime, Transformation t) {
-//        int newHeight = (int) (startHeight + targetHeight * interpolatedTime);
-//        view.getLayoutParams().height = newHeight;
-//        view.requestLayout();
-//    }
-//
-//    @Override
-//    public void initialize(int width, int height, int parentWidth, int parentHeight) {
-//        super.initialize(width, height, parentWidth, parentHeight);
-//    }
-//
-//    @Override
-//    public boolean willChangeBounds() {
-//        return true;
-//    }
-//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
