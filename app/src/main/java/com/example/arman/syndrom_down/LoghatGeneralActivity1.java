@@ -453,6 +453,7 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
 
                 if (replayClicked >= 4) {
                     memoryReleaser(wordSound);
+                    wordSound.start();
                     wordSound = null;
                     Intent intent = new Intent(LoghatGeneralActivity1.this, LoghatGeneralActivity2.class);
                     intent.putExtra("category", category);

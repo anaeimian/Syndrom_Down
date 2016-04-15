@@ -4,27 +4,22 @@ import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
- * Created by Szamani on 1/1/2016.
- */
-public class Bazi2Activity2 extends ActionBarActivity {
-    private Toolbar toolbar;
 
+public class Bazi2Activity5 extends ActionBarActivity {
     private ImageView field;
     private ImageView ball;
-    private ImageView goal2;
     private ImageView pic1;
     private ImageView pic2;
-    private float ballX = 0;
     private ObjectAnimator animator;
     private String category;
     private MediaPlayer wordVoice;
@@ -37,16 +32,8 @@ public class Bazi2Activity2 extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bazi2);
-//        setTitle(getString(R.string.footbal));
-
-//        toolbar = (Toolbar) findViewById(R.id.app_bar);
-//        setSupportActionBar(toolbar);
-
-//        imView0 = (ImageView) findViewById(R.id.imView0);
-//        goal1 = (ImageView) findViewById(R.id.goal1);
         ball = (ImageView) findViewById(R.id.ball);
         field = (ImageView) findViewById(R.id.field);
-//        goal2 = (ImageView) findViewById(R.id.goal2);
         pic1 = (ImageView) findViewById(R.id.pic1);
         pic2 = (ImageView) findViewById(R.id.pic2);
         wordVoice = MediaPlayer.create(getApplicationContext(), R.raw.football_madar);
@@ -60,6 +47,7 @@ public class Bazi2Activity2 extends ActionBarActivity {
         handleIntent();
     }
 
+
     private void handleIntent() {
         Intent intent = getIntent();
         category = intent.getStringExtra("category");
@@ -71,35 +59,14 @@ public class Bazi2Activity2 extends ActionBarActivity {
         int categorySize = 0;
 
         switch (category) {
-            case "khanevade":
-                categorySize = 4 - 2;
-                break;
             case "andam":
-                categorySize = 10 - 2;
-                break;
-            case "miveh":
-                categorySize = 5 - 2 + 1;
-                break;
-            case "heyvanat":
-                categorySize = 6 - 2;
-                break;
-            case "pooshak":
-                categorySize = 7 - 2 + 1;
+                categorySize = 10 - 2 - 2 - 2 - 2;
                 break;
             case "vasayel":
-                categorySize = 9 - 2 + 1;
-                break;
-            case "mashaghel":
-                categorySize = 3 - 2 + 1;
-                break;
-            case "rang":
-                categorySize = 3 - 2 + 1;
-                break;
-            case "khordani":
-                categorySize = 5 - 2 + 1;
+                categorySize = 9 - 2 + 1 - 2 - 2 - 2;
                 break;
             case "mafahim":
-                categorySize = 9 - 2 + 1;
+                categorySize = 9 - 2 + 1 - 2 - 2 - 2;
                 break;
         }
         int selectedItem1 = random.nextInt(categorySize);
@@ -939,69 +906,6 @@ public class Bazi2Activity2 extends ActionBarActivity {
         }
 
 
-//            case "khanevade":
-//                int selectedItem1 = random.nextInt(items.size());
-//                int selectedItem2 = random.nextInt(items.size());
-//                while (selectedItem1 == selectedItem2) {
-//                    selectedItem2 = random.nextInt(items.size());
-//                }
-//                for (int i = 0; i < items.size(); i++) {
-//                    if (i != selectedItem1 && i != selectedItem2)
-//                        remainedItems.add(items.get(i));
-//                }
-//                switch (items.get(selectedItem1)) {
-//                    case "baba":
-//                        pic1.setImageResource(R.drawable.tbaba);
-//                        if (answerPos == 0) {
-//                            wordVoice = MediaPlayer.create(this, R.raw.baba_kojastjast);
-//                        }
-//                        break;
-//                    case "maman":
-//                        pic1.setImageResource(R.drawable.tmaman);
-//                        if (answerPos == 0) {
-//                            wordVoice = MediaPlayer.create(this, R.raw.maman_kojastjast);
-//                        }
-//                        break;
-//
-//                    case "khahar":
-//                        pic1.setImageResource(R.drawable.tkhahar);
-//                        if (answerPos == 0) {
-//                            wordVoice = MediaPlayer.create(this, R.raw.khahar_kojastjast);
-//                        }
-//                        break;
-//                    case "dadash":
-//                        pic1.setImageResource(R.drawable.tbaradar);
-//                        if (answerPos == 0) {
-//                            wordVoice = MediaPlayer.create(this, R.raw.dadash_kojastjast);
-//                        }
-//                        break;
-//                }
-//                switch (items.get(selectedItem2)) {
-//                    case "baba":
-//                        pic2.setImageResource(R.drawable.tbaba);
-//                        if (answerPos == 1) {
-//                            wordVoice = MediaPlayer.create(this, R.raw.baba_kojastjast);
-//                        }
-//                        break;
-//                    case "maman":
-//                        pic2.setImageResource(R.drawable.tmaman);
-//                        if (answerPos == 1) {
-//                            wordVoice = MediaPlayer.create(this, R.raw.maman_kojastjast);
-//                        }
-//                        break;
-//                    case "khahar":
-//                        pic2.setImageResource(R.drawable.tkhahar);
-//                        if (answerPos == 1) {
-//                            wordVoice = MediaPlayer.create(this, R.raw.khahar_kojastjast);
-//                        }
-//                        break;
-//                    case "dadash":
-//                        pic2.setImageResource(R.drawable.tbaradar);
-//                        if (answerPos == 1) {
-//                            wordVoice = MediaPlayer.create(this, R.raw.dadash_kojastjast);
-//                        }
-//                        break;
-//                }
         wordVoice.start();
         if (answerPos == 0) {
             pic1.setOnClickListener(new View.OnClickListener() {
@@ -1043,23 +947,14 @@ public class Bazi2Activity2 extends ActionBarActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 Intent intent = null;
-                if (category.equals("mashaghel") || category.equals("rang") || category.equals("khanevade")) {
-                    intent = new Intent(Bazi2Activity2.this, BaziListActivity.class);
-                } else {
-                    intent = new Intent(Bazi2Activity2.this, Bazi2Activity3.class);
-                }
-
+                intent = new Intent(Bazi2Activity5.this, BaziListActivity.class);
                 ball.setVisibility(View.INVISIBLE);
-//                Intent intent = new Intent(Bazi2Activity2.this, BaziListActivity.class);
                 intent.putExtra("category", category);
                 intent.putExtra("gameType", "football");
-                intent.putStringArrayListExtra("list", remainedItems);
-
                 memoryReleaser(tashvigh);
                 memoryReleaser(wordVoice);
                 memoryReleaser(payMoreAttention);
                 startActivity(intent);
-//                mediaPlayerTashvigh.start();
             }
 
             @Override
@@ -1074,6 +969,7 @@ public class Bazi2Activity2 extends ActionBarActivity {
         });
     }
 
+
     private void memoryReleaser(MediaPlayer mediaPlayer) {
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -1087,12 +983,24 @@ public class Bazi2Activity2 extends ActionBarActivity {
 
 
     @Override
-    public void onBackPressed() {
-        Intent temp = getIntent();
-        String gameType = temp.getStringExtra("gameType");
-        Intent intent = new Intent(Bazi2Activity2.this, BaziListActivity.class);
-        intent.putExtra("gameType", gameType);
-        startActivity(intent);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_bazi2_activity5, menu);
+        return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }

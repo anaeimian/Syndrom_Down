@@ -152,5 +152,7 @@
     <string name="title_activity_bazi1_activity4">Bazi1Activity4</string>
     <string name="title_activity_bazi1_activity5">Bazi1Activity5</string>
     <string name="title_activity_bazi1_activity6">Bazi1Activity6</string>
+    <string name="title_activity_bazi2_activity5">Bazi2Activity5</string>
+    <string name="title_activity_bazi2_activity6">Bazi2Activity6</string>
 
 </resources>

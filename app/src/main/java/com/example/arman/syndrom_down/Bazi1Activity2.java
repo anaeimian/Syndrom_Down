@@ -85,6 +85,7 @@ public class Bazi1Activity2 extends ActionBarActivity {
             public void onCompletion(MediaPlayer mediaPlayer) {
                 mediaPlayer.stop();
                 mediaPlayer.release();
+                mediaPlayer = null;
             }
         });
     }
@@ -1068,6 +1069,9 @@ public class Bazi1Activity2 extends ActionBarActivity {
                                 memoryReleaser(tashvigh);
                                 memoryReleaser(payMoreAttention);
                                 memoryReleaser(wordVoice);
+                                memoryReleaser(tashvigh);
+                                memoryReleaser(wordVoice);
+                                memoryReleaser(payMoreAttention);
                                 startActivity(intent);
                             }
 

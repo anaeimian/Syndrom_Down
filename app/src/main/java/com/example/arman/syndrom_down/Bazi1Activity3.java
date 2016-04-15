@@ -87,6 +87,7 @@ public class Bazi1Activity3 extends ActionBarActivity {
             public void onCompletion(MediaPlayer mediaPlayer) {
                 mediaPlayer.stop();
                 mediaPlayer.release();
+                mediaPlayer = null;
             }
         });
     }
@@ -110,7 +111,7 @@ public class Bazi1Activity3 extends ActionBarActivity {
                 categorySize = 10 - 2 - 2;
                 break;
             case "miveh":
-                categorySize = 5 - 2 + 1 -2;
+                categorySize = 5 - 2 + 1 - 2;
                 break;
             case "heyvanat":
                 categorySize = 6 - 2 - 2;
@@ -126,7 +127,7 @@ public class Bazi1Activity3 extends ActionBarActivity {
                 categorySize = 3 - 2 + 1 - 2;
                 break;
             case "rang":
-                categorySize = 3 - 2 + 1 -2 ;
+                categorySize = 3 - 2 + 1 - 2;
                 break;
             case "khordani":
                 categorySize = 5 - 2 + 1 - 2;

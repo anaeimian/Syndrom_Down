@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.arman.syndrom_down" >
+    package="com.example.arman.syndrom_down">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/logo"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask"
@@ -16,7 +16,7 @@
             android:name=".SplashActivity"
             android:label="@string/app_name"
             android:noHistory="true"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -68,9 +68,6 @@
             android:launchMode="singleTop"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".LoghatGeneralActivity"
-            android:screenOrientation="landscape" />
-        <activity
             android:name=".FelActivity"
             android:screenOrientation="landscape" />
         <activity
@@ -90,9 +87,6 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".HessiActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".Kalame3GeneralActivity"
             android:screenOrientation="landscape" />
         <activity
             android:name=".ZamirActivity"
@@ -157,20 +151,28 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".Bazi1Activity3"
-            android:label="@string/title_activity_bazi1_activity3" >
-        </activity>
+            android:label="@string/title_activity_bazi1_activity3"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".Bazi1Activity4"
-            android:label="@string/title_activity_bazi1_activity4" >
-        </activity>
+            android:label="@string/title_activity_bazi1_activity4"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".Bazi1Activity5"
-            android:label="@string/title_activity_bazi1_activity5" >
-        </activity>
+            android:label="@string/title_activity_bazi1_activity5"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".Bazi1Activity6"
-            android:label="@string/title_activity_bazi1_activity6" >
-        </activity>
+            android:label="@string/title_activity_bazi1_activity6"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".Bazi2Activity5"
+            android:label="@string/title_activity_bazi2_activity5"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".Bazi2Activity6"
+            android:label="@string/title_activity_bazi2_activity6"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>

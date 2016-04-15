@@ -33,7 +33,7 @@ public class Bazi2Activity extends ActionBarActivity {
     String category = "";
 
     Random random = new Random();
-    private ArrayList<String> remianedItems;
+    private ArrayList<String> remainedItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,33 +44,18 @@ public class Bazi2Activity extends ActionBarActivity {
 //        toolbar = (Toolbar) findViewById(R.id.app_bar);
 //        setSupportActionBar(toolbar);
 
-//        imView0 = (ImageView) findViewById(R.id.imView0);
-//        goal1 = (ImageView) findViewById(R.id.goal1);
         ball = (ImageView) findViewById(R.id.ball);
         field = (ImageView) findViewById(R.id.field);
-//        goal2 = (ImageView) findViewById(R.id.goal2);
         pic1 = (ImageView) findViewById(R.id.pic1);
         pic2 = (ImageView) findViewById(R.id.pic2);
         payMoreAttention = MediaPlayer.create(getApplicationContext(), R.raw.pay_more_attention);
         tashvigh = MediaPlayer.create(getApplicationContext(), R.raw.afarin);
-//        Display display = getWindowManager().getDefaultDisplay();
-//        Point size = new Point();
-//        display.getSize(size);
-//        int width = size.x;
-//        int height = size.y;
-//        xCenter = width;
         animator = new ObjectAnimator();
         animator.setDuration(1000);
         animator.setTarget(ball);
         animator.setPropertyName("translationX");
 
-//        animator1 = new ObjectAnimator();
-//        animator1.setDuration(1000);
-//        animator1.setTarget(imView3);
-//        animator1.setPropertyName("translationX");
         handleIntent();
-//        setResources();
-        setListeners();
     }
 
 
@@ -94,12 +79,11 @@ public class Bazi2Activity extends ActionBarActivity {
                 khanevadeItems.add("dadash");
 
 
-                remianedItems = new ArrayList<>();
+                remainedItems = new ArrayList<>();
                 for (int i = 0; i < khanevadeItems.size(); i++) {
                     if (i != selectedItem1 && i != selectedItem2)
-                        remianedItems.add(khanevadeItems.get(i));
+                        remainedItems.add(khanevadeItems.get(i));
                 }
-
 
 
                 break;
@@ -111,25 +95,158 @@ public class Bazi2Activity extends ActionBarActivity {
                 andamItems.add("dast");
                 andamItems.add("pa");
                 andamItems.add("goosh");
-                andamItems.add("moo");
+                andamItems.add("mo");
                 andamItems.add("dahan");
                 andamItems.add("bini");
                 andamItems.add("zaban");
                 andamItems.add("dandan");
-                andamItems.add("abroo");
+                andamItems.add("abro");
 
-                remianedItems = new ArrayList<>();
+                remainedItems = new ArrayList<>();
                 for (int i = 0; i < andamItems.size(); i++) {
                     if (i != selectedItem1 && i != selectedItem2)
-                        remianedItems.add(andamItems.get(i));
+                        remainedItems.add(andamItems.get(i));
                 }
+                break;
+            case "miveh":
+                ArrayList<String> mivehItems;
+                mivehItems = new ArrayList<>();
+                mivehItems.add("moz");
+                mivehItems.add("sib");
+                mivehItems.add("khiar");
+                mivehItems.add("porteghal");
+                mivehItems.add("limo");
 
+                remainedItems = new ArrayList<>();
+                for (int i = 0; i < mivehItems.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remainedItems.add(mivehItems.get(i));
+                }
+                remainedItems.add(mivehItems.get(selectedItem1));//make number of elements even!
+                break;
+            case "heyvanat":
+                ArrayList<String> heyvanatItems;
+                heyvanatItems = new ArrayList<>();
+                heyvanatItems.add("gorbe");
+                heyvanatItems.add("sag");
+                heyvanatItems.add("gav");
+                heyvanatItems.add("mahi");
+                heyvanatItems.add("morgh");
+                heyvanatItems.add("asb");
 
+                remainedItems = new ArrayList<>();
+                for (int i = 0; i < heyvanatItems.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remainedItems.add(heyvanatItems.get(i));
+                }
+                break;
+            case "pooshak":
+                ArrayList<String> pooshakItems;
+                pooshakItems = new ArrayList<>();
+                pooshakItems.add("kafsh");
+                pooshakItems.add("kolah");
+                pooshakItems.add("joorab");
+                pooshakItems.add("shalvar");
+                pooshakItems.add("pirahan");
+                pooshakItems.add("rosari");
+                pooshakItems.add("bolooz");
+
+                remainedItems = new ArrayList<>();
+                for (int i = 0; i < pooshakItems.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remainedItems.add(pooshakItems.get(i));
+                }
+                remainedItems.add(pooshakItems.get(selectedItem1));//make number of elements even!
+                break;
+            case "vasayel":
+                ArrayList<String> vasayelItems;
+                vasayelItems = new ArrayList<>();
+                vasayelItems.add("shane");
+                vasayelItems.add("mesvak");
+                vasayelItems.add("hole");
+                vasayelItems.add("toop");
+                vasayelItems.add("docharkhe");
+                vasayelItems.add("mashin");
+                vasayelItems.add("havapeyma");
+                vasayelItems.add("ghashoq");
+                vasayelItems.add("ketab");
+
+                remainedItems = new ArrayList<>();
+                for (int i = 0; i < vasayelItems.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remainedItems.add(vasayelItems.get(i));
+                }
+                remainedItems.add(vasayelItems.get(selectedItem1));//make number of elements even!
+                break;
+            case "mashaghel":
+                ArrayList<String> mashagelItems;
+                mashagelItems = new ArrayList<>();
+                mashagelItems.add("doctor");
+                mashagelItems.add("nanva");
+                mashagelItems.add("moalem");
+
+                remainedItems = new ArrayList<>();
+                for (int i = 0; i < mashagelItems.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remainedItems.add(mashagelItems.get(i));
+                }
+                remainedItems.add(mashagelItems.get(selectedItem1));//make number of elements even!
+                break;
+            case "rang":
+                ArrayList<String> rangItems;
+                rangItems = new ArrayList<>();
+                rangItems.add("abi");
+                rangItems.add("zard");
+                rangItems.add("ghermez");
+
+                remainedItems = new ArrayList<>();
+                for (int i = 0; i < rangItems.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remainedItems.add(rangItems.get(i));
+                }
+                remainedItems.add(rangItems.get(selectedItem1));//make number of elements even!
+                break;
+            case "khordani":
+                ArrayList<String> khordaniItems;
+                khordaniItems = new ArrayList<>();
+                khordaniItems.add("nan");
+                khordaniItems.add("shir");
+                khordaniItems.add("ab");
+                khordaniItems.add("cake");
+                khordaniItems.add("bisco");
+
+                remainedItems = new ArrayList<>();
+                for (int i = 0; i < khordaniItems.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remainedItems.add(khordaniItems.get(i));
+                }
+                remainedItems.add(khordaniItems.get(selectedItem1));//make number of elements even!
+                break;
+            case "mafahim":
+                ArrayList<String> mafahimItems;
+                mafahimItems = new ArrayList<>();
+                mafahimItems.add("bala");
+                mafahimItems.add("paeen");
+                mafahimItems.add("kasif");
+                mafahimItems.add("tamiz");
+                mafahimItems.add("bache");
+                mafahimItems.add("dokhtar");
+                mafahimItems.add("pesar");
+                mafahimItems.add("sard");
+                mafahimItems.add("garm");
+
+                remainedItems = new ArrayList<>();
+                for (int i = 0; i < mafahimItems.size(); i++) {
+                    if (i != selectedItem1 && i != selectedItem2)
+                        remainedItems.add(mafahimItems.get(i));
+                }
+                remainedItems.add(mafahimItems.get(selectedItem1));//make number of elements even!
+                break;
 
         }
         if (answerPos == 0) {
             setVoiceImage(pic1, selectedItem1, category);
-            setImage(pic2, selectedItem2);
+            setImage(pic2, selectedItem2, category);
             pic1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -146,7 +263,7 @@ public class Bazi2Activity extends ActionBarActivity {
             });
         } else if (answerPos == 1) {
             setVoiceImage(pic2, selectedItem1, category);
-            setImage(pic1, selectedItem2);
+            setImage(pic1, selectedItem2, category);
             pic2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -173,7 +290,10 @@ public class Bazi2Activity extends ActionBarActivity {
                 ball.setVisibility(View.INVISIBLE);
                 Intent intent = new Intent(Bazi2Activity.this, Bazi2Activity2.class);
                 intent.putExtra("category", category);
-                intent.putExtra("list",remianedItems);
+                intent.putExtra("list", remainedItems);
+                memoryReleaser(tashvigh);
+                memoryReleaser(wordVoice);
+                memoryReleaser(payMoreAttention);
                 startActivity(intent);
 //                mediaPlayerTashvigh.start();
             }
@@ -191,6 +311,18 @@ public class Bazi2Activity extends ActionBarActivity {
         wordVoice.start();
 
     }
+
+    private void memoryReleaser(MediaPlayer mediaPlayer) {
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.stop();
+                mediaPlayer.release();
+                mediaPlayer = null;
+            }
+        });
+    }
+
 
     void setVoiceImage(ImageView image, int index, String category) {
         switch (category) {
@@ -214,315 +346,511 @@ public class Bazi2Activity extends ActionBarActivity {
                         break;
                 }
                 break;
-//            case "andam":
-//                switch (index) {
-//                    case 0:
-//                        image.setImageResource(R.drawable.balloon_cheshm);
-//                        wordVoice = MediaPlayer.create(this, R.raw.cheshm_ko);
-//                        break;
-//                    case 1:
-//                        image.setImageResource(R.drawable.balloon_dast);
-//                        wordVoice = MediaPlayer.create(this, R.raw.dast_ko);
-//                        break;
-//                    case 2:
-//                        image.setImageResource(R.drawable.balloon_paa);
-//                        wordVoice = MediaPlayer.create(this, R.raw.paa_ko);
-//                        break;
-//                    case 3:
-//                        image.setImageResource(R.drawable.balloon_goosh);
-//                        wordVoice = MediaPlayer.create(this, R.raw.goosh_ko);
-//                        break;
-//                    case 4:
-//                        image.setImageResource(R.drawable.balloon_mo);
-//                        wordVoice = MediaPlayer.create(this, R.raw.mo_ko);
-//                        break;
-//                    case 5:
-//                        image.setImageResource(R.drawable.balloon_dahan);
-//                        wordVoice = MediaPlayer.create(this, R.raw.dahan_ko);
-//                        break;
-//                    case 6:
-//                        image.setImageResource(R.drawable.balloon_bini);
-//                        wordVoice = MediaPlayer.create(this, R.raw.bini_ko);
-//                        break;
-//                    case 7:
-//                        image.setImageResource(R.drawable.balloon_zaban);
-//                        wordVoice = MediaPlayer.create(this, R.raw.zaban_ko);
-//                        break;
-//                    case 8:
-//                        image.setImageResource(R.drawable.balloon_dandan);
-//                        wordVoice = MediaPlayer.create(this, R.raw.dandan_ko);
-//                        break;
-//                    case 9:
-//                        image.setImageResource(R.drawable.balloon_abroo);
-//                        wordVoice = MediaPlayer.create(this, R.raw.dandan_ko);
-//                        break;
-//                }
-//                break;
+            case "andam":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tcheshm);
+                        wordVoice = MediaPlayer.create(this, R.raw.cheshm_kojast);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tdast);
+                        wordVoice = MediaPlayer.create(this, R.raw.dast_kojast);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.tpa);
+                        wordVoice = MediaPlayer.create(this, R.raw.pa_ko);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.tgosh);
+                        wordVoice = MediaPlayer.create(this, R.raw.gush_kojast);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.tmo);
+                        wordVoice = MediaPlayer.create(this, R.raw.mo_kojast);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.tdahan);
+                        wordVoice = MediaPlayer.create(this, R.raw.dahan_kojast);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.tbini);
+                        wordVoice = MediaPlayer.create(this, R.raw.bini_kojast);
+                        break;
+                    case 7:
+                        image.setImageResource(R.drawable.tzaban);
+                        wordVoice = MediaPlayer.create(this, R.raw.zaban_kojast);
+                        break;
+                    case 8:
+                        image.setImageResource(R.drawable.tdandan);
+                        wordVoice = MediaPlayer.create(this, R.raw.dandan_kojast);
+                        break;
+                    case 9:
+                        image.setImageResource(R.drawable.tabro);
+                        wordVoice = MediaPlayer.create(this, R.raw.abro_kojast);
+                        break;
+                }
+                break;
+            case "miveh":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tmoz);
+                        wordVoice = MediaPlayer.create(this, R.raw.moz_kojast);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tsib);
+                        wordVoice = MediaPlayer.create(this, R.raw.sib_kojast);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.tkhiar);
+                        wordVoice = MediaPlayer.create(this, R.raw.khiar_kojast);
+                        break;
+
+                    case 3:
+                        image.setImageResource(R.drawable.tporteqal);
+                        wordVoice = MediaPlayer.create(this, R.raw.porteqal_kojast);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.tlimo);
+                        wordVoice = MediaPlayer.create(this, R.raw.limo_kojast);
+                        break;
+                }
+                break;
+            case "heyvanat":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tgorbe);
+                        wordVoice = MediaPlayer.create(this, R.raw.gorbe_kojast);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tsag);
+                        wordVoice = MediaPlayer.create(this, R.raw.sag_kojast);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.tgav);
+                        wordVoice = MediaPlayer.create(this, R.raw.gav_kojast);
+                        break;
+
+                    case 3:
+                        image.setImageResource(R.drawable.tmahi);
+                        wordVoice = MediaPlayer.create(this, R.raw.mahi_kojast);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.tmorq);
+                        wordVoice = MediaPlayer.create(this, R.raw.morq_kojast);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.tasb);
+                        wordVoice = MediaPlayer.create(this, R.raw.asb_kojast);
+                        break;
+
+                }
+
+                break;
+            case "pooshak":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tkafsh);
+                        wordVoice = MediaPlayer.create(this, R.raw.kafsh_kojast);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tkolah);
+                        wordVoice = MediaPlayer.create(this, R.raw.kolah_kojast);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.tjorab);
+                        wordVoice = MediaPlayer.create(this, R.raw.jorab_ko);
+                    case 3:
+                        image.setImageResource(R.drawable.tshalvar);
+                        wordVoice = MediaPlayer.create(this, R.raw.shalvar_kojast);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.tpirahan);
+                        wordVoice = MediaPlayer.create(this, R.raw.pirhan_kojast);
+                    case 5:
+                        image.setImageResource(R.drawable.trosari);
+                        wordVoice = MediaPlayer.create(this, R.raw.rosari_kojast);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.tbloz);
+                        wordVoice = MediaPlayer.create(this, R.raw.bloz_kojast);
+                }
+                break;
+            case "vasayel":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tshane);
+                        wordVoice = MediaPlayer.create(this, R.raw.shane_kojast);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tmesvak);
+                        wordVoice = MediaPlayer.create(this, R.raw.mesvak_kojast);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.thole);
+                        wordVoice = MediaPlayer.create(this, R.raw.hole_kojast);
+                        break;
+
+                    case 3:
+                        image.setImageResource(R.drawable.ttop);
+                        wordVoice = MediaPlayer.create(this, R.raw.toop_kojast);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.tdocharkhe);
+                        wordVoice = MediaPlayer.create(this, R.raw.docharkhe_kojast);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.tmashin);
+                        wordVoice = MediaPlayer.create(this, R.raw.mashin_kojast);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.thavapeima);
+                        wordVoice = MediaPlayer.create(this, R.raw.havapeima_kojast);
+                        break;
+                    case 7:
+                        image.setImageResource(R.drawable.tghashoq);
+                        wordVoice = MediaPlayer.create(this, R.raw.qashoq_kojast);
+                        break;
+                    case 8:
+                        image.setImageResource(R.drawable.tketab);
+                        wordVoice = MediaPlayer.create(this, R.raw.ketab_kojast);
+                        break;
+
+
+                }
+                break;
+            case "mashaghel":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tdoctor);
+                        wordVoice = MediaPlayer.create(this, R.raw.doctor_kojast);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tnanva);
+                        wordVoice = MediaPlayer.create(this, R.raw.nanva_kojast);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.tmoalem);
+                        wordVoice = MediaPlayer.create(this, R.raw.moalem_kojast);
+                        break;
+                }
+                break;
+            case "rang":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tabi);
+                        wordVoice = MediaPlayer.create(this, R.raw.abi_kojast);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tzard);
+                        wordVoice = MediaPlayer.create(this, R.raw.zard_kojast);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.tghermez);
+                        wordVoice = MediaPlayer.create(this, R.raw.qermez_kojast);
+                        break;
+                }
+                break;
+            case "khordani":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tnan);
+                        wordVoice = MediaPlayer.create(this, R.raw.nan_kojast);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tshir);
+                        wordVoice = MediaPlayer.create(this, R.raw.shir_kojast);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.tab);
+                        wordVoice = MediaPlayer.create(this, R.raw.ab_kojast);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.tcake);
+                        wordVoice = MediaPlayer.create(this, R.raw.cake_kojast);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.tbisko);
+                        wordVoice = MediaPlayer.create(this, R.raw.bisko_kojast);
+                        break;
+                }
+                break;
+
+            case "mafahim":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tbala);
+                        wordVoice = MediaPlayer.create(this, R.raw.bala_kojast);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tpaeen);
+                        wordVoice = MediaPlayer.create(this, R.raw.paeen_kojast);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.tkasif);
+                        wordVoice = MediaPlayer.create(this, R.raw.kasif_kojast);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.ttamiz);
+                        wordVoice = MediaPlayer.create(this, R.raw.tamiz_kojast);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.tbache);
+                        wordVoice = MediaPlayer.create(this, R.raw.bache_kojast);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.tdokhtar);
+                        wordVoice = MediaPlayer.create(this, R.raw.dokhtar_kojast);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.tpesar);
+                        wordVoice = MediaPlayer.create(this, R.raw.pesar_kojast);
+                        break;
+                    case 7:
+                        image.setImageResource(R.drawable.tsard);
+                        wordVoice = MediaPlayer.create(this, R.raw.sard_kojast);
+                        break;
+                    case 8:
+                        image.setImageResource(R.drawable.tgarm);
+                        wordVoice = MediaPlayer.create(this, R.raw.garm_kojast);
+                        break;
+
+                }
 
         }
     }
 
-    void setImage(ImageView image, int index) {
-        switch (index) {
-            case 0:
-                image.setImageResource(R.drawable.tbaba);
+    void setImage(ImageView image, int index, String category) {
+        switch (category) {
+            case "khanevade":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tbaba);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tmaman);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.tkhahar);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.tbaradar);
+                        break;
+                }
                 break;
-            case 1:
-                image.setImageResource(R.drawable.tmaman);
+            case "andam":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tcheshm);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tdast);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.tpa);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.tgosh);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.tgosh);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.tmo);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.tdahan);
+                        break;
+                    case 7:
+                        image.setImageResource(R.drawable.tbini);
+                        break;
+                    case 8:
+                        image.setImageResource(R.drawable.tzaban);
+                        break;
+                    case 9:
+                        image.setImageResource(R.drawable.tdandan);
+                        break;
+                    case 10:
+                        image.setImageResource(R.drawable.tabro);
+                        break;
+                }
                 break;
-            case 2:
-                image.setImageResource(R.drawable.tkhahar);
+            case "miveh":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tmoz);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tsib);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.tkhiar);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.tporteqal);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.tlimo);
+                        break;
+                }
                 break;
-            case 3:
-                image.setImageResource(R.drawable.tbaradar);
+            case "heyvanat":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tgorbe);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tsag);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.tgav);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.tmahi);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.tmorq);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.tasb);
+                        break;
+                }
                 break;
+            case "pooshak":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tkafsh);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tkolah);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.tjorab);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.tshalvar);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.tpirahan);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.trosari);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.tbloz);
+                        break;
+                }
+                break;
+
+            case "vasayel":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tshane);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tmesvak);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.thole);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.ttop);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.tdocharkhe);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.tmashin);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.thavapeima);
+                        break;
+                    case 7:
+                        image.setImageResource(R.drawable.tghashoq);
+                        break;
+                    case 8:
+                        image.setImageResource(R.drawable.tketab);
+                        break;
+                }
+                break;
+
+            case "mashaghel":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tdoctor);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tnanva);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.tmoalem);
+                        break;
+                }
+                break;
+            case "rang":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tabi);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tzard);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.tghermez);
+                        break;
+                }
+                break;
+            case "khordani":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tnan);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tshir);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.tab);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.tcake);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.tbisko);
+                        break;
+                }
+                break;
+
+            case "mafahim":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.tbala);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.tpaeen);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.tkasif);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.ttamiz);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.tbache);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.tdokhtar);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.tpesar);
+                        break;
+                    case 7:
+                        image.setImageResource(R.drawable.tsard);
+                        break;
+                    case 8:
+                        image.setImageResource(R.drawable.tgarm);
+                        break;
+
+                }
         }
-
     }
 
-//    private void handleIntent1() {
-//        Intent intent = getIntent();
-//        category = intent.getStringExtra("category");
-//        switch (category) {
-//            case "khanevade":
-//                pic1.setImageResource(R.drawable.tbaradar);
-//                pic2.setImageResource(R.drawable.tkhahar);
-//                mediaPlayerRahnama.start();
-//                pic1.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        tashvigh.start();
-//                        animator.setFloatValues(0, -field.getWidth() / 2 + 30);
-//                        animator.start();
-//                    }
-//                });
-//                pic2.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        payMoreAttention.start();
-////                        animator.setFloatValues(0, field.getWidth()/2-10);
-////                        animator.start();
-//                    }
-//                });
-
-//
-//                break;
-//            default:
-//                break;
-//
-//        }
-//
-//    }
-
-    private void setListeners() {
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-////                animator.setFloatValues(pic1.getX() + 500, pic1.getX());
-////                animator.start();
-//            }
-//        }, 500);
-
-//        animator.addListener(new Animator.AnimatorListener() {
-//            @Override
-//            public void onAnimationStart(Animator animation) {
-//                ball.setVisibility(View.VISIBLE);
-//            }
-//
-//            @Override
-//            public void onAnimationEnd(Animator animation) {
-//                ball.setVisibility(View.INVISIBLE);
-////                mediaPlayerRahnama.start();
-//            }
-//
-//            @Override
-//            public void onAnimationCancel(Animator animation) {
-//
-//            }
-//
-//            @Override
-//            public void onAnimationRepeat(Animator animation) {
-//
-//            }
-//        });
-
-//        animator1.addListener(new Animator.AnimatorListener() {
-//            @Override
-//            public void onAnimationStart(Animator animation) {
-//                imView3.setVisibility(View.VISIBLE);
-//            }
-//
-//            @Override
-//            public void onAnimationEnd(Animator animation) {
-//                imView3.setVisibility(View.INVISIBLE);
-//                mediaPlayerRahnama1.start();
-//            }
-//
-//            @Override
-//            public void onAnimationCancel(Animator animation) {
-//
-//            }
-//
-//            @Override
-//            public void onAnimationRepeat(Animator animation) {
-//
-//            }
-//        });
-
-//        mediaPlayerRahnama.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-//            @Override
-//            public void onCompletion(MediaPlayer mp) {
-//                mediaPlayerTashvigh.start();
-//            }
-//        });
-//
-//        mediaPlayerRahnama1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-//            @Override
-//            public void onCompletion(MediaPlayer mp) {
-//                mediaPlayerTashvigh.start();
-//            }
-//        });
-
-
-//        imView0.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                animator.setFloatValues(imView0.getX() - 200, imView0.getX() - 500);
-//                animator.start();
-//            }
-//        });
-
-//        goal1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                animator.setFloatValues(0, -ball.getX() + goal1.getX());
-//                animator.start();
-//            }
-//        });
-//        goal2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                animator.setFloatValues(0, goal2.getX() - ball.getX());
-//                animator.start();
-//            }
-//        });
-    }
-
-//    private void setResources() {
-//        mediaPlayerTashvigh = MediaPlayer.create(this, R.raw.step);
-//
-//        //////////////////////////////////////////////////////////////
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        //////////////////////////////////////////////////////////////
-//
-//        Random random = new Random();
-//        int cat = random.nextInt(10);
-//
-//        switch (cat) {
-//            case 0:
-//                khanevade();
-//                break;
-//            case 1:
-//                andam();
-//                break;
-//            case 2:
-//                mive();
-//                break;
-//            case 3:
-//                heyvanat();
-//                break;
-//            case 4:
-//                pooshak();
-//                break;
-//            case 5:
-//                vasayel();
-//                break;
-//            case 6:
-//                mashaghel();
-//                break;
-//            case 7:
-//                rang();
-//                break;
-//            case 8:
-//                khordani();
-//                break;
-//            case 9:
-//                mafahim();
-//                break;
-//            default:
-//                khanevade();
-//                break;
-//        }
-//    }
-//
-//    private void khanevade() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat); // imView0
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep); // imView1
-//        imView0.setImageResource(R.drawable.pedari);
-//        imView1.setImageResource(R.drawable.khahar);
-//    }
-//
-//    private void andam() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        imView0.setImageResource(R.drawable.binii);
-//        imView2.setImageResource(R.drawable.dahani);
-//    }
-//
-//    private void mive() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        imView0.setImageResource(R.drawable.moz);
-//        imView2.setImageResource(R.drawable.sib);
-//    }
-//
-//    private void heyvanat() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        imView0.setImageResource(R.drawable.sag);
-//        imView2.setImageResource(R.drawable.gav);
-//    }
-//
-//    private void pooshak() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        imView0.setImageResource(R.drawable.kafsh);
-//        imView2.setImageResource(R.drawable.kolah);
-//    }
-//
-//    private void vasayel() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        imView0.setImageResource(R.drawable.docharkhe);
-//        imView2.setImageResource(R.drawable.havapeyma);
-//    }
-//
-//    private void mashaghel() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        imView0.setImageResource(R.drawable.doctori);
-//        imView2.setImageResource(R.drawable.nanvai);
-//    }
-//
-//    private void rang() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        imView0.setImageResource(R.drawable.ghermez);
-//        imView2.setImageResource(R.drawable.zard);
-//    }
-//
-//    private void khordani() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        imView0.setImageResource(R.drawable.nan);
-//        imView2.setImageResource(R.drawable.cake);
-//    }
-//
-//    private void mafahim() {
-//        mediaPlayerRahnama = MediaPlayer.create(this, R.raw.chat);
-//        mediaPlayerRahnama1 = MediaPlayer.create(this, R.raw.beep);
-//        imView0.setImageResource(R.drawable.balai);
-//        imView2.setImageResource(R.drawable.sardi);
-//    }
 }

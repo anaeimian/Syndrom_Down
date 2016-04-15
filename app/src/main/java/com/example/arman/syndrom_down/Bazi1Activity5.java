@@ -89,6 +89,7 @@ public class Bazi1Activity5 extends ActionBarActivity {
             public void onCompletion(MediaPlayer mediaPlayer) {
                 mediaPlayer.stop();
                 mediaPlayer.release();
+                mediaPlayer = null;
             }
         });
     }
@@ -1040,14 +1041,9 @@ public class Bazi1Activity5 extends ActionBarActivity {
                             @Override
                             public void onAnimationEnd(Animation animation) {
                                 Intent intent = null;
-                                if (category.equals("vasayel") || category.equals("mafahim")) {
-                                    intent = new Intent(Bazi1Activity5.this, BaziListActivity.class);
-                                } else {
-                                    intent = new Intent(Bazi1Activity5.this, Bazi1Activity6.class);
-                                }
+                                intent = new Intent(Bazi1Activity5.this, BaziListActivity.class);
                                 intent.putExtra("category", category);
                                 intent.putExtra("gameType", "balloon");
-                                intent.putExtra("list", remainedItems);
                                 memoryReleaser(tashvigh);
                                 memoryReleaser(payMoreAttention);
                                 memoryReleaser(wordVoice);

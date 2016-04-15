@@ -89,6 +89,7 @@ public class Bazi1Activity4 extends ActionBarActivity {
             public void onCompletion(MediaPlayer mediaPlayer) {
                 mediaPlayer.stop();
                 mediaPlayer.release();
+                mediaPlayer = null;
             }
         });
     }
