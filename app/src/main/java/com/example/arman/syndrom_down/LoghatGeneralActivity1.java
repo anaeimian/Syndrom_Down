@@ -79,10 +79,16 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
 
     @Override
     protected void onDestroy() {
-        wordSound.release();
-        wordSound = null;
-        dragVoice.release();
-        dragVoice = null;
+        super.onDestroy();
+        if (!wordSound.equals(null)) {
+            wordSound.release();
+            wordSound = null;
+        }
+        if (!dragVoice.equals(null)) {
+            dragVoice.release();
+            dragVoice = null;
+        }
+
     }
 
     private void setViews() {
@@ -411,20 +417,43 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
         }
     }
 
-    public void controller() {
-        replay.setOnClickListener(new View.OnClickListener() {
+
+    private void memoryReleaser(MediaPlayer mediaPlayer) {
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
-            public void onClick(View v) {
-                wordSound.start();
-                replayClicked++;
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.stop();
+                mediaPlayer.release();
             }
         });
+    }
+
+
+    public void controller() {
+        wordSound.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(final MediaPlayer mediaPlayer) {
+                replay.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        wordSound.start();
+//                        if (wordSound.isPlaying())
+//                            memoryReleaser(wordSound);
+                        replayClicked++;
+                    }
+
+                });
+            }
+        });
+
 
         pass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if (replayClicked >= 4) {
+                    memoryReleaser(wordSound);
+                    wordSound = null;
                     Intent intent = new Intent(LoghatGeneralActivity1.this, LoghatGeneralActivity2.class);
                     intent.putExtra("category", category);
                     intent.putExtra("position", position + "");

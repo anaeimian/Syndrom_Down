@@ -43,9 +43,22 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
         setContentView(R.layout.activity_loghat_general_activity2);
         dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.father_drag);
         tashvigh = MediaPlayer.create(this, R.raw.afarin);
+        dragVoice.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mediaPlayer) {
+                dragVoice.start();
+//                memoryReleaser(dragVoice);
+            }
+        });
         setViews();
         controller();
-        dragVoice.start();
+//        dragVoice.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+//            @Override
+//            public void onPrepared(MediaPlayer mediaPlayer) {
+//                dragVoice.start();
+//            }
+//        });
+
         guide = (ImageView) findViewById(R.id.guide);
         hand = (ImageView) findViewById(R.id.hand);
         settingsDialog = new Dialog(this);
@@ -70,15 +83,23 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
 
     @Override
     protected void onDestroy() {
+        super.onDestroy();
         tashvigh.release();
         tashvigh = null;
         dragVoice.release();
         dragVoice = null;
     }
 
+    private void memoryReleaser(MediaPlayer mediaPlayer) {
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+    }
+
     private void setViews() {
-
-
         word = (ImageView) findViewById(R.id.word);
         wordImg = (ImageView) findViewById(R.id.wordImg);
 
@@ -572,24 +593,37 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
                         break;
                     case DragEvent.ACTION_DROP:
                         v.setBackgroundColor(Color.TRANSPARENT);
+//                        tashvigh.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+//                            @Override
+//                            public void onPrepared(MediaPlayer mediaPlayer) {
                         tashvigh.start();
-                        wordDragged++;
-                        if (wordDragged <= 3) {
 
-                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                                public void onCompletion(MediaPlayer mp) {
-                                    if (wordDragged <= 3)
-                                        dragVoice.start();
+//                            }
+//                        });
+
+                        wordDragged++;
+                        tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            public void onCompletion(MediaPlayer mp) {
+                                if (wordDragged <= 3) {
+                                    dragVoice.start();
+//                                    memoryReleaser(dragVoice);
                                 }
-                            });
-                        }
+
+                            }
+                        });
+
                         if (wordDragged >= 4) {
+                            memoryReleaser(dragVoice);
+                            memoryReleaser(tashvigh);
+
                             tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                                 public void onCompletion(MediaPlayer mp) {
                                     if (wordDragged >= 4) {
                                         Intent intent = new Intent(LoghatGeneralActivity2.this, LoghatGeneralActivity3.class);
                                         intent.putExtra("category", category);
                                         intent.putExtra("position", position + "");
+                                        dragVoice = null;
+                                        tashvigh = null;
                                         startActivity(intent);
                                     }
                                 }

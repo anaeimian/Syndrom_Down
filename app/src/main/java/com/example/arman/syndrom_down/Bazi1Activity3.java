@@ -32,6 +32,8 @@ public class Bazi1Activity3 extends ActionBarActivity {
     private MediaPlayer payMoreAttention;
     private MediaPlayer tashvigh;
 
+    ArrayList<String> receivedItems;
+    ArrayList<String> remainedItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,12 +80,77 @@ public class Bazi1Activity3 extends ActionBarActivity {
         startActivity(intent);
     }
 
+
+    private void memoryReleaser(MediaPlayer mediaPlayer) {
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.stop();
+                mediaPlayer.release();
+            }
+        });
+    }
+
+
     private void handleIntent() {
         Intent intent = getIntent();
         final String category = intent.getStringExtra("category");
-        ArrayList<String> items = intent.getStringArrayListExtra("list");
+        ArrayList<String> receivedItems = intent.getStringArrayListExtra("list");
         Random random = new Random();
         int answerPos = random.nextInt(2);
+
+
+        int categorySize = 0;
+
+        switch (category) {
+            case "khanevade":
+                categorySize = 4 - 2 - 2;
+                break;
+            case "andam":
+                categorySize = 10 - 2 - 2;
+                break;
+            case "miveh":
+                categorySize = 5 - 2 + 1 -2;
+                break;
+            case "heyvanat":
+                categorySize = 6 - 2 - 2;
+                break;
+            case "pooshak":
+                categorySize = 7 - 2 + 1 - 2;
+                break;
+            case "vasayel":
+                categorySize = 9 - 2 + 1 - 2;
+                break;
+
+            case "mashaghel":
+                categorySize = 3 - 2 + 1 - 2;
+                break;
+            case "rang":
+                categorySize = 3 - 2 + 1 -2 ;
+                break;
+            case "khordani":
+                categorySize = 5 - 2 + 1 - 2;
+                break;
+            case "mafahim":
+                categorySize = 9 - 2 + 1 - 2;
+                break;
+        }
+        int selectedItem1 = random.nextInt(categorySize);
+        int selectedItem2 = random.nextInt(categorySize);
+        while (selectedItem2 == selectedItem1) {
+            selectedItem2 = random.nextInt(categorySize);
+        }
+        ArrayList<String> items = new ArrayList();
+        items.add(receivedItems.get(selectedItem1));
+        items.add(receivedItems.get(selectedItem2));
+
+        remainedItems = new ArrayList<>();
+        for (int i = 0; i < receivedItems.size(); i++) {
+            if (i != selectedItem1 && i != selectedItem2)
+                remainedItems.add(receivedItems.get(i));
+        }
+
+
         switch (category) {
             case "khanevade":
                 switch (items.get(0)) {
@@ -295,7 +362,7 @@ public class Bazi1Activity3 extends ActionBarActivity {
                             wordVoice = MediaPlayer.create(this, R.raw.khiar_ko);
                         }
                         break;
-                    case "porteqal":
+                    case "porteghal":
                         word1.setImageResource(R.drawable.balloon_porteqal);
                         if (answerPos == 0) {
                             wordVoice = MediaPlayer.create(this, R.raw.porteqal_ko);
@@ -329,7 +396,7 @@ public class Bazi1Activity3 extends ActionBarActivity {
                             wordVoice = MediaPlayer.create(this, R.raw.khiar_ko);
                         }
                         break;
-                    case "porteqal":
+                    case "porteghal":
                         word2.setImageResource(R.drawable.balloon_porteqal);
                         if (answerPos == 1) {
                             wordVoice = MediaPlayer.create(this, R.raw.porteqal_ko);
@@ -372,7 +439,7 @@ public class Bazi1Activity3 extends ActionBarActivity {
                             wordVoice = MediaPlayer.create(this, R.raw.mahi_ko);
                         }
                         break;
-                    case "morq":
+                    case "morgh":
                         word1.setImageResource(R.drawable.balloon_morq);
                         if (answerPos == 0) {
                             wordVoice = MediaPlayer.create(this, R.raw.morq_ko);
@@ -411,7 +478,7 @@ public class Bazi1Activity3 extends ActionBarActivity {
                             wordVoice = MediaPlayer.create(this, R.raw.mahi_ko);
                         }
                         break;
-                    case "morq":
+                    case "morgh":
                         word2.setImageResource(R.drawable.balloon_morq);
                         if (answerPos == 1) {
                             wordVoice = MediaPlayer.create(this, R.raw.morq_ko);
@@ -441,7 +508,7 @@ public class Bazi1Activity3 extends ActionBarActivity {
                             wordVoice = MediaPlayer.create(this, R.raw.kolah_ko);
                         }
                         break;
-                    case "jorab":
+                    case "joorab":
                         word1.setImageResource(R.drawable.balloon_jorab);
                         if (answerPos == 0) {
                             wordVoice = MediaPlayer.create(this, R.raw.jorab_ko);
@@ -454,7 +521,7 @@ public class Bazi1Activity3 extends ActionBarActivity {
                             wordVoice = MediaPlayer.create(this, R.raw.shalvar_ko);
                         }
                         break;
-                    case "pirhan":
+                    case "pirahan":
                         word1.setImageResource(R.drawable.balloon_pirahan);
                         if (answerPos == 0) {
                             wordVoice = MediaPlayer.create(this, R.raw.pirhan_ko);
@@ -466,7 +533,7 @@ public class Bazi1Activity3 extends ActionBarActivity {
                             wordVoice = MediaPlayer.create(this, R.raw.rosari_ko);
                         }
                         break;
-                    case "bloz":
+                    case "bolooz":
                         word1.setImageResource(R.drawable.balloon_bloz);
                         if (answerPos == 0) {
                             wordVoice = MediaPlayer.create(this, R.raw.bloz_ko);
@@ -485,7 +552,7 @@ public class Bazi1Activity3 extends ActionBarActivity {
                             wordVoice = MediaPlayer.create(this, R.raw.kolah_ko);
                         }
                         break;
-                    case "jorab":
+                    case "joorab":
                         word2.setImageResource(R.drawable.balloon_jorab);
                         if (answerPos == 1) {
                             wordVoice = MediaPlayer.create(this, R.raw.jorab_ko);
@@ -510,7 +577,7 @@ public class Bazi1Activity3 extends ActionBarActivity {
                             wordVoice = MediaPlayer.create(this, R.raw.rosari_ko);
                         }
                         break;
-                    case "bloz":
+                    case "bolooz":
                         word2.setImageResource(R.drawable.balloon_bloz);
                         if (answerPos == 1) {
                             wordVoice = MediaPlayer.create(this, R.raw.bloz_ko);
@@ -557,7 +624,7 @@ public class Bazi1Activity3 extends ActionBarActivity {
                             wordVoice = MediaPlayer.create(this, R.raw.mashin_ko);
                         }
                         break;
-                    case "havapeima":
+                    case "havapeyma":
                         word1.setImageResource(R.drawable.balloon_havapeima);
                         if (answerPos == 0) {
                             wordVoice = MediaPlayer.create(this, R.raw.havapeima_kojast);
@@ -613,7 +680,7 @@ public class Bazi1Activity3 extends ActionBarActivity {
                             wordVoice = MediaPlayer.create(this, R.raw.mashin_ko);
                         }
                         break;
-                    case "havapeima":
+                    case "havapeyma":
                         word2.setImageResource(R.drawable.balloon_havapeima);
                         if (answerPos == 1) {
                             wordVoice = MediaPlayer.create(this, R.raw.havapeima_kojast);
@@ -633,7 +700,7 @@ public class Bazi1Activity3 extends ActionBarActivity {
                         break;
                 }
                 break;
-            case "mashaqhel":
+            case "mashaghel":
                 switch (items.get(0)) {
                     case "doctor":
                         word1.setImageResource(R.drawable.balloon_doctor);
@@ -953,72 +1020,6 @@ public class Bazi1Activity3 extends ActionBarActivity {
 
     }
 
-//    private void startRotateAnimation() {
-//        RotateAnimation rotate = new RotateAnimation(0, 30, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-//        rotate.setDuration(1000);
-//        rotate.setInterpolator(new LinearInterpolator());
-//        word2.startAnimation(rotate);
-//        rotate.setAnimationListener(new Animation.AnimationListener() {
-//            @Override
-//            public void onAnimationStart(Animation animation) {
-//
-//            }
-//
-//            @Override
-//            public void onAnimationEnd(Animation animation) {
-//                RotateAnimation rotate1 = new RotateAnimation(30, -30, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-//                rotate1.setDuration(2000);
-//                rotate1.setInterpolator(new LinearInterpolator());
-//
-//                word2.startAnimation(rotate1);
-//                rotate1.setAnimationListener(new Animation.AnimationListener() {
-//                    @Override
-//                    public void onAnimationStart(Animation animation) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onAnimationEnd(Animation animation) {
-//                        RotateAnimation rotate2 = new RotateAnimation(-30, 0, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-//                        rotate2.setDuration(1000);
-//                        rotate2.setInterpolator(new LinearInterpolator());
-//
-//                        word2.startAnimation(rotate2);
-//                        rotate2.setAnimationListener(new Animation.AnimationListener() {
-//                            @Override
-//                            public void onAnimationStart(Animation animation) {
-//
-//                            }
-//
-//                            @Override
-//                            public void onAnimationEnd(Animation animation) {
-//                                Intent intent = new Intent(Bazi1Activity2.this, BaziListActivity.class);
-//                                intent.putExtra("category", "khanevade");
-//                                intent.putExtra("gameType", "balloon");
-//                                startActivity(intent);
-//                            }
-//
-//                            @Override
-//                            public void onAnimationRepeat(Animation animation) {
-//
-//                            }
-//                        });
-//                    }
-//
-//                    @Override
-//                    public void onAnimationRepeat(Animation animation) {
-//
-//                    }
-//                });
-//            }
-//
-//            @Override
-//            public void onAnimationRepeat(Animation animation) {
-//
-//            }
-//        });
-//    }
-
     private void startRotateAnimation(final ImageView image, final String category) {
         RotateAnimation rotate = new RotateAnimation(0, 30, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         rotate.setDuration(1000);
@@ -1058,9 +1059,18 @@ public class Bazi1Activity3 extends ActionBarActivity {
 
                             @Override
                             public void onAnimationEnd(Animation animation) {
-                                Intent intent = new Intent(Bazi1Activity3.this, BaziListActivity.class);
+                                Intent intent = null;
+                                if (category.equals("miveh") || category.equals("khordani") || category.equals("heyvanat")) {
+                                    intent = new Intent(Bazi1Activity3.this, BaziListActivity.class);
+                                } else {
+                                    intent = new Intent(Bazi1Activity3.this, Bazi1Activity4.class);
+                                }
                                 intent.putExtra("category", category);
                                 intent.putExtra("gameType", "balloon");
+                                intent.putExtra("list", remainedItems);
+                                memoryReleaser(tashvigh);
+                                memoryReleaser(payMoreAttention);
+                                memoryReleaser(wordVoice);
                                 startActivity(intent);
                             }
 
@@ -1143,22 +1153,4 @@ public class Bazi1Activity3 extends ActionBarActivity {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

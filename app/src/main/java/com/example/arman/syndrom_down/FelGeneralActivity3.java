@@ -60,6 +60,17 @@ public class FelGeneralActivity3 extends ActionBarActivity {
 
     }
 
+    private void memoryReleaser(MediaPlayer mediaPlayer) {
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+                mediaPlayer = null;
+            }
+        });
+    }
+
+
     void guide() {
 
 
@@ -408,6 +419,8 @@ public class FelGeneralActivity3 extends ActionBarActivity {
                             tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                                 public void onCompletion(MediaPlayer mp) {
                                     if (verbDragged >= 4) {
+                                        memoryReleaser(verbDrag);
+                                        memoryReleaser(tashvigh);
                                         Intent intent = new Intent(FelGeneralActivity3.this, FelGeneralActivity4.class);
                                         intent.putExtra("category", category);
                                         intent.putExtra("position", position + "");

@@ -437,6 +437,9 @@ public class FelGeneralActivity4 extends ActionBarActivity {
                 star4.setVisibility(View.INVISIBLE);
                 star5.setVisibility(View.INVISIBLE);
                 intent.putExtra("position", "0");
+                memoryReleaser(tashvigh);
+                memoryReleaser(verbDrag);
+                memoryReleaser(clapSound);
                 startActivity(intent);
             }
 
@@ -473,6 +476,18 @@ public class FelGeneralActivity4 extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+    private void memoryReleaser(MediaPlayer mediaPlayer) {
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+                mediaPlayer = null;
+            }
+        });
+    }
+
 
     private void controller() {
         final Animation animation = new AlphaAnimation(1, 0);

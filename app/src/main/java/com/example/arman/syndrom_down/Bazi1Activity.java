@@ -35,7 +35,7 @@ public class Bazi1Activity extends ActionBarActivity {
     private MediaPlayer wordVoice;
     private MediaPlayer payMoreAttention;
     private MediaPlayer tashvigh;
-    private ArrayList<String> remianedItems;
+    private ArrayList<String> remainedItems;
     Random random = new Random();
 
     @Override
@@ -87,6 +87,18 @@ public class Bazi1Activity extends ActionBarActivity {
         intent.putExtra("gameType", gameType);
         startActivity(intent);
     }
+
+
+    private void memoryReleaser(MediaPlayer mediaPlayer) {
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.stop();
+                mediaPlayer.release();
+            }
+        });
+    }
+
 
     private void handleIntent() {
         Intent intent = getIntent();
@@ -143,10 +155,10 @@ public class Bazi1Activity extends ActionBarActivity {
                 khanevadeItems.add("dadash");
 
 
-                remianedItems = new ArrayList<>();
+                remainedItems = new ArrayList<>();
                 for (int i = 0; i < khanevadeItems.size(); i++) {
                     if (i != selectedItem1 && i != selectedItem2)
-                        remianedItems.add(khanevadeItems.get(i));
+                        remainedItems.add(khanevadeItems.get(i));
                 }
 
                 if (answerPos == 0) {
@@ -198,25 +210,7 @@ public class Bazi1Activity extends ActionBarActivity {
                         }
                     });
                 }
-//                word1.setImageResource(R.drawable.balloon_baba);
-//                word2.setImageResource(R.drawable.balloon_maman);
                 startAnimation();
-//                wordVoice = MediaPlayer.create(this, R.raw.baba_ko);
-
-//                word1.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        startRotateAnimation("khanevade");
-//                        tashvigh.start();
-//
-//                    }
-//                });
-//                word2.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        payMoreAttention.start();
-//                    }
-//                });
 
                 break;
             case "andam":
@@ -226,17 +220,17 @@ public class Bazi1Activity extends ActionBarActivity {
                 andamItems.add("dast");
                 andamItems.add("pa");
                 andamItems.add("goosh");
-                andamItems.add("moo");
+                andamItems.add("mo");
                 andamItems.add("dahan");
                 andamItems.add("bini");
                 andamItems.add("zaban");
                 andamItems.add("dandan");
-                andamItems.add("abroo");
+                andamItems.add("abro");
 
-                remianedItems = new ArrayList<>();
+                remainedItems = new ArrayList<>();
                 for (int i = 0; i < andamItems.size(); i++) {
                     if (i != selectedItem1 && i != selectedItem2)
-                        remianedItems.add(andamItems.get(i));
+                        remainedItems.add(andamItems.get(i));
                 }
 
                 if (answerPos == 0) {
@@ -319,12 +313,12 @@ public class Bazi1Activity extends ActionBarActivity {
                 mivehItems.add("porteghal");
                 mivehItems.add("limo");
 
-                remianedItems = new ArrayList<>();
+                remainedItems = new ArrayList<>();
                 for (int i = 0; i < mivehItems.size(); i++) {
                     if (i != selectedItem1 && i != selectedItem2)
-                        remianedItems.add(mivehItems.get(i));
+                        remainedItems.add(mivehItems.get(i));
                 }
-
+                remainedItems.add(mivehItems.get(selectedItem1));//make number of elements even!
                 if (answerPos == 0) {
                     setVoiceImage(word1, selectedItem1, category);
                     setImage(word2, selectedItem2, category);
@@ -388,10 +382,10 @@ public class Bazi1Activity extends ActionBarActivity {
                 heyvanatItems.add("morgh");
                 heyvanatItems.add("asb");
 
-                remianedItems = new ArrayList<>();
+                remainedItems = new ArrayList<>();
                 for (int i = 0; i < heyvanatItems.size(); i++) {
                     if (i != selectedItem1 && i != selectedItem2)
-                        remianedItems.add(heyvanatItems.get(i));
+                        remainedItems.add(heyvanatItems.get(i));
                 }
 
                 if (answerPos == 0) {
@@ -457,12 +451,12 @@ public class Bazi1Activity extends ActionBarActivity {
                 pooshakItems.add("rosari");
                 pooshakItems.add("bolooz");
 
-                remianedItems = new ArrayList<>();
+                remainedItems = new ArrayList<>();
                 for (int i = 0; i < pooshakItems.size(); i++) {
                     if (i != selectedItem1 && i != selectedItem2)
-                        remianedItems.add(pooshakItems.get(i));
+                        remainedItems.add(pooshakItems.get(i));
                 }
-
+                remainedItems.add(pooshakItems.get(selectedItem1));//make number of elements even!
                 if (answerPos == 0) {
                     setVoiceImage(word1, selectedItem1, category);
                     setImage(word2, selectedItem2, category);
@@ -526,15 +520,15 @@ public class Bazi1Activity extends ActionBarActivity {
                 vasayelItems.add("docharkhe");
                 vasayelItems.add("mashin");
                 vasayelItems.add("havapeyma");
-                vasayelItems.add("ghashogh");
+                vasayelItems.add("ghashoq");
                 vasayelItems.add("ketab");
 
-                remianedItems = new ArrayList<>();
+                remainedItems = new ArrayList<>();
                 for (int i = 0; i < vasayelItems.size(); i++) {
                     if (i != selectedItem1 && i != selectedItem2)
-                        remianedItems.add(vasayelItems.get(i));
+                        remainedItems.add(vasayelItems.get(i));
                 }
-
+                remainedItems.add(vasayelItems.get(selectedItem1));//make number of elements even!
                 if (answerPos == 0) {
                     setVoiceImage(word1, selectedItem1, category);
                     setImage(word2, selectedItem2, category);
@@ -594,12 +588,12 @@ public class Bazi1Activity extends ActionBarActivity {
                 mashagelItems.add("nanva");
                 mashagelItems.add("moalem");
 
-                remianedItems = new ArrayList<>();
+                remainedItems = new ArrayList<>();
                 for (int i = 0; i < mashagelItems.size(); i++) {
                     if (i != selectedItem1 && i != selectedItem2)
-                        remianedItems.add(mashagelItems.get(i));
+                        remainedItems.add(mashagelItems.get(i));
                 }
-
+                remainedItems.add(mashagelItems.get(selectedItem1));//make number of elements even!
                 if (answerPos == 0) {
                     setVoiceImage(word1, selectedItem1, category);
                     setImage(word2, selectedItem2, category);
@@ -659,12 +653,12 @@ public class Bazi1Activity extends ActionBarActivity {
                 rangItems.add("zard");
                 rangItems.add("ghermez");
 
-                remianedItems = new ArrayList<>();
+                remainedItems = new ArrayList<>();
                 for (int i = 0; i < rangItems.size(); i++) {
                     if (i != selectedItem1 && i != selectedItem2)
-                        remianedItems.add(rangItems.get(i));
+                        remainedItems.add(rangItems.get(i));
                 }
-
+                remainedItems.add(rangItems.get(selectedItem1));//make number of elements even!
                 if (answerPos == 0) {
                     setVoiceImage(word1, selectedItem1, category);
                     setImage(word2, selectedItem2, category);
@@ -724,14 +718,14 @@ public class Bazi1Activity extends ActionBarActivity {
                 khordaniItems.add("shir");
                 khordaniItems.add("ab");
                 khordaniItems.add("cake");
-                khordaniItems.add("biscuit");
+                khordaniItems.add("bisco");
 
-                remianedItems = new ArrayList<>();
+                remainedItems = new ArrayList<>();
                 for (int i = 0; i < khordaniItems.size(); i++) {
                     if (i != selectedItem1 && i != selectedItem2)
-                        remianedItems.add(khordaniItems.get(i));
+                        remainedItems.add(khordaniItems.get(i));
                 }
-
+                remainedItems.add(khordaniItems.get(selectedItem1));//make number of elements even!
                 if (answerPos == 0) {
                     setVoiceImage(word1, selectedItem1, category);
                     setImage(word2, selectedItem2, category);
@@ -797,12 +791,12 @@ public class Bazi1Activity extends ActionBarActivity {
                 mafahimItems.add("sard");
                 mafahimItems.add("garm");
 
-                remianedItems = new ArrayList<>();
+                remainedItems = new ArrayList<>();
                 for (int i = 0; i < mafahimItems.size(); i++) {
                     if (i != selectedItem1 && i != selectedItem2)
-                        remianedItems.add(mafahimItems.get(i));
+                        remainedItems.add(mafahimItems.get(i));
                 }
-
+                remainedItems.add(mafahimItems.get(selectedItem1));//make number of elements even!
                 if (answerPos == 0) {
                     setVoiceImage(word1, selectedItem1, category);
                     setImage(word2, selectedItem2, category);
@@ -1429,7 +1423,10 @@ public class Bazi1Activity extends ActionBarActivity {
                             public void onAnimationEnd(Animation animation) {
                                 Intent intent = new Intent(Bazi1Activity.this, Bazi1Activity2.class);
                                 intent.putExtra("category", category);
-                                intent.putStringArrayListExtra("list", remianedItems);
+                                intent.putStringArrayListExtra("list", remainedItems);
+                                memoryReleaser(tashvigh);
+                                memoryReleaser(wordVoice);
+                                memoryReleaser(payMoreAttention);
                                 startActivity(intent);
                             }
 
@@ -1475,7 +1472,12 @@ public class Bazi1Activity extends ActionBarActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+//                wordVoice.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+//                    @Override
+//                    public void onPrepared(MediaPlayer mediaPlayer) {
                 wordVoice.start();
+//                s
+
 //                imView0.setVisibility(View.INVISIBLE);
 //                mediaPlayerRahnama.start();
             }

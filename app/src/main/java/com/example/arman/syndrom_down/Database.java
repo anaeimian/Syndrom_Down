@@ -1,21 +1,5 @@
 package com.example.arman.syndrom_down;
 
-import android.animation.Animator;
-import android.animation.ObjectAnimator;
-import android.content.ClipData;
-import android.graphics.Color;
-import android.media.MediaPlayer;
-import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.DragEvent;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.MediaController;
-import android.widget.ScrollView;
-import android.widget.VideoView;
-
 import java.io.Serializable;
 
 /**
@@ -60,8 +44,46 @@ public class Database implements Serializable {
 
         kalame2[0] = true;
         kalame3[0] = true;
-        
+
         zamir[0] = true;
     }
 
+//    public void activate(String category, int index) {
+//        switch (category) {
+//            case "khanevade":
+//                khanevade[index] = true;
+//                break;
+//            case "andam":
+//                andam[index] = true;
+//                break;
+//            case "miveh":
+//                mive[index] = true;
+//                break;
+//            case "heyvanat":
+//                heyvanat[index] = true;
+//                break;
+//            case "pooshak":
+//                pooshak[index] = true;
+//                break;
+//
+//            case "vasayel":
+//                vasayel[index] = true;
+//                break;
+//
+//            case "mashaghel":
+//                mashaghel[index] = true;
+//                break;
+//            case "rang":
+//                rang[index] = true;
+//                break;
+//            case "khordani":
+//                khordani[index] = true;
+//                break;
+//
+//            case "mafahim":
+//                mafahim[index] = true;
+//                break;
+//
+//        }
+//    }
 }

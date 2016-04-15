@@ -34,6 +34,16 @@ public class FelGeneralActivity1 extends ActionBarActivity {
         felVoice.start();
     }
 
+    private void memoryReleaser(MediaPlayer mediaPlayer) {
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+                mediaPlayer = null;
+            }
+        });
+    }
+
     private void setViews() {
         category = getIntent().getStringExtra("category");
         String pos = getIntent().getStringExtra("position");
@@ -279,6 +289,7 @@ public class FelGeneralActivity1 extends ActionBarActivity {
         pass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                memoryReleaser(felVoice);
                 Intent intent = new Intent(FelGeneralActivity1.this, FelGeneralActivity2.class);
                 intent.putExtra("category", category);
                 intent.putExtra("position", position + "");

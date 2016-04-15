@@ -176,7 +176,6 @@ public class FelGeneralActivity extends ActionBarActivity {
 
         vidView0.setMediaController(mediaController);
         vidView1.setMediaController(mediaController);
-
         imViewRahnama.setVisibility(View.INVISIBLE);
         imViewRahnama2.setVisibility(View.INVISIBLE);
     }

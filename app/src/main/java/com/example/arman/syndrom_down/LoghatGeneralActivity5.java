@@ -35,7 +35,14 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
         fail = (ImageView) findViewById(R.id.fail);
         shapeShows = MediaPlayer.create(getApplicationContext(), R.raw.shapeshows);
         payMoreAttention = MediaPlayer.create(getApplicationContext(), R.raw.pay_more_attention);
-        shapeShows.start();
+        shapeShows.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mediaPlayer) {
+                shapeShows.start();
+//                memoryReleaser(shapeShows);
+            }
+        });
+
         tashvigh = MediaPlayer.create(this, R.raw.afarin);
         setViews();
         controller();
@@ -84,6 +91,7 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
 
     @Override
     protected void onDestroy() {
+        super.onDestroy();
         tashvigh.release();
         tashvigh = null;
         shapeShows.release();
@@ -93,11 +101,22 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
     }
 
 
+    private void memoryReleaser(MediaPlayer mediaPlayer) {
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+    }
+
+
     void controller() {
         fail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 payMoreAttention.start();
+//                memoryReleaser(payMoreAttention);
             }
         });
 
@@ -106,12 +125,22 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
             public void onClick(View v) {
                 passClicked++;
                 tashvigh.start();
+//                memoryReleaser(tashvigh);
+
                 tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
-                        if (passClicked <= 3)
+                        if (passClicked <= 3) {
                             shapeShows.start();
+//                            memoryReleaser(shapeShows);
+                        }
                         if (passClicked >= 4) {
+                            memoryReleaser(shapeShows);
+                            memoryReleaser(payMoreAttention);
+                            memoryReleaser(tashvigh);
+                            shapeShows = null;
+                            payMoreAttention = null;
+                            tashvigh = null;
                             Intent intent = new Intent(LoghatGeneralActivity5.this, LoghatGeneralActivity6.class);
                             intent.putExtra("category", category);
                             intent.putExtra("position", position + "");

@@ -41,6 +41,17 @@ public class FelGeneralActivity2 extends ActionBarActivity {
     }
 
 
+    private void memoryReleaser(MediaPlayer mediaPlayer) {
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+                mediaPlayer = null;
+            }
+        });
+    }
+
+
     private void setViews() {
         category = getIntent().getStringExtra("category");
         String pos = getIntent().getStringExtra("position");
@@ -243,6 +254,9 @@ public class FelGeneralActivity2 extends ActionBarActivity {
                     tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                         public void onCompletion(MediaPlayer mp) {
                             if (passclicked >= 4) {
+                                memoryReleaser(felVoice);
+                                memoryReleaser(payMoreAttention);
+                                memoryReleaser(tashvigh);
                                 Intent intent = new Intent(FelGeneralActivity2.this, FelGeneralActivity3.class);
                                 intent.putExtra("category", category);
                                 intent.putExtra("position", position + "");

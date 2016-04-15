@@ -56,21 +56,34 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
 
         setViews();
         controller();
-        dragVoice.start();
+        dragVoice.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mediaPlayer) {
+                dragVoice.start();
+//                memoryReleaser(dragVoice);
+            }
+        });
     }
 
     @Override
     protected void onDestroy() {
+        super.onDestroy();
         tashvigh.release();
         tashvigh = null;
         dragVoice.release();
         dragVoice = null;
     }
 
+    private void memoryReleaser(MediaPlayer mediaPlayer) {
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+    }
 
     private void setViews() {
-
-
         word = (ImageView) findViewById(R.id.father);
         wordImg = (ImageView) findViewById(R.id.fatherimg);
         arrow = (ImageView) findViewById(R.id.arrow);
@@ -513,19 +526,25 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
                     case DragEvent.ACTION_DROP:
                         v.setBackgroundColor(Color.TRANSPARENT);
                         tashvigh.start();
+//                        memoryReleaser(tashvigh);
+
                         wordDragged++;
-                        if (wordDragged <= 3) {
-                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                                public void onCompletion(MediaPlayer mp) {
-                                    if (wordDragged <= 3)
-                                        dragVoice.start();
+                        tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            public void onCompletion(MediaPlayer mp) {
+                                if (wordDragged <= 3) {
+                                    dragVoice.start();
+//                                    memoryReleaser(dragVoice);
                                 }
-                            });
-                        }
+                            }
+                        });
                         if (wordDragged >= 4) {
                             tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                                 public void onCompletion(MediaPlayer mp) {
                                     if (wordDragged >= 4) {
+                                        memoryReleaser(dragVoice);
+                                        memoryReleaser(tashvigh);
+                                        dragVoice = null;
+                                        tashvigh = null;
                                         Intent intent = new Intent(LoghatGeneralActivity3.this, LoghatGeneralActivity4.class);
                                         intent.putExtra("category", category);
                                         intent.putExtra("position", position + "");

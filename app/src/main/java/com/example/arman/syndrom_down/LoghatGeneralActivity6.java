@@ -42,6 +42,7 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
     private ObjectAnimator animator8;
     private ObjectAnimator animator9;
     private ObjectAnimator animator10;
+
     ImageView star1;
     ImageView star2;
     ImageView star3;
@@ -66,7 +67,14 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
         clapSound = MediaPlayer.create(getApplicationContext(), R.raw.clap);
         setViews();
         controller();
-        inchie.start();
+        inchie.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mediaPlayer) {
+                inchie.start();
+//                memoryReleaser(inchie);
+            }
+        });
+
 
         guide = (ImageView) findViewById(R.id.guide);
         settingsDialog = new Dialog(this);
@@ -105,12 +113,21 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
     @Override
     public void onBackPressed() {
         // Inflate the menu; this adds items to the action bar if it is present.
+        memoryReleaser(inchie);
+        memoryReleaser(payMoreAttention);
+        memoryReleaser(tashvigh);
+        memoryReleaser(clapSound);
+        inchie = null;
+        payMoreAttention = null;
+        tashvigh = null;
+        clapSound = null;
         Intent intent1 = new Intent(LoghatGeneralActivity6.this, LoghatActivity.class);
         startActivity(intent1);
     }
 
     @Override
     protected void onDestroy() {
+        super.onDestroy();
         tashvigh.release();
         tashvigh = null;
         clapSound.release();
@@ -126,6 +143,8 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 payMoreAttention.start();
+//                memoryReleaser(payMoreAttention);
+
             }
         });
 
@@ -136,12 +155,18 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
                 passClicked++;
                 if (passClicked < 4)
                     tashvigh.start();
+//                memoryReleaser(tashvigh);
+
                 tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
-                        if (passClicked <= 3)
+                        if (passClicked <= 3) {
                             inchie.start();
+//                            memoryReleaser(inchie);
+                        }
+
                         if (passClicked >= 4) {
+//                            Utils.database.activate(category, position);
                             switch (category) {
                                 case "khanevade":
                                     intent = new Intent(LoghatGeneralActivity6.this, KhanevadeActivity.class);
@@ -205,7 +230,10 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
     }
 
     void successAnimation() {
+        Log.d("succes", "succes animation");
         clapSound.start();
+//        memoryReleaser(clapSound);
+
         star1 = (ImageView) findViewById(R.id.star1);
         star2 = (ImageView) findViewById(R.id.star2);
         star3 = (ImageView) findViewById(R.id.star3);
@@ -316,6 +344,14 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                memoryReleaser(inchie);
+                memoryReleaser(payMoreAttention);
+                memoryReleaser(tashvigh);
+                memoryReleaser(clapSound);
+                inchie = null;
+                payMoreAttention = null;
+                tashvigh = null;
+                clapSound = null;
                 star1.setVisibility(View.INVISIBLE);
                 star2.setVisibility(View.INVISIBLE);
                 star3.setVisibility(View.INVISIBLE);
@@ -396,6 +432,15 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
 
         DatabaseAdapter.getInstance().saveDatabase(LoghatGeneralActivity6.this,
                 Utils.database);
+    }
+
+    private void memoryReleaser(MediaPlayer mediaPlayer) {
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
     }
 
     private void setViews() {
