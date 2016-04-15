@@ -1055,9 +1055,12 @@ public class Bazi2Activity2 extends ActionBarActivity {
                 intent.putExtra("gameType", "football");
                 intent.putStringArrayListExtra("list", remainedItems);
 
-                memoryReleaser(tashvigh);
-                memoryReleaser(wordVoice);
-                memoryReleaser(payMoreAttention);
+                tashvigh.release();
+                tashvigh = null;
+                payMoreAttention.release();
+                payMoreAttention = null;
+                wordVoice.release();
+                wordVoice = null;
                 startActivity(intent);
 //                mediaPlayerTashvigh.start();
             }
@@ -1092,6 +1095,12 @@ public class Bazi2Activity2 extends ActionBarActivity {
         String gameType = temp.getStringExtra("gameType");
         Intent intent = new Intent(Bazi2Activity2.this, BaziListActivity.class);
         intent.putExtra("gameType", gameType);
+        tashvigh.release();
+        tashvigh = null;
+        payMoreAttention.release();
+        payMoreAttention = null;
+        wordVoice.release();
+        wordVoice = null;
         startActivity(intent);
     }
 

@@ -135,9 +135,12 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
 //                            memoryReleaser(shapeShows);
                         }
                         if (passClicked >= 4) {
-                            memoryReleaser(shapeShows);
-                            memoryReleaser(payMoreAttention);
-                            memoryReleaser(tashvigh);
+                            tashvigh.release();
+                            shapeShows.release();
+                            payMoreAttention.release();
+//                            memoryReleaser(shapeShows);
+//                            memoryReleaser(payMoreAttention);
+//                            memoryReleaser(tashvigh);
                             shapeShows = null;
                             payMoreAttention = null;
                             tashvigh = null;

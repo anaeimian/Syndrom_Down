@@ -635,6 +635,12 @@ public class FelGeneralActivity4 extends ActionBarActivity {
     public void onBackPressed() {
         // Inflate the menu; this adds items to the action bar if it is present.
         Intent intent = new Intent(FelGeneralActivity4.this, FelActivity.class);
+        tashvigh.release();
+        tashvigh = null;
+        verbDrag.release();
+        verbDrag = null;
+        clapSound.release();
+        clapSound = null;
         startActivity(intent);
     }
 }

@@ -419,8 +419,12 @@ public class FelGeneralActivity3 extends ActionBarActivity {
                             tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                                 public void onCompletion(MediaPlayer mp) {
                                     if (verbDragged >= 4) {
-                                        memoryReleaser(verbDrag);
-                                        memoryReleaser(tashvigh);
+                                        verbDrag.release();
+                                        verbDrag = null;
+                                        tashvigh.release();
+                                        tashvigh = null;
+//                                        memoryReleaser(verbDrag);
+//                                        memoryReleaser(tashvigh);
                                         Intent intent = new Intent(FelGeneralActivity3.this, FelGeneralActivity4.class);
                                         intent.putExtra("category", category);
                                         intent.putExtra("position", position + "");

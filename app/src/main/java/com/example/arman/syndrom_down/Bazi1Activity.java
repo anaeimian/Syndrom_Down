@@ -84,6 +84,12 @@ public class Bazi1Activity extends ActionBarActivity {
         String gameType = temp.getStringExtra("gameType");
         Intent intent = new Intent(Bazi1Activity.this, BaziListActivity.class);
         intent.putExtra("gameType", gameType);
+        tashvigh.release();
+        tashvigh = null;
+        wordVoice.release();
+        wordVoice = null;
+        payMoreAttention.release();
+        payMoreAttention = null;
         startActivity(intent);
     }
 
@@ -1405,9 +1411,15 @@ public class Bazi1Activity extends ActionBarActivity {
                                 Intent intent = new Intent(Bazi1Activity.this, Bazi1Activity2.class);
                                 intent.putExtra("category", category);
                                 intent.putStringArrayListExtra("list", remainedItems);
-                                memoryReleaser(tashvigh);
-                                memoryReleaser(wordVoice);
-                                memoryReleaser(payMoreAttention);
+                                tashvigh.release();
+                                tashvigh = null;
+                                wordVoice.release();
+                                wordVoice = null;
+                                payMoreAttention.release();
+                                payMoreAttention = null;
+//                                memoryReleaser(tashvigh);
+//                                memoryReleaser(wordVoice);
+//                                memoryReleaser(payMoreAttention);
                                 startActivity(intent);
                             }
 

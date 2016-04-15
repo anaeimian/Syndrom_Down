@@ -424,6 +424,7 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
             public void onCompletion(MediaPlayer mediaPlayer) {
                 mediaPlayer.stop();
                 mediaPlayer.release();
+                mediaPlayer = null;
             }
         });
     }
@@ -452,9 +453,14 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
             public void onClick(View v) {
 
                 if (replayClicked >= 4) {
-                    memoryReleaser(wordSound);
-                    wordSound.start();
-                    wordSound = null;
+//                    memoryReleaser(wordSound);
+                    wordSound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            wordSound.release();
+                            wordSound = null;
+                        }
+                    });
                     Intent intent = new Intent(LoghatGeneralActivity1.this, LoghatGeneralActivity2.class);
                     intent.putExtra("category", category);
                     intent.putExtra("position", position + "");

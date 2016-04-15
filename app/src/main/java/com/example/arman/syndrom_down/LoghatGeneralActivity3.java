@@ -541,8 +541,10 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
                             tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                                 public void onCompletion(MediaPlayer mp) {
                                     if (wordDragged >= 4) {
-                                        memoryReleaser(dragVoice);
-                                        memoryReleaser(tashvigh);
+                                        tashvigh.release();
+                                        dragVoice.release();
+//                                        memoryReleaser(dragVoice);
+//                                        memoryReleaser(tashvigh);
                                         dragVoice = null;
                                         tashvigh = null;
                                         Intent intent = new Intent(LoghatGeneralActivity3.this, LoghatGeneralActivity4.class);
@@ -553,8 +555,6 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
                                 }
                             });
 
-                        } else {
-                            //mediaPlayerTashvigh.start();
                         }
 
                         break;

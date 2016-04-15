@@ -58,6 +58,21 @@ public class Bazi2Activity extends ActionBarActivity {
         handleIntent();
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent temp = getIntent();
+        String gameType = temp.getStringExtra("gameType");
+        Intent intent = new Intent(Bazi2Activity.this, BaziListActivity.class);
+        intent.putExtra("gameType", gameType);
+        tashvigh.release();
+        tashvigh = null;
+        wordVoice.release();
+        wordVoice = null;
+        payMoreAttention.release();
+        payMoreAttention = null;
+        startActivity(intent);
+    }
+
 
     private void handleIntent() {
         Intent intent = getIntent();
@@ -291,9 +306,12 @@ public class Bazi2Activity extends ActionBarActivity {
                 Intent intent = new Intent(Bazi2Activity.this, Bazi2Activity2.class);
                 intent.putExtra("category", category);
                 intent.putExtra("list", remainedItems);
-                memoryReleaser(tashvigh);
-                memoryReleaser(wordVoice);
-                memoryReleaser(payMoreAttention);
+                tashvigh.release();
+                tashvigh = null;
+                payMoreAttention.release();
+                payMoreAttention = null;
+                wordVoice.release();
+                wordVoice = null;
                 startActivity(intent);
 //                mediaPlayerTashvigh.start();
             }

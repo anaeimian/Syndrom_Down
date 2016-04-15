@@ -344,10 +344,14 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                memoryReleaser(inchie);
-                memoryReleaser(payMoreAttention);
-                memoryReleaser(tashvigh);
-                memoryReleaser(clapSound);
+//                memoryReleaser(inchie);
+//                memoryReleaser(payMoreAttention);
+//                memoryReleaser(tashvigh);
+//                memoryReleaser(clapSound);
+                inchie.release();
+                payMoreAttention.release();
+                tashvigh.release();
+                clapSound.release();
                 inchie = null;
                 payMoreAttention = null;
                 tashvigh = null;

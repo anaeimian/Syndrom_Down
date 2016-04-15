@@ -613,8 +613,8 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
                         });
 
                         if (wordDragged >= 4) {
-                            memoryReleaser(dragVoice);
-                            memoryReleaser(tashvigh);
+//                            memoryReleaser(dragVoice);
+//                            memoryReleaser(tashvigh);
 
                             tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                                 public void onCompletion(MediaPlayer mp) {
@@ -622,6 +622,8 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
                                         Intent intent = new Intent(LoghatGeneralActivity2.this, LoghatGeneralActivity3.class);
                                         intent.putExtra("category", category);
                                         intent.putExtra("position", position + "");
+                                        dragVoice.release();
+                                        tashvigh.release();
                                         dragVoice = null;
                                         tashvigh = null;
                                         startActivity(intent);

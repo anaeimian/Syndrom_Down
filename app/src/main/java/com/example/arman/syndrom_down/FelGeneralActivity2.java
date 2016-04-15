@@ -254,9 +254,15 @@ public class FelGeneralActivity2 extends ActionBarActivity {
                     tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                         public void onCompletion(MediaPlayer mp) {
                             if (passclicked >= 4) {
-                                memoryReleaser(felVoice);
-                                memoryReleaser(payMoreAttention);
-                                memoryReleaser(tashvigh);
+                                felVoice.release();
+                                felVoice = null;
+                                payMoreAttention.release();
+                                payMoreAttention = null;
+                                tashvigh.release();
+                                tashvigh = null;
+//                                memoryReleaser(felVoice);
+//                                memoryReleaser(payMoreAttention);
+//                                memoryReleaser(tashvigh);
                                 Intent intent = new Intent(FelGeneralActivity2.this, FelGeneralActivity3.class);
                                 intent.putExtra("category", category);
                                 intent.putExtra("position", position + "");

@@ -1025,13 +1025,21 @@ public class Bazi2Activity3 extends ActionBarActivity {
     }
 
 
+
     @Override
     public void onBackPressed() {
         Intent temp = getIntent();
         String gameType = temp.getStringExtra("gameType");
         Intent intent = new Intent(Bazi2Activity3.this, BaziListActivity.class);
         intent.putExtra("gameType", gameType);
+        tashvigh.release();
+        tashvigh = null;
+        payMoreAttention.release();
+        payMoreAttention = null;
+        wordVoice.release();
+        wordVoice = null;
         startActivity(intent);
     }
+
 
 }

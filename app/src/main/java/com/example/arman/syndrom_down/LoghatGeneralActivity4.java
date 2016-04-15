@@ -477,8 +477,10 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
                             tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                                 public void onCompletion(MediaPlayer mp) {
                                     if (wordDragged >= 4) {
-                                        memoryReleaser(sabadVoice);
-                                        memoryReleaser(tashvigh);
+//                                        memoryReleaser(sabadVoice);
+//                                        memoryReleaser(tashvigh);
+                                        tashvigh.release();
+                                        sabadVoice.release();
                                         sabadVoice = null;
                                         tashvigh = null;
                                         Intent intent = new Intent(LoghatGeneralActivity4.this, LoghatGeneralActivity5.class);

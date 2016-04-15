@@ -1021,6 +1021,13 @@ public class Bazi2Activity4 extends ActionBarActivity {
         String gameType = temp.getStringExtra("gameType");
         Intent intent = new Intent(Bazi2Activity4.this, BaziListActivity.class);
         intent.putExtra("gameType", gameType);
+        tashvigh.release();
+        tashvigh = null;
+        payMoreAttention.release();
+        payMoreAttention = null;
+        wordVoice.release();
+        wordVoice = null;
         startActivity(intent);
     }
+
 }

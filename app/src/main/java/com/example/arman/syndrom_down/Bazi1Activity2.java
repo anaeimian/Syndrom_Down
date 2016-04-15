@@ -75,6 +75,12 @@ public class Bazi1Activity2 extends ActionBarActivity {
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(Bazi1Activity2.this, BaziListActivity.class);
+        tashvigh.release();
+        tashvigh = null;
+        wordVoice.release();
+        wordVoice = null;
+        payMoreAttention.release();
+        payMoreAttention = null;
         startActivity(intent);
     }
 
@@ -1066,12 +1072,15 @@ public class Bazi1Activity2 extends ActionBarActivity {
                                 intent.putExtra("category", category);
                                 intent.putExtra("gameType", "balloon");
                                 intent.putExtra("list", remainedItems);
-                                memoryReleaser(tashvigh);
-                                memoryReleaser(payMoreAttention);
-                                memoryReleaser(wordVoice);
-                                memoryReleaser(tashvigh);
-                                memoryReleaser(wordVoice);
-                                memoryReleaser(payMoreAttention);
+                                tashvigh.release();
+                                tashvigh = null;
+                                wordVoice.release();
+                                wordVoice = null;
+                                payMoreAttention.release();
+                                payMoreAttention = null;
+//                                memoryReleaser(tashvigh);
+//                                memoryReleaser(wordVoice);
+//                                memoryReleaser(payMoreAttention);
                                 startActivity(intent);
                             }
 
