@@ -228,7 +228,7 @@ public class Bazi2Activity extends ActionBarActivity {
                 khordaniItems.add("shir");
                 khordaniItems.add("ab");
                 khordaniItems.add("cake");
-                khordaniItems.add("bisco");
+                khordaniItems.add("bisko");
 
                 remainedItems = new ArrayList<>();
                 for (int i = 0; i < khordaniItems.size(); i++) {
@@ -306,12 +306,18 @@ public class Bazi2Activity extends ActionBarActivity {
                 Intent intent = new Intent(Bazi2Activity.this, Bazi2Activity2.class);
                 intent.putExtra("category", category);
                 intent.putExtra("list", remainedItems);
-                tashvigh.release();
-                tashvigh = null;
-                payMoreAttention.release();
-                payMoreAttention = null;
-                wordVoice.release();
-                wordVoice = null;
+                tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        tashvigh.release();
+                        tashvigh = null;
+                        payMoreAttention.release();
+                        payMoreAttention = null;
+                        wordVoice.release();
+                        wordVoice = null;
+
+                    }
+                });
                 startActivity(intent);
 //                mediaPlayerTashvigh.start();
             }

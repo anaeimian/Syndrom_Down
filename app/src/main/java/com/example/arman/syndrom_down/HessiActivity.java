@@ -36,7 +36,6 @@ public class HessiActivity extends ActionBarActivity {
         items = new ArrayList<>();
         items.add(getResources().getString(R.string.khabidan));
         items.add(getResources().getString(R.string.shostan));
-        items.add(getResources().getString(R.string.paridan));
         items.add(getResources().getString(R.string.davidan));
         items.add(getResources().getString(R.string.khordan));
         items.add(getResources().getString(R.string.khandan));

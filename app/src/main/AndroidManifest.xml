@@ -162,16 +162,8 @@
             android:label="@string/title_activity_bazi1_activity5"
             android:screenOrientation="landscape"></activity>
         <activity
-            android:name=".Bazi1Activity6"
-            android:label="@string/title_activity_bazi1_activity6"
-            android:screenOrientation="landscape"></activity>
-        <activity
             android:name=".Bazi2Activity5"
             android:label="@string/title_activity_bazi2_activity5"
-            android:screenOrientation="landscape"></activity>
-        <activity
-            android:name=".Bazi2Activity6"
-            android:label="@string/title_activity_bazi2_activity6"
             android:screenOrientation="landscape"></activity>
     </application>
 

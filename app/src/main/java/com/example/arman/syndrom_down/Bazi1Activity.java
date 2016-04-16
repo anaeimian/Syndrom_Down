@@ -198,6 +198,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word2, "khanevade");
                             tashvigh.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -246,6 +252,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word1, "andam");
                             tashvigh.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -271,6 +283,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word2, "andam");
                             tashvigh.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -314,6 +332,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word1, "miveh");
                             tashvigh.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -338,6 +362,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word2, "miveh");
                             tashvigh.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -383,6 +413,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word1, "heyvanat");
                             tashvigh.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -407,6 +443,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word2, "heyvanat");
                             tashvigh.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -452,6 +494,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word1, "pooshak");
                             tashvigh.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -476,6 +524,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word2, "pooshak");
                             tashvigh.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -524,6 +578,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word1, "vasayel");
                             tashvigh.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -548,6 +608,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word2, "vasayel");
                             tashvigh.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -589,6 +655,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word1, "mashaghel");
                             tashvigh.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -613,6 +685,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word2, "mashaghel");
                             tashvigh.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -654,6 +732,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word1, "rang");
                             tashvigh.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -678,6 +762,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word2, "rang");
                             tashvigh.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -705,7 +795,7 @@ public class Bazi1Activity extends ActionBarActivity {
                 khordaniItems.add("shir");
                 khordaniItems.add("ab");
                 khordaniItems.add("cake");
-                khordaniItems.add("bisco");
+                khordaniItems.add("bisko");
 
                 remainedItems = new ArrayList<>();
                 for (int i = 0; i < khordaniItems.size(); i++) {
@@ -721,6 +811,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word1, "khordani");
                             tashvigh.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -745,6 +841,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word2, "khordani");
                             tashvigh.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -792,6 +894,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word1, "mafahim");
                             tashvigh.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -816,6 +924,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         public void onClick(View v) {
                             startRotateAnimation(word2, "mafahim");
                             tashvigh.start();
+                            tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
@@ -1411,15 +1525,18 @@ public class Bazi1Activity extends ActionBarActivity {
                                 Intent intent = new Intent(Bazi1Activity.this, Bazi1Activity2.class);
                                 intent.putExtra("category", category);
                                 intent.putStringArrayListExtra("list", remainedItems);
-                                tashvigh.release();
-                                tashvigh = null;
-                                wordVoice.release();
-                                wordVoice = null;
-                                payMoreAttention.release();
-                                payMoreAttention = null;
-//                                memoryReleaser(tashvigh);
-//                                memoryReleaser(wordVoice);
-//                                memoryReleaser(payMoreAttention);
+                                tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                    @Override
+                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                        tashvigh.release();
+                                        tashvigh = null;
+                                        payMoreAttention.release();
+                                        payMoreAttention = null;
+                                        wordVoice.release();
+                                        wordVoice = null;
+
+                                    }
+                                });
                                 startActivity(intent);
                             }
 
@@ -1465,14 +1582,13 @@ public class Bazi1Activity extends ActionBarActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-//                wordVoice.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-//                    @Override
-//                    public void onPrepared(MediaPlayer mediaPlayer) {
                 wordVoice.start();
-//                s
-
-//                imView0.setVisibility(View.INVISIBLE);
-//                mediaPlayerRahnama.start();
+                wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        mediaPlayer.release();
+                    }
+                });
             }
 
             @Override

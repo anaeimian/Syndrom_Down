@@ -204,20 +204,16 @@ public class FelGeneralActivity3 extends ActionBarActivity {
                         verbImg.setImageResource(R.drawable.imshostan);
                         break;
                     case 2:
-                        verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.paridan_drag);
-                        verb.setImageResource(R.drawable.tparidan);
-//                        verbImg.setImageResource(R.drawable.imparidan);                        break;
-                    case 3:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.davidan_drag);
                         verb.setImageResource(R.drawable.tdavidan);
                         verbImg.setImageResource(R.drawable.imdavidan);
                         break;
-                    case 4:
+                    case 3:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.khordan_drag);
                         verb.setImageResource(R.drawable.tkhordan);
                         verbImg.setImageResource(R.drawable.imkhordan);
                         break;
-                    case 5:
+                    case 4:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.khandan_drag);
                         verb.setImageResource(R.drawable.tkhandan);
                         verbImg.setImageResource(R.drawable.imkhaandan);
@@ -372,7 +368,27 @@ public class FelGeneralActivity3 extends ActionBarActivity {
     @Override
     public void onBackPressed() {
         // Inflate the menu; this adds items to the action bar if it is present.
-        Intent intent = new Intent(FelGeneralActivity3.this, FelActivity.class);
+        Intent intent = null;
+        switch (category) {
+            case "amr":
+                intent = new Intent(FelGeneralActivity3.this, AmrActivity.class);
+                break;
+            case "gozashte":
+                intent = new Intent(FelGeneralActivity3.this, GozashteActivity.class);
+                break;
+            case "hessi":
+                intent = new Intent(FelGeneralActivity3.this, HessiActivity.class);
+                break;
+            case "kalame2":
+                intent = new Intent(FelGeneralActivity3.this, Kalame2Activity.class);
+                break;
+            case "kalame3":
+                intent = new Intent(FelGeneralActivity3.this, Kalame3Activity.class);
+                break;
+            case "zamir":
+                intent = new Intent(FelGeneralActivity3.this, ZamirActivity.class);
+                break;
+        }
         startActivity(intent);
     }
 

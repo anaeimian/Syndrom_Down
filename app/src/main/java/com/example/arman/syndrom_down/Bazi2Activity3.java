@@ -994,9 +994,18 @@ public class Bazi2Activity3 extends ActionBarActivity {
                 intent.putExtra("category", category);
                 intent.putExtra("gameType", "football");
                 intent.putStringArrayListExtra("list", remainedItems);
-                memoryReleaser(tashvigh);
-                memoryReleaser(wordVoice);
-                memoryReleaser(payMoreAttention);
+                tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        tashvigh.release();
+                        tashvigh = null;
+                        payMoreAttention.release();
+                        payMoreAttention = null;
+                        wordVoice.release();
+                        wordVoice = null;
+
+                    }
+                });
                 startActivity(intent);
 //                mediaPlayerTashvigh.start();
             }
@@ -1023,7 +1032,6 @@ public class Bazi2Activity3 extends ActionBarActivity {
             }
         });
     }
-
 
 
     @Override

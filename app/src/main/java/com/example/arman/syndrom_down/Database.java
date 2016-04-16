@@ -19,7 +19,7 @@ public class Database implements Serializable {
 
     public boolean[] amr = new boolean[7];
     public boolean[] gozashte = new boolean[6];
-    public boolean[] hessi = new boolean[7];
+    public boolean[] hessi = new boolean[6];
 
     public boolean[] kalame2 = new boolean[16];
     public boolean[] kalame3 = new boolean[5];

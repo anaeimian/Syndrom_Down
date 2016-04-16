@@ -951,9 +951,18 @@ public class Bazi2Activity5 extends ActionBarActivity {
                 ball.setVisibility(View.INVISIBLE);
                 intent.putExtra("category", category);
                 intent.putExtra("gameType", "football");
-                memoryReleaser(tashvigh);
-                memoryReleaser(wordVoice);
-                memoryReleaser(payMoreAttention);
+                tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        tashvigh.release();
+                        tashvigh = null;
+                        payMoreAttention.release();
+                        payMoreAttention = null;
+                        wordVoice.release();
+                        wordVoice = null;
+
+                    }
+                });
                 startActivity(intent);
             }
 
