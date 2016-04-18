@@ -64,70 +64,70 @@ public class BaziListActivity extends ActionBarActivity {
                 intent.putExtra("gameType", gameType);
                 switch (position) {
                     case 0:
-                        if (Utils.database.khanevade[3]) {
-                            intent.putExtra("category", "khanevade");
-                            unLcok = true;
-                        }
+//                        if (Utils.database.khanevade[3]) {
+                        intent.putExtra("category", "khanevade");
+//                            unLcok = true;
+//                        }
                         break;
                     case 1:
-                        if (Utils.database.andam[9]) {
-                            intent.putExtra("category", "andam");
-                            unLcok = true;
-                        }
+//                        if (Utils.database.andam[9]) {
+                        intent.putExtra("category", "andam");
+//                            unLcok = true;
+//                        }
                         break;
                     case 2:
-                        if (Utils.database.mive[4]) {
-                            intent.putExtra("category", "miveh");
-                            unLcok = true;
-                        }
+//                        if (Utils.database.mive[4]) {
+                        intent.putExtra("category", "miveh");
+//                            unLcok = true;
+//                        }
                         break;
                     case 3:
-                        if (Utils.database.heyvanat[5]) {
-                            intent.putExtra("category", "heyvanat");
-                            unLcok = true;
-                        }
+//                        if (Utils.database.heyvanat[5]) {
+                        intent.putExtra("category", "heyvanat");
+//                            unLcok = true;
+//                        }
                         break;
                     case 4:
-                        if (Utils.database.pooshak[6]) {
-                            intent.putExtra("category", "pooshak");
-                            unLcok = true;
-                        }
+//                        if (Utils.database.pooshak[6]) {
+                        intent.putExtra("category", "pooshak");
+//                            unLcok = true;
+//                        }
 
                         break;
                     case 5:
-                        if (Utils.database.vasayel[8]) {
-                            intent.putExtra("category", "vasayel");
-                            unLcok = true;
-                        }
+//                        if (Utils.database.vasayel[8]) {
+                        intent.putExtra("category", "vasayel");
+//                            unLcok = true;
+//                        }
 
                         break;
                     case 6:
-                        if (Utils.database.mashaghel[2]) {
-                            intent.putExtra("category", "mashaghel");
-                            unLcok = true;
-                        }
+//                        if (Utils.database.mashaghel[2]) {
+                        intent.putExtra("category", "mashaghel");
+//                            unLcok = true;
+//                        }
                         break;
                     case 7:
-                        if (Utils.database.rang[2]) {
-                            intent.putExtra("category", "rang");
-                            unLcok = true;
-                        }
+//                        if (Utils.database.rang[2]) {
+                        intent.putExtra("category", "rang");
+//                            unLcok = true;
+//                        }
                         break;
                     case 8:
-                        if (Utils.database.khordani[4]) {
-                            intent.putExtra("category", "khordani");
-                            unLcok = true;
-                        }
+//                        if (Utils.database.khordani[4]) {
+                        intent.putExtra("category", "khordani");
+//                            unLcok = true;
+//                        }
                         break;
                     case 9:
-                        if (Utils.database.mafahim[8]) {
-                            intent.putExtra("category", "mafahim");
-                            unLcok = true;
-                        }
+//                        if (Utils.database.mafahim[8]) {
+                        intent.putExtra("category", "mafahim");
+//                            unLcok = true;
+//                        }
                         break;
                 }
-                if (unLcok)
-                    startActivity(intent);
+//                if (unLcok)
+                startActivity(intent);
             }
         });
     }

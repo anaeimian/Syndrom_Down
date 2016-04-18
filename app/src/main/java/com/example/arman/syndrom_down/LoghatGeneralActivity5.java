@@ -92,12 +92,13 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        tashvigh.release();
+        if (tashvigh != null)
+            tashvigh.release();
         tashvigh = null;
-        shapeShows.release();
-        shapeShows = null;
-        payMoreAttention.release();
-        payMoreAttention = null;
+        if (shapeShows != null)
+            shapeShows.release();
+        if (payMoreAttention != null)
+            payMoreAttention.release();
     }
 
 

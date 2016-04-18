@@ -73,9 +73,11 @@ public class LoghatGeneralActivity4 extends ActionBarActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        tashvigh.release();
+        if (tashvigh != null)
+            tashvigh.release();
         tashvigh = null;
-        sabadVoice.release();
+        if (sabadVoice != null)
+            sabadVoice.release();
         sabadVoice = null;
     }
 

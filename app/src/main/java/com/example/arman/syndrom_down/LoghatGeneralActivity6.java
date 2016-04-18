@@ -128,13 +128,17 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        tashvigh.release();
+        if (tashvigh != null)
+            tashvigh.release();
         tashvigh = null;
-        clapSound.release();
+        if (clapSound != null)
+            clapSound.release();
         clapSound = null;
-        payMoreAttention.release();
+        if (payMoreAttention != null)
+            payMoreAttention.release();
         payMoreAttention = null;
-        inchie.release();
+        if (inchie != null)
+            inchie.release();
         inchie = null;
     }
 
