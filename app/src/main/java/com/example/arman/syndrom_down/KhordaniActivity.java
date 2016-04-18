@@ -56,8 +56,8 @@ public class KhordaniActivity extends ActionBarActivity {
         listKhordani.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (!Utils.database.khordani[position])
-                    return;
+//                if (!Utils.database.khordani[position])
+//                    return;
 
                 Intent intent = new Intent(KhordaniActivity.this, LoghatGeneralActivity1.class);
                 intent.putExtra("category","khordani");

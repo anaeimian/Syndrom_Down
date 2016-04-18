@@ -46,8 +46,8 @@ public class ZamirActivity extends ActionBarActivity {
         listZamir.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (!Utils.database.zamir[position])
-                    return;
+//                if (!Utils.database.zamir[position])
+//                    return;
 
                 Intent intent = new Intent(ZamirActivity.this, FelGeneralActivity1.class);
                 intent.putExtra(Utils.TYPE, 4);

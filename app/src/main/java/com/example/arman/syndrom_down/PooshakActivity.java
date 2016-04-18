@@ -60,8 +60,8 @@ public class PooshakActivity extends ActionBarActivity {
         listPooshak.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (!Utils.database.pooshak[position])
-                    return;
+//                if (!Utils.database.pooshak[position])
+//                    return;
 
                 Intent intent = new Intent(PooshakActivity.this, LoghatGeneralActivity1.class);
                 intent.putExtra("category", "pooshak");

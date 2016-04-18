@@ -65,8 +65,8 @@ public class VasayelActivity extends ActionBarActivity {
         listVasayel.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (!Utils.database.vasayel[position])
-                    return;
+//                if (!Utils.database.vasayel[position])
+//                    return;
 
                 Intent intent = new Intent(VasayelActivity.this, LoghatGeneralActivity1.class);
                 intent.putExtra("position", position + "");

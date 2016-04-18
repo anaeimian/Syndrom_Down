@@ -535,32 +535,32 @@ public class FelGeneralActivity4 extends ActionBarActivity {
                                         switch (category) {
                                             case "amr":
                                                 intent = new Intent(FelGeneralActivity4.this, AmrActivity.class);
-                                                passSection();
+//                                                passSection();
                                                 successAnimation();
                                                 break;
                                             case "gozashte":
                                                 intent = new Intent(FelGeneralActivity4.this, GozashteActivity.class);
-                                                passSection();
+//                                                passSection();
                                                 successAnimation();
                                                 break;
                                             case "hessi":
                                                 intent = new Intent(FelGeneralActivity4.this, HessiActivity.class);
-                                                passSection();
+//                                                passSection();
                                                 successAnimation();
                                                 break;
                                             case "kalame2":
                                                 intent = new Intent(FelGeneralActivity4.this, Kalame2Activity.class);
-                                                passSection();
+//                                                passSection();
                                                 successAnimation();
                                                 break;
                                             case "kalame3":
                                                 intent = new Intent(FelGeneralActivity4.this, Kalame3Activity.class);
-                                                passSection();
+//                                                passSection();
                                                 successAnimation();
                                                 break;
                                             case "zamir":
                                                 intent = new Intent(FelGeneralActivity4.this, ZamirActivity.class);
-                                                passSection();
+//                                                passSection();
                                                 successAnimation();
                                                 break;
                                         }

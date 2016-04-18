@@ -53,8 +53,8 @@ public class RangActivity extends ActionBarActivity {
         listRang.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (!Utils.database.rang[position])
-                    return;
+//                if (!Utils.database.rang[position])
+//                    return;
 
                 Intent intent = new Intent(RangActivity.this, LoghatGeneralActivity1.class);
                 intent.putExtra("category","rang");

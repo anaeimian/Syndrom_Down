@@ -175,42 +175,42 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
                                 case "khanevade":
                                     intent = new Intent(LoghatGeneralActivity6.this, KhanevadeActivity.class);
                                     successAnimation();
-                                    passSection();
+//                                    passSection();
 
                                     break;
                                 case "andam":
                                     intent = new Intent(LoghatGeneralActivity6.this, AndamActivity.class);
-                                    passSection();
+//                                    passSection();
                                     successAnimation();
                                     break;
                                 case "miveh":
                                     intent = new Intent(LoghatGeneralActivity6.this, MiveActivity.class);
-                                    passSection();
+//                                    passSection();
                                     successAnimation();
                                     break;
                                 case "heyvanat":
                                     intent = new Intent(LoghatGeneralActivity6.this, HeyvanatActivity.class);
-                                    passSection();
+//                                    passSection();
                                     successAnimation();
                                     break;
                                 case "pooshak":
                                     intent = new Intent(LoghatGeneralActivity6.this, PooshakActivity.class);
-                                    passSection();
+//                                    passSection();
                                     successAnimation();
                                     break;
                                 case "vasayel":
                                     intent = new Intent(LoghatGeneralActivity6.this, VasayelActivity.class);
-                                    passSection();
+//                                    passSection();
                                     successAnimation();
                                     break;
                                 case "mashaghel":
                                     intent = new Intent(LoghatGeneralActivity6.this, MashaghelActivity.class);
-                                    passSection();
+//                                    passSection();
                                     successAnimation();
                                     break;
                                 case "rang":
                                     intent = new Intent(LoghatGeneralActivity6.this, RangActivity.class);
-                                    passSection();
+//                                    passSection();
                                     successAnimation();
                                     break;
                                 case "khordani":
@@ -220,7 +220,7 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
                                     break;
                                 case "mafahim":
                                     intent = new Intent(LoghatGeneralActivity6.this, MafahimActivity.class);
-                                    passSection();
+//                                    passSection();
                                     successAnimation();
                                     break;
                             }

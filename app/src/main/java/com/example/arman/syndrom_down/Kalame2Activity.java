@@ -59,8 +59,8 @@ public class Kalame2Activity extends ActionBarActivity {
         listKalame2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (!Utils.database.kalame2[position])
-                    return;
+//                if (!Utils.database.kalame2[position])
+//                    return;
 
                 Intent intent = new Intent(Kalame2Activity.this, FelGeneralActivity1.class);
                 intent.putExtra(Utils.TYPE, 3);

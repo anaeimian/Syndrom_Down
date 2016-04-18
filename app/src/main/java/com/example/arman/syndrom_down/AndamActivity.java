@@ -66,8 +66,8 @@ public class AndamActivity extends ActionBarActivity {
         listAndam.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (!Utils.database.andam[position])
-                    return;
+//                if (!Utils.database.andam[position])
+//                    return;
                 Intent intent = new Intent(AndamActivity.this, LoghatGeneralActivity1.class);
                 intent.putExtra("category", "andam");
                 intent.putExtra("position", position + "");

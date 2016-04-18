@@ -64,8 +64,8 @@ public class MafahimActivity extends ActionBarActivity {
         listMafahim.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (!Utils.database.mafahim[position])
-                    return;
+//                if (!Utils.database.mafahim[position])
+//                    return;
 
                 Intent intent = new Intent(MafahimActivity.this, LoghatGeneralActivity1.class);
                 intent.putExtra("category","mafahim");
