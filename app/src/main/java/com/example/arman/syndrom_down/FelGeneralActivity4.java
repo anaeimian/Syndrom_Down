@@ -592,33 +592,38 @@ public class FelGeneralActivity4 extends ActionBarActivity {
 
         switch (category) {
             case "amr": // amr
-                while (i < Utils.database.amr.length &&
-                        Utils.database.amr[++i]) ;
-                Utils.database.amr[i] = true;
+                Utils.database.amr[position + 1] = true;
+//                while (i < Utils.database.amr.length &&
+//                        Utils.database.amr[++i]) ;
+//                Utils.database.amr[i] = true;
                 break;
 
             case "gozashte": // gozashte
-                while (i < Utils.database.gozashte.length &&
-                        Utils.database.gozashte[++i]) ;
-                Utils.database.gozashte[i] = true;
+                Utils.database.gozashte[position + 1] = true;
+//                while (i < Utils.database.gozashte.length &&
+//                        Utils.database.gozashte[++i]) ;
+//                Utils.database.gozashte[i] = true;
                 break;
 
             case "hessi": // hessi
-                while (i < Utils.database.hessi.length &&
-                        Utils.database.hessi[++i]) ;
-                Utils.database.hessi[i] = true;
+                Utils.database.hessi[position + 1] = true;
+//                while (i < Utils.database.hessi.length &&
+//                        Utils.database.hessi[++i]) ;
+//                Utils.database.hessi[i] = true;
                 break;
 
             case "kalame2": // kalame2
-                while (i < Utils.database.kalame2.length &&
-                        Utils.database.kalame2[++i]) ;
-                Utils.database.kalame2[i] = true;
+                Utils.database.kalame2[position + 1] = true;
+//                while (i < Utils.database.kalame2.length &&
+//                        Utils.database.kalame2[++i]) ;
+//                Utils.database.kalame2[i] = true;
                 break;
 
             case "zamir": // zamir
-                while (i < Utils.database.zamir.length &&
-                        Utils.database.zamir[++i]) ;
-                Utils.database.zamir[i] = true;
+                Utils.database.zamir[position + 1] = true;
+//                while (i < Utils.database.zamir.length &&
+//                        Utils.database.zamir[++i]) ;
+//                Utils.database.zamir[i] = true;
                 break;
         }
 

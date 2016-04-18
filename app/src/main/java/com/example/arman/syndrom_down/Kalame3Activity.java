@@ -48,9 +48,9 @@ public class Kalame3Activity extends ActionBarActivity {
         listKalame3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (!Utils.database.kalame3[position]) {
-//                    return;
-//                }
+                if (!Utils.database.kalame3[position]) {
+                    return;
+                }
 
                 Intent intent = new Intent(Kalame3Activity.this, FelGeneralActivity1.class);
                 intent.putExtra(Utils.NAME, listAdapterKalame3.getItem(position));

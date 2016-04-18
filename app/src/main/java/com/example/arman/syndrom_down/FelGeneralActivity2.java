@@ -281,6 +281,7 @@ public class FelGeneralActivity2 extends ActionBarActivity {
                                 tashvigh = null;
                                 Intent intent;
                                 if (category.equals("kalame3")) {
+                                    Utils.database.kalame3[position + 1] = true;
                                     intent = new Intent(FelGeneralActivity2.this, Kalame3Activity.class);
                                 } else {
                                     intent = new Intent(FelGeneralActivity2.this, FelGeneralActivity3.class);

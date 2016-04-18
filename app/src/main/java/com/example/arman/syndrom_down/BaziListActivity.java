@@ -21,6 +21,7 @@ public class BaziListActivity extends ActionBarActivity {
     private Toolbar toolbar;
     Intent intent;
     String category;
+    boolean unLcok = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,7 @@ public class BaziListActivity extends ActionBarActivity {
         items.add(getResources().getString(R.string.khordani));
         items.add(getResources().getString(R.string.mafahim));
 
-
+        unLcok = false;
         adapter = new ListAdapterLoghatActivity(this, items);
         listLoghat.setAdapter(adapter);
         Intent getIntent = getIntent();
@@ -63,37 +64,70 @@ public class BaziListActivity extends ActionBarActivity {
                 intent.putExtra("gameType", gameType);
                 switch (position) {
                     case 0:
-                        intent.putExtra("category", "khanevade");
+                        if (Utils.database.khanevade[3]) {
+                            intent.putExtra("category", "khanevade");
+                            unLcok = true;
+                        }
                         break;
                     case 1:
-                        intent.putExtra("category", "andam");
+                        if (Utils.database.andam[9]) {
+                            intent.putExtra("category", "andam");
+                            unLcok = true;
+                        }
                         break;
                     case 2:
-                        intent.putExtra("category", "miveh");
+                        if (Utils.database.mive[4]) {
+                            intent.putExtra("category", "miveh");
+                            unLcok = true;
+                        }
                         break;
                     case 3:
-                        intent.putExtra("category", "heyvanat");
+                        if (Utils.database.heyvanat[5]) {
+                            intent.putExtra("category", "heyvanat");
+                            unLcok = true;
+                        }
                         break;
                     case 4:
-                        intent.putExtra("category", "pooshak");
+                        if (Utils.database.pooshak[6]) {
+                            intent.putExtra("category", "pooshak");
+                            unLcok = true;
+                        }
+
                         break;
                     case 5:
-                        intent.putExtra("category", "vasayel");
+                        if (Utils.database.vasayel[8]) {
+                            intent.putExtra("category", "vasayel");
+                            unLcok = true;
+                        }
+
                         break;
                     case 6:
-                        intent.putExtra("category", "mashaghel");
+                        if (Utils.database.mashaghel[2]) {
+                            intent.putExtra("category", "mashaghel");
+                            unLcok = true;
+                        }
                         break;
                     case 7:
-                        intent.putExtra("category", "rang");
+                        if (Utils.database.rang[2]) {
+                            intent.putExtra("category", "rang");
+                            unLcok = true;
+                        }
                         break;
                     case 8:
-                        intent.putExtra("category", "khordani");
+                        if (Utils.database.khordani[4]) {
+                            intent.putExtra("category", "khordani");
+                            unLcok = true;
+                        }
                         break;
                     case 9:
-                        intent.putExtra("category", "mafahim");
+                        if (Utils.database.mafahim[8]) {
+                            intent.putExtra("category", "mafahim");
+                            unLcok = true;
+                        }
                         break;
                 }
-                startActivity(intent);
+                if (unLcok)
+                    startActivity(intent);
             }
         });
     }
