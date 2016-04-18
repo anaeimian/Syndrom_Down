@@ -260,8 +260,10 @@ public class FelGeneralActivity2 extends ActionBarActivity {
                 if (passclicked <= 3)
                     tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                         public void onCompletion(MediaPlayer mp) {
-                            if (passclicked <= 3)
+                            if (passclicked <= 3) {
                                 felVoice.start();
+                                felVideo.start();
+                            }
                         }
                     });
 
@@ -277,10 +279,12 @@ public class FelGeneralActivity2 extends ActionBarActivity {
                                 payMoreAttention = null;
                                 tashvigh.release();
                                 tashvigh = null;
-//                                memoryReleaser(felVoice);
-//                                memoryReleaser(payMoreAttention);
-//                                memoryReleaser(tashvigh);
-                                Intent intent = new Intent(FelGeneralActivity2.this, FelGeneralActivity3.class);
+                                Intent intent;
+                                if (category.equals("kalame3")) {
+                                    intent = new Intent(FelGeneralActivity2.this, Kalame3Activity.class);
+                                } else {
+                                    intent = new Intent(FelGeneralActivity2.this, FelGeneralActivity3.class);
+                                }
                                 intent.putExtra("category", category);
                                 intent.putExtra("position", position + "");
                                 startActivity(intent);

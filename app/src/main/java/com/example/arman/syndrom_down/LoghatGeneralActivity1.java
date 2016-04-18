@@ -457,8 +457,8 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
                     wordSound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                         @Override
                         public void onCompletion(MediaPlayer mediaPlayer) {
-                            wordSound.release();
-                            wordSound = null;
+                            mediaPlayer.release();
+                            mediaPlayer = null;
                         }
                     });
                     Intent intent = new Intent(LoghatGeneralActivity1.this, LoghatGeneralActivity2.class);

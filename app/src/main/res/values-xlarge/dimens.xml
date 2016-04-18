@@ -30,4 +30,9 @@
 
     <dimen name="fel_video_height">400dp</dimen>
     <dimen name="fel_video_width">640dp</dimen>
+
+    <dimen name="loghat_image_width">320dp</dimen>
+    <dimen name="loghat_image_height">320dp</dimen>
+
+    <dimen name="loghat_image_margin_top">100dp</dimen>
 </resources>
