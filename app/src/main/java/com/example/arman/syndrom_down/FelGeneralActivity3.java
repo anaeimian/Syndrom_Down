@@ -230,7 +230,7 @@ public class FelGeneralActivity3 extends ActionBarActivity {
                     case 1:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.kafsheman_drag);
                         verb.setImageResource(R.drawable.tkafsheman);
-//                        verbImg.setImageResource(R.drawable.imkafsheman);                        break;
+                        verbImg.setImageResource(R.drawable.imkafshman);                        break;
                     case 2:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.toopeman_drag);
                         verb.setImageResource(R.drawable.ttoopman);

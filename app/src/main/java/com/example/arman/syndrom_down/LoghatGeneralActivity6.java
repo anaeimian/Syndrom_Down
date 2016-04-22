@@ -215,7 +215,7 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
                                     break;
                                 case "khordani":
                                     intent = new Intent(LoghatGeneralActivity6.this, KhordaniActivity.class);
-                                    passSection();
+                              //      passSection();
                                     successAnimation();
                                     break;
                                 case "mafahim":
@@ -381,76 +381,76 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
         });
     }
 
-    private void passSection() {
-        int i = 0;
-//        active = true;
+//    private void passSection() {
+//        int i = 0;
+////        active = true;
+//
+//        switch (category) {
+//            case "khanevade":
+//                Utils.database.khanevade[position + 1] = true;
+////                while (i < Utils.database.khanevade.length - 1 &&
+////                        Utils.database.khanevade[++i]) ;
+////                Utils.database.khanevade[i] = true;
+//                break;
+//            case "andam":
+//                Utils.database.andam[position + 1] = true;
+////                while (i < Utils.database.andam.length &&
+////                        Utils.database.andam[++i]) ;
+////                Utils.database.andam[i] = true;
+//                break;
+//            case "miveh":
+//                Utils.database.mive[position + 1] = true;
+////                while (i < Utils.database.mive.length &&
+////                        Utils.database.mive[++i]) ;
+////                Utils.database.mive[i] = true;
+//                break;
+//            case "heyvanat":
+//                Utils.database.heyvanat[position + 1] = true;
+////                while (i < Utils.database.heyvanat.length &&
+////                        Utils.database.heyvanat[++i]) ;
+////                Utils.database.heyvanat[i] = true;
+//                break;
+//            case "pooshak":
+//                Utils.database.pooshak[position + 1] = true;
+////                while (i < Utils.database.pooshak.length &&
+////                        Utils.database.pooshak[++i]) ;
+////                Utils.database.pooshak[i] = true;
+//                break;
+//            case "vasayel":
+//                Utils.database.vasayel[position + 1] = true;
+////                while (i < Utils.database.vasayel.length &&
+////                        Utils.database.vasayel[++i]) ;
+////                Utils.database.vasayel[i] = true;
+//                break;
+//            case "mashaghel":
+//                Utils.database.mashaghel[position + 1] = true;
+////                while (i < Utils.database.mashaghel.length &&
+////                        Utils.database.mashaghel[++i]) ;
+////                Utils.database.mashaghel[i] = true;
+//                break;
+//            case "rang":
+//                Utils.database.rang[position + 1] = true;
+////                while (i < Utils.database.rang.length &&
+////                        Utils.database.rang[++i]) ;
+////                Utils.database.rang[i] = true;
+//                break;
+//            case "khordani":
+//                Utils.database.khordani[position + 1] = true;
+////                while (i < Utils.database.khordani.length &&
+////                        Utils.database.khordani[++i]) ;
+////                Utils.database.khordani[i] = true;
+//                break;
+//            case "mafahim":
+//                Utils.database.mafahim[position + 1] = true;
+////                while (i < Utils.database.mafahim.length &&
+////                        Utils.database.mafahim[++i]) ;
+////                Utils.database.mafahim[i] = true;
+//                break;
+//        }
 
-        switch (category) {
-            case "khanevade":
-                Utils.database.khanevade[position + 1] = true;
-//                while (i < Utils.database.khanevade.length - 1 &&
-//                        Utils.database.khanevade[++i]) ;
-//                Utils.database.khanevade[i] = true;
-                break;
-            case "andam":
-                Utils.database.andam[position + 1] = true;
-//                while (i < Utils.database.andam.length &&
-//                        Utils.database.andam[++i]) ;
-//                Utils.database.andam[i] = true;
-                break;
-            case "miveh":
-                Utils.database.mive[position + 1] = true;
-//                while (i < Utils.database.mive.length &&
-//                        Utils.database.mive[++i]) ;
-//                Utils.database.mive[i] = true;
-                break;
-            case "heyvanat":
-                Utils.database.heyvanat[position + 1] = true;
-//                while (i < Utils.database.heyvanat.length &&
-//                        Utils.database.heyvanat[++i]) ;
-//                Utils.database.heyvanat[i] = true;
-                break;
-            case "pooshak":
-                Utils.database.pooshak[position + 1] = true;
-//                while (i < Utils.database.pooshak.length &&
-//                        Utils.database.pooshak[++i]) ;
-//                Utils.database.pooshak[i] = true;
-                break;
-            case "vasayel":
-                Utils.database.vasayel[position + 1] = true;
-//                while (i < Utils.database.vasayel.length &&
-//                        Utils.database.vasayel[++i]) ;
-//                Utils.database.vasayel[i] = true;
-                break;
-            case "mashaghel":
-                Utils.database.mashaghel[position + 1] = true;
-//                while (i < Utils.database.mashaghel.length &&
-//                        Utils.database.mashaghel[++i]) ;
-//                Utils.database.mashaghel[i] = true;
-                break;
-            case "rang":
-                Utils.database.rang[position + 1] = true;
-//                while (i < Utils.database.rang.length &&
-//                        Utils.database.rang[++i]) ;
-//                Utils.database.rang[i] = true;
-                break;
-            case "khordani":
-                Utils.database.khordani[position + 1] = true;
-//                while (i < Utils.database.khordani.length &&
-//                        Utils.database.khordani[++i]) ;
-//                Utils.database.khordani[i] = true;
-                break;
-            case "mafahim":
-                Utils.database.mafahim[position + 1] = true;
-//                while (i < Utils.database.mafahim.length &&
-//                        Utils.database.mafahim[++i]) ;
-//                Utils.database.mafahim[i] = true;
-                break;
-        }
-
-        DatabaseAdapter.getInstance().saveDatabase(LoghatGeneralActivity6.this,
-                Utils.database);
-    }
+//        DatabaseAdapter.getInstance().saveDatabase(LoghatGeneralActivity6.this,
+//                Utils.database);
+//    }
 
     private void memoryReleaser(MediaPlayer mediaPlayer) {
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
