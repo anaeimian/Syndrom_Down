@@ -55,15 +55,17 @@ public class RangActivity extends ActionBarActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                if (!Utils.database.rang[position])
 //                    return;
+                if (Utils.database.rang < position)
+                    return;
 
                 Intent intent = new Intent(RangActivity.this, LoghatGeneralActivity1.class);
                 intent.putExtra("category","rang");
                 intent.putExtra("position", position + "");
 //                intent.putExtra(Utils.TYPE, 7);
 //                intent.putExtra(Utils.WHICH, position);
-                if (Utils.database.rang[position + 1])
-                    intent.putExtra(Utils.ACTIVE, true);
-                else intent.putExtra(Utils.ACTIVE, false);
+//                if (Utils.database.rang[position + 1])
+//                    intent.putExtra(Utils.ACTIVE, true);
+//                else intent.putExtra(Utils.ACTIVE, false);
                 intent.putExtra(Utils.NAME, adapter.getItem(position));
                 startActivity(intent);
             }

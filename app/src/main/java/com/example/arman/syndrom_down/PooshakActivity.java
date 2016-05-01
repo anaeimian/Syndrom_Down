@@ -62,16 +62,18 @@ public class PooshakActivity extends ActionBarActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                if (!Utils.database.pooshak[position])
 //                    return;
+                if (Utils.database.pooshak < position)
+                    return;
 
                 Intent intent = new Intent(PooshakActivity.this, LoghatGeneralActivity1.class);
                 intent.putExtra("category", "pooshak");
                 intent.putExtra("position", position + "");
 //                intent.putExtra(Utils.TYPE, 4);
 //                intent.putExtra(Utils.WHICH, position);
-                if (Utils.database.pooshak[position + 1])
-                    intent.putExtra(Utils.ACTIVE, true);
-                else intent.putExtra(Utils.ACTIVE, false);
-                intent.putExtra(Utils.NAME, adapter.getItem(position));
+//                if (Utils.database.pooshak[position + 1])
+//                    intent.putExtra(Utils.ACTIVE, true);
+//                else intent.putExtra(Utils.ACTIVE, false);
+//                intent.putExtra(Utils.NAME, adapter.getItem(position));
                 startActivity(intent);
             }
         });

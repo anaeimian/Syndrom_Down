@@ -62,15 +62,18 @@ public class Kalame2Activity extends ActionBarActivity {
 //                if (!Utils.database.kalame2[position])
 //                    return;
 
+                if (Utils.database.kalame2 < position)
+                    return;
+
                 Intent intent = new Intent(Kalame2Activity.this, FelGeneralActivity1.class);
-                intent.putExtra(Utils.TYPE, 3);
-                intent.putExtra(Utils.WHICH, position);
+//                intent.putExtra(Utils.TYPE, 3);
+//                intent.putExtra(Utils.WHICH, position);
                 intent.putExtra("category", "kalame2");
                 intent.putExtra("position", position + "");
-                if (Utils.database.kalame2[position + 1])
-                    intent.putExtra(Utils.ACTIVE, true);
-                else intent.putExtra(Utils.ACTIVE, false);
-                intent.putExtra(Utils.NAME, adapter.getItem(position));
+//                if (Utils.database.kalame2[position + 1])
+//                    intent.putExtra(Utils.ACTIVE, true);
+//                else intent.putExtra(Utils.ACTIVE, false);
+//                intent.putExtra(Utils.NAME, adapter.getItem(position));
                 startActivity(intent);
             }
         });

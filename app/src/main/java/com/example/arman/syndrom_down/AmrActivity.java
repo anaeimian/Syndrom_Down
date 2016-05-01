@@ -67,15 +67,18 @@ public class AmrActivity extends ActionBarActivity {
 //                if (!Utils.database.amr[position])
 //                    return;
 
+                if (Utils.database.amr < position)
+                    return;
+
                 Intent intent = new Intent(AmrActivity.this, FelGeneralActivity1.class);
                 intent.putExtra("category", "amr");
                 intent.putExtra("position", position + "");
-                intent.putExtra(Utils.TYPE, 0);
-                intent.putExtra(Utils.WHICH, position);
-                if (Utils.database.amr[position + 1])
-                    intent.putExtra(Utils.ACTIVE, true);
-                else intent.putExtra(Utils.ACTIVE, false);
-                intent.putExtra(Utils.NAME, adapter.getItem(position));
+//                intent.putExtra(Utils.TYPE, 0);
+//                intent.putExtra(Utils.WHICH, position);
+////                if (Utils.database.amr[position + 1])
+////                    intent.putExtra(Utils.ACTIVE, true);
+//                else intent.putExtra(Utils.ACTIVE, false);
+//                intent.putExtra(Utils.NAME, adapter.getItem(position));
                 startActivity(intent);
             }
         });

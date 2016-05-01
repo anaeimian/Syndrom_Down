@@ -67,15 +67,18 @@ public class MafahimActivity extends ActionBarActivity {
 //                if (!Utils.database.mafahim[position])
 //                    return;
 
+                if (Utils.database.mafahim < position)
+                    return;
+
                 Intent intent = new Intent(MafahimActivity.this, LoghatGeneralActivity1.class);
                 intent.putExtra("category","mafahim");
                 intent.putExtra("position", position + "");
 //                intent.putExtra(Utils.TYPE, 9);
 //                intent.putExtra(Utils.WHICH, position);
-                if (Utils.database.mafahim[position + 1])
-                    intent.putExtra(Utils.ACTIVE, true);
-                else intent.putExtra(Utils.ACTIVE, false);
-                intent.putExtra(Utils.NAME, adapter.getItem(position));
+//                if (Utils.database.mafahim[position + 1])
+//                    intent.putExtra(Utils.ACTIVE, true);
+//                else intent.putExtra(Utils.ACTIVE, false);
+//                intent.putExtra(Utils.NAME, adapter.getItem(position));
                 startActivity(intent);
             }
         });

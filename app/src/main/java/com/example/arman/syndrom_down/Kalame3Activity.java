@@ -51,15 +51,17 @@ public class Kalame3Activity extends ActionBarActivity {
 //                if (!Utils.database.kalame3[position]) {
 //                    return;
 //                }
+                if (Utils.database.kalame3 < position)
+                    return;
 
                 Intent intent = new Intent(Kalame3Activity.this, FelGeneralActivity1.class);
-                intent.putExtra(Utils.NAME, listAdapterKalame3.getItem(position));
-                intent.putExtra(Utils.WHICH, position);
+//                intent.putExtra(Utils.NAME, listAdapterKalame3.getItem(position));
+//                intent.putExtra(Utils.WHICH, position);
                 intent.putExtra("position", position + "");
                 intent.putExtra("category", "kalame3");
-                if (Utils.database.kalame3[position + 1])
-                    intent.putExtra(Utils.ACTIVE, true);
-                else intent.putExtra(Utils.ACTIVE, false);
+//                if (Utils.database.kalame3[position + 1])
+//                    intent.putExtra(Utils.ACTIVE, true);
+//                else intent.putExtra(Utils.ACTIVE, false);
                 startActivity(intent);
             }
         });

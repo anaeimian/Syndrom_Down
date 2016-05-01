@@ -68,14 +68,17 @@ public class VasayelActivity extends ActionBarActivity {
 //                if (!Utils.database.vasayel[position])
 //                    return;
 
+                if (Utils.database.vasayel < position)
+                    return;
+
                 Intent intent = new Intent(VasayelActivity.this, LoghatGeneralActivity1.class);
                 intent.putExtra("position", position + "");
-                intent.putExtra("category","vasayel");
+                intent.putExtra("category", "vasayel");
 //                intent.putExtra(Utils.TYPE, 5);
 //                intent.putExtra(Utils.WHICH, position);
-                if (Utils.database.vasayel[position + 1])
-                    intent.putExtra(Utils.ACTIVE, true);
-                else intent.putExtra(Utils.ACTIVE, false);
+//                if (Utils.database.vasayel[position + 1])
+//                    intent.putExtra(Utils.ACTIVE, true);
+//                else intent.putExtra(Utils.ACTIVE, false);
                 intent.putExtra(Utils.NAME, adapter.getItem(position));
                 startActivity(intent);
             }

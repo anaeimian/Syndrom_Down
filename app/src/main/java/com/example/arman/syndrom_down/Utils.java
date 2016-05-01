@@ -15,7 +15,7 @@ public class Utils {
 
     public static Database database;
 
-    public static final String FILENAME = "FILENAME";
+    public static final String FILENAME = "db1";
 
     public static ViewPager viewPager;
 

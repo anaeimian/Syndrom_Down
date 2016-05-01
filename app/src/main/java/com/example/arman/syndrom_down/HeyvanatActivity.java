@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -61,16 +62,20 @@ public class HeyvanatActivity extends ActionBarActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                if (!Utils.database.heyvanat[position])
 //                    return;
+                Log.d("utils", Utils.database.heyvanat + "  " + position);
+                if (Utils.database.heyvanat < position)
+
+                    return;
 
                 Intent intent = new Intent(HeyvanatActivity.this, LoghatGeneralActivity1.class);
                 intent.putExtra("position", position + "");
                 intent.putExtra("category", "heyvanat");
 //                intent.putExtra(Utils.TYPE, 3);
 //                intent.putExtra(Utils.WHICH, position);
-                if (Utils.database.heyvanat[position + 1])
-                    intent.putExtra(Utils.ACTIVE, true);
-                else intent.putExtra(Utils.ACTIVE, false);
-                intent.putExtra(Utils.NAME, adapter.getItem(position));
+//                if (Utils.database.heyvanat[position + 1])
+//                    intent.putExtra(Utils.ACTIVE, true);
+//                else intent.putExtra(Utils.ACTIVE, false);
+//                intent.putExtra(Utils.NAME, adapter.getItem(position));
                 startActivity(intent);
             }
         });

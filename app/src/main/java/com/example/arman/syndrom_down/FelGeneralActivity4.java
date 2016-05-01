@@ -67,7 +67,11 @@ public class FelGeneralActivity4 extends ActionBarActivity {
         clapSound = MediaPlayer.create(getApplicationContext(), R.raw.clap);
         controller();
         setViews();
-        verbDrag.start();
+        category = getIntent().getStringExtra("category");
+        if (!category.equals("kalame3")) {
+            verbDrag.start();
+        }
+
 
     }
 
@@ -248,28 +252,34 @@ public class FelGeneralActivity4 extends ActionBarActivity {
                 break;
 
             case "kalame3":
-                switch (position) {
-                    case 0:
-                        verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.gorbeheivan_drag);
-                        verb.setImageResource(R.drawable.tgorbeheivan);
-                        verbImg.setImageResource(R.drawable.imgorbeheivan);
-                        break;
-                    case 1:
-                        verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.abirangast_drag);
-                        verb.setImageResource(R.drawable.tabirangast);
-                        verbImg.setImageResource(R.drawable.imtabirangast);
-                        break;
-                    case 2:
-                        verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.mozmiveast_drag);
-                        verb.setImageResource(R.drawable.tmozmiveast);
-                        verbImg.setImageResource(R.drawable.immozmiveast);
-                        break;
-                    case 3:
-                        verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.pesarmadrese_drag);
-                        verb.setImageResource(R.drawable.tpesarmadrese);
-                        verbImg.setImageResource(R.drawable.impesarmadrese);
-                        break;
-                }
+                intent = new Intent(FelGeneralActivity4.this, Kalame3Activity.class);
+                verb.setVisibility(View.INVISIBLE);
+                verbImg.setVisibility(View.INVISIBLE);
+                arrow.setVisibility(View.INVISIBLE);
+                passSection();
+                successAnimation();
+//                switch (position) {
+//                    case 0:
+//                        verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.gorbeheivan_drag);
+//                        verb.setImageResource(R.drawable.tgorbeheivan);
+//                        verbImg.setImageResource(R.drawable.imgorbeheivan);
+//                        break;
+//                    case 1:
+//                        verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.abirangast_drag);
+//                        verb.setImageResource(R.drawable.tabirangast);
+//                        verbImg.setImageResource(R.drawable.imtabirangast);
+//                        break;
+//                    case 2:
+//                        verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.mozmiveast_drag);
+//                        verb.setImageResource(R.drawable.tmozmiveast);
+//                        verbImg.setImageResource(R.drawable.immozmiveast);
+//                        break;
+//                    case 3:
+//                        verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.pesarmadrese_drag);
+//                        verb.setImageResource(R.drawable.tpesarmadrese);
+//                        verbImg.setImageResource(R.drawable.impesarmadrese);
+//                        break;
+//                }
                 break;
             case "zamir":
                 switch (position) {
@@ -433,9 +443,19 @@ public class FelGeneralActivity4 extends ActionBarActivity {
                 star4.setVisibility(View.INVISIBLE);
                 star5.setVisibility(View.INVISIBLE);
                 intent.putExtra("position", "0");
-                memoryReleaser(tashvigh);
-                memoryReleaser(verbDrag);
-                memoryReleaser(clapSound);
+                tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        mediaPlayer.release();
+                        clapSound.release();
+                        if (!category.equals("kalame3")) {
+                            verbDrag.release();
+                        }
+                    }
+                });
+//                memoryReleaser(tashvigh);
+//                memoryReleaser(verbDrag);
+//                memoryReleaser(clapSound);
                 startActivity(intent);
             }
 
@@ -535,32 +555,32 @@ public class FelGeneralActivity4 extends ActionBarActivity {
                                         switch (category) {
                                             case "amr":
                                                 intent = new Intent(FelGeneralActivity4.this, AmrActivity.class);
-//                                                passSection();
+                                                passSection();
                                                 successAnimation();
                                                 break;
                                             case "gozashte":
                                                 intent = new Intent(FelGeneralActivity4.this, GozashteActivity.class);
-//                                                passSection();
+                                                passSection();
                                                 successAnimation();
                                                 break;
                                             case "hessi":
                                                 intent = new Intent(FelGeneralActivity4.this, HessiActivity.class);
-//                                                passSection();
+                                                passSection();
                                                 successAnimation();
                                                 break;
                                             case "kalame2":
                                                 intent = new Intent(FelGeneralActivity4.this, Kalame2Activity.class);
-//                                                passSection();
+                                                passSection();
                                                 successAnimation();
                                                 break;
                                             case "kalame3":
                                                 intent = new Intent(FelGeneralActivity4.this, Kalame3Activity.class);
-//                                                passSection();
+                                                passSection();
                                                 successAnimation();
                                                 break;
                                             case "zamir":
                                                 intent = new Intent(FelGeneralActivity4.this, ZamirActivity.class);
-//                                                passSection();
+                                                passSection();
                                                 successAnimation();
                                                 break;
                                         }
@@ -587,40 +607,50 @@ public class FelGeneralActivity4 extends ActionBarActivity {
 
 
     private void passSection() {
-        int i = 0;
-//        active = true;
-
         switch (category) {
             case "amr": // amr
-                Utils.database.amr[position + 1] = true;
+                if (Utils.database.amr < position + 1)
+                    Utils.database.amr = position + 1;
 //                while (i < Utils.database.amr.length &&
 //                        Utils.database.amr[++i]) ;
 //                Utils.database.amr[i] = true;
                 break;
 
             case "gozashte": // gozashte
-                Utils.database.gozashte[position + 1] = true;
+                if (Utils.database.gozashte < position + 1)
+                    Utils.database.gozashte = position + 1;
 //                while (i < Utils.database.gozashte.length &&
 //                        Utils.database.gozashte[++i]) ;
 //                Utils.database.gozashte[i] = true;
                 break;
 
             case "hessi": // hessi
-                Utils.database.hessi[position + 1] = true;
+                if (Utils.database.hessi < position + 1)
+                    Utils.database.hessi = position + 1;
 //                while (i < Utils.database.hessi.length &&
 //                        Utils.database.hessi[++i]) ;
 //                Utils.database.hessi[i] = true;
                 break;
 
             case "kalame2": // kalame2
-                Utils.database.kalame2[position + 1] = true;
+                if (Utils.database.kalame2 < position + 1)
+                    Utils.database.kalame2 = position + 1;
+//                while (i < Utils.database.kalame2.length &&
+//                        Utils.database.kalame2[++i]) ;
+//                Utils.database.kalame2[i] = true;
+                break;
+
+            case "kalame3": // kalame3
+                if (Utils.database.kalame3 < position + 1)
+                    Utils.database.kalame3 = position + 1;
 //                while (i < Utils.database.kalame2.length &&
 //                        Utils.database.kalame2[++i]) ;
 //                Utils.database.kalame2[i] = true;
                 break;
 
             case "zamir": // zamir
-                Utils.database.zamir[position + 1] = true;
+                if (Utils.database.zamir < position + 1)
+                    Utils.database.zamir = position + 1;
 //                while (i < Utils.database.zamir.length &&
 //                        Utils.database.zamir[++i]) ;
 //                Utils.database.zamir[i] = true;

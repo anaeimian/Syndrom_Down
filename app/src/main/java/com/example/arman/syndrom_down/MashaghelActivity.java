@@ -56,6 +56,9 @@ public class MashaghelActivity extends ActionBarActivity {
 //                if (!Utils.database.mashaghel[position])
 //                    return;
 
+                if (Utils.database.mashaghel < position)
+                    return;
+
                 Intent intent = new Intent(MashaghelActivity.this, LoghatGeneralActivity1.class);
                 intent.putExtra("category","mashaghel");
                 intent.putExtra("position", position + "");

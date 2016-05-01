@@ -3,6 +3,9 @@
     <string name="app_name">Syndrom_Down</string>
     <string name="action_settings">منو</string>
     <string name="repeatTitle">تکرار و تمرین</string>
+    <string name="activation_code">لطفا کد فعالسازی نرم افزار را وارد کنید</string>
+    <string name="wrong_code">کد وارد شده نادرست است. لطفا مجددا تلاش کنید</string>
+    <string name="confirm">تایید</string>
     <string name="amoozesh">آموزش</string>
     <string name="andam">اندام</string>
     <string name="bazi">بازی</string>

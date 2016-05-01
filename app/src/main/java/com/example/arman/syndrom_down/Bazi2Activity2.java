@@ -3,10 +3,14 @@ package com.example.arman.syndrom_down;
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.graphics.Point;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Display;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -33,6 +37,32 @@ public class Bazi2Activity2 extends ActionBarActivity {
     private ArrayList<String> remainedItems;
     private ArrayList<String> receivedItems;
 
+
+    MediaPlayer clapSound;
+
+    private ObjectAnimator animator11;
+    private ObjectAnimator animator12;
+    private ObjectAnimator animator13;
+    private ObjectAnimator animator14;
+    private ObjectAnimator animator5;
+    private ObjectAnimator animator6;
+    private ObjectAnimator animator7;
+    private ObjectAnimator animator8;
+    private ObjectAnimator animator9;
+    private ObjectAnimator animator10;
+
+    ImageView star1;
+    ImageView star2;
+    ImageView star3;
+    ImageView star4;
+    ImageView star5;
+    ImageView star6;
+    ImageView star7;
+    ImageView star8;
+    ImageView star9;
+    ImageView star10;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +74,7 @@ public class Bazi2Activity2 extends ActionBarActivity {
 
 //        imView0 = (ImageView) findViewById(R.id.imView0);
 //        goal1 = (ImageView) findViewById(R.id.goal1);
+        clapSound = MediaPlayer.create(getApplicationContext(),R.raw.clap);
         ball = (ImageView) findViewById(R.id.ball);
         field = (ImageView) findViewById(R.id.field);
 //        goal2 = (ImageView) findViewById(R.id.goal2);
@@ -58,6 +89,175 @@ public class Bazi2Activity2 extends ActionBarActivity {
         animator.setPropertyName("translationX");
 
         handleIntent();
+    }
+
+    void successAnimation() {
+        Log.d("succes", "succes animation");
+        clapSound.start();
+        clapSound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.release();
+            }
+        });
+        star1 = (ImageView) findViewById(R.id.star1);
+        star2 = (ImageView) findViewById(R.id.star2);
+        star3 = (ImageView) findViewById(R.id.star3);
+        star4 = (ImageView) findViewById(R.id.star4);
+        star5 = (ImageView) findViewById(R.id.star5);
+        star6 = (ImageView) findViewById(R.id.star6);
+        star7 = (ImageView) findViewById(R.id.star7);
+        star8 = (ImageView) findViewById(R.id.star8);
+        star9 = (ImageView) findViewById(R.id.star9);
+        star10 = (ImageView) findViewById(R.id.star10);
+        animator11 = new ObjectAnimator();
+        animator11.setDuration(2000);
+        animator11.setTarget(star1);
+        animator11.setPropertyName("translationY");
+
+        animator12 = new ObjectAnimator();
+        animator12.setDuration(2000);
+        animator12.setTarget(star2);
+        animator12.setPropertyName("translationY");
+
+        animator13 = new ObjectAnimator();
+        animator13.setDuration(2000);
+        animator13.setTarget(star3);
+        animator13.setPropertyName("translationY");
+
+        animator14 = new ObjectAnimator();
+        animator14.setDuration(2000);
+        animator14.setTarget(star4);
+        animator14.setPropertyName("translationY");
+
+        animator5 = new ObjectAnimator();
+        animator5.setDuration(2000);
+        animator5.setTarget(star5);
+        animator5.setPropertyName("translationY");
+
+        animator6 = new ObjectAnimator();
+        animator6.setDuration(3000);
+        animator6.setTarget(star6);
+        animator6.setPropertyName("translationY");
+
+        animator7 = new ObjectAnimator();
+        animator7.setDuration(3000);
+        animator7.setTarget(star7);
+        animator7.setPropertyName("translationY");
+
+        animator8 = new ObjectAnimator();
+        animator8.setDuration(3000);
+        animator8.setTarget(star8);
+        animator8.setPropertyName("translationY");
+
+        animator9 = new ObjectAnimator();
+        animator9.setDuration(3000);
+        animator9.setTarget(star9);
+        animator9.setPropertyName("translationY");
+
+        animator10 = new ObjectAnimator();
+        animator10.setDuration(3000);
+        animator10.setTarget(star10);
+        animator10.setPropertyName("translationY");
+
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        final int width = size.x;
+        final int height = size.y;
+        Log.d("test", width + "");
+        Log.d("test", height + "");
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                animator11.setFloatValues(0, -height - 300);
+                animator11.start();
+                animator12.setFloatValues(0, -height - 300);
+                animator12.start();
+                animator13.setFloatValues(0, -height - 300);
+                animator13.start();
+                animator14.setFloatValues(0, -height - 300);
+                animator14.start();
+                animator5.setFloatValues(0, -height - 300);
+                animator5.start();
+                animator6.setFloatValues(0, -height - 300);
+                animator6.start();
+                animator7.setFloatValues(0, -height - 300);
+                animator7.start();
+                animator8.setFloatValues(0, -height - 300);
+                animator8.start();
+                animator9.setFloatValues(0, -height - 300);
+                animator9.start();
+                animator10.setFloatValues(0, -height - 300);
+                animator10.start();
+            }
+        }, 500);
+        animator11.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                star1.setX(width / 6);
+                star2.setX(2 * width / 6);
+                star3.setX(3 * width / 6);
+                star4.setX(4 * width / 6);
+                star5.setX(5 * width / 6);
+                star6.setX(width / 6);
+                star7.setX(2 * width / 6);
+                star8.setX(3 * width / 6);
+                star9.setX(4 * width / 6);
+                star10.setX(5 * width / 6);
+                star1.setVisibility(View.VISIBLE);
+                star2.setVisibility(View.VISIBLE);
+                star3.setVisibility(View.VISIBLE);
+                star4.setVisibility(View.VISIBLE);
+                star5.setVisibility(View.VISIBLE);
+                star6.setVisibility(View.VISIBLE);
+                star7.setVisibility(View.VISIBLE);
+                star8.setVisibility(View.VISIBLE);
+                star9.setVisibility(View.VISIBLE);
+                star10.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                Intent intent = null;
+                if (category.equals("mashaghel") || category.equals("rang") || category.equals("khanevade")) {
+                    intent = new Intent(Bazi2Activity2.this, BaziListActivity.class);
+                } else {
+                    intent = new Intent(Bazi2Activity2.this, Bazi2Activity3.class);
+                }
+                intent.putExtra("category", category);
+                intent.putExtra("gameType", "football");
+                intent.putExtra("list", remainedItems);
+                tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        tashvigh.release();
+                        tashvigh = null;
+                        payMoreAttention.release();
+                        payMoreAttention = null;
+                        wordVoice.release();
+                        wordVoice = null;
+
+                    }
+                });
+//                                memoryReleaser(tashvigh);
+//                                memoryReleaser(wordVoice);
+//                                memoryReleaser(payMoreAttention);
+                startActivity(intent);
+
+
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
     }
 
     private void handleIntent() {
@@ -1044,7 +1244,9 @@ public class Bazi2Activity2 extends ActionBarActivity {
             public void onAnimationEnd(Animator animation) {
                 Intent intent = null;
                 if (category.equals("mashaghel") || category.equals("rang") || category.equals("khanevade")) {
-                    intent = new Intent(Bazi2Activity2.this, BaziListActivity.class);
+                    ball.setVisibility(View.INVISIBLE);
+                    successAnimation();
+                    return;
                 } else {
                     intent = new Intent(Bazi2Activity2.this, Bazi2Activity3.class);
                 }

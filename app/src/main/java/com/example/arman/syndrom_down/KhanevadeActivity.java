@@ -84,18 +84,18 @@ public class KhanevadeActivity extends AppCompatActivity {
         listKhanevade.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (!Utils.database.khanevade[position])
-//                    return;
+                if (Utils.database.khanevade < position)
+                    return;
 
                 Intent intent = new Intent(KhanevadeActivity.this, LoghatGeneralActivity1.class);
                 intent.putExtra("category", "khanevade");
                 intent.putExtra("position", position + "");
-                intent.putExtra(Utils.TYPE, 0);
-                intent.putExtra(Utils.WHICH, position);
-                if (Utils.database.khanevade[position + 1])
-                    intent.putExtra(Utils.ACTIVE, true);
-                else intent.putExtra(Utils.ACTIVE, false);
-                intent.putExtra(Utils.NAME, adapter.getItem(position));
+//                intent.putExtra(Utils.TYPE, 0);
+//                intent.putExtra(Utils.WHICH, position);
+//                if (Utils.database.khanevade[position + 1])
+//                    intent.putExtra(Utils.ACTIVE, true);
+//                else intent.putExtra(Utils.ACTIVE, false);
+//                intent.putExtra(Utils.NAME, adapter.getItem(position));
                 startActivity(intent);
             }
         });
