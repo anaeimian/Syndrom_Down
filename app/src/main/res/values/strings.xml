@@ -5,6 +5,15 @@
     <string name="repeatTitle">تکرار و تمرین</string>
     <string name="activation_code">لطفا کد فعالسازی نرم افزار را وارد کنید</string>
     <string name="wrong_code">کد وارد شده نادرست است. لطفا مجددا تلاش کنید</string>
+    <string name="wrong_pass">کلمه عبور نادرست است. لطفا مجددا تلاش کنید</string>
+    <string name="pass_label">کلمه عبور</string>
+    <string name="user_label">کاربر</string>
+    <string name="family1">حسینی</string>
+    <string name="family2">محمدی</string>
+    <string name="family3">علوی</string>
+    <string name="family4">احمدی</string>
+    <string name="family5">حسنی</string>
+    <string name="public_user">کاربر عادی</string>
     <string name="confirm">تایید</string>
     <string name="amoozesh">آموزش</string>
     <string name="andam">اندام</string>
@@ -135,7 +144,7 @@
     <string name="title_activity_loghat_general_activity_new">LoghatGeneralActivityNew</string>
     <string name="hello_world">Hello world!</string>
 
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_loghat_general_activity2">LoghatGeneralActivity2</string>
     <string name="title_activity_loghat_general_activity3">LoghatGeneralActivity3</string>
@@ -157,5 +166,6 @@
     <string name="title_activity_bazi1_activity6">Bazi1Activity6</string>
     <string name="title_activity_bazi2_activity5">Bazi2Activity5</string>
     <string name="title_activity_bazi2_activity6">Bazi2Activity6</string>
+    <string name="title_activity_user_selection">UserSelectionActivity</string>
 
 </resources>

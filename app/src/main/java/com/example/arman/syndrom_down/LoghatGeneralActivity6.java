@@ -157,8 +157,10 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
             public void onClick(View v) {
 
                 passClicked++;
-                if (passClicked < 4)
+                if (passClicked < 4) {
+                    Log.d("tashvigh","tashvigh");
                     tashvigh.start();
+                }
 //                memoryReleaser(tashvigh);
 
                 tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -166,10 +168,12 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
                     public void onCompletion(MediaPlayer mediaPlayer) {
                         if (passClicked <= 3) {
                             inchie.start();
+                            Log.d("inchie", "inchie");
 //                            memoryReleaser(inchie);
                         }
 
                         if (passClicked >= 4) {
+                            Log.d("b4","b4");
 //                            Utils.database.activate(category, position);
                             switch (category) {
                                 case "khanevade":

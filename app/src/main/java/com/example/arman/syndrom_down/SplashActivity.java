@@ -23,11 +23,8 @@ public class SplashActivity extends Activity {
         setContentView(R.layout.activity_splash);
 
 
-//        Utils.database.activationCodeEntered = false;
-//        DatabaseAdapter.getInstance().saveDatabase(getApplicationContext(), Utils.database);
-
         InitializeDatabase();
-        intent = new Intent(SplashActivity.this, MainActivity.class);
+        intent = new Intent(SplashActivity.this, UserSelectionActivity.class);
 
         if (Utils.database.activationCodeEntered) {
             startActivity(intent);

@@ -152,18 +152,22 @@
         <activity
             android:name=".Bazi1Activity3"
             android:label="@string/title_activity_bazi1_activity3"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".Bazi1Activity4"
             android:label="@string/title_activity_bazi1_activity4"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".Bazi1Activity5"
             android:label="@string/title_activity_bazi1_activity5"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".Bazi2Activity5"
             android:label="@string/title_activity_bazi2_activity5"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".UserSelectionActivity"
+            android:label="@string/title_activity_user_selection"
             android:screenOrientation="landscape"></activity>
     </application>
 
