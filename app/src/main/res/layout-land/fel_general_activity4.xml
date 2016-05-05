@@ -43,7 +43,7 @@
         android:layout_alignEnd="@+id/guide"
         android:layout_alignRight="@+id/guide"
         android:layout_alignTop="@+id/star2"
-        android:src="@drawable/star_black"
+        android:src="@drawable/balloon_red"
         android:visibility="invisible" />
 
     <ImageView
@@ -72,7 +72,7 @@
         android:layout_alignLeft="@+id/verb"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/verb"
-        android:src="@drawable/star_yellow"
+        android:src="@drawable/balloon_red"
         android:visibility="invisible" />
 
     <ImageView
@@ -92,7 +92,7 @@
         android:layout_alignEnd="@+id/guide"
         android:layout_alignRight="@+id/guide"
         android:layout_alignTop="@+id/star2"
-        android:src="@drawable/star_black"
+        android:src="@drawable/balloon_red"
         android:visibility="invisible" />
 
     <ImageView
@@ -112,7 +112,7 @@
         android:layout_alignLeft="@+id/word"
         android:layout_alignStart="@+id/word"
         android:layout_alignTop="@+id/star4"
-        android:src="@drawable/star_yellow"
+        android:src="@drawable/balloon_red"
         android:visibility="invisible" />
 
     <ImageView
@@ -141,5 +141,13 @@
         android:layout_width="5dp"
         android:layout_height="5dp"
         android:layout_alignParentBottom="true" />
+
+    <ImageView
+        android:id="@+id/guide"
+        android:layout_width="50dp"
+        android:layout_height="75dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/guide" />
 
 </RelativeLayout>

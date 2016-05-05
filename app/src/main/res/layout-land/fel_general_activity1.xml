@@ -24,6 +24,16 @@
         android:layout_marginRight="10dp"
         android:src="@drawable/check" />
 
+
+    <ImageView
+        android:id="@+id/guide"
+        android:layout_width="50dp"
+        android:layout_height="75dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/guide" />
+
+
     <ImageView
         android:id="@+id/replay"
         android:layout_width="wrap_content"

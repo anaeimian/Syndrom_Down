@@ -2,6 +2,7 @@ package com.example.arman.syndrom_down;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
+import android.app.Dialog;
 import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.Color;
@@ -16,6 +17,7 @@ import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
@@ -55,6 +57,8 @@ public class FelGeneralActivity4 extends ActionBarActivity {
     ImageView star10;
     ImageView bottomAligner;
     Intent intent = null;
+    private ImageView guide;
+    Dialog settingsDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +75,17 @@ public class FelGeneralActivity4 extends ActionBarActivity {
         if (!category.equals("kalame3")) {
             verbDrag.start();
         }
+        guide = (ImageView) findViewById(R.id.guide);
+        settingsDialog = new Dialog(this);
+        settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.fel_dialog_layout4, null));
+        guide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                settingsDialog.show();
+            }
+        });
 
     }
 

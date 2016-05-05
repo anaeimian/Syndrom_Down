@@ -1,5 +1,6 @@
 package com.example.arman.syndrom_down;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -8,6 +9,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.VideoView;
 
@@ -19,6 +21,8 @@ public class FelGeneralActivity1 extends ActionBarActivity {
     ImageView replay;
     int position = 0;
     String category;
+    private ImageView guide;
+    Dialog settingsDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,17 @@ public class FelGeneralActivity1 extends ActionBarActivity {
         controller();
         felVideo.start();
         felVoice.start();
+        guide = (ImageView) findViewById(R.id.guide);
+        settingsDialog = new Dialog(this);
+        settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.fel_dialog_layout1, null));
+        guide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                settingsDialog.show();
+            }
+        });
     }
 
     private void memoryReleaser(MediaPlayer mediaPlayer) {
