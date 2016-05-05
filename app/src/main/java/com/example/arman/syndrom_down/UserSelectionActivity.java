@@ -3,7 +3,6 @@ package com.example.arman.syndrom_down;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,8 +27,12 @@ public class UserSelectionActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_selection);
 
+        if (getIntent().getBooleanExtra("EXIT", false)) {
+            finish();
+        }
+
         items = new String[]{
-                getResources().getString(R.string.family1), getResources().getString(R.string.family2), getResources().getString(R.string.family3), getResources().getString(R.string.family4), getResources().getString(R.string.family5), getResources().getString(R.string.public_user)
+                getResources().getString(R.string.family1), getResources().getString(R.string.family2), getResources().getString(R.string.family3), getResources().getString(R.string.family4), getResources().getString(R.string.family5), getResources().getString(R.string.family6), getResources().getString(R.string.family7), getResources().getString(R.string.family8), getResources().getString(R.string.public_user)
         };
         tv = (TextView) findViewById(R.id.password);
         btn = (Button) findViewById(R.id.okButton);
@@ -51,46 +54,66 @@ public class UserSelectionActivity extends ActionBarActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("selected", selectedState + "");
                 switch (selectedState) {
                     case 0:
-                        if (tv.getText().toString().trim().equals("0")) {
-                            intent.putExtra("user", "0");
+                        if (tv.getText().toString().trim().equals(getResources().getString(R.string.pass1))) {
+                            User.setName("akhavan");
                             startActivity(intent);
 
                         } else
                             Toast.makeText(getApplicationContext(), R.string.wrong_pass, Toast.LENGTH_LONG).show();
                         break;
                     case 1:
-                        if (tv.getText().toString().trim().equals("1")) {
-                            intent.putExtra("user", "1");
+                        if (tv.getText().toString().trim().equals(getResources().getString(R.string.pass2))) {
+                            User.setName("aghamohammadi");
                             startActivity(intent);
                         } else
                             Toast.makeText(getApplicationContext(), R.string.wrong_pass, Toast.LENGTH_LONG).show();
                         break;
                     case 2:
-                        if (tv.getText().toString().trim().equals("2")) {
-                            intent.putExtra("user", "2");
+                        if (tv.getText().toString().trim().equals(getResources().getString(R.string.pass3))) {
+                            User.setName("biabani");
                             startActivity(intent);
                         } else
                             Toast.makeText(getApplicationContext(), R.string.wrong_pass, Toast.LENGTH_LONG).show();
                         break;
                     case 3:
-                        if (tv.getText().toString().trim().equals("3")) {
-                            intent.putExtra("user", "3");
+                        if (tv.getText().toString().trim().equals(getResources().getString(R.string.pass4))) {
+                            User.setName("seraji");
                             startActivity(intent);
                         } else
                             Toast.makeText(getApplicationContext(), R.string.wrong_pass, Toast.LENGTH_LONG).show();
                         break;
                     case 4:
-                        if (tv.getText().toString().trim().equals("4")) {
-                            intent.putExtra("user", "4");
+                        if (tv.getText().toString().trim().equals(getResources().getString(R.string.pass5))) {
+                            User.setName("tahmasbi");
                             startActivity(intent);
                         } else
                             Toast.makeText(getApplicationContext(), R.string.wrong_pass, Toast.LENGTH_LONG).show();
                         break;
                     case 5:
-                        intent.putExtra("user", "public");
+                        if (tv.getText().toString().trim().equals(getResources().getString(R.string.pass6))) {
+                            User.setName("ghader");
+                            startActivity(intent);
+                        } else
+                            Toast.makeText(getApplicationContext(), R.string.wrong_pass, Toast.LENGTH_LONG).show();
+                        break;
+                    case 6:
+                        if (tv.getText().toString().trim().equals(getResources().getString(R.string.pass7))) {
+                            User.setName("niknejad");
+                            startActivity(intent);
+                        } else
+                            Toast.makeText(getApplicationContext(), R.string.wrong_pass, Toast.LENGTH_LONG).show();
+                        break;
+                    case 7:
+                        if (tv.getText().toString().trim().equals(getResources().getString(R.string.pass8))) {
+                            User.setName("usefi");
+                            startActivity(intent);
+                        } else
+                            Toast.makeText(getApplicationContext(), R.string.wrong_pass, Toast.LENGTH_LONG).show();
+                        break;
+                    case 8:
+                        User.setName("public");
                         startActivity(intent);
                         break;
                 }

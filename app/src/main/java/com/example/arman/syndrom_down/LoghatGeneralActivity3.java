@@ -96,23 +96,139 @@ public class LoghatGeneralActivity3 extends ActionBarActivity {
             case "khanevade":
                 switch (position) {
                     case 0:
+                        switch (User.getName()) {
+                            case "biabani":
+                                wordImg.setImageResource(R.drawable.biabani_imbaba);
+                                break;
+                            case "ghader":
+                                wordImg.setImageResource(R.drawable.ghader_imbaba);
+                                break;
+                            case "tahmasbi":
+                                wordImg.setImageResource(R.drawable.tahmasbi_imbaba);
+                                break;
+                            case "akhavan":
+                                wordImg.setImageResource(R.drawable.akhavan_imbaba);
+                                break;
+                            case "seraji":
+                                wordImg.setImageResource(R.drawable.seraji_imbaba);
+                                break;
+                            case "niknejad":
+                                wordImg.setImageResource(R.drawable.niknejad_imbaba);
+                                break;
+                            case "aghamohammadi":
+                                wordImg.setImageResource(R.drawable.aghamohammadi_imbaba);
+                                break;
+                            case "usefi":
+                                wordImg.setImageResource(R.drawable.usefi_imbaba);
+                                break;
+                            default:
+                                wordImg.setImageResource(R.drawable.imbaba);
+                                break;
+                        }
                         word.setImageResource(R.drawable.tbaba);
-                        wordImg.setImageResource(R.drawable.imbaba);
+//                        wordImg.setImageResource(R.drawable.imbaba);
                         dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.father_drag);
                         break;
                     case 1:
+                        switch (User.getName()) {
+                            case "biabani":
+                                wordImg.setImageResource(R.drawable.biabani_immadar);
+                                break;
+                            case "ghader":
+                                wordImg.setImageResource(R.drawable.ghader_immadar);
+                                break;
+                            case "tahmasbi":
+                                wordImg.setImageResource(R.drawable.tahmasbi_immadar);
+                                break;
+                            case "akhavan":
+                                wordImg.setImageResource(R.drawable.akhavan_immadar);
+                                break;
+                            case "seraji":
+                                wordImg.setImageResource(R.drawable.seraji_immadar);
+                                break;
+                            case "niknejad":
+                                wordImg.setImageResource(R.drawable.niknejad_immadar);
+                                break;
+                            case "aghamohammadi":
+                                wordImg.setImageResource(R.drawable.aghamohammadi_immadar);
+                                break;
+                            case "usefi":
+                                wordImg.setImageResource(R.drawable.usefi_immadar);
+                                break;
+                            default:
+                                wordImg.setImageResource(R.drawable.immadar);
+                                break;
+                        }
                         word.setImageResource(R.drawable.tmaman);
-                        wordImg.setImageResource(R.drawable.immadar);
+//                        wordImg.setImageResource(R.drawable.immadar);
                         dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.madar_drag);
                         break;
                     case 2:
+                        switch (User.getName()) {
+                            case "biabani":
+                                wordImg.setImageResource(R.drawable.biabani_imkhahar);
+                                break;
+                            case "ghader":
+                                wordImg.setImageResource(R.drawable.ghader_imkhahar);
+                                break;
+                            case "tahmasbi":
+                                wordImg.setImageResource(R.drawable.tahmasbi_imkhahar);
+                                break;
+                            case "akhavan":
+                                wordImg.setImageResource(R.drawable.akhavan_imkhahar);
+                                break;
+                            case "seraji":
+                                wordImg.setImageResource(R.drawable.seraji_imkhahar);
+                                break;
+                            case "niknejad":
+                                wordImg.setImageResource(R.drawable.niknejad_imkhahar);
+                                break;
+                            case "aghamohammadi":
+                                wordImg.setImageResource(R.drawable.imkhahar);
+                                break;
+                            case "usefi":
+                                wordImg.setImageResource(R.drawable.imkhahar);
+                                break;
+                            default:
+                                wordImg.setImageResource(R.drawable.imkhahar);
+                                break;
+                        }
                         word.setImageResource(R.drawable.tkhahar);
-                        wordImg.setImageResource(R.drawable.imkhahar);
+//                        wordImg.setImageResource(R.drawable.imkhahar);
                         dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.khahar_drag);
                         break;
                     case 3:
+                        switch (User.getName()) {
+                            case "biabani":
+                                wordImg.setImageResource(R.drawable.biabani_imbaradar);
+                                break;
+                            case "ghader":
+                                wordImg.setImageResource(R.drawable.imbaradar);
+                                break;
+                            case "tahmasbi":
+                                wordImg.setImageResource(R.drawable.imbaradar);
+                                break;
+                            case "akhavan":
+                                wordImg.setImageResource(R.drawable.akhavan_imbaradar);
+                                break;
+                            case "seraji":
+                                wordImg.setImageResource(R.drawable.imbaradar);
+                                break;
+                            case "niknejad":
+                                wordImg.setImageResource(R.drawable.niknejad_imbaradar);
+                                break;
+                            case "aghamohammadi":
+                                wordImg.setImageResource(R.drawable.aghamohammadi_imbaradar);
+                                break;
+                            case "usefi":
+                                wordImg.setImageResource(R.drawable.imbaradar);
+                                break;
+                            default:
+                                wordImg.setImageResource(R.drawable.imbaradar);
+                                break;
+                        }
                         word.setImageResource(R.drawable.tbaradar);
-                        wordImg.setImageResource(R.drawable.imbaradar);
+//                        wordImg.setImageResource(R.drawable.imbaradar);
                         dragVoice = MediaPlayer.create(getApplicationContext(), R.raw.dadash_drag);
                         break;
                     default:

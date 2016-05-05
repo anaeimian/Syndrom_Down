@@ -12,30 +12,31 @@
         android:id="@+id/userLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/user_label"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/spinner"
-        android:layout_alignEnd="@+id/spinner" />
+        android:layout_above="@+id/password"
+        android:layout_alignLeft="@+id/passLabel"
+        android:layout_alignStart="@+id/passLabel"
+        android:layout_marginBottom="10dp"
+        android:text="@string/user_label" />
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/userLabel"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignEnd="@+id/password"
+        android:layout_alignRight="@+id/password"
+        android:layout_above="@+id/password" />
 
 
     <TextView
         android:id="@+id/passLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pass_label"
+        android:layout_alignBottom="@+id/password"
         android:layout_marginLeft="54dp"
         android:layout_marginStart="54dp"
-        android:layout_alignBottom="@+id/password"
+        android:layout_toEndOf="@+id/password"
         android:layout_toRightOf="@+id/password"
-        android:layout_toEndOf="@+id/password" />
+        android:text="@string/pass_label" />
 
     <EditText
         android:id="@+id/password"
@@ -48,11 +49,11 @@
 
     <Button
         android:id="@+id/okButton"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="39dp"
-        android:text="New Button" />
+        android:text="@string/enter" />
 
 </RelativeLayout>

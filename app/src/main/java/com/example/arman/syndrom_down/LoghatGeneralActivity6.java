@@ -147,34 +147,25 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 payMoreAttention.start();
-//                memoryReleaser(payMoreAttention);
-
             }
         });
 
         pass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 passClicked++;
-                if (passClicked < 4) {
-                    Log.d("tashvigh","tashvigh");
+                if (passClicked < 5) {
                     tashvigh.start();
                 }
-//                memoryReleaser(tashvigh);
 
                 tashvigh.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mediaPlayer) {
                         if (passClicked <= 3) {
                             inchie.start();
-                            Log.d("inchie", "inchie");
-//                            memoryReleaser(inchie);
                         }
 
                         if (passClicked >= 4) {
-                            Log.d("b4","b4");
-//                            Utils.database.activate(category, position);
                             switch (category) {
                                 case "khanevade":
                                     intent = new Intent(LoghatGeneralActivity6.this, KhanevadeActivity.class);
@@ -219,7 +210,7 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
                                     break;
                                 case "khordani":
                                     intent = new Intent(LoghatGeneralActivity6.this, KhordaniActivity.class);
-                                          passSection();
+                                    passSection();
                                     successAnimation();
                                     break;
                                 case "mafahim":

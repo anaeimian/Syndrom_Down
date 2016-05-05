@@ -166,16 +166,132 @@ public class LoghatGeneralActivity5 extends ActionBarActivity {
             case "khanevade":
                 switch (position) {
                     case 0:
-                        wordImg.setImageResource(R.drawable.imbaba);
+                        switch (User.getName()) {
+                            case "biabani":
+                                wordImg.setImageResource(R.drawable.biabani_imbaba);
+                                break;
+                            case "ghader":
+                                wordImg.setImageResource(R.drawable.ghader_imbaba);
+                                break;
+                            case "tahmasbi":
+                                wordImg.setImageResource(R.drawable.tahmasbi_imbaba);
+                                break;
+                            case "akhavan":
+                                wordImg.setImageResource(R.drawable.akhavan_imbaba);
+                                break;
+                            case "seraji":
+                                wordImg.setImageResource(R.drawable.seraji_imbaba);
+                                break;
+                            case "niknejad":
+                                wordImg.setImageResource(R.drawable.niknejad_imbaba);
+                                break;
+                            case "aghamohammadi":
+                                wordImg.setImageResource(R.drawable.aghamohammadi_imbaba);
+                                break;
+                            case "usefi":
+                                wordImg.setImageResource(R.drawable.usefi_imbaba);
+                                break;
+                            default:
+                                wordImg.setImageResource(R.drawable.imbaba);
+                                break;
+                        }
+//                        wordImg.setImageResource(R.drawable.imbaba);
                         break;
                     case 1:
-                        wordImg.setImageResource(R.drawable.immadar);
+                        switch (User.getName()) {
+                            case "biabani":
+                                wordImg.setImageResource(R.drawable.biabani_immadar);
+                                break;
+                            case "ghader":
+                                wordImg.setImageResource(R.drawable.ghader_immadar);
+                                break;
+                            case "tahmasbi":
+                                wordImg.setImageResource(R.drawable.tahmasbi_immadar);
+                                break;
+                            case "akhavan":
+                                wordImg.setImageResource(R.drawable.akhavan_immadar);
+                                break;
+                            case "seraji":
+                                wordImg.setImageResource(R.drawable.seraji_immadar);
+                                break;
+                            case "niknejad":
+                                wordImg.setImageResource(R.drawable.niknejad_immadar);
+                                break;
+                            case "aghamohammadi":
+                                wordImg.setImageResource(R.drawable.aghamohammadi_immadar);
+                                break;
+                            case "usefi":
+                                wordImg.setImageResource(R.drawable.usefi_immadar);
+                                break;
+                            default:
+                                wordImg.setImageResource(R.drawable.immadar);
+                                break;
+                        }
+//                        wordImg.setImageResource(R.drawable.immadar);
                         break;
                     case 2:
-                        wordImg.setImageResource(R.drawable.imkhahar);
+                        switch (User.getName()) {
+                            case "biabani":
+                                wordImg.setImageResource(R.drawable.biabani_imkhahar);
+                                break;
+                            case "ghader":
+                                wordImg.setImageResource(R.drawable.ghader_imkhahar);
+                                break;
+                            case "tahmasbi":
+                                wordImg.setImageResource(R.drawable.tahmasbi_imkhahar);
+                                break;
+                            case "akhavan":
+                                wordImg.setImageResource(R.drawable.akhavan_imkhahar);
+                                break;
+                            case "seraji":
+                                wordImg.setImageResource(R.drawable.seraji_imkhahar);
+                                break;
+                            case "niknejad":
+                                wordImg.setImageResource(R.drawable.niknejad_imkhahar);
+                                break;
+                            case "aghamohammadi":
+                                wordImg.setImageResource(R.drawable.imkhahar);
+                                break;
+                            case "usefi":
+                                wordImg.setImageResource(R.drawable.imkhahar);
+                                break;
+                            default:
+                                wordImg.setImageResource(R.drawable.imkhahar);
+                                break;
+                        }
+//                        wordImg.setImageResource(R.drawable.imkhahar);
                         break;
                     case 3:
-                        wordImg.setImageResource(R.drawable.imbaradar);
+                        switch (User.getName()) {
+                            case "biabani":
+                                wordImg.setImageResource(R.drawable.biabani_imbaradar);
+                                break;
+                            case "ghader":
+                                wordImg.setImageResource(R.drawable.imbaradar);
+                                break;
+                            case "tahmasbi":
+                                wordImg.setImageResource(R.drawable.imbaradar);
+                                break;
+                            case "akhavan":
+                                wordImg.setImageResource(R.drawable.akhavan_imbaradar);
+                                break;
+                            case "seraji":
+                                wordImg.setImageResource(R.drawable.imbaradar);
+                                break;
+                            case "niknejad":
+                                wordImg.setImageResource(R.drawable.niknejad_imbaradar);
+                                break;
+                            case "aghamohammadi":
+                                wordImg.setImageResource(R.drawable.aghamohammadi_imbaradar);
+                                break;
+                            case "usefi":
+                                wordImg.setImageResource(R.drawable.imbaradar);
+                                break;
+                            default:
+                                wordImg.setImageResource(R.drawable.imbaradar);
+                                break;
+                        }
+//                        wordImg.setImageResource(R.drawable.imbaradar);
                         break;
                     default:
                         break;
