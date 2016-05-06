@@ -1187,6 +1187,12 @@ public class Bazi1Activity2 extends ActionBarActivity {
                 @Override
                 public void onClick(View v) {
                     payMoreAttention.start();
+                    payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            wordVoice.start();
+                        }
+                    });
                 }
             });
         } else if (answerPos == 1) {
@@ -1215,6 +1221,12 @@ public class Bazi1Activity2 extends ActionBarActivity {
                 @Override
                 public void onClick(View v) {
                     payMoreAttention.start();
+                    payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            wordVoice.start();
+                        }
+                    });
                 }
             });
         }

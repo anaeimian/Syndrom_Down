@@ -107,7 +107,7 @@ public class Bazi1Activity extends ActionBarActivity {
 
     private void handleIntent() {
         Intent intent = getIntent();
-        String category = intent.getStringExtra("category");
+        final String category = intent.getStringExtra("category");
         int answerPos = random.nextInt(2);
         int categorySize = 0;
 
@@ -144,7 +144,7 @@ public class Bazi1Activity extends ActionBarActivity {
                 categorySize = 9;
                 break;
         }
-        int selectedItem1 = random.nextInt(categorySize);
+        final int selectedItem1 = random.nextInt(categorySize);
         int selectedItem2 = random.nextInt(categorySize);
         while (selectedItem2 == selectedItem1) {
             selectedItem2 = random.nextInt(categorySize);
@@ -188,6 +188,19 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mediaPlayer) {
+                                            mediaPlayer.release();
+                                        }
+                                    });
+                                }
+                            });
                         }
                     });
                 } else if (answerPos == 1) {
@@ -218,6 +231,20 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mediaPlayer) {
+                                            mediaPlayer.release();
+                                        }
+                                    });
+                                }
+                            });
+
                         }
                     });
                 }
@@ -272,6 +299,19 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mediaPlayer) {
+                                            mediaPlayer.release();
+                                        }
+                                    });
+                                }
+                            });
                         }
                     });
                 } else if (answerPos == 1) {
@@ -303,6 +343,19 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mediaPlayer) {
+                                            mediaPlayer.release();
+                                        }
+                                    });
+                                }
+                            });
                         }
                     });
                 }
@@ -352,6 +405,19 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mediaPlayer) {
+                                            mediaPlayer.release();
+                                        }
+                                    });
+                                }
+                            });
                         }
                     });
                 } else if (answerPos == 1) {
@@ -382,6 +448,19 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mediaPlayer) {
+                                            mediaPlayer.release();
+                                        }
+                                    });
+                                }
+                            });
                         }
                     });
                 }
@@ -433,6 +512,19 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mediaPlayer) {
+                                            mediaPlayer.release();
+                                        }
+                                    });
+                                }
+                            });
                         }
                     });
                 } else if (answerPos == 1) {
@@ -463,6 +555,19 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mediaPlayer) {
+                                            mediaPlayer.release();
+                                        }
+                                    });
+                                }
+                            });
                         }
                     });
                 }
@@ -514,6 +619,19 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mediaPlayer) {
+                                            mediaPlayer.release();
+                                        }
+                                    });
+                                }
+                            });
                         }
                     });
                 } else if (answerPos == 1) {
@@ -544,6 +662,19 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mediaPlayer) {
+                                            mediaPlayer.release();
+                                        }
+                                    });
+                                }
+                            });
                         }
                     });
                 }
@@ -598,6 +729,19 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mediaPlayer) {
+                                            mediaPlayer.release();
+                                        }
+                                    });
+                                }
+                            });
                         }
                     });
                 } else if (answerPos == 1) {
@@ -628,6 +772,19 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mediaPlayer) {
+                                            mediaPlayer.release();
+                                        }
+                                    });
+                                }
+                            });
                         }
                     });
                 }
@@ -675,6 +832,19 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mediaPlayer) {
+                                            mediaPlayer.release();
+                                        }
+                                    });
+                                }
+                            });
                         }
                     });
                 } else if (answerPos == 1) {
@@ -705,6 +875,19 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mediaPlayer) {
+                                            mediaPlayer.release();
+                                        }
+                                    });
+                                }
+                            });
                         }
                     });
                 }
@@ -752,6 +935,19 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mediaPlayer) {
+                                            mediaPlayer.release();
+                                        }
+                                    });
+                                }
+                            });
                         }
                     });
                 } else if (answerPos == 1) {
@@ -782,6 +978,19 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mediaPlayer) {
+                                            mediaPlayer.release();
+                                        }
+                                    });
+                                }
+                            });
                         }
                     });
                 }
@@ -831,6 +1040,19 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mediaPlayer) {
+                                            mediaPlayer.release();
+                                        }
+                                    });
+                                }
+                            });
                         }
                     });
                 } else if (answerPos == 1) {
@@ -861,6 +1083,19 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mediaPlayer) {
+                                            mediaPlayer.release();
+                                        }
+                                    });
+                                }
+                            });
                         }
                     });
                 }
@@ -914,6 +1149,12 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                }
+                            });
                         }
                     });
                 } else if (answerPos == 1) {
@@ -944,6 +1185,19 @@ public class Bazi1Activity extends ActionBarActivity {
                         @Override
                         public void onClick(View v) {
                             payMoreAttention.start();
+                            setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                            payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    wordVoice.start();
+                                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                        @Override
+                                        public void onCompletion(MediaPlayer mediaPlayer) {
+                                            mediaPlayer.release();
+                                        }
+                                    });
+                                }
+                            });
                         }
                     });
                 }
