@@ -1033,6 +1033,18 @@ public class Bazi1Activity3 extends ActionBarActivity {
                 @Override
                 public void onClick(View v) {
                     payMoreAttention.start();
+                    payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            wordVoice.start();
+                            wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
+                        }
+                    });
                 }
             });
         } else if (answerPos == 1) {
@@ -1061,6 +1073,18 @@ public class Bazi1Activity3 extends ActionBarActivity {
                 @Override
                 public void onClick(View v) {
                     payMoreAttention.start();
+                    payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            wordVoice.start();
+                            wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
+                        }
+                    });
                 }
             });
         }
