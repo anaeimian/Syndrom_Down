@@ -171,7 +171,7 @@ public class FelGeneralActivity2 extends ActionBarActivity {
                         felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.kafshetamiz_clip));
                         break;
                     case 11:
-//                       felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.abbedeh_clip));
+                       felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.abbedeh_clip));
                         break;
                     case 12:
                         felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.babaraft_clip));
