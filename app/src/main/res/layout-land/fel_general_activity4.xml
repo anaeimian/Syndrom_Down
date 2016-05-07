@@ -38,103 +38,21 @@
 
     <ImageView
         android:id="@+id/star1"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignEnd="@+id/guide"
-        android:layout_alignRight="@+id/guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignTop="@+id/star2"
-        android:src="@drawable/balloon_red"
+        android:src="@drawable/qaz"
         android:visibility="invisible" />
 
     <ImageView
         android:id="@+id/star2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/star_yellow"
+        android:src="@drawable/qaz"
         android:visibility="invisible" />
 
-    <ImageView
-        android:id="@+id/star3"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignEnd="@+id/verbImg"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/verbImg"
-        android:src="@drawable/star_gray"
-        android:visibility="invisible" />
-
-    <ImageView
-        android:id="@+id/star4"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignLeft="@+id/verb"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/verb"
-        android:src="@drawable/balloon_red"
-        android:visibility="invisible" />
-
-    <ImageView
-        android:id="@+id/star5"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/star_black"
-        android:visibility="invisible" />
-
-    <ImageView
-        android:id="@+id/star6"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignEnd="@+id/guide"
-        android:layout_alignRight="@+id/guide"
-        android:layout_alignTop="@+id/star2"
-        android:src="@drawable/balloon_red"
-        android:visibility="invisible" />
-
-    <ImageView
-        android:id="@+id/star7"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignTop="@+id/star3"
-        android:layout_toEndOf="@+id/star1"
-        android:layout_toRightOf="@+id/star1"
-        android:src="@drawable/star_gray"
-        android:visibility="invisible" />
-
-    <ImageView
-        android:id="@+id/star8"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignLeft="@+id/word"
-        android:layout_alignStart="@+id/word"
-        android:layout_alignTop="@+id/star4"
-        android:src="@drawable/balloon_red"
-        android:visibility="invisible" />
-
-    <ImageView
-        android:id="@+id/star9"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignTop="@+id/star5"
-        android:layout_toEndOf="@+id/word"
-        android:layout_toRightOf="@+id/word"
-        android:src="@drawable/star_gray"
-        android:visibility="invisible" />
-
-    <ImageView
-        android:id="@+id/star10"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/star5"
-        android:layout_below="@+id/center"
-        android:src="@drawable/star_yellow"
-        android:visibility="invisible" />
 
     <ImageView
         android:id="@+id/bottomAligner"

@@ -105,6 +105,300 @@ public class Bazi1Activity extends ActionBarActivity {
     }
 
 
+    void setVoiceImage(ImageView image, int index, String category) {
+        switch (category) {
+            case "khanevade":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_baba);
+                        wordVoice = MediaPlayer.create(this, R.raw.baba_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_maman);
+                        wordVoice = MediaPlayer.create(this, R.raw.maman_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_khahar);
+                        wordVoice = MediaPlayer.create(this, R.raw.khahar_ko);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_dadash);
+                        wordVoice = MediaPlayer.create(this, R.raw.dadash_ko);
+                        break;
+                }
+                break;
+            case "andam":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_cheshm);
+                        wordVoice = MediaPlayer.create(this, R.raw.cheshm_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_dast);
+                        wordVoice = MediaPlayer.create(this, R.raw.dast_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_pa);
+                        wordVoice = MediaPlayer.create(this, R.raw.pa_ko);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_gush);
+                        wordVoice = MediaPlayer.create(this, R.raw.gush_ko);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_mo);
+                        wordVoice = MediaPlayer.create(this, R.raw.mo_ko);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.balloon_dahan);
+                        wordVoice = MediaPlayer.create(this, R.raw.dahan_ko);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.balloon_bini);
+                        wordVoice = MediaPlayer.create(this, R.raw.bini_ko);
+                        break;
+                    case 7:
+                        image.setImageResource(R.drawable.balloon_zaban);
+                        wordVoice = MediaPlayer.create(this, R.raw.zaban_ko);
+                        break;
+                    case 8:
+                        image.setImageResource(R.drawable.balloon_dandan);
+                        wordVoice = MediaPlayer.create(this, R.raw.dandan_ko);
+                        break;
+                    case 9:
+                        image.setImageResource(R.drawable.balloon_abro);
+                        wordVoice = MediaPlayer.create(this, R.raw.abro_ko);
+                        break;
+                }
+                break;
+            case "miveh":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_moz);
+                        wordVoice = MediaPlayer.create(this, R.raw.moz_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_sib);
+                        wordVoice = MediaPlayer.create(this, R.raw.sib_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_khiar);
+                        wordVoice = MediaPlayer.create(this, R.raw.khiar_ko);
+                        break;
+
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_porteqal);
+                        wordVoice = MediaPlayer.create(this, R.raw.porteqal_ko);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_limo);
+                        wordVoice = MediaPlayer.create(this, R.raw.limo_ko);
+                        break;
+                }
+                break;
+            case "heyvanat":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_gorbe);
+                        wordVoice = MediaPlayer.create(this, R.raw.gorbe_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_sag);
+                        wordVoice = MediaPlayer.create(this, R.raw.sag_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_gav);
+                        wordVoice = MediaPlayer.create(this, R.raw.gav_ko);
+                        break;
+
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_mahi);
+                        wordVoice = MediaPlayer.create(this, R.raw.mahi_ko);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_morq);
+                        wordVoice = MediaPlayer.create(this, R.raw.morq_ko);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.balloon_asb);
+                        wordVoice = MediaPlayer.create(this, R.raw.asb_ko);
+                        break;
+
+                }
+
+                break;
+            case "pooshak":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_kafsh);
+                        wordVoice = MediaPlayer.create(this, R.raw.kafsh_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_kolah);
+                        wordVoice = MediaPlayer.create(this, R.raw.kolah_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_jorab);
+                        wordVoice = MediaPlayer.create(this, R.raw.jorab_ko);
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_shalvar);
+                        wordVoice = MediaPlayer.create(this, R.raw.shalvar_ko);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_pirahan);
+                        wordVoice = MediaPlayer.create(this, R.raw.pirhan_ko);
+                    case 5:
+                        image.setImageResource(R.drawable.balloon_rosari);
+                        wordVoice = MediaPlayer.create(this, R.raw.rosari_ko);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.balloon_bloz);
+                        wordVoice = MediaPlayer.create(this, R.raw.bloz_ko);
+                }
+                break;
+            case "vasayel":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_shane);
+                        wordVoice = MediaPlayer.create(this, R.raw.shane_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_mesvak);
+                        wordVoice = MediaPlayer.create(this, R.raw.mesvak_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_hole);
+                        wordVoice = MediaPlayer.create(this, R.raw.hole_ko);
+                        break;
+
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_toop);
+                        wordVoice = MediaPlayer.create(this, R.raw.toop_ko);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_docharkhe);
+                        wordVoice = MediaPlayer.create(this, R.raw.docharkhe_ko);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.balloon_mashin);
+                        wordVoice = MediaPlayer.create(this, R.raw.mashin_ko);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.balloon_havapeima);
+                        wordVoice = MediaPlayer.create(this, R.raw.havapeima_kojast);
+                        break;
+                    case 7:
+                        image.setImageResource(R.drawable.balloon_ghashoq);
+                        wordVoice = MediaPlayer.create(this, R.raw.qashoq_ko);
+                        break;
+                    case 8:
+                        image.setImageResource(R.drawable.balloon_ketab);
+                        wordVoice = MediaPlayer.create(this, R.raw.ketab_ko);
+                        break;
+
+
+                }
+                break;
+            case "mashaghel":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_doctor);
+                        wordVoice = MediaPlayer.create(this, R.raw.doctor_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_nanva);
+                        wordVoice = MediaPlayer.create(this, R.raw.nanva_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_moalem);
+                        wordVoice = MediaPlayer.create(this, R.raw.moalem_ko);
+                        break;
+                }
+                break;
+            case "rang":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_abi);
+                        wordVoice = MediaPlayer.create(this, R.raw.abi_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_zard);
+                        wordVoice = MediaPlayer.create(this, R.raw.zard_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_ghermez);
+                        wordVoice = MediaPlayer.create(this, R.raw.qermez_ko);
+                        break;
+                }
+                break;
+            case "khordani":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_nan);
+                        wordVoice = MediaPlayer.create(this, R.raw.nan_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_shir);
+                        wordVoice = MediaPlayer.create(this, R.raw.shir_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_ab);
+                        wordVoice = MediaPlayer.create(this, R.raw.ab_ko);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_cake);
+                        wordVoice = MediaPlayer.create(this, R.raw.cake_ko);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_bisko);
+                        wordVoice = MediaPlayer.create(this, R.raw.bisko_ko);
+                        break;
+                }
+                break;
+
+            case "mafahim":
+                switch (index) {
+                    case 0:
+                        image.setImageResource(R.drawable.balloon_bala);
+                        wordVoice = MediaPlayer.create(this, R.raw.bala_ko);
+                        break;
+                    case 1:
+                        image.setImageResource(R.drawable.balloon_paeen);
+                        wordVoice = MediaPlayer.create(this, R.raw.paeen_ko);
+                        break;
+                    case 2:
+                        image.setImageResource(R.drawable.balloon_kasif);
+                        wordVoice = MediaPlayer.create(this, R.raw.kasif_ko);
+                        break;
+                    case 3:
+                        image.setImageResource(R.drawable.balloon_tamiz);
+                        wordVoice = MediaPlayer.create(this, R.raw.tamiz_ko);
+                        break;
+                    case 4:
+                        image.setImageResource(R.drawable.balloon_bache);
+                        wordVoice = MediaPlayer.create(this, R.raw.bache_kojast);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.balloon_dokhtar);
+                        wordVoice = MediaPlayer.create(this, R.raw.dokhtar_ko);
+                        break;
+                    case 6:
+                        image.setImageResource(R.drawable.balloon_pesar);
+                        wordVoice = MediaPlayer.create(this, R.raw.pesar_kojast);
+                        break;
+                    case 7:
+                        image.setImageResource(R.drawable.balloon_sard);
+                        wordVoice = MediaPlayer.create(this, R.raw.sard_ko);
+                        break;
+                    case 8:
+                        image.setImageResource(R.drawable.balloon_garm);
+                        wordVoice = MediaPlayer.create(this, R.raw.garm_ko);
+                        break;
+
+                }
+        }
+    }
+
     private void handleIntent() {
         Intent intent = getIntent();
         final String category = intent.getStringExtra("category");
@@ -1207,300 +1501,6 @@ public class Bazi1Activity extends ActionBarActivity {
 
         }
 
-    }
-
-    void setVoiceImage(ImageView image, int index, String category) {
-        switch (category) {
-            case "khanevade":
-                switch (index) {
-                    case 0:
-                        image.setImageResource(R.drawable.balloon_baba);
-                        wordVoice = MediaPlayer.create(this, R.raw.baba_ko);
-                        break;
-                    case 1:
-                        image.setImageResource(R.drawable.balloon_maman);
-                        wordVoice = MediaPlayer.create(this, R.raw.maman_ko);
-                        break;
-                    case 2:
-                        image.setImageResource(R.drawable.balloon_khahar);
-                        wordVoice = MediaPlayer.create(this, R.raw.khahar_ko);
-                        break;
-                    case 3:
-                        image.setImageResource(R.drawable.balloon_dadash);
-                        wordVoice = MediaPlayer.create(this, R.raw.dadash_ko);
-                        break;
-                }
-                break;
-            case "andam":
-                switch (index) {
-                    case 0:
-                        image.setImageResource(R.drawable.balloon_cheshm);
-                        wordVoice = MediaPlayer.create(this, R.raw.cheshm_ko);
-                        break;
-                    case 1:
-                        image.setImageResource(R.drawable.balloon_dast);
-                        wordVoice = MediaPlayer.create(this, R.raw.dast_ko);
-                        break;
-                    case 2:
-                        image.setImageResource(R.drawable.balloon_pa);
-                        wordVoice = MediaPlayer.create(this, R.raw.pa_ko);
-                        break;
-                    case 3:
-                        image.setImageResource(R.drawable.balloon_gush);
-                        wordVoice = MediaPlayer.create(this, R.raw.gush_ko);
-                        break;
-                    case 4:
-                        image.setImageResource(R.drawable.balloon_mo);
-                        wordVoice = MediaPlayer.create(this, R.raw.mo_ko);
-                        break;
-                    case 5:
-                        image.setImageResource(R.drawable.balloon_dahan);
-                        wordVoice = MediaPlayer.create(this, R.raw.dahan_ko);
-                        break;
-                    case 6:
-                        image.setImageResource(R.drawable.balloon_bini);
-                        wordVoice = MediaPlayer.create(this, R.raw.bini_ko);
-                        break;
-                    case 7:
-                        image.setImageResource(R.drawable.balloon_zaban);
-                        wordVoice = MediaPlayer.create(this, R.raw.zaban_ko);
-                        break;
-                    case 8:
-                        image.setImageResource(R.drawable.balloon_dandan);
-                        wordVoice = MediaPlayer.create(this, R.raw.dandan_ko);
-                        break;
-                    case 9:
-                        image.setImageResource(R.drawable.balloon_abro);
-                        wordVoice = MediaPlayer.create(this, R.raw.abro_ko);
-                        break;
-                }
-                break;
-            case "miveh":
-                switch (index) {
-                    case 0:
-                        image.setImageResource(R.drawable.balloon_moz);
-                        wordVoice = MediaPlayer.create(this, R.raw.moz_ko);
-                        break;
-                    case 1:
-                        image.setImageResource(R.drawable.balloon_sib);
-                        wordVoice = MediaPlayer.create(this, R.raw.sib_ko);
-                        break;
-                    case 2:
-                        image.setImageResource(R.drawable.balloon_khiar);
-                        wordVoice = MediaPlayer.create(this, R.raw.khiar_ko);
-                        break;
-
-                    case 3:
-                        image.setImageResource(R.drawable.balloon_porteqal);
-                        wordVoice = MediaPlayer.create(this, R.raw.porteqal_ko);
-                        break;
-                    case 4:
-                        image.setImageResource(R.drawable.balloon_limo);
-                        wordVoice = MediaPlayer.create(this, R.raw.limo_ko);
-                        break;
-                }
-                break;
-            case "heyvanat":
-                switch (index) {
-                    case 0:
-                        image.setImageResource(R.drawable.balloon_gorbe);
-                        wordVoice = MediaPlayer.create(this, R.raw.gorbe_ko);
-                        break;
-                    case 1:
-                        image.setImageResource(R.drawable.balloon_sag);
-                        wordVoice = MediaPlayer.create(this, R.raw.sag_ko);
-                        break;
-                    case 2:
-                        image.setImageResource(R.drawable.balloon_gav);
-                        wordVoice = MediaPlayer.create(this, R.raw.gav_ko);
-                        break;
-
-                    case 3:
-                        image.setImageResource(R.drawable.balloon_mahi);
-                        wordVoice = MediaPlayer.create(this, R.raw.mahi_ko);
-                        break;
-                    case 4:
-                        image.setImageResource(R.drawable.balloon_morq);
-                        wordVoice = MediaPlayer.create(this, R.raw.morq_ko);
-                        break;
-                    case 5:
-                        image.setImageResource(R.drawable.balloon_asb);
-                        wordVoice = MediaPlayer.create(this, R.raw.asb_ko);
-                        break;
-
-                }
-
-                break;
-            case "pooshak":
-                switch (index) {
-                    case 0:
-                        image.setImageResource(R.drawable.balloon_kafsh);
-                        wordVoice = MediaPlayer.create(this, R.raw.kafsh_ko);
-                        break;
-                    case 1:
-                        image.setImageResource(R.drawable.balloon_kolah);
-                        wordVoice = MediaPlayer.create(this, R.raw.kolah_ko);
-                        break;
-                    case 2:
-                        image.setImageResource(R.drawable.balloon_jorab);
-                        wordVoice = MediaPlayer.create(this, R.raw.jorab_ko);
-                    case 3:
-                        image.setImageResource(R.drawable.balloon_shalvar);
-                        wordVoice = MediaPlayer.create(this, R.raw.shalvar_ko);
-                        break;
-                    case 4:
-                        image.setImageResource(R.drawable.balloon_pirahan);
-                        wordVoice = MediaPlayer.create(this, R.raw.pirhan_ko);
-                    case 5:
-                        image.setImageResource(R.drawable.balloon_rosari);
-                        wordVoice = MediaPlayer.create(this, R.raw.rosari_ko);
-                        break;
-                    case 6:
-                        image.setImageResource(R.drawable.balloon_bloz);
-                        wordVoice = MediaPlayer.create(this, R.raw.bloz_ko);
-                }
-                break;
-            case "vasayel":
-                switch (index) {
-                    case 0:
-                        image.setImageResource(R.drawable.balloon_shane);
-                        wordVoice = MediaPlayer.create(this, R.raw.shane_ko);
-                        break;
-                    case 1:
-                        image.setImageResource(R.drawable.balloon_mesvak);
-                        wordVoice = MediaPlayer.create(this, R.raw.mesvak_ko);
-                        break;
-                    case 2:
-                        image.setImageResource(R.drawable.balloon_hole);
-                        wordVoice = MediaPlayer.create(this, R.raw.hole_ko);
-                        break;
-
-                    case 3:
-                        image.setImageResource(R.drawable.balloon_toop);
-                        wordVoice = MediaPlayer.create(this, R.raw.toop_ko);
-                        break;
-                    case 4:
-                        image.setImageResource(R.drawable.balloon_docharkhe);
-                        wordVoice = MediaPlayer.create(this, R.raw.docharkhe_ko);
-                        break;
-                    case 5:
-                        image.setImageResource(R.drawable.balloon_mashin);
-                        wordVoice = MediaPlayer.create(this, R.raw.mashin_ko);
-                        break;
-                    case 6:
-                        image.setImageResource(R.drawable.balloon_havapeima);
-                        wordVoice = MediaPlayer.create(this, R.raw.havapeima_kojast);
-                        break;
-                    case 7:
-                        image.setImageResource(R.drawable.balloon_ghashoq);
-                        wordVoice = MediaPlayer.create(this, R.raw.qashoq_ko);
-                        break;
-                    case 8:
-                        image.setImageResource(R.drawable.balloon_ketab);
-                        wordVoice = MediaPlayer.create(this, R.raw.ketab_ko);
-                        break;
-
-
-                }
-                break;
-            case "mashaghel":
-                switch (index) {
-                    case 0:
-                        image.setImageResource(R.drawable.balloon_doctor);
-                        wordVoice = MediaPlayer.create(this, R.raw.doctor_ko);
-                        break;
-                    case 1:
-                        image.setImageResource(R.drawable.balloon_nanva);
-                        wordVoice = MediaPlayer.create(this, R.raw.nanva_ko);
-                        break;
-                    case 2:
-                        image.setImageResource(R.drawable.balloon_moalem);
-                        wordVoice = MediaPlayer.create(this, R.raw.moalem_ko);
-                        break;
-                }
-                break;
-            case "rang":
-                switch (index) {
-                    case 0:
-                        image.setImageResource(R.drawable.balloon_abi);
-                        wordVoice = MediaPlayer.create(this, R.raw.abi_ko);
-                        break;
-                    case 1:
-                        image.setImageResource(R.drawable.balloon_zard);
-                        wordVoice = MediaPlayer.create(this, R.raw.zard_ko);
-                        break;
-                    case 2:
-                        image.setImageResource(R.drawable.balloon_ghermez);
-                        wordVoice = MediaPlayer.create(this, R.raw.qermez_ko);
-                        break;
-                }
-                break;
-            case "khordani":
-                switch (index) {
-                    case 0:
-                        image.setImageResource(R.drawable.balloon_nan);
-                        wordVoice = MediaPlayer.create(this, R.raw.nan_ko);
-                        break;
-                    case 1:
-                        image.setImageResource(R.drawable.balloon_shir);
-                        wordVoice = MediaPlayer.create(this, R.raw.shir_ko);
-                        break;
-                    case 2:
-                        image.setImageResource(R.drawable.balloon_ab);
-                        wordVoice = MediaPlayer.create(this, R.raw.ab_ko);
-                        break;
-                    case 3:
-                        image.setImageResource(R.drawable.balloon_cake);
-                        wordVoice = MediaPlayer.create(this, R.raw.cake_ko);
-                        break;
-                    case 4:
-                        image.setImageResource(R.drawable.balloon_bisko);
-                        wordVoice = MediaPlayer.create(this, R.raw.bisko_ko);
-                        break;
-                }
-                break;
-
-            case "mafahim":
-                switch (index) {
-                    case 0:
-                        image.setImageResource(R.drawable.balloon_bala);
-                        wordVoice = MediaPlayer.create(this, R.raw.bala_ko);
-                        break;
-                    case 1:
-                        image.setImageResource(R.drawable.balloon_paeen);
-                        wordVoice = MediaPlayer.create(this, R.raw.paeen_ko);
-                        break;
-                    case 2:
-                        image.setImageResource(R.drawable.balloon_kasif);
-                        wordVoice = MediaPlayer.create(this, R.raw.kasif_ko);
-                        break;
-                    case 3:
-                        image.setImageResource(R.drawable.balloon_tamiz);
-                        wordVoice = MediaPlayer.create(this, R.raw.tamiz_ko);
-                        break;
-                    case 4:
-                        image.setImageResource(R.drawable.balloon_bache);
-                        wordVoice = MediaPlayer.create(this, R.raw.bache_kojast);
-                        break;
-                    case 5:
-                        image.setImageResource(R.drawable.balloon_dokhtar);
-                        wordVoice = MediaPlayer.create(this, R.raw.dokhtar_ko);
-                        break;
-                    case 6:
-                        image.setImageResource(R.drawable.balloon_pesar);
-                        wordVoice = MediaPlayer.create(this, R.raw.pesar_kojast);
-                        break;
-                    case 7:
-                        image.setImageResource(R.drawable.balloon_sard);
-                        wordVoice = MediaPlayer.create(this, R.raw.sard_ko);
-                        break;
-                    case 8:
-                        image.setImageResource(R.drawable.balloon_garm);
-                        wordVoice = MediaPlayer.create(this, R.raw.garm_ko);
-                        break;
-
-                }
-        }
     }
 
     void setImage(ImageView image, int index, String category) {
