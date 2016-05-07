@@ -87,7 +87,7 @@ public class FelGeneralActivity1 extends ActionBarActivity {
                         break;
                     case 4:
                         felVoice = MediaPlayer.create(getApplicationContext(), R.raw.beshour_voice);
-                        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.beshour_clip));
+                        felVideo.setVideoURI(Uri.parse("android.resource://" + "com.example.arman.syndrom_down" + "/" + R.raw.shostan_clip));
                         break;
                     case 5:
                         felVoice = MediaPlayer.create(getApplicationContext(), R.raw.bokhor_voice);
