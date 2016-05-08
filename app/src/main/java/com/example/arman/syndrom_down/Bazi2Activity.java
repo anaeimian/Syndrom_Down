@@ -78,7 +78,7 @@ public class Bazi2Activity extends ActionBarActivity {
         Intent intent = getIntent();
         category = intent.getStringExtra("category");
         int answerPos = random.nextInt(2);
-        int selectedItem1 = random.nextInt(4);
+        final int selectedItem1 = random.nextInt(4);
         int selectedItem2 = random.nextInt(4);
         while (selectedItem2 == selectedItem1) {
             selectedItem2 = random.nextInt(4);
@@ -274,6 +274,19 @@ public class Bazi2Activity extends ActionBarActivity {
                 @Override
                 public void onClick(View v) {
                     payMoreAttention.start();
+                    setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                    payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            wordVoice.start();
+                            wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
+                        }
+                    });
                 }
             });
         } else if (answerPos == 1) {
@@ -291,6 +304,19 @@ public class Bazi2Activity extends ActionBarActivity {
                 @Override
                 public void onClick(View v) {
                     payMoreAttention.start();
+                    setVoiceImage(new ImageView(getApplicationContext()), selectedItem1, category);
+                    payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            wordVoice.start();
+                            wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
+                        }
+                    });
                 }
             });
         }

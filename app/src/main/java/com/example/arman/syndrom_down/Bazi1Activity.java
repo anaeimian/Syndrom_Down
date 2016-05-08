@@ -1836,13 +1836,15 @@ public class Bazi1Activity extends ActionBarActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                wordVoice.start();
-                wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mediaPlayer) {
-                        mediaPlayer.release();
-                    }
-                });
+                if (wordVoice != null) {
+                    wordVoice.start();
+                    wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            mediaPlayer.release();
+                        }
+                    });
+                }
             }
 
             @Override

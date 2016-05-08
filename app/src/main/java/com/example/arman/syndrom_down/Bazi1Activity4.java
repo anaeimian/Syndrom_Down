@@ -349,6 +349,8 @@ public class Bazi1Activity4 extends ActionBarActivity {
                 remainedItems.add(receivedItems.get(i));
         }
 
+        final String item0 = items.get(0);
+        final String item1 = items.get(1);
 
         switch (category) {
             case "khanevade":
@@ -1196,6 +1198,19 @@ public class Bazi1Activity4 extends ActionBarActivity {
                 @Override
                 public void onClick(View v) {
                     payMoreAttention.start();
+                    payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            setVoice(item0);
+                            wordVoice.start();
+                            wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
+                        }
+                    });
                 }
             });
         } else if (answerPos == 1) {
@@ -1224,6 +1239,19 @@ public class Bazi1Activity4 extends ActionBarActivity {
                 @Override
                 public void onClick(View v) {
                     payMoreAttention.start();
+                    payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            setVoice(item1);
+                            wordVoice.start();
+                            wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mediaPlayer) {
+                                    mediaPlayer.release();
+                                }
+                            });
+                        }
+                    });
                 }
             });
         }
@@ -1314,6 +1342,211 @@ public class Bazi1Activity4 extends ActionBarActivity {
 
             }
         });
+    }
+
+    private void setVoice(String item) {
+        switch (item) {
+            case "baba":
+                wordVoice = MediaPlayer.create(this, R.raw.baba_ko);
+                break;
+            case "maman":
+                wordVoice = MediaPlayer.create(this, R.raw.maman_ko);
+                break;
+
+            case "khahar":
+                wordVoice = MediaPlayer.create(this, R.raw.khahar_ko);
+                break;
+            case "dadash":
+                wordVoice = MediaPlayer.create(this, R.raw.dadash_ko);
+                break;
+            ///////////
+            case "cheshm":
+                wordVoice = MediaPlayer.create(this, R.raw.cheshm_ko);
+                break;
+            case "dast":
+                wordVoice = MediaPlayer.create(this, R.raw.dast_ko);
+                break;
+
+            case "pa":
+                wordVoice = MediaPlayer.create(this, R.raw.pa_ko);
+                break;
+            case "goosh":
+                wordVoice = MediaPlayer.create(this, R.raw.gush_ko);
+                break;
+            case "mo":
+                wordVoice = MediaPlayer.create(this, R.raw.mo_ko);
+                break;
+            case "dahan":
+                wordVoice = MediaPlayer.create(this, R.raw.dahan_ko);
+                break;
+
+            case "bini":
+                wordVoice = MediaPlayer.create(this, R.raw.bini_ko);
+                break;
+            case "zaban":
+                wordVoice = MediaPlayer.create(this, R.raw.zaban_ko);
+                break;
+            case "dandan":
+                wordVoice = MediaPlayer.create(this, R.raw.dandan_ko);
+                break;
+            case "abro":
+                wordVoice = MediaPlayer.create(this, R.raw.abro_ko);
+                break;
+            ///////////
+            case "moz":
+                wordVoice = MediaPlayer.create(this, R.raw.moz_ko);
+                break;
+            case "sib":
+                wordVoice = MediaPlayer.create(this, R.raw.sib_ko);
+                break;
+
+            case "khiar":
+                wordVoice = MediaPlayer.create(this, R.raw.khiar_ko);
+                break;
+            case "porteghal":
+                wordVoice = MediaPlayer.create(this, R.raw.porteqal_ko);
+                break;
+            case "limo":
+                wordVoice = MediaPlayer.create(this, R.raw.limo_ko);
+                break;
+            ////////////
+            case "gorbe":
+                wordVoice = MediaPlayer.create(this, R.raw.gorbe_ko);
+                break;
+            case "sag":
+                wordVoice = MediaPlayer.create(this, R.raw.sag_ko);
+                break;
+            case "gav":
+                wordVoice = MediaPlayer.create(this, R.raw.gav_ko);
+                break;
+
+            case "mahi":
+                wordVoice = MediaPlayer.create(this, R.raw.mahi_ko);
+                break;
+            case "morgh":
+                wordVoice = MediaPlayer.create(this, R.raw.morq_ko);
+                break;
+            case "asb":
+                wordVoice = MediaPlayer.create(this, R.raw.asb_ko);
+                break;
+            /////////////
+            case "kafsh":
+                wordVoice = MediaPlayer.create(this, R.raw.kafsh_ko);
+                break;
+            case "kolah":
+                wordVoice = MediaPlayer.create(this, R.raw.kolah_ko);
+                break;
+            case "joorab":
+                wordVoice = MediaPlayer.create(this, R.raw.jorab_ko);
+                break;
+
+            case "shalvar":
+                wordVoice = MediaPlayer.create(this, R.raw.shalvar_ko);
+                break;
+            case "pirahan":
+                wordVoice = MediaPlayer.create(this, R.raw.pirhan_ko);
+                break;
+            case "rosari":
+                wordVoice = MediaPlayer.create(this, R.raw.rosari_ko);
+                break;
+            case "bolooz":
+                wordVoice = MediaPlayer.create(this, R.raw.bloz_ko);
+                break;
+            ///////////
+            case "shane":
+                wordVoice = MediaPlayer.create(this, R.raw.shane_ko);
+                break;
+            case "mesvak":
+                wordVoice = MediaPlayer.create(this, R.raw.mesvak_ko);
+                break;
+            case "hole":
+                wordVoice = MediaPlayer.create(this, R.raw.hole_ko);
+                break;
+
+            case "toop":
+                wordVoice = MediaPlayer.create(this, R.raw.toop_ko);
+                break;
+            case "docharkhe":
+                wordVoice = MediaPlayer.create(this, R.raw.docharkhe_ko);
+                break;
+            case "mashin":
+                wordVoice = MediaPlayer.create(this, R.raw.mashin_ko);
+                break;
+            case "havapeyma":
+                wordVoice = MediaPlayer.create(this, R.raw.havapeima_kojast);
+                break;
+            case "ghashoq":
+                wordVoice = MediaPlayer.create(this, R.raw.qashoq_ko);
+                break;
+            case "ketab":
+                wordVoice = MediaPlayer.create(this, R.raw.ketab_ko);
+                break;
+            ////////////////
+            case "doctor":
+                wordVoice = MediaPlayer.create(this, R.raw.doctor_ko);
+                break;
+            case "nanva":
+                wordVoice = MediaPlayer.create(this, R.raw.nanva_ko);
+                break;
+            case "moalem":
+                wordVoice = MediaPlayer.create(this, R.raw.moalem_ko);
+                break;
+            //////////////
+            case "abi":
+                wordVoice = MediaPlayer.create(this, R.raw.abi_ko);
+                break;
+            case "zard":
+                wordVoice = MediaPlayer.create(this, R.raw.zard_ko);
+                break;
+            case "ghermez":
+                wordVoice = MediaPlayer.create(this, R.raw.qermez_ko);
+                break;
+            //////////////
+            case "nan":
+                wordVoice = MediaPlayer.create(this, R.raw.nan_ko);
+                break;
+            case "shir":
+                wordVoice = MediaPlayer.create(this, R.raw.shir_ko);
+                break;
+            case "ab":
+                wordVoice = MediaPlayer.create(this, R.raw.ab_ko);
+                break;
+            case "cake":
+                wordVoice = MediaPlayer.create(this, R.raw.cake_ko);
+                break;
+            case "bisko":
+                wordVoice = MediaPlayer.create(this, R.raw.bisko_ko);
+                break;
+            ///////////////
+            case "bala":
+                wordVoice = MediaPlayer.create(this, R.raw.bala_ko);
+                break;
+            case "paeen":
+                wordVoice = MediaPlayer.create(this, R.raw.paeen_ko);
+                break;
+            case "kasif":
+                wordVoice = MediaPlayer.create(this, R.raw.kasif_ko);
+                break;
+
+            case "tamiz":
+                wordVoice = MediaPlayer.create(this, R.raw.tamiz_ko);
+                break;
+            case "bache":
+                wordVoice = MediaPlayer.create(this, R.raw.bache_kojast);
+                break;
+            case "dokhtar":
+                wordVoice = MediaPlayer.create(this, R.raw.dokhtar_ko);
+                break;
+            case "pesar":
+                wordVoice = MediaPlayer.create(this, R.raw.pesar_kojast);
+                break;
+            case "sard":
+                wordVoice = MediaPlayer.create(this, R.raw.sard_ko);
+                break;
+            case "garm":
+                wordVoice = MediaPlayer.create(this, R.raw.garm_ko);
+                break;
+        }
     }
 
     private void startAnimation() {

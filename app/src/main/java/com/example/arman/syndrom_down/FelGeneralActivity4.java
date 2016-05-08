@@ -25,7 +25,7 @@ import android.widget.ImageView;
 
 
 public class FelGeneralActivity4 extends ActionBarActivity {
-
+    Animation animation;
     ImageView verb;
     ImageView verbImg;
     ImageView arrow;
@@ -72,8 +72,11 @@ public class FelGeneralActivity4 extends ActionBarActivity {
         controller();
         setViews();
         category = getIntent().getStringExtra("category");
+
         if (!category.equals("kalame3")) {
             verbDrag.start();
+        } else {
+            arrow.setImageResource(-1);
         }
         guide = (ImageView) findViewById(R.id.guide);
         settingsDialog = new Dialog(this);
@@ -82,7 +85,6 @@ public class FelGeneralActivity4 extends ActionBarActivity {
         guide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 settingsDialog.show();
             }
         });
@@ -271,7 +273,9 @@ public class FelGeneralActivity4 extends ActionBarActivity {
                 intent = new Intent(FelGeneralActivity4.this, Kalame3Activity.class);
                 verb.setVisibility(View.INVISIBLE);
                 verbImg.setVisibility(View.INVISIBLE);
-                arrow.setVisibility(View.INVISIBLE);
+//                animation = null;
+//                arrow.setVisibility(View.INVISIBLE);
+//                arrow = null;
                 passSection();
                 successAnimation();
 //                switch (position) {
@@ -522,12 +526,13 @@ public class FelGeneralActivity4 extends ActionBarActivity {
 
 
     private void controller() {
-        final Animation animation = new AlphaAnimation(1, 0);
+        animation = new AlphaAnimation(1, 0);
         animation.setDuration(1000);
         animation.setInterpolator(new LinearInterpolator());
         animation.setRepeatCount(Animation.INFINITE);
         animation.setRepeatMode(Animation.REVERSE);
-        arrow.startAnimation(animation);
+        if (!getIntent().getStringExtra("category").equals("kalame3"))
+            arrow.startAnimation(animation);
 
         verb.setOnLongClickListener(new View.OnLongClickListener() {
             @Override

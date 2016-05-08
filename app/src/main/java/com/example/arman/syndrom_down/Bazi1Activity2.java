@@ -341,7 +341,7 @@ public class Bazi1Activity2 extends ActionBarActivity {
                 remainedItems.add(receivedItems.get(i));
         }
         final String item0 = items.get(0);
-        String item1 = items.get(1);
+        final String item1 = items.get(1);
         switch (category) {
             case "khanevade":
                 switch (items.get(0)) {
@@ -1232,7 +1232,7 @@ public class Bazi1Activity2 extends ActionBarActivity {
                     payMoreAttention.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                         @Override
                         public void onCompletion(MediaPlayer mediaPlayer) {
-                            setVoice(item0);
+                            setVoice(item1);
                             wordVoice.start();
                             wordVoice.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                                 @Override

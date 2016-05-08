@@ -235,63 +235,63 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
 
         star1 = (ImageView) findViewById(R.id.star1);
         star2 = (ImageView) findViewById(R.id.star2);
-        star3 = (ImageView) findViewById(R.id.star3);
-        star4 = (ImageView) findViewById(R.id.star4);
-        star5 = (ImageView) findViewById(R.id.star5);
-        star6 = (ImageView) findViewById(R.id.star6);
-        star7 = (ImageView) findViewById(R.id.star7);
-        star8 = (ImageView) findViewById(R.id.star8);
-        star9 = (ImageView) findViewById(R.id.star9);
-        star10 = (ImageView) findViewById(R.id.star10);
+//        star3 = (ImageView) findViewById(R.id.star3);
+//        star4 = (ImageView) findViewById(R.id.star4);
+//        star5 = (ImageView) findViewById(R.id.star5);
+//        star6 = (ImageView) findViewById(R.id.star6);
+//        star7 = (ImageView) findViewById(R.id.star7);
+//        star8 = (ImageView) findViewById(R.id.star8);
+//        star9 = (ImageView) findViewById(R.id.star9);
+//        star10 = (ImageView) findViewById(R.id.star10);
         animator1 = new ObjectAnimator();
-        animator1.setDuration(2000);
+        animator1.setDuration(1500);
         animator1.setTarget(star1);
         animator1.setPropertyName("translationY");
 
         animator2 = new ObjectAnimator();
-        animator2.setDuration(2000);
+        animator2.setDuration(3000);
         animator2.setTarget(star2);
         animator2.setPropertyName("translationY");
 
-        animator3 = new ObjectAnimator();
-        animator3.setDuration(2000);
-        animator3.setTarget(star3);
-        animator3.setPropertyName("translationY");
-
-        animator4 = new ObjectAnimator();
-        animator4.setDuration(2000);
-        animator4.setTarget(star4);
-        animator4.setPropertyName("translationY");
-
-        animator5 = new ObjectAnimator();
-        animator5.setDuration(2000);
-        animator5.setTarget(star5);
-        animator5.setPropertyName("translationY");
-
-        animator6 = new ObjectAnimator();
-        animator6.setDuration(3000);
-        animator6.setTarget(star6);
-        animator6.setPropertyName("translationY");
-
-        animator7 = new ObjectAnimator();
-        animator7.setDuration(3000);
-        animator7.setTarget(star7);
-        animator7.setPropertyName("translationY");
-
-        animator8 = new ObjectAnimator();
-        animator8.setDuration(3000);
-        animator8.setTarget(star8);
-        animator8.setPropertyName("translationY");
-
-        animator9 = new ObjectAnimator();
-        animator9.setDuration(3000);
-        animator9.setTarget(star9);
-        animator9.setPropertyName("translationY");
-
-        animator10 = new ObjectAnimator();
-        animator10.setDuration(3000);
-        animator10.setTarget(star10);
-        animator10.setPropertyName("translationY");
+//        animator3 = new ObjectAnimator();
+//        animator3.setDuration(2000);
+//        animator3.setTarget(star3);
+//        animator3.setPropertyName("translationY");
+//
+//        animator4 = new ObjectAnimator();
+//        animator4.setDuration(2000);
+//        animator4.setTarget(star4);
+//        animator4.setPropertyName("translationY");
+//
+//        animator5 = new ObjectAnimator();
+//        animator5.setDuration(2000);
+//        animator5.setTarget(star5);
+//        animator5.setPropertyName("translationY");
+//
+//        animator6 = new ObjectAnimator();
+//        animator6.setDuration(3000);
+//        animator6.setTarget(star6);
+//        animator6.setPropertyName("translationY");
+//
+//        animator7 = new ObjectAnimator();
+//        animator7.setDuration(3000);
+//        animator7.setTarget(star7);
+//        animator7.setPropertyName("translationY");
+//
+//        animator8 = new ObjectAnimator();
+//        animator8.setDuration(3000);
+//        animator8.setTarget(star8);
+//        animator8.setPropertyName("translationY");
+//
+//        animator9 = new ObjectAnimator();
+//        animator9.setDuration(3000);
+//        animator9.setTarget(star9);
+//        animator9.setPropertyName("translationY");
+//
+//        animator10 = new ObjectAnimator();
+//        animator10.setDuration(3000);
+//        animator10.setTarget(star10);
+//        animator10.setPropertyName("translationY");
 
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -300,6 +300,8 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
         final int height = size.y;
         Log.d("test", width + "");
         Log.d("test", height + "");
+        star1.setY(height + 100);
+        star2.setY(height + 100);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -307,37 +309,38 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
                 animator1.start();
                 animator2.setFloatValues(0, -height - 300);
                 animator2.start();
-                animator3.setFloatValues(0, -height - 300);
-                animator3.start();
-                animator4.setFloatValues(0, -height - 300);
-                animator4.start();
-                animator5.setFloatValues(0, -height - 300);
-                animator5.start();
-                animator6.setFloatValues(0, -height - 300);
-                animator6.start();
-                animator7.setFloatValues(0, -height - 300);
-                animator7.start();
-                animator8.setFloatValues(0, -height - 300);
-                animator8.start();
-                animator9.setFloatValues(0, -height - 300);
-                animator9.start();
-                animator10.setFloatValues(0, -height - 300);
-                animator10.start();
+//                animator3.setFloatValues(0, -height - 300);
+//                animator3.start();
+//                animator4.setFloatValues(0, -height - 300);
+//                animator4.start();
+//                animator5.setFloatValues(0, -height - 300);
+//                animator5.start();
+//                animator6.setFloatValues(0, -height - 300);
+//                animator6.start();
+//                animator7.setFloatValues(0, -height - 300);
+//                animator7.start();
+//                animator8.setFloatValues(0, -height - 300);
+//                animator8.start();
+//                animator9.setFloatValues(0, -height - 300);
+//                animator9.start();
+//                animator10.setFloatValues(0, -height - 300);
+//                animator10.start();
             }
         }, 500);
         animator1.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
-                star1.setX(width / 6);
-                star2.setX(2 * width / 6);
-                star3.setX(3 * width / 6);
-                star4.setX(4 * width / 6);
-                star5.setX(5 * width / 6);
-                star6.setX(width / 6);
-                star7.setX(2 * width / 6);
-                star8.setX(3 * width / 6);
-                star9.setX(4 * width / 6);
-                star10.setX(5 * width / 6);
+                star1.setVisibility(View.VISIBLE);
+                star2.setVisibility(View.VISIBLE);
+
+//                star3.setX(3 * width / 6);
+//                star4.setX(4 * width / 6);
+//                star5.setX(5 * width / 6);
+//                star6.setX(width / 6);
+//                star7.setX(2 * width / 6);
+//                star8.setX(3 * width / 6);
+//                star9.setX(4 * width / 6);
+//                star10.setX(5 * width / 6);
 //                star1.setVisibility(View.VISIBLE);
             }
 
@@ -357,9 +360,9 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
                 clapSound = null;
                 star1.setVisibility(View.INVISIBLE);
                 star2.setVisibility(View.INVISIBLE);
-                star3.setVisibility(View.INVISIBLE);
-                star4.setVisibility(View.INVISIBLE);
-                star5.setVisibility(View.INVISIBLE);
+//                star3.setVisibility(View.INVISIBLE);
+//                star4.setVisibility(View.INVISIBLE);
+//                star5.setVisibility(View.INVISIBLE);
                 intent.putExtra("position", "0");
                 startActivity(intent);
             }
