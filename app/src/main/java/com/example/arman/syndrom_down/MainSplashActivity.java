@@ -38,7 +38,7 @@ public class MainSplashActivity extends ActionBarActivity {
 
                 startActivity(intent);
             }
-        }, 3000);
+        }, 5000);
     }
 
     @Override

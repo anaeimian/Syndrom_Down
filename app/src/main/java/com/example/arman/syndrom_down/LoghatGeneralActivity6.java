@@ -307,8 +307,9 @@ public class LoghatGeneralActivity6 extends ActionBarActivity {
             public void run() {
                 animator1.setFloatValues(0, -height - 300);
                 animator1.start();
-                animator2.setFloatValues(0, -height - 300);
+                animator2.setFloatValues(height, -height - 500);
                 animator2.start();
+
 //                animator3.setFloatValues(0, -height - 300);
 //                animator3.start();
 //                animator4.setFloatValues(0, -height - 300);
