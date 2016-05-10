@@ -37,7 +37,6 @@ public class GozashteActivity extends ActionBarActivity {
         items.add(getResources().getString(R.string.raft));
         items.add(getResources().getString(R.string.khord));
         items.add(getResources().getString(R.string.khabid));
-        items.add(getResources().getString(R.string.parid));
         items.add(getResources().getString(R.string.david));
 
 //        items.add("raft");

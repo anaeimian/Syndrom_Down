@@ -197,10 +197,6 @@ public class FelGeneralActivity3 extends ActionBarActivity {
                         verbImg.setImageResource(R.drawable.imkhabid);
                         break;
                     case 3:
-                        verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.parid_drag);
-                        verb.setImageResource(R.drawable.tparid);
-//                        verbImg.setImageResource(R.drawable.imparid);                        break;
-                    case 4:
                         verbDrag = MediaPlayer.create(getApplicationContext(), R.raw.david_drag);
                         verb.setImageResource(R.drawable.tdavid);
                         verbImg.setImageResource(R.drawable.imdavidan);

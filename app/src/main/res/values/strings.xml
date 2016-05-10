@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">Syndrom_Down</string>
+    <string name="app_name">دانا</string>
     <string name="action_settings">منو</string>
     <string name="repeatTitle">تکرار و تمرین</string>
     <string name="activation_code">لطفا کد فعالسازی نرم افزار را وارد کنید</string>
@@ -146,7 +146,7 @@
     <string name="gorbeheyvanast">گربه حیوان است</string>
     <string name="abirangast">آبی رنگ است</string>
     <string name="mozmiveast">موز میوه است</string>
-    <string name="pesarmadreseraft">پسر مدرسه رفت</string>
+    <string name="pesarmadreseraft">دختر مدرسه رفت</string>
     <string name="zamir">ضمیر</string>
     <string name="man">من</string>
     <string name="to">تو</string>
@@ -179,5 +179,6 @@
     <string name="title_activity_bazi2_activity5">Bazi2Activity5</string>
     <string name="title_activity_bazi2_activity6">Bazi2Activity6</string>
     <string name="title_activity_user_selection">UserSelectionActivity</string>
+    <string name="title_activity_main_splash">MainSplashActivity</string>
 
 </resources>
