@@ -14,7 +14,7 @@ public class AmoozeshActivity extends ActionBarActivity {
     private ImageView imViewLoghat;
     private ImageView imViewJomle;
     private Toolbar toolbar;
-
+    private String user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +24,9 @@ public class AmoozeshActivity extends ActionBarActivity {
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
 
+        Intent intent = getIntent();
+        user = intent.getStringExtra("user");
+
         imViewLoghat = (ImageView) findViewById(R.id.imViewLoghat);
         imViewJomle = (ImageView) findViewById(R.id.imViewJomle);
 
@@ -31,6 +34,7 @@ public class AmoozeshActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AmoozeshActivity.this, LoghatActivity.class);
+                intent.putExtra("user", user);
                 startActivity(intent);
             }
         });
@@ -39,6 +43,7 @@ public class AmoozeshActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AmoozeshActivity.this, JomleActivity.class);
+                intent.putExtra("user",user);
                 startActivity(intent);
             }
         });

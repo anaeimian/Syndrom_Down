@@ -224,7 +224,7 @@ public class LoghatGeneralActivity2 extends ActionBarActivity {
                                 wordImg.setImageResource(R.drawable.imbaradar);
                                 break;
                             case "tahmasbi":
-                                wordImg.setImageResource(R.drawable.imbaradar);
+                                wordImg.setImageResource(R.drawable.tahmasbi_imbaradar);
                                 break;
                             case "akhavan":
                                 wordImg.setImageResource(R.drawable.akhavan_imbaradar);

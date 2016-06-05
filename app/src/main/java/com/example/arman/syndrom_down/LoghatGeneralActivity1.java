@@ -29,7 +29,8 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
     PopupWindow popUp;
     ImageView imGuide;
     Dialog settingsDialog;
-
+    Intent userIntent;
+    String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,8 @@ public class LoghatGeneralActivity1 extends FragmentActivity {
         settingsDialog = new Dialog(this);
         settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.dialog_layout, null));
+        userIntent = getIntent();
+        user = userIntent.getStringExtra("user");
 //        popUpLayout.addView(text);
         guide.setOnClickListener(new View.OnClickListener() {
             @Override
